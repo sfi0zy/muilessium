@@ -100,6 +100,13 @@
         transform: rotateX(90deg);
         transition: all @default-animation-duration @default-animation-function;
         will-change: max-height, margin, opacity, transform;
+
+        @media print {
+            max-height: none;
+            margin: 1rem 0;
+            opacity: 1;
+            transform: rotateX(0);
+        }
     } 
         
     > .item.-unfold {
