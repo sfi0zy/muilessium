@@ -4,6 +4,7 @@
 ## Description
 Muilessium is a UI framework for simple static websites (personal blogs, landings e.t.c.). It consists of over 50 components, a lot of utilities, helpers and syntax wrappers to make your code cleaner. This project can be used as a dependency or you can fork it and use as boilerplate for your project.
 
+![Preview](https://sfi0zy.github.io/images/456b9f3f6080a9056a34ce74872af98a.jpg)
 
 
 ## Docs
@@ -57,7 +58,7 @@ gulp --production
  - Vulnerabilities in dependencies
 
 ## Contribution
-If you are beginner front-end developer and you want to boost your CV with words like "I participate in development of the real open source project" - I'll be pleasured to give you a number of easy tasks. If you have your own ideas of how to improve the project - just create an issue and we'll discuss them.
+If you are beginner front-end developer and you want to boost your CV with words like "I participate in the development of the real open source project" - I'll be pleasured to give you a number of easy tasks. If you have your own ideas of how to improve the project - just create an issue and we'll discuss them.
 
 ## License
 MIT License
