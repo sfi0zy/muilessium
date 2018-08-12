@@ -79,11 +79,11 @@ gulp.task('browser-sync', () => {
     gulp.watch([
         './src/js/*.js',
         './src/js/*/*.js'
-    ], ['js']);
+    ], gulp.parallel('js'));
 
     gulp.watch([
         './src/dss/index.handlebars'
-    ], ['dss']);
+    ], gulp.parallel('dss'));
 });
 
 
