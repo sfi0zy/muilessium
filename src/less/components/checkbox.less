@@ -55,7 +55,6 @@
             
             > .icon {
                 border-color: @black;
-                
             }
         }
     }
@@ -66,7 +65,7 @@
         vertical-align: middle; 
         height: @default-ui-height;
         width: @default-ui-height;
-        border: 1px solid @grey-3;
+        border: 1px solid @blue-1;
         border-radius: @default-border-radius;
         
         > .symbol {
@@ -82,6 +81,7 @@
         }
 
         > .symbol > .mui-svg-icon {
+            fill: @green-3;
         }
     }
     
@@ -96,8 +96,19 @@
     }
     
     &.-toggle {
+        > label,
+        &.-checked > label {
+            &:hover,
+            &:focus {
+                > .icon {
+                    border-color: @black;
+                }
+            }
+        }
+
         > label > .icon {
-            background: @grey-3;
+            background: @red-1;
+            border: 1px solid @red-1;
             width: @default-ui-height * 2;
             overflow: hidden;
             transition: all @default-animation-duration @default-animation-function;
@@ -114,7 +125,7 @@
                 line-height: 2.5; // It's 2rem (default ui height). IE11 doesn't support REM units in pseudo-elements.
                 text-align: center;
                 text-transform: uppercase;
-                background: @grey-5;
+                background: @red-4;
                 color: @white;
                 border-radius: @default-border-radius;
                 transition: all @default-animation-duration @default-animation-function;
@@ -131,10 +142,13 @@
         }
         
         &.-checked > label > .icon {
+            background: @green-1;
+            border: 1px solid @green-1;
+
             &::before,
             &::after {
                 left: ~'calc(100% - ' @default-ui-height ~')';
-                background: @black;
+                background: @green-4;
                 color: @white;
             }
             
