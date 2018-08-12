@@ -1,0 +1,41 @@
+// @name Notification
+// @description Global notifications. There are two types of notifications - "banner" and "message". Banner should be used for static notifications for all users. Usually it is used at the top ot the page. Messages should be used as popup notifications (left and right). Use Muilessium.UTILS.animateElement to animate them.
+//
+// @markup
+//  <div class='mui-notification -message -left -white-bg _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+//  <div class='mui-notification -message -right -white-bg _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+//  <div class='mui-notification -banner'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+
+
+.@{muilessium-prefix}notification {
+    padding: 1rem;
+
+    &.-banner {
+        text-align: center;
+    }
+
+    &.-message {
+        position: fixed;
+        bottom: 1rem;
+        width: 20rem;
+        max-width: 20rem;
+        border-radius: .3rem;
+        z-index: 20;
+        opacity: 0;
+        pointer-events: none;
+
+        @media screen and (max-width: 22rem) {
+            width: ~'calc(100% - 2rem)';
+            max-width: ~'calc(100% - 2rem)';
+        }
+
+        &.-left {
+            left: 1rem;
+        }
+
+        &.-right {
+            right: 1rem;
+        }
+    }
+}
