@@ -31,9 +31,16 @@
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
 
+    @media print {
+        max-height: none !important;
+    }
 
     &.-max-height-20 {
         max-height: 20rem;
+
+        @media print {
+            max-height: none !important;
+        }
     }
 
     > .scroll-content {
