@@ -27,11 +27,11 @@ node_modules/muilessium/dist/js/muilessium.min.js
 git clone https://github.com/sfi0zy/muilessium.git
 cd muilessium
 npm i
-gulp server
+npm run dev
 ```
 ### Build for production:
 ```sh
-gulp --production
+npm run prod
 ```
 
 ### Changelog (since v0.2):
