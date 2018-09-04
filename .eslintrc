@@ -22,7 +22,8 @@
         "space-before-function-paren":       "off",
         "no-trailing-spaces":                "off",
         "comma-dangle":                      "off",
-        "object-curly-newline":              "off"
+        "object-curly-newline":              "off",
+        "prefer-destructuring":              "off"
     },
 
 
@@ -34,6 +35,7 @@
         "HTMLElement":           true,
         "HTMLCollection":        true,
         "XMLHttpRequest":        true,
-        "requestAnimationFrame": true
+        "requestAnimationFrame": true,
+        "KeyboardEvent":         true
     }
 }
