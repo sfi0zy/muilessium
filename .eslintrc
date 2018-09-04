@@ -1,6 +1,9 @@
 {
     "extends": "airbnb-base",
 
+    "env": {
+        "browser": true
+    },
 
     "rules": {
         "indent":                            ["error", 4],
@@ -24,18 +27,5 @@
         "comma-dangle":                      "off",
         "object-curly-newline":              "off",
         "prefer-destructuring":              "off"
-    },
-
-
-    "globals": {
-        "window":                true,
-        "document":              true,
-        "Node":                  true,
-        "NodeList":              true,
-        "HTMLElement":           true,
-        "HTMLCollection":        true,
-        "XMLHttpRequest":        true,
-        "requestAnimationFrame": true,
-        "KeyboardEvent":         true
     }
 }
