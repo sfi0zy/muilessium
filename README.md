@@ -58,9 +58,10 @@ npm run prod
  - Vulnerabilities in dependencies
 
 ## Contribution
-If you are beginner front-end developer and you want to boost your CV with words like "I participate in the development of the real open source project" - I'll be pleasured to give you a number of easy tasks. If you have your own ideas of how to improve the project - just create an issue and we'll discuss them.
+I don't have enough time to work on this project and I'll be glad to see new developers here. If you are a beginner front-end developer and you want to boost your CV or you have your own ideas of how to improve the project - take a look on [issues page](https://github.com/sfi0zy/muilessium/issues).
 
 ## License
 MIT License
+
 Copyright (c) 2016-2018 Ivan Bogachev <sfi0zy@gmail.com>
 
