@@ -1,21 +1,19 @@
-const gulp         = require('gulp'),
-      $            = require('gulp-load-plugins')();
-      package      = JSON.parse(require('fs').readFileSync('./package.json')),
-      argv         = require('yargs').argv,
-      webpack      = require('webpack-stream'),
-      browserSync  = require('browser-sync').create();
+const gulp         = require('gulp');
+const $            = require('gulp-load-plugins')();
+const fs           = require('fs');
+const argv         = require('yargs').argv;
+const webpack      = require('webpack-stream');
+const browserSync  = require('browser-sync').create();
 
 
-
+const pkg         = JSON.parse(fs.readFileSync('./package.json'));
 const ENVIRONMENT = argv.production ? 'production' : 'development';
 
 
 console.log('\x1b[33m%s %s\x1b[0m\n  ⇒ %s', ' ',
-    ENVIRONMENT.toUpperCase(),
-    package.name + ' v' + package.version);
+    ENVIRONMENT.toUpperCase(), `${pkg.name} v${pkg.version}`);
 console.log('\x1b[36m%s %s\x1b[0m\n  ⇒ %s', ' ',
-    'Browsers:',
-    package.browserslist);
+    'Browsers:', pkg.browserslist);
 
 
 
@@ -24,7 +22,7 @@ gulp.task('less', () => {
         .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.init()))
         .pipe($.less())
         .pipe($.postcss())
-        .pipe($.cssnano({ discardComments: { removeAll: true }}))
+        .pipe($.cssnano({ discardComments: { removeAll: true } }))
         .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.write()))
         .pipe($.rename('muilessium.min.css'))
         .pipe($.size({ showFiles: true }))
