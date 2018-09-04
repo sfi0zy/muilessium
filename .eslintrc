@@ -26,6 +26,8 @@
         "no-trailing-spaces":                "off",
         "comma-dangle":                      "off",
         "object-curly-newline":              "off",
-        "prefer-destructuring":              "off"
+        "prefer-destructuring":              "off",
+        "no-console":                        "off",
+        "global-require":                    "off",
     }
 }
