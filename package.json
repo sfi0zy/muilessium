@@ -1,7 +1,8 @@
 {
   "name": "muilessium",
-  "version": "0.2.30",
+  "version": "0.2.31",
   "description": "UI Framework",
+  "keywords": "css, less, responsive, front-end, ui, components, framework",
   "author": "Ivan Bogachev <sfi0zy@gmail.com>",
   "license": "MIT",
   "repository": {
