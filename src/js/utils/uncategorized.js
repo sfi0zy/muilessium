@@ -17,6 +17,8 @@
 //  - deepGet(obj, path)
 //  - deepSet(obj, path, data)
 //  - toLispCase(str)
+//  - upperLimit(value, max)
+//  - lowerLimit(value, min)
 //
 // -----------------------------------------------------------------------------
 
@@ -331,5 +333,23 @@ export function toLispCase(str) {
     }
 
     return DEPENDENCIES.toSlugCase(str); 
+}
+
+
+// UpperLimit
+// ----------
+// ...
+
+export function upperLimit(value, max) {
+    return value < max ? value : max;
+}
+
+
+// LowerLimit
+// ----------
+// ...
+
+export function lowerLimit(value, min) {
+    return value < min ? min : value;
 }
 

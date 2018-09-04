@@ -486,6 +486,24 @@ module.exports = {
         });
 
         test.done();
+    },
+
+
+    upperLimit(test) {
+        test.equal(_.upperLimit(0,   0),    0);
+        test.equal(_.upperLimit(10,  100), 10);
+        test.equal(_.upperLimit(100, 10),  10);
+
+        test.done();
+    },
+
+
+    lowerLimit(test) {
+        test.equal(_.lowerLimit(0,   0),    0);
+        test.equal(_.lowerLimit(100, 10), 100);
+        test.equal(_.lowerLimit(10, 100), 100);
+
+        test.done();
     }
 };
 
