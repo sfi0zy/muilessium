@@ -16,8 +16,10 @@
 //       Executes all callbacks for event with this name.
 //
 // Default events:
+//   - resize-window
 //   - resize-window-height
 //   - resize-window-width
+//   - scroll
 //   - scroll-start
 //   - scroll-end
 // Additional events (initialized in /src/js/muilessium.js):
@@ -52,47 +54,44 @@ class Events {
 
 
     initWindowResizeEvents() {
+        this.addEvent('resize-window');
         this.addEvent('resize-window-height');
         this.addEvent('resize-window-width');
 
         this.data.window.height = window.innerHeight;
         this.data.window.width  = window.innerWidth;
 
-        this.timeouts.resizeWindowHeight = null;
-        this.timeouts.resizeWindowWidth  = null;
+        this.timeouts.resizeWindow       = null;
 
         window.addEventListener('resize', () => {
+            this.fireEvent('resize-window');
+
             const height = window.innerHeight;
             const width  = window.innerWidth;
 
             if (this.data.window.height !== height) {
                 this.data.window.height = height;
-                clearTimeout(this.timeouts.resizeWindowHeight);
-
-                this.timeouts.resizeWindowHeight = setTimeout(() => {
-                    this.fireEvent('resize-window-height');
-                }, 150);
+                this.fireEvent('resize-window-height');
             }
 
             if (this.data.window.width !== width) {
                 this.data.window.width = width;
-                clearTimeout(this.timeouts.resizeWindowWidth);
-
-                this.timeouts.resizeWindowHeight = setTimeout(() => {
-                    this.fireEvent('resize-window-width');
-                }, 150);
+                this.fireEvent('resize-window-width');
             }
         });
     }
 
 
     initScrollEvents() {
+        this.addEvent('scroll');
         this.addEvent('scroll-start');
         this.addEvent('scroll-end');
 
         this.timeouts.scroll = null;
 
         window.addEventListener('scroll', () => {
+            this.fireEvent('scroll');
+
             if (!this.timeouts.scroll) {
                 this.fireEvent('scroll-start');
             } else {
