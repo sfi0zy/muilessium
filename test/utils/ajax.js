@@ -20,15 +20,27 @@ require('jsdom-global')('', {
 
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 module.exports = {
-    ['post']: function(test) {
+    post(test) {
         log.info('POST https://jsonplaceholder.typicode.com/posts');
 
         test.expect(1);
+
+        // ---------------
+
+        function callbackPositive(responseText) {
+            test.equal(JSON.parse(responseText).id, 101);
+            test.done();
+        }
+
+        function callbackNegative(/* status, statusText */) {
+            test.ok(false, 'it seems like jsonplaceholder is down');            
+            test.done();
+        }
 
         // ---------------
 
@@ -38,6 +50,14 @@ module.exports = {
             callbackPositive,
             callbackNegative
         );
+    },
+    
+
+
+    postProtected(test) {
+        log.info('POST https://jsonplaceholder.typicode.com/posts');
+
+        test.expect(1);
 
         // ---------------
 
@@ -45,19 +65,6 @@ module.exports = {
             test.equal(JSON.parse(responseText).id, 101);
             test.done();
         }
-
-        function callbackNegative(status, statusText) {
-            test.ok(false, 'it seems like jsonplaceholder is down');            
-            test.done();
-        }
-    },
-    
-
-
-    ['postProtected']: function(test) {
-        log.info('POST https://jsonplaceholder.typicode.com/posts');
-
-        test.expect(1);
 
         // ---------------
 
@@ -66,21 +73,26 @@ module.exports = {
             { /* data */ },
             callbackPositive
         );
-
-        // ---------------
-
-        function callbackPositive(responseText) {
-            test.equal(JSON.parse(responseText).id, 101);
-            test.done();
-        }
     },
 
 
 
-    ['get']: function(test) {
+    get(test) {
         log.info('GET https://jsonplaceholder.typicode.com/posts');
 
         test.expect(1);
+
+        // ---------------
+
+        function callbackPositive(responseText) {
+            test.equal(JSON.parse(responseText)[0].id, 1);
+            test.done();
+        }
+
+        function callbackNegative(/* status, statusText */) {
+            test.ok(false, 'it seems like jsonplaceholder is down');            
+            test.done();
+        }
 
         // ---------------
 
@@ -89,6 +101,14 @@ module.exports = {
             callbackPositive,
             callbackNegative
         );
+    },
+    
+
+
+    getProtected(test) {
+        log.info('GET https://jsonplaceholder.typicode.com/posts');
+
+        test.expect(1);
 
         // ---------------
 
@@ -96,20 +116,6 @@ module.exports = {
             test.equal(JSON.parse(responseText)[0].id, 1);
             test.done();
         }
-
-        function callbackNegative(status, statusText) {
-            test.ok(false, 'it seems like jsonplaceholder is down');            
-            test.done();
-        }
-        
-    },
-    
-
-
-    ['getProtected']: function(test) {
-        log.info('GET https://jsonplaceholder.typicode.com/posts');
-
-        test.expect(1);
 
         // ---------------
 
@@ -117,13 +123,6 @@ module.exports = {
             'https://jsonplaceholder.typicode.com/posts',
             callbackPositive
         );
-
-        // ---------------
-
-        function callbackPositive(responseText) {
-            test.equal(JSON.parse(responseText)[0].id, 1);
-            test.done();
-        }
-    },
+    }
 };
 

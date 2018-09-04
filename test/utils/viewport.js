@@ -11,30 +11,29 @@ require('babel-register')({
 require('jsdom-global/register');
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 
 module.exports = {
-    ['isInViewport']: function(test) {
+    isInViewport(test) {
         log.warning('The rendering is not implemented in jsdom.',
-                    'All viewport utilities should be tested manually.');
+            'All viewport utilities should be tested manually.');
 
-        document.body.innerHTML = `<div></div>`;
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
  
         // ---------------
 
-        var result = _.isInViewport(element);
+        const result = _.isInViewport(element);
 
         // ---------------
 
         test.ok(result, 'It should return "true" if the element is in the viewport.');
 
-
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.isInViewport(null);
             _.isInViewport(undefined);
         });
@@ -44,20 +43,20 @@ module.exports = {
 
 
 
-    ['isAboveViewport']: function(test) {
-        document.body.innerHTML = `<div></div>`;
+    isAboveViewport(test) {
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
  
         // ---------------
 
-        var result = _.isInViewport(element);
+        const result = _.isInViewport(element);
 
         // ---------------
 
         test.ok(result, 'It should return "true" if the element is above the viewport.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.isInViewport(null);
             _.isInViewport(undefined);
         });

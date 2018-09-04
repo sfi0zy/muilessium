@@ -11,15 +11,15 @@ require('babel-register')({
 require('jsdom-global/register');
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+// const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 module.exports = {
-    ['makeElementFocusable']: function(test) {
-        document.body.innerHTML = `<div></div>`;
+    makeElementFocusable(test) {
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -29,7 +29,7 @@ module.exports = {
 
         test.equal(element.tabIndex, 0, 'It should set the tabIndex attribute to zero.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeElementFocusable(null);
             _.makeElementFocusable(undefined);
         });
@@ -39,12 +39,12 @@ module.exports = {
 
 
 
-    ['makeElementsFocusable']: function(test) {
+    makeElementsFocusable(test) {
         document.body.innerHTML =
                 `<div></div>
                  <div></div>`;
 
-        var elements = document.querySelectorAll('div');
+        const elements = document.querySelectorAll('div');
 
         // ---------------
 
@@ -56,7 +56,7 @@ module.exports = {
             test.equal(element.tabIndex, 0, 'It should set the tabIndex attribute of all selected elements to zero.');
         });
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeElementsFocusable(null);
             _.makeElementsFocusable(undefined);
         });
@@ -66,10 +66,10 @@ module.exports = {
 
 
 
-    ['makeElementNotFocusable']: function(test) {
-        document.body.innerHTML = `<div tabindex='0'></div>`;
+    makeElementNotFocusable(test) {
+        document.body.innerHTML = '<div tabindex="0"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -79,7 +79,7 @@ module.exports = {
 
         test.equal(element.tabIndex, -1, 'It should set the tabIndex attribute to -1.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeElementNotFocusable(null);
             _.makeElementNotFocusable(undefined);
         });
@@ -89,12 +89,12 @@ module.exports = {
 
 
 
-    ['makeElementsNotFocusable']: function(test) {
+    makeElementsNotFocusable(test) {
         document.body.innerHTML =
                 `<div tabindex='0'></div>
                  <div tabindex='1'></div>`;
 
-        var elements = document.querySelectorAll('div');
+        const elements = document.querySelectorAll('div');
 
         // ---------------
 
@@ -106,7 +106,7 @@ module.exports = {
             test.equal(element.tabIndex, -1, 'It should set the tabIndex attribute of all selected elements to -1.');
         });
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeElementsNotFocusable(null);
             _.makeElementsNotFocusable(undefined);
         });
@@ -116,7 +116,7 @@ module.exports = {
 
 
 
-    ['getFocusableChilds']: function(test) {
+    getFocusableChilds(test) {
         document.body.innerHTML =
                 `<div id='parent'>
                     <div tabindex='0'></div>
@@ -124,11 +124,11 @@ module.exports = {
                     <div></div>
                  </div>`;
 
-        var parent = document.querySelector('#parent');
+        const parent = document.querySelector('#parent');
 
         // ---------------
 
-        var childs = _.getFocusableChilds(parent);
+        const childs = _.getFocusableChilds(parent);
 
         // ---------------
 
@@ -138,7 +138,7 @@ module.exports = {
             test.ok(element.tabIndex >= 0, 'It should return the array of focusable elements.');
         });
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.getFocusableChilds(null);
             _.getFocusableChilds(undefined);
         });
@@ -148,7 +148,7 @@ module.exports = {
 
 
 
-    ['getAllFocusableElements']: function(test) {
+    getAllFocusableElements(test) {
         document.body.innerHTML =
                 `<div>
                      <div tabindex='0'></div>
@@ -158,7 +158,7 @@ module.exports = {
 
         // ---------------
 
-        var elements = _.getAllFocusableElements();
+        const elements = _.getAllFocusableElements();
 
         // ---------------
 
@@ -173,7 +173,7 @@ module.exports = {
 
 
 
-    ['getNextFocusableElement']: function(test) {
+    getNextFocusableElement(test) {
         document.body.innerHTML =
                 `<div>
                      <div id='prev' tabindex='0'></div>
@@ -181,19 +181,19 @@ module.exports = {
                      <div></div>
                  </div>`;
 
-        var element = document.querySelector('#prev');
+        const element = document.querySelector('#prev');
 
         // ---------------
 
-        var next1 = _.getNextFocusableElement(element),
-            next2 = _.getNextFocusableElement(next1);
+        const next1 = _.getNextFocusableElement(element);
+        const next2 = _.getNextFocusableElement(next1);
 
         // ---------------
 
         test.equal(next1.id, 'next', 'It should return the next focusable element.');
         test.equal(next2,    null,   'It should return "null" if the selected element is the last focusable element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.getNextFocusableElement(null);
             _.getNextFocusableElement(undefined);
         });
@@ -203,7 +203,7 @@ module.exports = {
 
 
 
-    ['getPreviousFocusableElement']: function(test) {
+    getPreviousFocusableElement(test) {
         document.body.innerHTML =
                 `<div>
                      <div id='prev' tabindex='0'></div>
@@ -211,19 +211,19 @@ module.exports = {
                      <div></div>
                  </div>`;
 
-        var element = document.querySelector('#next');
+        const element = document.querySelector('#next');
 
         // ---------------
 
-        var prev1 = _.getPreviousFocusableElement(element),
-            prev2 = _.getPreviousFocusableElement(prev1);
+        const prev1 = _.getPreviousFocusableElement(element);
+        const prev2 = _.getPreviousFocusableElement(prev1);
 
         // ---------------
 
         test.equal(prev1.id, 'prev', 'It should return the previous focusable element.');
         test.equal(prev2,    null,   'It should return "null" if the selected element is the first focusable element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.getPreviousFocusableElement(null);
             _.getPreviousFocusableElement(undefined);
         });
@@ -233,7 +233,7 @@ module.exports = {
 
 
 
-    ['goToNextFocusableElement']: function(test) {
+    goToNextFocusableElement(test) {
         document.body.innerHTML =
                 `<div>
                      <div id='prev' tabindex='0'></div>
@@ -241,7 +241,7 @@ module.exports = {
                      <div></div>
                  </div>`;
 
-        var element = document.querySelector('#prev');
+        const element = document.querySelector('#prev');
         
         element.focus();
 
@@ -253,7 +253,7 @@ module.exports = {
 
         test.equal(document.activeElement.id, 'next', 'It should move the focus to the next focusable element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.goToNextFocusableElement(element);
             _.goToNextFocusableElement(null);
             _.goToNextFocusableElement(undefined);
@@ -264,7 +264,7 @@ module.exports = {
 
 
 
-    ['goToPreviousFocusableElement']: function(test) {
+    goToPreviousFocusableElement(test) {
         document.body.innerHTML =
                 `<div>
                      <div id='prev' tabindex='1'></div>
@@ -272,7 +272,7 @@ module.exports = {
                      <div></div>
                  </div>`;
 
-        var element = document.querySelector('#next');
+        const element = document.querySelector('#next');
         
         element.focus();
 
@@ -284,7 +284,7 @@ module.exports = {
 
         test.equal(document.activeElement.id, 'prev', 'It should move the focus to the previous focusable element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.goToPreviousFocusableElement(element);
             _.goToPreviousFocusableElement(null);
             _.goToPreviousFocusableElement(undefined);
@@ -295,18 +295,25 @@ module.exports = {
 
 
 
-    ['makeElementClickable']: function(test) {
+    makeElementClickable(test) {
         document.body.innerHTML =
                 `<div></div>
                  <div></div>
                  <div></div>`;
 
-        var elements = document.querySelectorAll('div'),
-            isClicked = false,
-            expectedResultsForMouse    = [true, true, false],
-            expectedResultsForKeyboard = [true, false, true];
+        const elements = document.querySelectorAll('div');
+        let   isClicked = false;
+        const expectedResultsForMouse    = [true, true, false];
+        const expectedResultsForKeyboard = [true, false, true];
 
         test.expect(11);
+
+        // ---------------
+
+        function callback() {
+            test.ok(true, 'It should execute the callback function on the "click" event for the element.');
+            isClicked = true;
+        }
 
         // ---------------
 
@@ -316,22 +323,16 @@ module.exports = {
 
         // ---------------
 
-
-        function callback() {
-            test.ok(true, 'It should execute the callback function on the "click" event for the element.');
-            isClicked = true;
-        }
-
-        [0,1,2].forEach(function(i) {
+        [0, 1, 2].forEach((i) => {
             isClicked = false;
 
             elements[i].click();
 
             test.equal(isClicked, expectedResultsForMouse[i],
-                    'It should execute the callback function on the "mouse click" event.');
+                'It should execute the callback function on the "mouse click" event.');
         });
 
-        [0,1,2].forEach(function(i) {
+        [0, 1, 2].forEach((i) => {
             isClicked = false;
 
             elements[i].dispatchEvent(
@@ -342,10 +343,10 @@ module.exports = {
             );
 
             test.equal(isClicked, expectedResultsForKeyboard[i],
-                    'It should execute the callback function on the "enter pressed" event.');
+                'It should execute the callback function on the "enter pressed" event.');
         });
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeElementClickable(null);
             _.makeElementClickable(undefined);
             _.makeElementClickable(elements[0], null);
@@ -357,7 +358,7 @@ module.exports = {
 
 
 
-    ['makeChildElementsClickable']: function(test) {
+    makeChildElementsClickable(test) {
         document.body.innerHTML =
                 `<div class='parent'>
                      <div></div>
@@ -372,53 +373,58 @@ module.exports = {
                      <div></div>
                  </div>`;
 
-        var parents = document.querySelectorAll('.parent'),
-            elements = [
-                parents[0].querySelectorAll('div'),
-                parents[1].querySelectorAll('div'),
-                parents[2].querySelectorAll('div')
-            ],
-            isClicked = false,
-            expectedResultsForMouse    = [true, true, false],
-            expectedResultsForKeyboard = [true, false, true];
+        const parents = document.querySelectorAll('.parent');
+        const elements = [
+            parents[0].querySelectorAll('div'),
+            parents[1].querySelectorAll('div'),
+            parents[2].querySelectorAll('div')
+        ];
+        let   isClicked = false;
+        const expectedResultsForMouse    = [true, true, false];
+        const expectedResultsForKeyboard = [true, false, true];
 
         test.expect(29);
 
         // ---------------
 
-        _.makeChildElementsClickable(parents[0], elements[0], callback());
-        _.makeChildElementsClickable(parents[1], elements[1], callback(), { mouse: true,  keyboard: false });
-        _.makeChildElementsClickable(parents[2], elements[2], callback(), { mouse: false, keyboard: true  });
+        function callback() {
+            let counter = 0;
+
+            return (index) => {
+                test.ok(true, 'It should set the event listener for the click event for the element.');
+                test.equal(index, (counter++) % 2, 'It should pass the index of the child element to the callback function.'); 
+                isClicked = true;
+            };
+        }
 
         // ---------------
 
-        function callback() {
-            var counter = 0;
+        _.makeChildElementsClickable(parents[0], elements[0], callback());
+        _.makeChildElementsClickable(parents[1], elements[1], callback(),
+            { mouse: true,  keyboard: false });
+        _.makeChildElementsClickable(parents[2], elements[2], callback(),
+            { mouse: false, keyboard: true  });
 
-            return function(index) {
-                test.ok(true, 'It should set the event listener for the click event for the element.');
-                test.equal(index, (counter++)%2, 'It should pass the index of the child element to the callback function.'); 
-                isClicked = true;
-            }
-        }
+        // ---------------
 
-        [0,1,2].forEach(function(testNumber) {
-            var expectedResult = expectedResultsForMouse[testNumber];
 
-            [0,1].forEach(function(i) {
+        [0, 1, 2].forEach((testNumber) => {
+            const expectedResult = expectedResultsForMouse[testNumber];
+
+            [0, 1].forEach((i) => {
                 isClicked = false;
 
                 elements[testNumber][i].click();
 
                 test.equal(isClicked, expectedResult,
-                        'It should execute the callback function on the "mouse click" event.');
+                    'It should execute the callback function on the "mouse click" event.');
             });
         });
 
-        [0,1,2].forEach(function(testNumber) {
-            var expectedResult = expectedResultsForKeyboard[testNumber];
+        [0, 1, 2].forEach((testNumber) => {
+            const expectedResult = expectedResultsForKeyboard[testNumber];
 
-            [0,1].forEach(function(i) {
+            [0, 1].forEach((i) => {
                 isClicked = false;
 
                 elements[testNumber][i].dispatchEvent(
@@ -429,17 +435,17 @@ module.exports = {
                 );
 
                 test.equal(isClicked, expectedResult,
-                        'It should execute the callback function on the "enter pressed" event.');
+                    'It should execute the callback function on the "enter pressed" event.');
             });
         });
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.makeChildElementsClickable(null);
             _.makeChildElementsClickable(undefined);
-            _.makeChildElementsClickable(parent, null);
-            _.makeChildElementsClickable(parent, undefined);
-            _.makeChildElementsClickable(parent, elements, null);
-            _.makeChildElementsClickable(parent, elements, undefined);
+            _.makeChildElementsClickable(parents, null);
+            _.makeChildElementsClickable(parents, undefined);
+            _.makeChildElementsClickable(parents, elements, null);
+            _.makeChildElementsClickable(parents, elements, undefined);
         });
 
         test.done();
@@ -447,12 +453,18 @@ module.exports = {
 
 
 
-    ['onFocus']: function(test) {
-        document.body.innerHTML = `<div tabindex='0'></div>`;
+    onFocus(test) {
+        document.body.innerHTML = '<div tabindex="0"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         test.expect(2);
+
+        // ---------------
+        
+        function callback() {
+            test.ok(true, 'It should execute the callback function on the "focus" event.');
+        }
 
         // ---------------
 
@@ -460,13 +472,9 @@ module.exports = {
 
         // ---------------
 
-        function callback() {
-            test.ok(true, 'It should execute the callback function on the "focus" event.');
-        }
-
         element.focus();
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.onFocus(null);
             _.onFocus(undefined);
             _.onFocus(element, null);
@@ -478,16 +486,12 @@ module.exports = {
 
 
 
-    ['onBlur']: function(test) {
-        document.body.innerHTML = `<div tabindex='0'></div>`;
+    onBlur(test) {
+        document.body.innerHTML = '<div tabindex="0"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         test.expect(2);
-
-        // ---------------
-
-        _.onBlur(element, callback);
 
         // ---------------
 
@@ -495,10 +499,16 @@ module.exports = {
             test.ok(true, 'It should execute the callback function on the "blur" event.');
         }
 
+        // ---------------
+
+        _.onBlur(element, callback);
+
+        // ---------------
+
         element.focus();
         element.blur();
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.onBlur(null);
             _.onBlur(undefined);
             _.onBlur(element, null);

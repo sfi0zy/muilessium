@@ -12,41 +12,43 @@ require('babel-register')({
 require('jsdom-global/register');
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 // This will fix the following error from jsdom runtime:
 // - Error: Not implemented: window.scroll
-window.scroll = function() {}
+window.scroll = () => {};
 
 // It looks like smoothscroll-polyfill doesn't work with the latest jsdom
 // versions. Here is little fix for it.
 // See /src/js/polyfills.js for more information about polyfills.
-window.HTMLElement.prototype.scrollIntoView = function() {}
+window.HTMLElement.prototype.scrollIntoView = () => {};
 
 
 module.exports = {
-    ['scrollTo']: function(test) {
+    scrollTo(test) {
         log.warning('Window.scroll is not implemented in jsdom.',
-                    'All scroll utilities should be tested manually.');
+            'All scroll utilities should be tested manually.');
 
-        document.body.innerHTML = `<div></div>`;
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
  
+        // ---------------
+ 
+        function callback() {
+            test.ok(true, 'It should execute the callback function when scroll ends.');
+            test.done();
+        }
+
         // ---------------
 
         _.scrollTo(element, callback);
 
         // ---------------
 
-        function callback() {
-            test.ok(true, 'It should execute the callback function when scroll ends.');
-            test.done();
-        }
-
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.scrollTo(null);
             _.scrollTo(undefined);
             _.scrollTo(element, null);
@@ -56,12 +58,8 @@ module.exports = {
 
 
 
-    ['scrollToTop']: function(test) {
-        document.body.innerHTML = ``;
- 
-        // ---------------
-
-        _.scrollToTop(callback);
+    scrollToTop(test) {
+        document.body.innerHTML = '';
 
         // ---------------
 
@@ -69,8 +67,14 @@ module.exports = {
             test.ok(true, 'It should execute the callback function when scroll ends.');
             test.done();
         }
+ 
+        // ---------------
 
-        test.doesNotThrow(function() {
+        _.scrollToTop(callback);
+
+        // ---------------
+
+        test.doesNotThrow(() => {
             _.scrollTo(null);
             _.scrollTo(undefined);
         });
@@ -78,12 +82,18 @@ module.exports = {
 
 
 
-    ['scrollFire']: function(test) {
-        document.body.innerHTML = `<div></div>`;
+    scrollFire(test) {
+        document.body.innerHTML = '<div></div>';
  
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         test.expect(2);
+
+        // ---------------
+        
+        function callback() {
+            test.ok(true, 'It should execute the callback function.');
+        }
 
         // ---------------
 
@@ -91,11 +101,7 @@ module.exports = {
 
         // ---------------
 
-        function callback() {
-            test.ok(true, 'It should execute the callback function.');
-        }
-
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.scrollFire(null);
             _.scrollFire(undefined);
             _.scrollFire(element, null);

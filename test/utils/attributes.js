@@ -11,15 +11,15 @@ require('babel-register')({
 require('jsdom-global/register');
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+// const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 module.exports = {
-    ['setAttribute']: function(test) {
-        document.body.innerHTML = `<div></div>`;
+    setAttribute(test) {
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -29,7 +29,7 @@ module.exports = {
 
         test.equal(element.getAttribute('data-test'), 'true', 'It should set the attribute of the element to the selected value.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.setAttribute(null);
             _.setAttribute(undefined);
             _.setAttribute(element, null);
@@ -43,20 +43,20 @@ module.exports = {
 
 
 
-    ['getAttribute']: function(test) {
-        document.body.innerHTML = `<div data-test='true'></div>`;
+    getAttribute(test) {
+        document.body.innerHTML = '<div data-test="true"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
-        var result = _.getAttribute(element, 'data-test');
+        const result = _.getAttribute(element, 'data-test');
 
         // ---------------
 
         test.equal(result, 'true', 'It should return the value of the selected attribute of the element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.getAttribute(null);
             _.getAttribute(undefined);
             _.getAttribute(element, null);
@@ -68,10 +68,10 @@ module.exports = {
 
 
 
-    ['removeAttribute']: function(test) {
-        document.body.innerHTML = `<div data-test='true'></div>`;
+    removeAttribute(test) {
+        document.body.innerHTML = '<div data-test="true"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
     
@@ -81,7 +81,7 @@ module.exports = {
 
         test.equal(element.getAttribute('data-test'), null, 'It should remove the attribute from the element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.removeAttribute(null);
             _.removeAttribute(undefined);
             _.removeAttribute(element, null);

@@ -12,21 +12,28 @@ require('babel-register')({
 require('jsdom-global/register');
 
 
-var log = require('../../nodeunit.config.js').log,
-    _   = require('../../src/js/utils.js').default;
+const log = require('../../nodeunit.config.js').log;
+const   _ = require('../../src/js/utils.js').default;
 
 
 
 module.exports = {
-    ['typeText']: function(test) {
+    typeText(test) {
         log.warning('The appearance is important.',
-                    'All utilities for the animations should be tested manually.');
+            'All utilities for the animations should be tested manually.');
 
-        document.body.innerHTML = `<div></div>`;
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         test.expect(2);
+
+        // ---------------
+
+        function callback() {
+            test.equal(element.innerHTML, 'text', 'It should print the text in the element.');
+            test.done();
+        }
 
         // ---------------
 
@@ -37,14 +44,9 @@ module.exports = {
             times: -1
         }, callback);
 
-        // ---------------
-        
-        function callback() {
-            test.equal(element.innerHTML, 'text', 'It should print the text in the element.');
-            test.done();
-        }
+        // ---------------        
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.typeText(null);
             _.typeText(undefined);
             _.typeText(element, undefined);
@@ -54,10 +56,10 @@ module.exports = {
 
 
     
-    ['typeTexts']: function(test) {
-        document.body.innerHTML = `<div></div>`;
+    typeTexts(test) {
+        document.body.innerHTML = '<div></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -65,7 +67,7 @@ module.exports = {
 
         // ---------------
         
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.typeTexts(null);
             _.typeTexts(undefined);
         });
@@ -76,10 +78,10 @@ module.exports = {
 
 
 
-    ['activateAnimation']: function(test) {
-        document.body.innerHTML = `<div class='other-class'></div>`;
+    activateAnimation(test) {
+        document.body.innerHTML = '<div class="other-class"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -90,7 +92,7 @@ module.exports = {
         test.ok(element.classList.contains('-activated'),  'It should add the "-activated" class to the element.');
         test.ok(element.classList.contains('other-class'), 'It should not remove other classes from the element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.activateAnimation(null);
             _.activateAnimation(undefined);
         });
@@ -100,10 +102,10 @@ module.exports = {
 
 
 
-    ['animateElement']: function(test) {
-        document.body.innerHTML = `<div class='other-class fade-in'></div>`;
+    animateElement(test) {
+        document.body.innerHTML = '<div class="other-class fade-in"></div>';
 
-        var element = document.querySelector('div');
+        const element = document.querySelector('div');
 
         // ---------------
 
@@ -116,7 +118,7 @@ module.exports = {
         test.ok(element.classList.contains('-activated'),    'It should add the "-activated" class to the element.');
         test.ok(element.classList.contains('other-class'),   'It should not remove other classes from the element.');
 
-        test.doesNotThrow(function() {
+        test.doesNotThrow(() => {
             _.animateElement(null);
             _.animateElement(undefined);
             _.animateElement(element, null);
