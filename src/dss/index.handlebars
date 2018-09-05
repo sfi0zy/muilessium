@@ -620,6 +620,36 @@
                     <div class='_smaller-2 -grey-4'>/src/js/controls/keyboard.js<br>/src/js/controls/mouse.js<br>/src/js/controls/touchpad.js</div>
 
                     <p class='mui-p _separate-1'>Muilessium has a number of handy utilities for controls. It exports them as <i>Muilessium.KEYBOARD, Muilessium.MOUSE and Muilessium.TOUCHPAD</i>. They should be used to keep the code clean and readable.</p>
+
+                    <ul class='mui-list _smaller-1'>
+                        <li class='item'>MOUSE
+                            <ul class='mui-list'>
+                                <li class='item'>onClick(element, callback)</li>
+                                <li class='item'>onMouseOver(element, callback)</li>
+                                <li class='item'>onMouseOut(element, callback)</li>
+                            </ul>
+                        </li>
+                        <li class='item'>KEYBOARD
+                            <ul class='mui-list'>
+                                <li class='item'>onEnterPressed(element, callback)</li>
+                                <li class='item'>onSpacePressed(element, callback)</li>
+                                <li class='item'>onEscapePressed(element, callback)</li>
+                                <li class='item'>onTabPressed(element, callback)</li>
+                                <li class='item'>onShiftTabPressed(element, callback)</li>
+                                <li class='item'>onArrowUpPressed(element, callback)</li>
+                                <li class='item'>onArrowRightPressed(element, callback)</li>
+                                <li class='item'>onArrowDownPressed(element, callback)</li>
+                                <li class='item'>onArrowLeftPressed(element, callback)</li>
+                            </ul>
+                        </li>
+                        <li class='item'>TOUCHPAD
+                            <ul class='mui-list'>
+                                <li class='item'>onSwipeLeft(element, callback)</li>
+                                <li class='item'>onSwipeRight(element, callback)</li>
+                                <li class='item'>onPinchOut(element, callback)</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <!-- /controls overview -->
 
@@ -636,16 +666,113 @@
                     <p class='mui-p _separate-1'>Muilessium exports over 60 internal utilities as <i>Muilessium.UTILS</i>. In the source code they are separated by categories:</p>
 
                     <ul class='mui-list _smaller-1'>
-                        <li id='utils-ajax' class='item'>AJAX</li>
-                        <li id='utils-animations' class='item'>Animations</li>
-                        <li id='utils-aria' class='item'>WAI-ARIA</li>
-                        <li id='utils-attributes' class='item'>HTML attributes</li>
-                        <li id='utils-checks' class='item'>Checking</li>
-                        <li id='utils-css-classes' class='item'>CSS classes</li>
-                        <li id='utils-focus-and-click' class='item'>Focus &amp; click</li>
-                        <li id='utils-scroll' class='item'>Scroll</li>
-                        <li id='utils-viewport' class='item'>Viewport</li>
-                        <li id='utils-uncategorized' class='item'>Uncategorized</li>
+                        <li id='utils-ajax' class='item'>AJAX
+                            <ul class='mui-list'>
+                                <li class='item'>ajax.post(url, data, successCallback, errorCallback)</li>
+                                <li class='item'>ajax.postProtected(url, data, callback)</li>
+                                <li class='item'>ajax.get(url, successCallback, errorCallback)</li>
+                                <li class='item'>ajax.getProtected(url, callback)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-animations' class='item'>Animations
+                            <ul class='mui-list'>
+                                <li class='item'>typeText(element, { text, delay, cycle, times }, callback)</li>
+                                <li class='item'>typeTexts(element, textsList)</li>
+                                <li class='item'>activateAnimation(element)</li>
+                                <li class='item'>animateElement(element, animation)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-aria' class='item'>WAI-ARIA
+                            <ul class='mui-list'>
+                                <li class='item'>aria.set(element, property, value</li>
+                                <li class='item'>aria.setRole(element, role)</li>
+                                <li class='item'>aria.removeRole(element)</li>
+                                <li class='item'>aria.setId(element, id)</li>
+                                <li class='item'>aria.get(element, property)</li>
+                                <li class='item'>aria.getRole(element)</li>
+                                <li class='item'>aria.toggleState(element, state)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-attributes' class='item'>HTML attributes
+                            <ul class='mui-list'>
+                                <li class='item'>setAttribute(element, attribute, value)</li>
+                                <li class='item'>getAttribute(element, attribute, defaultValue)</li>
+                                <li class='item'>removeAttribute(element, attribute)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-checks' class='item'>Checking
+                            <ul class='mui-list'>
+                                <li class='item'>isNode(element)</li>
+                                <li class='item'>isInPage(element)</li>
+                                <li class='item'>isNotInPage(element)</li>
+                                <li class='item'>ifExists(element, callback)</li>
+                                <li class='item'>ifNodeList(element, callback)</li>
+                                <li class='item'>isDescendant(parent, child)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-css-classes' class='item'>CSS classes
+                            <ul class='mui-list'>
+                                <li class='item'>hasClass(element, class)</li>
+                                <li class='item'>hasNotClass(element, class)</li>
+                                <li class='item'>addClass(element, class)</li>
+                                <li class='item'>addClasses(element, classes)</li>
+                                <li class='item'>removeClass(element, class)</li>
+                                <li class='item'>removeClasses(element, classes)</li>
+                                <li class='item'>replaceClass(element, class, newClass)</li>
+                                <li class='item'>toggleClass(element, class)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-focus-and-click' class='item'>Focus &amp; click
+                            <ul class='mui-list'>
+                                <li class='item'>makeElementFocusable(element)</li>
+                                <li class='item'>makeElementsFocusable(elementsList)</li>
+                                <li class='item'>makeElementNotFocusable(element)</li>
+                                <li class='item'>makeElementsNotFocusable(elementsList)</li>
+                                <li class='item'>getFocusableChilds(element)</li>
+                                <li class='item'>getAllFocusableElements()</li>
+                                <li class='item'>getNextFocusableElement(element)</li>
+                                <li class='item'>getPreviousFocusableElement(element)</li>
+                                <li class='item'>goToNextFocusableElement(element)</li>
+                                <li class='item'>goToPreviousFocusableElement(element)</li>
+                                <li class='item'>makeElementClickable(element, callback, { mouse, keyboard }</li>
+                                <li class='item'>makeElementsClickable(element, childs, callback, { mouse, keyboard }</li>
+                                <li class='item'>onFocus(element, callback)</li>
+                                <li class='item'>onBlur(element, callback)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-scroll' class='item'>Scroll
+                            <ul class='mui-list'>
+                                <li class='item'>scrollTo(element, callback)</li>
+                                <li class='item'>scrollToTop(callback)</li>
+                                <li class='item'>scrollFire(element, callback)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-viewport' class='item'>Viewport
+                            <ul class='mui-list'>
+                                <li class='item'>isInViewport(element)</li>
+                                <li class='item'>isAboveViewport(element)</li>
+                            </ul>
+                        </li>
+                        <li id='utils-uncategorized' class='item'>Uncategorized
+                            <ul class='mui-list'>
+                                <li class='item'>normalizeTabIndexes()</li>
+                                <li class='item'>layLoadImages(callback)</li>
+                                <li class='item'>initAnchorLinks()</li>
+                                <li class='item'>generateRandomString(length)</li>
+                                <li class='item'>stringify(object)</li>
+                                <li class='item'>extend(target, sources)</li>
+                                <li class='item'>debounce(func, delay)</li>
+                                <li class='item'>callOnce(callback)</li>
+                                <li class='item'>firstOfList(list)</li>
+                                <li class='item'>lastOfList(list)</li>
+                                <li class='item'>forEach(list, callback, delay)</li>
+                                <li class='item'>deepGet(obj, path)</li>
+                                <li class='item'>deepSet(obj, path, data)</li>
+                                <li class='item'>toLispCase(str)</li>
+                                <li class='item'>upperLimit(value, max)</li>
+                                <li class='item'>lowerLimit(value, min)</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- /utils overview -->
