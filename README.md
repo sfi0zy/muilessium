@@ -41,8 +41,8 @@ npm run prod
  - Simple global store
  - Scroll to the default anchor
  - Styles for printing
- - New colorful docs - all components on one page
- - New utilities - deepGet, deepSet, toLispCase
+ - New colorful docs - all components and utilities on one page
+ - New utilities - deepGet, deepSet, toLispCase, upperLimit, lowerLimit
  - New components - CustomScroll, Notification
 #### Changed:
  - Structure of the global Muilessium object including names of the fields
