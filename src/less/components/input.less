@@ -11,8 +11,8 @@
 //      <div class='mui-input-hint'>
 //          <span>Select Your username (min 3 characters, only letters allowed)</span>
 //          <span class='mui-input-indicator'>
-//              <span class='valid-icon'>&check;</span>
-//              <span class='invalid-icon'>&cross;</span>
+//              <span class='validicon'>&check;</span>
+//              <span class='invalidicon'>&cross;</span>
 //          </span>
 //      </div>
 //      <div class='mui-input' data-regexp='^[a-zA-Z]{3,}$' data-validation-delay='1000'>
@@ -34,8 +34,8 @@
 //      <div class='mui-input-hint'>
 //          <span>Select Your username (min 3 characters, only letters allowed)</span>
 //          <span class='mui-input-indicator'>
-//              <span class='valid-icon'>&check;</span>
-//              <span class='invalid-icon'>&cross;</span>
+//              <span class='validicon'>&check;</span>
+//              <span class='invalidicon'>&cross;</span>
 //          </span>
 //      </div>
 //      <div class='mui-input -icon-left' data-regexp='^[a-zA-Z]{3,}$'>
@@ -61,8 +61,8 @@
 //                  <span class='_smaller-1'>(min 3 characters, only letters allowed)</span>
 //              </span>
 //              <span class='mui-input-indicator'>
-//                  <span class='valid-icon'>&check;</span>
-//                  <span class='invalid-icon'>&cross;</span>
+//                  <span class='validicon'>&check;</span>
+//                  <span class='invalidicon'>&cross;</span>
 //              </span>
 //          </label>
 //          <input type='text' id='8vrWA'>
@@ -208,7 +208,7 @@
             }
         }
 
-        .mui-input-hint {
+        .@{muilessium-prefix}input-hint {
             margin-bottom: 0;
         }
     }
@@ -267,8 +267,8 @@
     position: relative;
     padding: 0 .2rem;
 
-    > .valid-icon,
-    > .invalid-icon {
+    > .validicon,
+    > .invalidicon {
         position: absolute;
         line-height: 1.5;
         opacity: 0;
@@ -276,14 +276,14 @@
     }
 
     &.-valid {
-        > .valid-icon {
+        > .validicon {
             opacity: 1;
             color: @green-3;
         }
     }
 
     &.-invalid {
-        > .invalid-icon {
+        > .invalidicon {
             opacity: 1;
             color: @red-3;
         }

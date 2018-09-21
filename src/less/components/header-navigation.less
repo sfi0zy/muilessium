@@ -12,7 +12,7 @@
 //      <div class='mui-navigation-toggle -hamburger' aria-label='Main website navigation'>
 //          <svg class='mui-svg-icon'><use xlink:href='#svg-icon--hamburger'></use></svg>
 //      </div>
-//      <ul class='links-list'>
+//      <ul class='linkslist'>
 //          <li class='item'>
 //              <a class='link' href='' aria-label='Home page'>
 //                  <span>home</span>
@@ -22,24 +22,24 @@
 //          <li class='item'><a class='link' href='' aria-label='About me'>about</a></li>
 //          <li class='item'><a class='link' href='' aria-label='Contacts'>contacts</a></li>
 //      </ul>
-//      <div class='mui-navigation-toggle mui-shadow-toggle'></div>
+//      <div class='mui-shadow-toggle'></div>
 //  </nav>
 
 
 .@{muilessium-prefix}header-navigation { 
     user-select: none;
     
-    > .links-list {
+    > .linkslist {
         list-style: none;
         margin: 0;
     }
     
-    > .links-list > .item {
+    > .linkslist > .item {
         display: inline-block;
         margin: 0;
     }
     
-    > .links-list > .item > .link {
+    > .linkslist > .item > .link {
         display: inline-block;
         padding: 0 calc((@default-ui-height * 2 - 1em) / 2);        
         line-height: @default-ui-height * 2;
@@ -56,7 +56,7 @@
     }
     
     &.-mobile-version {
-        > .links-list {
+        > .linkslist {
             display: block;
             visibility: hidden;
             position: fixed;
@@ -75,7 +75,7 @@
             transition: all @default-animation-duration @default-animation-function;
         }
         
-        > .links-list > .item {
+        > .linkslist > .item {
             display: block;
             overflow: hidden;
             
@@ -90,24 +90,19 @@
             }
         }
         
-        > .links-list > .item > .link {
+        > .linkslist > .item > .link {
             display: block;
             padding: .5rem 1rem;
         }
         
         &.-opened {
-            > .links-list {
+            > .linkslist {
                 transform: translateX(0);
                 visibility: visible;
             }
         
-            > .-hamburger {
+            > .@{muilessium-prefix}navigation-toggle.-hamburger {
                 color: @black;
-            }
-        
-            > .-shadow {
-                opacity: 1;
-                pointer-events: auto;
             }
         }
     }
@@ -115,7 +110,7 @@
     &.-desktop-version {
         opacity: 1;
 
-        .mui-navigation-toggle.-hamburger {
+        .@{muilessium-prefix}navigation-toggle.-hamburger {
             display: none;
         }
     }

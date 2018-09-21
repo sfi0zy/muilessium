@@ -45,8 +45,8 @@ export default class HeaderNavigation extends Component {
         this.domCache = extend(this.domCache, {
             hamburger:  element.querySelector('.mui-navigation-toggle'),
             shadow:     element.querySelector('.mui-shadow-toggle'),
-            links:      element.querySelector('.links-list'),
-            linksList:  element.querySelectorAll('.link'),
+            linksList:  element.querySelector('.linkslist'),
+            links:      element.querySelectorAll('.link'),
             focusables: []
         });
 
@@ -71,7 +71,7 @@ export default class HeaderNavigation extends Component {
         aria.set(this.domCache.shadow,    'hidden', true);
         aria.set(this.domCache.hamburger, 'haspopup', true);
 
-        aria.set(this.domCache.links, 'labelledby', aria.setId(this.domCache.hamburger));
+        aria.set(this.domCache.linksList, 'labelledby', aria.setId(this.domCache.hamburger));
 
         return this;
     }
@@ -82,8 +82,8 @@ export default class HeaderNavigation extends Component {
         makeElementClickable(this.domCache.shadow,    this.toggleNavigation.bind(this),
             { mouse: true, keyboard: false });
 
-        makeChildElementsClickable(this.domCache.element, this.domCache.linksList, (index) => {
-            const href = this.domCache.linksList[index].getAttribute('href');
+        makeChildElementsClickable(this.domCache.element, this.domCache.links, (index) => {
+            const href = this.domCache.links[index].getAttribute('href');
 
             if (href[0] === '#') {
                 this.closeNavigation();
@@ -98,7 +98,7 @@ export default class HeaderNavigation extends Component {
             }
         });
 
-        this.domCache.focusables = getFocusableChilds(this.domCache.links);
+        this.domCache.focusables = getFocusableChilds(this.domCache.linksList);
 
         KEYBOARD.onShiftTabPressed(firstOfList(this.domCache.focusables), () => {
             this.closeNavigation();
@@ -126,7 +126,7 @@ export default class HeaderNavigation extends Component {
             addClass(this.domCache.shadow,  '-visible');
 
             aria.set(this.domCache.hamburger, 'hidden', true);
-            aria.set(this.domCache.links,     'hidden', false);
+            aria.set(this.domCache.linksList, 'hidden', false);
 
             firstOfList(this.domCache.focusables).focus();
         }
@@ -144,7 +144,7 @@ export default class HeaderNavigation extends Component {
             removeClass(this.domCache.shadow,  '-visible');
 
             aria.set(this.domCache.hamburger, 'hidden', false);
-            aria.set(this.domCache.links,     'hidden', true);
+            aria.set(this.domCache.linksList, 'hidden', true);
 
             this.domCache.hamburger.focus();
         }
@@ -168,7 +168,7 @@ export default class HeaderNavigation extends Component {
             this.closeNavigation();
 
             aria.set(this.domCache.hamburger, 'hidden', false);
-            aria.set(this.domCache.links, 'hidden', true);
+            aria.set(this.domCache.linksList, 'hidden', true);
 
             addClass(this.domCache.element, '-mobile-version');
             removeClass(this.domCache.element, '-desktop-version');
@@ -186,7 +186,7 @@ export default class HeaderNavigation extends Component {
 
             aria.set(this.domCache.hamburger, 'hidden', true);
             aria.set(this.domCache.shadow,    'hidden', true);
-            aria.set(this.domCache.links,     'hidden', false);
+            aria.set(this.domCache.linksList, 'hidden', false);
 
             addClass(this.domCache.element, '-desktop-version');
             removeClass(this.domCache.element, '-mobile-version');
