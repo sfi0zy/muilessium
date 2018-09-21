@@ -22,7 +22,7 @@ export default class CustomScroll extends Component {
             simplebar: new SimpleBar(element, {
                 classNames: {
                     content: 'content',
-                    scrollContent: 'scroll-content',
+                    scrollContent: 'scrollcontent',
                     scrollbar: 'scrollbar',
                     track: 'track'
                 }
