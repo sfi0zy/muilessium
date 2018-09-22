@@ -35,7 +35,7 @@ export default class ModalWindow extends Component {
         this.domCache = extend(this.domCache, {
             openers:     document.querySelectorAll(`[data-modal-opener=${element.getAttribute('id')}]`),
             modalWindow: element.querySelector('.window'),
-            closeIcon:   element.querySelector('.close-icon'),
+            closeIcon:   element.querySelector('.closeicon'),
             shadow:      element.querySelector('.mui-shadow-toggle')
         });
 
