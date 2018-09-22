@@ -8,7 +8,7 @@
 //
 // @markup
 //  <div class='mui-checkbox'>
-//      <input type='checkbox' id='dFrp7'>
+//      <input type='checkbox' id='dFrp7' checked>
 //      <label>
 //          <span class='icon'>
 //              <span class='symbol'>
@@ -30,7 +30,7 @@
 //
 // @markup
 //  <div class='mui-checkbox -toggle'>
-//      <input type='checkbox' id='qW30v'>
+//      <input type='checkbox' id='qW30v' checked>
 //      <label>
 //          <span class='icon'></span>
 //          <span class='text'>Lorem ipsum.</span>
@@ -54,7 +54,7 @@
             outline: none;
             
             > .icon {
-                border-color: @black;
+                border-color: @blue-3;
             }
         }
     }
@@ -65,7 +65,7 @@
         vertical-align: middle; 
         height: @default-ui-height;
         width: @default-ui-height;
-        border: 1px solid @blue-1;
+        border: 1px solid @black;
         border-radius: @default-border-radius;
         
         > .symbol {
@@ -101,14 +101,14 @@
             &:hover,
             &:focus {
                 > .icon {
-                    border-color: @black;
+                    border-color: @blue-3;
                 }
             }
         }
 
         > label > .icon {
-            background: @red-1;
-            border: 1px solid @red-1;
+            background: @red-2;
+            border: 1px solid @red-2;
             width: @default-ui-height * 2;
             overflow: hidden;
             transition: all @default-animation-duration @default-animation-function;
@@ -125,7 +125,7 @@
                 line-height: 2.5; // It's 2rem (default ui height). IE11 doesn't support REM units in pseudo-elements.
                 text-align: center;
                 text-transform: uppercase;
-                background: @red-4;
+                background: @red-3;
                 color: @white;
                 border-radius: @default-border-radius;
                 transition: all @default-animation-duration @default-animation-function;
@@ -142,13 +142,13 @@
         }
         
         &.-checked > label > .icon {
-            background: @green-1;
-            border: 1px solid @green-1;
+            background: @green-2;
+            border: 1px solid @green-2;
 
             &::before,
             &::after {
                 left: ~'calc(100% - ' @default-ui-height ~')';
-                background: @green-4;
+                background: @green-3;
                 color: @white;
             }
             

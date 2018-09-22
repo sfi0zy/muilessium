@@ -8,7 +8,7 @@
 //  <div class='mui-input-wrapper'>
 //      <div class='mui-input-label'>Select Your gender</div>
 //      <div class='mui-radio' data-name='fgU67'>
-//          <input id='rb1Q4' value='male'>
+//          <input id='rb1Q4' value='male' checked>
 //          <label>
 //              <span class='icon'></span>
 //              <span class='text'>Male</span>
@@ -37,10 +37,10 @@
             cursor: pointer;
             
             > .icon {
-                border-color: @black;
+                border-color: @blue-4;
                 
                 &::after {
-                    background: @black;
+                    background: @blue-4;
                 }
             }
         }
@@ -65,7 +65,7 @@
             transform: translateX(-50%) translateY(-50%);
             height: 0;
             width: 0;
-            background: @grey-5;
+            background: @blue-4;
             border-radius: 50%;
             opacity: 0;
             transition: all @default-animation-duration @default-animation-function;
