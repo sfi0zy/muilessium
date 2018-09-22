@@ -46,6 +46,7 @@ npm run prod
  - New components - CustomScroll, Notification
 #### Changed:
  - Structure of the global Muilessium object including names of the fields
+ - Color scheme including names of the colors
  - Markup for the custom-scroll, header-navigation, hero-header, input, modal-window
 #### Removed:
  - Old grid based on floats
