@@ -116,7 +116,7 @@ export function initAnchorLinks() {
 // ------------------------
 
 export function generateRandomString(length = 8) {
-    const possibleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const possibleChars = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
     let str = '';
 
