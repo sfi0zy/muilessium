@@ -1,39 +1,38 @@
-// @name Select dropdown
+// @name        Select dropdown
 // @description Data-id attribute should be used to select id and name attributes for the hidden html select element. Should be used with label for better accessibility.
-// @component SelectDropdown
-// @method getSelectedIndex() - returns index of the selected item
-// @method openDropdown() - opens dropdown menu
-// @method closeDropdown() - closes dropdown menu
-// @method toggleDropdown() - opens dropdown menu if it is closed and closes it otherwise
-// @method updateState(newIndex = 0) - selects item with selected index
-// @method getState() - returns index of the selected item
-// @depends input
-// @depends dropdown-options
-// @depends shadow-toggle
-// @depends svg-icon
+//
+// @component   SelectDropdown
+// @method      getSelectedIndex()        - returns index of the selected item
+// @method      openDropdown()            - opens dropdown menu
+// @method      closeDropdown()           - closes dropdown menu
+// @method      toggleDropdown()          - opens dropdown menu if it is closed and closes it otherwise
+// @method      updateState(newIndex = 0) - selects item with selected index
+// @method      getState()                - returns index of the selected item
+//
+// @depends     input
+// @depends     dropdown-options
+// @depends     shadow-toggle
+// @depends     svg-icon
+//
 //
 // @markup
 //  <div class='mui-input-wrapper'>
 //      <label class='mui-input-label'>Select color</label>
 //      <div class='mui-select-dropdown'>
-//          <div class='select' data-id='fGrt3'>
+//          <div class='select' data-id='dss-ra6kade9'>
 //              <div class='state'></div>
 //              <div class='mui-dropdown-options _shadow-1'>
 //                  <div class='wrapper'>
-//                      <div class='mui-custom-scroll-wrapper'>
-//                          <div class='mui-custom-scroll'>
-//                              <div class='option -f-blue-4 -selected' data-value='red'>Red</div>
-//                              <div class='option -f-blue-4' data-value='green'>Green</div>
-//                              <div class='option -f-blue-4' data-value='blue'>Blue</div>
-//                              <div class='option -f-blue-4' data-value='orange'>Orange</div>
-//                          </div>
-//                      </div>
+//                      <div class='option -f-blue-4 -selected' data-value='red'>Red</div>
+//                      <div class='option -f-blue-4' data-value='green'>Green</div>
+//                      <div class='option -f-blue-4' data-value='blue'>Blue</div>
+//                      <div class='option -f-blue-4' data-value='orange'>Orange</div>
 //                  </div>
 //              </div>
 //          </div>
 //          <div class='mui-shadow-toggle'></div>
-//          <div class='icon -blue-3-bg'>
-//              <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-down'></use></svg>
+//          <div class='icon'>
+//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--arrow-down'></use></svg>
 //          </div>
 //      </div>
 //  </div>
@@ -55,14 +54,15 @@
         color: @black;
         background: @white;
         appearance: none;
-        border: 1px solid @blue-3;
+        border: 1px solid @grey-3;
         border-radius: @default-border-radius;
         outline: none;
+        transition: border-color @default-animation-duration @default-animation-function;
 
         &:hover,
         &:focus {
             cursor: pointer;
-            border-color: @green-3;
+            border-color: @blue-3;
         }
     }
     
@@ -76,7 +76,6 @@
         line-height: @default-ui-height;
         text-align: center;
         color: @white;
-        background: @grey-4;
         border-top-right-radius: @default-border-radius;
         border-bottom-right-radius: @default-border-radius;
         pointer-events: none;

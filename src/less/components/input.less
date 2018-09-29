@@ -1,9 +1,11 @@
-// @name Input
-// @description Has two parameters: regexp (/^(?:)$/ by default) and validation-delay (300ms by defaut). Use -js-no-validation class on mui-input to create input without validation. Use -js-allow-not-exists to hide console warnings when labels or hints are not present.
-// @component Input
-// @method validate() - validates input
-// @method isValid() - returns true if the input value is valid and false otherwise
-// @method getValue() - returns input value
+// @name        Input
+// @description Has two parameters: regexp (/^(?:)$/ by default) and validation-delay (300ms by defaut). Use -js-no-validation class on mui-input to create input without validation.
+//
+// @component   Input
+// @method      validate() - validates input
+// @method      isValid()  - returns true if the input value is valid and false otherwise
+// @method      getValue() - returns input value
+//
 //
 // @markup
 //  <div class='mui-input-wrapper'>
@@ -16,31 +18,7 @@
 //          </span>
 //      </div>
 //      <div class='mui-input' data-regexp='^[a-zA-Z]{3,}$' data-validation-delay='1000'>
-//          <input type='text' id='lUDbS' placeholder='Select your username'>
-//      </div>
-//  </div>
-
-
-// @name Input with icon
-// @description Input component with an icon
-// @component Input
-// @method validate() - validates input
-// @method isValid() - returns true if the input value is valid and false otherwise
-// @method getValue() - returns input value
-//
-// @markup
-//  <div class='mui-input-wrapper'>
-//      <label class='mui-input-label'>Username</label>
-//      <div class='mui-input-hint'>
-//          <span>Your username (min 3 characters, only letters allowed)</span>
-//          <span class='mui-input-indicator'>
-//              <span class='validicon'>&check;</span>
-//              <span class='invalidicon'>&cross;</span>
-//          </span>
-//      </div>
-//      <div class='mui-input -icon-left' data-regexp='^[a-zA-Z]{3,}$'>
-//          <label class='icon -blue-3-bg'>&lowast;</label>
-//          <input type='text' id='TEz8D' placeholder='Select your username'>
+//          <input type='text' id='dss-67o1pdxz' placeholder='Your username'>
 //      </div>
 //  </div>
 
@@ -49,9 +27,10 @@
     position: relative;    
     height: @default-ui-height;
     width: 100%;
-    border: 1px solid @blue-3;
+    border: 1px solid @grey-3;
     border-radius: @default-border-radius;
     overflow: hidden;
+    transition: border-color @default-animation-duration @default-animation-function;
     
     &:hover {
         cursor: pointer;
@@ -77,77 +56,15 @@
 
     }
     
-    &.-focused,
-    &.-icon-left.-focused {
+    &.-focused {
+        border-color: @blue-3;
+
         > input {
             color: @black;
 
             &::placeholder {
                 text-indent: -50rem;
                 opacity: 0;
-            }
-        }
-    }
-
-    &.-icon-left {
-        // This background is fix for chrome 1px bug
-        background: linear-gradient(to right,
-            @grey-4,
-            @grey-4 @default-ui-height,
-            @white @default-ui-height,
-            @white 100%);
-
-        > input {
-            text-indent: @default-ui-height;
-            
-            &::placeholder {
-                text-indent: @default-ui-height;
-            }
-        }
-        
-        > .icon {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1;
-            width: @default-ui-height;
-            font-size: @default-ui-height * .5;
-            line-height: ~'calc(' @default-ui-height ~' - 1px)';
-            text-align: center;
-            color: @white;
-            user-select: none;
-            
-            &:hover {
-                cursor: pointer;
-            }
-        }
-    }
-    
-    &.-icon-right {
-        // This background is fix for chrome 1px bug
-        // TODO: Fix calc bug on hover in IE11
-        background: linear-gradient(to right,
-            @white,
-            @white ~'calc(100% - ' @default-ui-height ~')',
-            @grey-4 @default-ui-height,
-            @grey-4 100%);
-        
-        > .icon {
-            position: absolute;
-            right: 0;
-            top: 0;
-            
-            width: @default-ui-height;
-            
-            font-size: @default-ui-height * .5;
-            line-height: @default-ui-height;
-            text-align: center;
-            
-            color: @white;
-            user-select: none;
-
-            &:hover {
-                cursor: pointer;
             }
         }
     }

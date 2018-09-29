@@ -9,7 +9,6 @@
 //   - to-slug-case
 //   - imagesloaded
 //   - hammerjs
-//   - simplebar
 //
 // -----------------------------------------------------------------------------
 
@@ -45,14 +44,6 @@ function Hammer() {
 }
 
 
-// SimpleBar
-// http://grsmto.github.io/simplebar/
-const _SimpleBar = require('simplebar');
-
-function SimpleBar() {
-    return _SimpleBar;
-}
-
 
 // -----------------------------------------------------------------------------
 
@@ -60,7 +51,6 @@ const DEPENDENCIES = {
     toSlugCase,
     imagesLoaded,
     Hammer,
-    SimpleBar
 };
 
 export default DEPENDENCIES;

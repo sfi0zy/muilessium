@@ -1,15 +1,18 @@
-// @name Modal window
+// @name        Modal window
 // @description Should be used for images. Shouldn't be used for interactive content.
-// @component ModalWindow
-// @method openModal() - opens modal window
-// @method closeModal() - closes modal window
-// @depends shadow-toggle
-// @depends image
-// @depends svg-icon
+//
+// @component   ModalWindow
+// @method      openModal()  - opens modal window
+// @method      closeModal() - closes modal window
+//
+// @depends     shadow-toggle
+// @depends     image
+// @depends     svg-icon
+//
 //
 // @markup
-// <div class='mui-button -blue-3-bg -f-blue-4-bg' data-modal-opener='Wer45'>Open modal</div>
-// <div class='mui-modal-window' id='Wer45'>
+// <div class='mui-button -blue-3-bg -f-blue-4-bg' data-modal-opener='dss-5bjaz9eq'>Show big image</div>
+// <div class='mui-modal-window' id='dss-5bjaz9eq'>
 //     <div class='window _shadow-3'>
 //         <div class='content -image'>
 //              <img class='mui-image -js-lazy-load' data-src='https://placehold.it/800x600/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Image description'>
@@ -79,12 +82,12 @@
         cursor: pointer;
         z-index: 2;
         box-sizing: content-box;
+        transition: all @default-animation-function @default-animation-duration;
 
         &:hover,
         &:focus {
             background: @grey-3;
             color: @grey-5;
-            transition: opacity @default-animation-function @default-animation-duration;
         }
     }
 

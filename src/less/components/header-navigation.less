@@ -1,26 +1,30 @@
-// @name Header navigation
-// @component HeaderNavigation
-// @method openNavigation() - opens mobile navigation
-// @method closeNavigation() - closes mobile navigation
-// @method toggleNavigation() - opens mobile navigation if it is closed and closes it otherwise
-// @method transformToMobile() - transforms navigation to mobile version
-// @method transformToDesktop() - transforms navigation to desktop version
+// @name        Header navigation
+// @description ...
+//
+// @component   HeaderNavigation
+// @method      openNavigation()     - opens mobile navigation
+// @method      closeNavigation()    - closes mobile navigation
+// @method      toggleNavigation()   - opens mobile navigation if it is closed and closes it otherwise
+// @method      transformToMobile()  - transforms navigation to mobile version
+// @method      transformToDesktop() - transforms navigation to desktop version
+//
 // @depends shadow-toggle
+//
 //
 // @markup
 //  <nav class='mui-header-navigation -mobile-version'>
-//      <div class='mui-navigation-toggle -hamburger' aria-label='Main website navigation'>
+//      <div class='mui-navigation-toggle -hamburger -f-blue-3'>
 //          <svg class='mui-svg-icon'><use xlink:href='#svg-icon--hamburger'></use></svg>
 //      </div>
 //      <ul class='linkslist'>
 //          <li class='item'>
-//              <a class='link' href='' aria-label='Home page'>
+//              <a class='link' href=''>
 //                  <span>home</span>
 //                  <span class='mui-badge -red-3-bg' aria-label='5 news'>5</span>
 //              </a>
 //          </li>
-//          <li class='item'><a class='link' href='' aria-label='About me'>about</a></li>
-//          <li class='item'><a class='link' href='' aria-label='Contacts'>contacts</a></li>
+//          <li class='item'><a class='link' href=''>about</a></li>
+//          <li class='item'><a class='link' href=''>contacts</a></li>
 //      </ul>
 //      <div class='mui-shadow-toggle'></div>
 //  </nav>
@@ -125,7 +129,7 @@
         line-height: @default-ui-height * 2;
         padding: 0 1rem;
         font-size: 2rem;
-        color: @grey-4;
+        fill: @black;
         transition: all @default-animation-duration @default-animation-function;
         
         &:hover {
@@ -134,7 +138,7 @@
         
         &:hover,
         &:focus {
-            color: @black;
+            fill: @grey-4;
         }
 
         &:active {

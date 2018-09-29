@@ -1,38 +1,24 @@
-// @name Checkbox
-// @component Checkbox
-// @method setCheckbox() - sets checkbox checked
-// @method unsetCheckbox() - sets checkbox unchecked
-// @method toggleCheckbox() - sets checkbox checked if it is unchecked and sets it unchecked otherwise
-// @method getState() - returns true if checkbox is checked and false otherwise
+// @name        Checkbox
+// @description ...
+//
+// @component   Checkbox
+// @method      setCheckbox()    - sets checkbox checked
+// @method      unsetCheckbox()  - sets checkbox unchecked
+// @method      toggleCheckbox() - sets checkbox checked if it is unchecked and sets it unchecked otherwise
+// @method      getState()       - returns true if checkbox is checked and false otherwise
+//
 // @depends svg-icon
+//
 //
 // @markup
 //  <div class='mui-checkbox'>
-//      <input type='checkbox' id='dFrp7' checked>
+//      <input type='checkbox' id='dss-r5mnwfyl' checked>
 //      <label>
 //          <span class='icon'>
 //              <span class='symbol'>
-//                  <svg class='mui-svg-icon -black'><use xlink:href="#svg-icon--check"></use></svg>
+//                  <svg class='mui-svg-icon -green-3'><use xlink:href="#svg-icon--check"></use></svg>
 //              </span>
 //          </span>
-//          <span class='text'>Lorem ipsum.</span>
-//      </label>
-//  </div>
-
-
-// @name Toggle checkbox
-// @description Toggle variation of the checkbox component.
-// @component Checkbox
-// @method setCheckbox() - sets checkbox checked
-// @method unsetCheckbox() - sets checkbox unchecked
-// @method toggleCheckbox() - sets checkbox checked if it is unchecked and sets it unchecked otherwise
-// @method getState() - returns true if checkbox is checked and false otherwise
-//
-// @markup
-//  <div class='mui-checkbox -toggle'>
-//      <input type='checkbox' id='qW30v' checked>
-//      <label>
-//          <span class='icon'></span>
 //          <span class='text'>Lorem ipsum.</span>
 //      </label>
 //  </div>
@@ -67,6 +53,7 @@
         width: @default-ui-height;
         border: 1px solid @black;
         border-radius: @default-border-radius;
+        transition: border-color @default-animation-duration @default-animation-function;
         
         > .symbol {
             display: inline-block;
@@ -93,69 +80,6 @@
     
     > label > .text {
         padding: 0 1rem;
-    }
-    
-    &.-toggle {
-        > label,
-        &.-checked > label {
-            &:hover,
-            &:focus {
-                > .icon {
-                    border-color: @blue-3;
-                }
-            }
-        }
-
-        > label > .icon {
-            background: @red-2;
-            border: 1px solid @red-2;
-            width: @default-ui-height * 2;
-            overflow: hidden;
-            transition: all @default-animation-duration @default-animation-function;
-            
-            &::before,
-            &::after {
-                display: block;
-                position: absolute;
-                top: -1px;
-                left: 0;
-                height: @default-ui-height;
-                width: @default-ui-height;
-                font-size: @default-ui-height * .4; // 2rem * 0.4 = 0.8rem
-                line-height: 2.5; // It's 2rem (default ui height). IE11 doesn't support REM units in pseudo-elements.
-                text-align: center;
-                text-transform: uppercase;
-                background: @red-3;
-                color: @white;
-                border-radius: @default-border-radius;
-                transition: all @default-animation-duration @default-animation-function;
-            }
-            
-            &::before {
-                content: 'off';
-            }
-            
-            &::after {
-                content: 'on';
-                opacity: 0;
-            }
-        }
-        
-        &.-checked > label > .icon {
-            background: @green-2;
-            border: 1px solid @green-2;
-
-            &::before,
-            &::after {
-                left: ~'calc(100% - ' @default-ui-height ~')';
-                background: @green-3;
-                color: @white;
-            }
-            
-            &::after {
-                opacity: 1;
-            }
-        }
     }
 }
 

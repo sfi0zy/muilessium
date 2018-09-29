@@ -1,96 +1,28 @@
-// @name Pagination
-// @state -bordered - Bordered pagination
-// @depends svg-icon
+// @name        Pagination
+// @description ...
+//
+// @depends     svg-icon
+//
 //
 // @markup
-//  <div class='mui-pagination' aria-label='Pagination'>
-//      <div class='page'>
-//          <a class='link -f-blue-2-bg' href='' aria-label='Previous page'>
-//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--arrow-left'></use></svg>
-//          </a>
-//      </div>
-//      <div class='page'         ><a class='link -f-blue-2-bg' href='' aria-label='Page number 1'>1</a></div>
-//      <div class='page'         ><a class='link -f-blue-2-bg' href='' aria-label='Page number 2'>2</a></div>
-//      <div class='page -current'><a class='link -f-blue-2-bg' href='' aria-label='Current page' >3</a></div>
-//      <div class='page'         ><a class='link -f-blue-2-bg' href='' aria-label='Page number 4'>4</a></div>
-//      <div class='page'         ><a class='link -f-blue-2-bg' href='' aria-label='Page number 5'>5</a></div>
-//      <div class='page'>
-//          <a class='link -f-blue-2-bg' href='' aria-label='Next page'>
-//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--arrow-right'></use></svg>
-//          </a>
-//      </div>
+//  <div class='mui-pagination'>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>
+//          <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-left'></use></svg>
+//      </button>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>1</button>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>2</button>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>3</button>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>4</button>
+//      <button class='mui-button -blue-3-bg -f-blue-4-bg'>
+//          <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-right'></use></svg>
+//      </button>
 //  </div>
 
 
 .@{muilessium-prefix}pagination {
-    position: relative;    
+    .mui-button-group;
+
+    margin: 1rem auto;
     text-align: center;
-    list-style: none;
-    user-select: none;
-    
-    > .page {
-        display: inline-block;
-        height: @default-ui-height;
-        margin: 0;
-        overflow: hidden;
-    }
-    
-    > .page > .link {
-        display: inline-block;
-        height: ~'calc(' @default-ui-height ~' - 2px)';
-        padding: 0 1rem;
-        font-size: @default-ui-height * .5;
-        line-height: ~'calc(' @default-ui-height ~' - 1px)';
-        text-decoration: none;
-        color: @black;
-        background: @white;
-        transition: all @default-animation-duration @default-animation-function;
-        
-        &:visited,
-        &:active {
-            color: @black;
-        }
-        
-        &:hover,
-        &:focus {
-            color: @black;
-            background: @grey-3;
-        }
-    }
-    
-    > .page.-current > .link { 
-        color: @black;
-        background: @grey-2;
-        
-        &:hover,
-        &:focus {
-            color: @black;
-            background: @grey-3;
-        }
-    }
-    
-    &.-bordered {
-        > .page > .link {
-            border: 1px solid @grey-3;
-            line-height: ~'calc(' @default-ui-height ~' - ' 2px ~')';
-
-            &:hover,
-            &:focus {
-                color: @black;
-                background: @grey-3;
-                border-color: @grey-3;
-            }
-        }
-
-        > .page:first-child > .link {
-            border-top-left-radius: @default-border-radius;
-            border-bottom-left-radius: @default-border-radius;
-        }
-            
-        > .page:last-child > .link {
-            border-top-right-radius: @default-border-radius;
-            border-bottom-right-radius: @default-border-radius;
-        }            
-    }
 }
 

@@ -1,35 +1,38 @@
-// @name Button
-// @description Button can include an icon, a badge or a label. Buttons can be used in more complex components like button-groups.
-// @depends badge*
+// @name        Button
+// @description Button can include an icon or a badge. Buttons can be used in more complex components like button-groups.
+//
+// @depends     badge*
+// @depends     svg-icon*
+//
 //
 // @markup
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg' aria-label=''>button</a>
-//  <a class='mui-button -small -blue-3-bg -f-blue-4-bg' aria-label=''>button</a>
-//  <a class='mui-button -large -blue-3-bg -f-blue-4-bg' aria-label=''>button</a>
-//  <a class='mui-button -dangerous -red-3-bg -f-red-5-bg' aria-label=''>button</a>
-//  <a class='mui-button -ghost -f-blue-2-bg' aria-label=''>button</a>
-//  <a class='mui-button -ghost -light -f-black-bg' aria-label=''>button</a>
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>&lowast;</span>
-//      <span>button</span>
+//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>standard</a>
+//  <a class='mui-button -small -blue-3-bg -f-blue-4-bg'>small</a>
+//  <a class='mui-button -big -blue-3-bg -f-blue-4-bg'>big</a>
+//  <a class='mui-button -dangerous -red-3-bg -f-red-5-bg'>dangerous</a>
+//  <a class='mui-button -ghost -f-blue-2-bg'>ghost</a>
+//  <a class='mui-button -ghost -light -f-black-bg'>light ghost</a>
+//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>
+//      <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--check'></use></svg>
+//      <span>with icon</span>
 //  </a>
-//  <a class='mui-button -icon -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>&lowast;</span>
+//  <a class='mui-button -icon -blue-3-bg -f-blue-4-bg'>
+//      <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--check'></use></svg>
 //  </a>
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>button</span>
-//      <span class='mui-badge -black -white-bg' aria-label='5 messages total'>5</span>
+//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>
+//      <span>with badge</span>
+//      <span class='mui-badge -black -white-bg'>5</span>
 //  </a>
-//  <a class='mui-button -badge-on-top -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>button</span>
-//      <span class='mui-badge -rounded -red-4-bg' aria-label='5 messages total'>5</span>
+//  <a class='mui-button -badge-on-top -blue-3-bg -f-blue-4-bg'>
+//      <span>with badge on top</span>
+//      <span class='mui-badge -rounded -red-4-bg'>5</span>
 //  </a>
-//  <a class='mui-button -label-left -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>button</span>
+//  <a class='mui-button -label-left -blue-3-bg -f-blue-4-bg'>
+//      <span>with label</span>
 //      <span class='label -green-3-bg'>label</span>
 //  </a>
-//  <a class='mui-button -label-right -blue-3-bg -f-blue-4-bg' aria-label=''>
-//      <span>button</span>
+//  <a class='mui-button -label-right -blue-3-bg -f-blue-4-bg'>
+//      <span>with label</span>
 //      <span class='label -green-3-bg'>label</span>
 //  </a>
 
@@ -71,7 +74,7 @@
         ._smaller-2;
     }
     
-    &.-large {
+    &.-big {
         ._bigger-2;
     }
     

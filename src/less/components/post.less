@@ -1,38 +1,45 @@
-// @name Post
-// @description A number of components which should be used together for the posts on page.
-// @depends button
-// @depends tags-list
+// @name        Post
+// @description Components which should be used together for the posts on page.
+//
+// @depends     button
+// @depends     tags-list
+//
 //
 // @markup
 //  <article class='mui-post'>
 //      <header class='mui-post-header'>
 //          <div class='title'>
-//              <a class='link -f-blue-4' href='' aria-label='Link to the post Lorem ipsum dolor'><h4>Lorem ipsum dolor</h4></a>
+//              <a class='link -f-blue-4' href=''><h4>Lorem ipsum dolor</h4></a>
 //          </div>
-//          <div class='information'>Post by<span class='author'><a class='link' href='' aria-label='Link to the author page'>John Doe</a></span>, <span class='date'>27 Jul 2016</span></div>
+//          <div class='information -grey-4'>
+//              <span>Published on</span>
+//              <span class='date'>September 29, 2018</span>
+//          </div>
 //      </header>
 //      <div class='mui-post-content'>
-//          ...
+//          <p class='mui-p'>...<br><br></p>
+//          <a href='' class='mui-button -ghost -f-blue-3-bg'>
+//              <span>read more</span>
+//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--arrow-right'></use></svg>
+//          </a>
 //      </div>
 //      <footer class='mui-post-footer'>
 //          <div class='mui-tags-list' aria-label='Tags list'>
 //              <div class='mui-tag-wrapper -icon' role='presentation'>
 //                  <svg class='mui-svg-icon'><use xlink:href='#svg-icon--tags'></use></svg>
 //              </div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4' aria-label='Search by tag nature'>nature</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4' aria-label='Search by tag art'>art</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4' aria-label='Search by tag photography'>photography</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4' aria-label='Search by tag mountains'>mountains</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4' aria-label='Search by tag sea'>sea</a></div>
+//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4'>html</a></div>
+//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4'>css</a></div>
+//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4'>javascript</a></div>
+//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4'>gulp</a></div>
+//              <div class='mui-tag-wrapper'><a href='' class='mui-tag -f-blue-4'>webpack</a></div>
 //          </div>
-//          <a href='' class='mui-button -read-more -blue-3-bg -f-blue-4-bg'>read more</a>
 //      </footer>
 //   </article>
 
 
 .@{muilessium-prefix}post {
     position: relative;    
-    max-width: 50rem;
     padding: 2rem 2rem 1rem;
 }
 
@@ -70,26 +77,5 @@
 
     border-top: 1px solid @grey-3;
     padding: 1rem 0;
-    
-    > .@{muilessium-prefix}tags-list {
-        display: inline-block;
-        max-width: 80%;
-        
-        @media screen and (max-width: 50rem) {
-            max-width: 70%;
-        }
-
-        @media screen and (max-width: 40rem) {
-            max-width: 90%;
-        }
-    }
-    
-    > .-read-more {
-        float: right;
-
-        @media screen and (max-width: 40rem) {
-            float: left;
-        }
-    }
 }
 

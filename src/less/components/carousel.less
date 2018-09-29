@@ -1,11 +1,14 @@
-// @name Carousel
+// @name        Carousel
 // @description Interval in seconds can be setted using data-attribute.
-// @component Carousel
-// @method startRotation() - starts rotation
-// @method stopRotation() - stops rotation
-// @method rotate(param) - rotates carousel to the selected slide ('next', 'prev' or selected by numerical index)
+//
+// @component   Carousel
+// @method      startRotation() - starts rotation
+// @method      stopRotation()  - stops rotation
+// @method      rotate(param)   - rotates carousel to the selected slide ('next', 'prev' or selected by numerical index)
+//
 // @depends image
 // @depends svg-icon
+//
 //
 // @markup
 //      <div class='mui-carousel' data-interval='4s'>
@@ -63,6 +66,7 @@
     width: 100%;
 }
 
+
 .@{muilessium-prefix}slides {
     position: inherit;
     height: inherit;
@@ -70,6 +74,7 @@
     margin: 0;
     list-style: none;
 }
+
 
 .@{muilessium-prefix}slide {
     position: absolute;
@@ -92,6 +97,7 @@
         height: inherit;
         width: inherit;        
     }
+
 }
 
 .@{muilessium-prefix}slide-content {
@@ -130,6 +136,7 @@
         
     }
 }
+
 
 .@{muilessium-prefix}carousel-controls {
     position: absolute;
@@ -173,6 +180,7 @@
         pointer-events: none;
     }
 }
+
 
 .@{muilessium-prefix}carousel-indicators {
     position: absolute;

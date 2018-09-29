@@ -1,3 +1,23 @@
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+//
+// Groups of helpers:
+//   - text-align
+//   - case
+//   - font-size
+//   - line-height
+//   - floats
+//   - margins
+//   - shadows
+//   - pointer-events
+//   - others
+//
+// -----------------------------------------------------------------------------
+
+
+// Text-align
+
 ._text-left    { text-align: left    !important; }
 ._text-right   { text-align: right   !important; }
 ._text-center  { text-align: center  !important; }
@@ -5,11 +25,15 @@
 
 
 
+// Case
+
 ._uppercase  { text-transform: uppercase  !important; }
 ._lowercase  { text-transform: lowercase  !important; }
 ._capitalize { text-transform: capitalize !important; }
 
 
+
+// Font-size
 
 ._smaller-0 { font-size: 1em   !important; }
 ._smaller-1 { font-size: .80em !important; }
@@ -34,8 +58,6 @@
     ._smaller-1 { font-size: 1em !important; }
 }
 
-
-
 ._bigger-0 { font-size: 1em    !important; }
 ._bigger-1 { font-size: 1.25em !important; }
 ._bigger-2 { font-size: 1.56em !important; }
@@ -44,6 +66,8 @@
 ._bigger-5 { font-size: 3.05em !important; }
 
 
+
+// Line-height
 
 ._line-1r   { line-height: 1rem !important; }
 ._line-1-25 { line-height: 1.25 !important; }
@@ -56,10 +80,14 @@
 
 
 
+// Floats
+
 ._left  { float: left  !important; }
 ._right { float: right !important; }
 
 
+
+// Margins
 
 ._separate-1 { margin-top: 1rem !important; margin-bottom: 1rem !important; }
 ._separate-2 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
@@ -69,6 +97,8 @@
 
 
 
+// Shadows
+
 ._shadow-1 { box-shadow: 0 0    4px @default-shadow-color !important; }
 ._shadow-2 { box-shadow: 0 1px  6px @default-shadow-color !important; }
 ._shadow-3 { box-shadow: 0 2px 10px @default-shadow-color !important; }
@@ -77,12 +107,26 @@
 
 
 
+// Pointer-events
+
 ._disabled {
     color: @grey-3 !important;
     pointer-events: none !important;
 }
 
+._disable-pointer-events {
+    pointer-events: none !important;
+}
 
+._disable-pointer-events-hard,
+._disable-pointer-events-hard * {
+    pointer-events: none !important;
+}
+
+
+
+
+// Others
 
 ._no-overflow {
     overflow: hidden !important;
@@ -101,11 +145,9 @@
 }
 
 
-
 ._no-break {
     white-space: nowrap !important;
 }
-
 
 
 ._allow-empty {
@@ -113,19 +155,9 @@
 }
 
 
-
 ._hidden {
     display: none !important;
 }
 
 
-
-._disable-pointer-events {
-    pointer-events: none !important;
-}
-
-._disable-pointer-events-hard,
-._disable-pointer-events-hard * {
-    pointer-events: none !important;
-}
 

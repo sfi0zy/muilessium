@@ -1,30 +1,18 @@
-// @name Dropdown options
+// @name        Dropdown options
 // @description This component should be used as a part of more complex components. See button-dropdown and select-dropdown components for more information.
-// @depends custom-scroll
+//
+//
 // @markup
 //  <div class='mui-dropdown-options'>
 //      <div class='wrapper'>
-//          <div class='mui-custom-scroll-wrapper'>
-//              <div class='mui-custom-scroll'>
-//                  <div class='option -f-light-blue-5'>Option 1</div>
-//                  <div class='option -f-light-blue-5'>Option 2</div>
-//                  <div class='option -f-light-blue-5'>Option 3</div>
-//                  <div class='option -f-light-blue-5'>Option 4</div>
-//                  <div class='option -f-light-blue-5'>Option 5</div>
-//                  <div class='option -f-light-blue-5'>Option 6</div>
-//                  <div class='option -f-light-blue-5'>Option 7</div>
-//                  <div class='option -f-light-blue-5'>Option 8</div>
-//                  <div class='option -f-light-blue-5'>Option 9</div>
-//                  <div class='option -f-light-blue-5'>Option 10</div>
-//                  <div class='option -f-light-blue-5'>Option 11</div>
-//                  <div class='option -f-light-blue-5'>Option 12</div>
-//                  <div class='option -f-light-blue-5'>Option 13</div>
-//                  <div class='option -f-light-blue-5'>Option 14</div>
-//                  <div class='option -f-light-blue-5'>Option 15</div>
-//              </div>
-//          </div>
+//          <div class='option -f-blue-4'>Option 1</div>
+//          <div class='option -f-blue-4'>Option 2</div>
+//          <div class='option -f-blue-4'>Option 3</div>
+//          <div class='option -f-blue-4'>Option 4</div>
+//          <div class='option -f-blue-4'>Option 5</div>
 //      </div>
 //  </div>
+
 
 .@{muilessium-prefix}dropdown-options {
     ._shadow-1;
@@ -67,8 +55,9 @@
         }
     }
 
-    > .wrapper .option {
+    > .wrapper > .option {
         cursor: pointer;
+        transition: color @default-animation-duration @default-animation-function;
 
         &:hover,
         &:focus {
@@ -76,7 +65,7 @@
         }
     }
 
-    > .wrapper .option > .link {
+    > .wrapper > .option > .link {
         text-decoration: none;
     }
 }

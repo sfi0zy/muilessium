@@ -1,20 +1,17 @@
-// @name Spoiler
-// @component Spoiler
-// @description Spoilers height is based on 10rem by default. Option -max-height-20 should be used with the same option of the custom scroll.
-// @method open() - opens spoiler
-// @method close() - closes spoiler
-// @method toggle() - opens spoiler if it is closed and closes it otherwise
-// @depends custom-scroll
+// @name        Spoiler
+// @description ...
+//
+// @component   Spoiler
+// @method      open()   - opens spoiler
+// @method      close()  - closes spoiler
+// @method      toggle() - opens spoiler if it is closed and closes it otherwise
+//
 //
 // @markup
-//  <div class='mui-spoiler -max-height-20'>
+//  <div class='mui-spoiler'>
 //      <div class='title'>spoiler</div>
 //      <div class='content'>
-//          <div class='mui-custom-scroll-wrapper'>
-//              <div class='mui-custom-scroll -max-height-20'>
-//                  <p class='mui-p'>ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, necessitatibus. Facilis in eum deserunt nam odit labore mollitia nesciunt vitae eaque aperiam ut ratione, possimus nulla iste iusto! Molestiae aliquam obcaecati ex corrupti incidunt impedit veniam consequatur accusantium quaerat id aperiam odit illo, deleniti vitae rerum! Odio voluptatum vitae impedit deleniti voluptate, architecto recusandae facilis, optio ut, natus qui consectetur ab cumque reprehenderit eveniet corrupti exercitationem eos accusamus enim. Porro, deleniti vitae doloremque blanditiis dicta, tenetur non odit accusamus quo, aperiam accusantium adipisci. Accusamus deserunt est consequatur, aut perferendis nisi, quibusdam cumque magni, commodi exercitationem velit minima. Culpa quaerat harum animi provident facere blanditiis corrupti. Totam, magnam sit possimus, laudantium quidem minus corporis, placeat facere maxime nostrum reiciendis vel officiis. Ipsum temporibus voluptates dolor assumenda, at inventore vero earum necessitatibus nulla! Est suscipit magnam rem, mollitia praesentium enim deserunt autem quibusdam quis voluptate esse ipsum? Quidem at commodi qui ex repellat ab necessitatibus unde cum ipsa esse quam, quasi animi, fugit dolor aut eaque laudantium. Veritatis eum pariatur ea fugiat exercitationem similique impedit praesentium vitae, voluptas quos tenetur animi quo placeat quaerat necessitatibus molestiae minus quasi perspiciatis modi voluptatem, quas labore illo quod. Incidunt ipsam voluptas quis voluptatem at, adipisci, laborum, corrupti doloremque exercitationem necessitatibus eaque? Iste fuga esse doloribus itaque veritatis, eius delectus iure labore natus nesciunt dolorem quasi animi amet sit, asperiores accusantium quos distinctio repellendus. Necessitatibus itaque cum quibusdam. Pariatur quis ipsa adipisci soluta minus? Quam vitae, ducimus corrupti rerum nam, cum voluptatibus, earum nihil est impedit exercitationem ut aliquid accusamus nisi doloremque! Temporibus deserunt accusantium exercitationem voluptatum amet beatae velit eum voluptatem? Omnis veniam sapiente dolorem minus aliquid ad itaque illum, iusto consequatur quia? Iusto fugit doloremque magni molestias corporis quaerat asperiores obcaecati? Quos recusandae esse excepturi quo quibusdam non neque dolorum quas, laudantium consequatur doloremque.</p>
-//              </div>
-//          </div>
+//          <p class='mui-p'>ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, necessitatibus. Facilis in eum deserunt nam odit labore mollitia nesciunt vitae eaque aperiam ut ratione, possimus nulla iste iusto! Molestiae aliquam obcaecati ex corrupti incidunt impedit veniam consequatur accusantium quaerat id aperiam odit illo, deleniti vitae rerum! Odio voluptatum vitae impedit deleniti voluptate, architecto recusandae facilis, optio ut, natus qui consectetur ab cumque reprehenderit eveniet corrupti exercitationem eos accusamus enim. Porro, deleniti vitae doloremque blanditiis dicta, tenetur non odit accusamus quo, aperiam accusantium adipisci. Accusamus deserunt est consequatur, aut perferendis nisi, quibusdam cumque magni, commodi exercitationem velit minima. Culpa quaerat harum animi provident facere blanditiis corrupti. Totam, magnam sit possimus, laudantium quidem minus corporis, placeat facere maxime nostrum reiciendis vel officiis. Ipsum temporibus voluptates dolor assumenda, at inventore vero earum necessitatibus nulla! Est suscipit magnam rem, mollitia praesentium enim deserunt autem quibusdam quis voluptate esse ipsum? Quidem at commodi qui ex repellat ab necessitatibus unde cum ipsa esse quam, quasi animi, fugit dolor aut eaque laudantium. Veritatis eum pariatur ea fugiat exercitationem similique impedit praesentium vitae, voluptas quos tenetur animi quo placeat quaerat necessitatibus molestiae minus quasi perspiciatis modi voluptatem, quas labore illo quod. Incidunt ipsam voluptas quis voluptatem at, adipisci, laborum, corrupti doloremque exercitationem necessitatibus eaque? Iste fuga esse doloribus itaque veritatis, eius delectus iure labore natus nesciunt dolorem quasi animi amet sit, asperiores accusantium quos distinctio repellendus. Necessitatibus itaque cum quibusdam. Pariatur quis ipsa adipisci soluta minus? Quam vitae, ducimus corrupti rerum nam, cum voluptatibus, earum nihil est impedit exercitationem ut aliquid accusamus nisi doloremque! Temporibus deserunt accusantium exercitationem voluptatum amet beatae velit eum voluptatem? Omnis veniam sapiente dolorem minus aliquid ad itaque illum, iusto consequatur quia? Iusto fugit doloremque magni molestias corporis quaerat asperiores obcaecati? Quos recusandae esse excepturi quo quibusdam non neque dolorum quas, laudantium consequatur doloremque.</p>
 //      </div>
 //  </div>
 
@@ -25,6 +22,7 @@
         display: inline-block;
         color: @grey-4;
         border-bottom: 1px dashed @grey-4;
+        transition: color @default-animation-duration @default-animation-function;
 
         &:hover,
         &:focus {
@@ -36,6 +34,7 @@
     > .content {
         max-height: 0;
         padding-top: 1rem;
+        padding-bottom: 1rem;
         opacity: 0;
         overflow: hidden;
         transform: rotateX(90deg) translateY(-40%);
@@ -51,15 +50,9 @@
 
     &.-opened {
         > .content {
-            max-height: 13rem; // Max-height of the custom scroll + 3rem. WTF?
+            max-height: 100rem;
             opacity: 1;
             transform: rotateX(0) translateY(0);
-        }
-    }
-
-    &.-opened.-max-height-20 {
-        > .content {
-            max-height: 23rem;
         }
     }
 }

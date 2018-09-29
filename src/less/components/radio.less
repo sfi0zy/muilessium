@@ -1,22 +1,26 @@
-// @name Radio
-// @depends input
-// @component Radio
-// @method updateState(index) - makes input with selected index selected
-// @method getState() - returns index of the checked input
+// @name        Radio
+// @description ...
+//
+// @component   Radio
+// @method      updateState(index) - makes input with selected index selected
+// @method      getState()         - returns index of the checked input
+//
+// @depends     input
+//
 //
 // @markup
 //  <div class='mui-input-wrapper'>
-//      <div class='mui-input-label'>Select Your gender</div>
-//      <div class='mui-radio' data-name='fgU67'>
-//          <input id='rb1Q4' value='male' checked>
+//      <div class='mui-input-label'>Left or right?</div>
+//      <div class='mui-radio' data-name='dss-mcosqko1'>
+//          <input id='dss-vyaga1l0' value='left' checked>
 //          <label>
 //              <span class='icon'></span>
-//              <span class='text'>Male</span>
+//              <span class='text'>Left</span>
 //          </label>
-//          <input id='sEr2u' value='female'>
+//          <input id='dss-x4ucsvtd' value='right'>
 //          <label>
 //              <span class='icon'></span>
-//              <span class='text'>Female</span>
+//              <span class='text'>Right</span>
 //          </label>
 //      </div>
 //  </div>
@@ -24,6 +28,7 @@
 
 .@{muilessium-prefix}radio {
     user-select: none;
+    margin-top: .5rem;
     
     > input[type=radio] {
         display: none;
@@ -55,6 +60,7 @@
         background: @white;
         border: 1px solid @grey-4;
         border-radius: 50%;
+        transition: border-color @default-animation-duration @default-animation-function;
         
         &::after {
             content: '';
