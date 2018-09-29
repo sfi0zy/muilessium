@@ -1,61 +1,74 @@
-@transparent: transparent;
+// -----------------------------------------------------------------------------
+// Color settings
+// -----------------------------------------------------------------------------
+//
+// List of colors:
+//   - transparent
+//   - white
+//   - black
+//   - grey   (1-5)
+//   - brown  (1-5)
+//   - blue   (1-5)
+//   - violet (1-5)
+//   - pink   (1-5)
+//   - green  (1-5)
+//   - cyan   (1-5)
+//   - red    (1-5)
+//   - yellow (1-5)
+//   - orange (1-5)
+//
+// -----------------------------------------------------------------------------
 
+
+@transparent: transparent;
 @white:  #ffffff;
-@grey-1: #fafafa;
-@grey-2: #eeeeee;
-@grey-3: #9e9e9e;
-@grey-4: #424242;
-@grey-5: #212121;
 @black:  #000000;
 
-@brown-1: #efebe9;
-@brown-2: #bcaaa4;
-@brown-3: #795548;
-@brown-4: #4e342e;
-@brown-5: #3e2723;
-
-@blue-1: #e3f2fd;
-@blue-2: #90caf9;
-@blue-3: #2196f3;
-@blue-4: #1565c0;
-@blue-5: #0d47a1;
-
+@grey-1:   #fafafa;
+@grey-2:   #eeeeee;
+@grey-3:   #9e9e9e;
+@grey-4:   #424242;
+@grey-5:   #212121;
+@brown-1:  #efebe9;
+@brown-2:  #bcaaa4;
+@brown-3:  #795548;
+@brown-4:  #4e342e;
+@brown-5:  #3e2723;
+@blue-1:   #e3f2fd;
+@blue-2:   #90caf9;
+@blue-3:   #2196f3;
+@blue-4:   #1565c0;
+@blue-5:   #0d47a1;
 @violet-1: #ede7f6;
 @violet-2: #b39ddb;
 @violet-3: #673ab7;
 @violet-4: #4527a0;
 @violet-5: #311b92;
-
-@pink-1: #fce4ec;
-@pink-2: #f48fb1;
-@pink-3: #e91e63;
-@pink-4: #ad1457;
-@pink-5: #880e4f;
-
-@green-1: #e8f5e9;
-@green-2: #a5d6a7;
-@green-3: #4caf50;
-@green-4: #2e7d32;
-@green-5: #1b5e20;
-
-@cyan-1: #e0f7fa;
-@cyan-2: #80deea;
-@cyan-3: #00bcd4;
-@cyan-4: #00838f;
-@cyan-5: #006064;
-
-@red-1: #ffebee;
-@red-2: #ef9a9a;
-@red-3: #f44336;
-@red-4: #c62828;
-@red-5: #b71c1c;
-
+@pink-1:   #fce4ec;
+@pink-2:   #f48fb1;
+@pink-3:   #e91e63;
+@pink-4:   #ad1457;
+@pink-5:   #880e4f;
+@green-1:  #e8f5e9;
+@green-2:  #a5d6a7;
+@green-3:  #4caf50;
+@green-4:  #2e7d32;
+@green-5:  #1b5e20;
+@cyan-1:   #e0f7fa;
+@cyan-2:   #80deea;
+@cyan-3:   #00bcd4;
+@cyan-4:   #00838f;
+@cyan-5:   #006064;
+@red-1:    #ffebee;
+@red-2:    #ef9a9a;
+@red-3:    #f44336;
+@red-4:    #c62828;
+@red-5:    #b71c1c;
 @yellow-1: #fffde7;
 @yellow-2: #fff59d;
 @yellow-3: #ffeb3b;
 @yellow-4: #f9a825;
 @yellow-5: #f57f17;
-
 @orange-1: #fff3e0;
 @orange-2: #ffcc80;
 @orange-3: #ff9800;
@@ -63,195 +76,182 @@
 @orange-5: #e65100;
 
 
-.-transparent { color: @transparent !important; }
 
-.-white  { color: @white !important;  }
-.-grey-1 { color: @grey-1 !important; }
-.-grey-2 { color: @grey-2 !important; }
-.-grey-3 { color: @grey-3 !important; }
-.-grey-4 { color: @grey-4 !important; }
-.-grey-5 { color: @grey-5 !important; }
-.-black  { color: @black !important;  }
-
-.-brown-1 { color: @brown-1 !important; }
-.-brown-2 { color: @brown-2 !important; }
-.-brown-3 { color: @brown-3 !important; }
-.-brown-4 { color: @brown-4 !important; }
-.-brown-5 { color: @brown-5 !important; }
-
-.-blue-1 { color: @blue-1 !important; }
-.-blue-2 { color: @blue-2 !important; }
-.-blue-3 { color: @blue-3 !important; }
-.-blue-4 { color: @blue-4 !important; }
-.-blue-5 { color: @blue-5 !important; }
-
-.-violet-1 { color: @violet-1 !important; }
-.-violet-2 { color: @violet-2 !important; }
-.-violet-3 { color: @violet-3 !important; }
-.-violet-4 { color: @violet-4 !important; }
-.-violet-5 { color: @violet-5 !important; }
-
-.-pink-1 { color: @pink-1 !important; }
-.-pink-2 { color: @pink-2 !important; }
-.-pink-3 { color: @pink-3 !important; }
-.-pink-4 { color: @pink-4 !important; }
-.-pink-5 { color: @pink-5 !important; }
-
-.-green-1 { color: @green-1 !important; }
-.-green-2 { color: @green-2 !important; }
-.-green-3 { color: @green-3 !important; }
-.-green-4 { color: @green-4 !important; }
-.-green-5 { color: @green-5 !important; }
-
-.-cyan-1 { color: @cyan-1 !important; }
-.-cyan-2 { color: @cyan-2 !important; }
-.-cyan-3 { color: @cyan-3 !important; }
-.-cyan-4 { color: @cyan-4 !important; }
-.-cyan-5 { color: @cyan-5 !important; }
-
-.-red-1 { color: @red-1 !important; }
-.-red-2 { color: @red-2 !important; }
-.-red-3 { color: @red-3 !important; }
-.-red-4 { color: @red-4 !important; }
-.-red-5 { color: @red-5 !important; }
-
-.-yellow-1 { color: @yellow-1 !important; }
-.-yellow-2 { color: @yellow-2 !important; }
-.-yellow-3 { color: @yellow-3 !important; }
-.-yellow-4 { color: @yellow-4 !important; }
-.-yellow-5 { color: @yellow-5 !important; }
-
-.-orange-1 { color: @orange-1 !important; }
-.-orange-2 { color: @orange-2 !important; }
-.-orange-3 { color: @orange-3 !important; }
-.-orange-4 { color: @orange-4 !important; }
-.-orange-5 { color: @orange-5 !important; }
+// -----------------------------------------------------------------------------
 
 
-.-f-transparent { &:hover, &:focus { color: @transparent !important; }}
 
-.-f-white  { &:hover, &:focus { color: @white !important; }}
-.-f-grey-1 { &:hover, &:focus { color: @grey-1 !important; }}
-.-f-grey-2 { &:hover, &:focus { color: @grey-2 !important; }}
-.-f-grey-3 { &:hover, &:focus { color: @grey-3 !important; }}
-.-f-grey-4 { &:hover, &:focus { color: @grey-4 !important; }}
-.-f-grey-5 { &:hover, &:focus { color: @grey-5 !important; }}
-.-f-black  { &:hover, &:focus { color: @black !important;  }}
+.-transparent { color: @transparent !important; fill: @transparent !important; }
+.-white       { color: @white       !important; fill: @white       !important; }
+.-black       { color: @black       !important; fill: @black       !important; }
 
-.-f-brown-1 { &:hover, &:focus { color: @brown-1 !important; }}
-.-f-brown-2 { &:hover, &:focus { color: @brown-2 !important; }}
-.-f-brown-3 { &:hover, &:focus { color: @brown-3 !important; }}
-.-f-brown-4 { &:hover, &:focus { color: @brown-4 !important; }}
-.-f-brown-5 { &:hover, &:focus { color: @brown-5 !important; }}
+.-grey-1   { color: @grey-1   !important; fill: @grey-1   !important; }
+.-grey-2   { color: @grey-2   !important; fill: @grey-2   !important; }
+.-grey-3   { color: @grey-3   !important; fill: @grey-3   !important; }
+.-grey-4   { color: @grey-4   !important; fill: @grey-4   !important; }
+.-grey-5   { color: @grey-5   !important; fill: @grey-5   !important; }
+.-brown-1  { color: @brown-1  !important; fill: @brown-1  !important; }
+.-brown-2  { color: @brown-2  !important; fill: @brown-2  !important; }
+.-brown-3  { color: @brown-3  !important; fill: @brown-3  !important; }
+.-brown-4  { color: @brown-4  !important; fill: @brown-4  !important; }
+.-brown-5  { color: @brown-5  !important; fill: @brown-5  !important; }
+.-blue-1   { color: @blue-1   !important; fill: @blue-1   !important; }
+.-blue-2   { color: @blue-2   !important; fill: @blue-2   !important; }
+.-blue-3   { color: @blue-3   !important; fill: @blue-3   !important; }
+.-blue-4   { color: @blue-4   !important; fill: @blue-4   !important; }
+.-blue-5   { color: @blue-5   !important; fill: @blue-5   !important; }
+.-violet-1 { color: @violet-1 !important; fill: @violet-1 !important; }
+.-violet-2 { color: @violet-2 !important; fill: @violet-2 !important; }
+.-violet-3 { color: @violet-3 !important; fill: @violet-3 !important; }
+.-violet-4 { color: @violet-4 !important; fill: @violet-4 !important; }
+.-violet-5 { color: @violet-5 !important; fill: @violet-5 !important; }
+.-pink-1   { color: @pink-1   !important; fill: @pink-1   !important; }
+.-pink-2   { color: @pink-2   !important; fill: @pink-2   !important; }
+.-pink-3   { color: @pink-3   !important; fill: @pink-3   !important; }
+.-pink-4   { color: @pink-4   !important; fill: @pink-4   !important; }
+.-pink-5   { color: @pink-5   !important; fill: @pink-5   !important; }
+.-green-1  { color: @green-1  !important; fill: @green-1  !important; }
+.-green-2  { color: @green-2  !important; fill: @green-2  !important; }
+.-green-3  { color: @green-3  !important; fill: @green-3  !important; }
+.-green-4  { color: @green-4  !important; fill: @green-4  !important; }
+.-green-5  { color: @green-5  !important; fill: @green-5  !important; }
+.-cyan-1   { color: @cyan-1   !important; fill: @cyan-1   !important; }
+.-cyan-2   { color: @cyan-2   !important; fill: @cyan-2   !important; }
+.-cyan-3   { color: @cyan-3   !important; fill: @cyan-3   !important; }
+.-cyan-4   { color: @cyan-4   !important; fill: @cyan-4   !important; }
+.-cyan-5   { color: @cyan-5   !important; fill: @cyan-5   !important; }
+.-red-1    { color: @red-1    !important; fill: @red-1    !important; }
+.-red-2    { color: @red-2    !important; fill: @red-2    !important; }
+.-red-3    { color: @red-3    !important; fill: @red-3    !important; }
+.-red-4    { color: @red-4    !important; fill: @red-4    !important; }
+.-red-5    { color: @red-5    !important; fill: @red-5    !important; }
+.-yellow-1 { color: @yellow-1 !important; fill: @yellow-1 !important; }
+.-yellow-2 { color: @yellow-2 !important; fill: @yellow-2 !important; }
+.-yellow-3 { color: @yellow-3 !important; fill: @yellow-3 !important; }
+.-yellow-4 { color: @yellow-4 !important; fill: @yellow-4 !important; }
+.-yellow-5 { color: @yellow-5 !important; fill: @yellow-5 !important; }
+.-orange-1 { color: @orange-1 !important; fill: @orange-1 !important; }
+.-orange-2 { color: @orange-2 !important; fill: @orange-2 !important; }
+.-orange-3 { color: @orange-3 !important; fill: @orange-3 !important; }
+.-orange-4 { color: @orange-4 !important; fill: @orange-4 !important; }
+.-orange-5 { color: @orange-5 !important; fill: @orange-5 !important; }
 
-.-f-blue-1 { &:hover, &:focus { color: @blue-1 !important; }}
-.-f-blue-2 { &:hover, &:focus { color: @blue-2 !important; }}
-.-f-blue-3 { &:hover, &:focus { color: @blue-3 !important; }}
-.-f-blue-4 { &:hover, &:focus { color: @blue-4 !important; }}
-.-f-blue-5 { &:hover, &:focus { color: @blue-5 !important; }}
 
-.-f-violet-1 { &:hover, &:focus { color: @violet-1 !important; }}
-.-f-violet-2 { &:hover, &:focus { color: @violet-2 !important; }}
-.-f-violet-3 { &:hover, &:focus { color: @violet-3 !important; }}
-.-f-violet-4 { &:hover, &:focus { color: @violet-4 !important; }}
-.-f-violet-5 { &:hover, &:focus { color: @violet-5 !important; }}
 
-.-f-pink-1 { &:hover, &:focus { color: @pink-1 !important; }}
-.-f-pink-2 { &:hover, &:focus { color: @pink-2 !important; }}
-.-f-pink-3 { &:hover, &:focus { color: @pink-3 !important; }}
-.-f-pink-4 { &:hover, &:focus { color: @pink-4 !important; }}
-.-f-pink-5 { &:hover, &:focus { color: @pink-5 !important; }}
+// -----------------------------------------------------------------------------
 
-.-f-green-1 { &:hover, &:focus { color: @green-1 !important; }}
-.-f-green-2 { &:hover, &:focus { color: @green-2 !important; }}
-.-f-green-3 { &:hover, &:focus { color: @green-3 !important; }}
-.-f-green-4 { &:hover, &:focus { color: @green-4 !important; }}
-.-f-green-5 { &:hover, &:focus { color: @green-5 !important; }}
 
-.-f-cyan-1 { &:hover, &:focus { color: @cyan-1 !important; }}
-.-f-cyan-2 { &:hover, &:focus { color: @cyan-2 !important; }}
-.-f-cyan-3 { &:hover, &:focus { color: @cyan-3 !important; }}
-.-f-cyan-4 { &:hover, &:focus { color: @cyan-4 !important; }}
-.-f-cyan-5 { &:hover, &:focus { color: @cyan-5 !important; }}
 
-.-f-red-1 { &:hover, &:focus { color: @red-1 !important; }}
-.-f-red-2 { &:hover, &:focus { color: @red-2 !important; }}
-.-f-red-3 { &:hover, &:focus { color: @red-3 !important; }}
-.-f-red-4 { &:hover, &:focus { color: @red-4 !important; }}
-.-f-red-5 { &:hover, &:focus { color: @red-5 !important; }}
+.-f-transparent { &:hover, &:focus { color: @transparent !important; fill: @transparent !important; }}
+.-f-white       { &:hover, &:focus { color: @white !important;       fill: @white       !important; }}
+.-f-black       { &:hover, &:focus { color: @black !important;       fill: @black       !important; }}
 
-.-f-yellow-1 { &:hover, &:focus { color: @yellow-1 !important; }}
-.-f-yellow-2 { &:hover, &:focus { color: @yellow-2 !important; }}
-.-f-yellow-3 { &:hover, &:focus { color: @yellow-3 !important; }}
-.-f-yellow-4 { &:hover, &:focus { color: @yellow-4 !important; }}
-.-f-yellow-5 { &:hover, &:focus { color: @yellow-5 !important; }}
+.-f-grey-1   { &:hover, &:focus { color: @grey-1   !important; fill: @grey-1   !important; }}
+.-f-grey-2   { &:hover, &:focus { color: @grey-2   !important; fill: @grey-2   !important; }}
+.-f-grey-3   { &:hover, &:focus { color: @grey-3   !important; fill: @grey-3   !important; }}
+.-f-grey-4   { &:hover, &:focus { color: @grey-4   !important; fill: @grey-4   !important; }}
+.-f-grey-5   { &:hover, &:focus { color: @grey-5   !important; fill: @grey-5   !important; }}
+.-f-brown-1  { &:hover, &:focus { color: @brown-1  !important; fill: @brown-1  !important; }}
+.-f-brown-2  { &:hover, &:focus { color: @brown-2  !important; fill: @brown-2  !important; }}
+.-f-brown-3  { &:hover, &:focus { color: @brown-3  !important; fill: @brown-3  !important; }}
+.-f-brown-4  { &:hover, &:focus { color: @brown-4  !important; fill: @brown-4  !important; }}
+.-f-brown-5  { &:hover, &:focus { color: @brown-5  !important; fill: @brown-5  !important; }}
+.-f-blue-1   { &:hover, &:focus { color: @blue-1   !important; fill: @blue-1   !important; }}
+.-f-blue-2   { &:hover, &:focus { color: @blue-2   !important; fill: @blue-2   !important; }}
+.-f-blue-3   { &:hover, &:focus { color: @blue-3   !important; fill: @blue-3   !important; }}
+.-f-blue-4   { &:hover, &:focus { color: @blue-4   !important; fill: @blue-4   !important; }}
+.-f-blue-5   { &:hover, &:focus { color: @blue-5   !important; fill: @blue-5   !important; }}
+.-f-violet-1 { &:hover, &:focus { color: @violet-1 !important; fill: @violet-1 !important; }}
+.-f-violet-2 { &:hover, &:focus { color: @violet-2 !important; fill: @violet-2 !important; }}
+.-f-violet-3 { &:hover, &:focus { color: @violet-3 !important; fill: @violet-3 !important; }}
+.-f-violet-4 { &:hover, &:focus { color: @violet-4 !important; fill: @violet-4 !important; }}
+.-f-violet-5 { &:hover, &:focus { color: @violet-5 !important; fill: @violet-5 !important; }}
+.-f-pink-1   { &:hover, &:focus { color: @pink-1   !important; fill: @pink-1   !important; }}
+.-f-pink-2   { &:hover, &:focus { color: @pink-2   !important; fill: @pink-2   !important; }}
+.-f-pink-3   { &:hover, &:focus { color: @pink-3   !important; fill: @pink-3   !important; }}
+.-f-pink-4   { &:hover, &:focus { color: @pink-4   !important; fill: @pink-4   !important; }}
+.-f-pink-5   { &:hover, &:focus { color: @pink-5   !important; fill: @pink-5   !important; }}
+.-f-green-1  { &:hover, &:focus { color: @green-1  !important; fill: @green-1  !important; }}
+.-f-green-2  { &:hover, &:focus { color: @green-2  !important; fill: @green-2  !important; }}
+.-f-green-3  { &:hover, &:focus { color: @green-3  !important; fill: @green-3  !important; }}
+.-f-green-4  { &:hover, &:focus { color: @green-4  !important; fill: @green-4  !important; }}
+.-f-green-5  { &:hover, &:focus { color: @green-5  !important; fill: @green-5  !important; }}
+.-f-cyan-1   { &:hover, &:focus { color: @cyan-1   !important; fill: @cyan-1   !important; }}
+.-f-cyan-2   { &:hover, &:focus { color: @cyan-2   !important; fill: @cyan-2   !important; }}
+.-f-cyan-3   { &:hover, &:focus { color: @cyan-3   !important; fill: @cyan-3   !important; }}
+.-f-cyan-4   { &:hover, &:focus { color: @cyan-4   !important; fill: @cyan-4   !important; }}
+.-f-cyan-5   { &:hover, &:focus { color: @cyan-5   !important; fill: @cyan-5   !important; }}
+.-f-red-1    { &:hover, &:focus { color: @red-1    !important; fill: @red-1    !important; }}
+.-f-red-2    { &:hover, &:focus { color: @red-2    !important; fill: @red-2    !important; }}
+.-f-red-3    { &:hover, &:focus { color: @red-3    !important; fill: @red-3    !important; }}
+.-f-red-4    { &:hover, &:focus { color: @red-4    !important; fill: @red-4    !important; }}
+.-f-red-5    { &:hover, &:focus { color: @red-5    !important; fill: @red-5    !important; }}
+.-f-yellow-1 { &:hover, &:focus { color: @yellow-1 !important; fill: @yellow-1 !important; }}
+.-f-yellow-2 { &:hover, &:focus { color: @yellow-2 !important; fill: @yellow-2 !important; }}
+.-f-yellow-3 { &:hover, &:focus { color: @yellow-3 !important; fill: @yellow-3 !important; }}
+.-f-yellow-4 { &:hover, &:focus { color: @yellow-4 !important; fill: @yellow-4 !important; }}
+.-f-yellow-5 { &:hover, &:focus { color: @yellow-5 !important; fill: @yellow-5 !important; }}
+.-f-orange-1 { &:hover, &:focus { color: @orange-1 !important; fill: @orange-1 !important; }}
+.-f-orange-2 { &:hover, &:focus { color: @orange-2 !important; fill: @orange-2 !important; }}
+.-f-orange-3 { &:hover, &:focus { color: @orange-3 !important; fill: @orange-3 !important; }}
+.-f-orange-4 { &:hover, &:focus { color: @orange-4 !important; fill: @orange-4 !important; }}
+.-f-orange-5 { &:hover, &:focus { color: @orange-5 !important; fill: @orange-5 !important; }}
 
-.-f-orange-1 { &:hover, &:focus { color: @orange-1 !important; }}
-.-f-orange-2 { &:hover, &:focus { color: @orange-2 !important; }}
-.-f-orange-3 { &:hover, &:focus { color: @orange-3 !important; }}
-.-f-orange-4 { &:hover, &:focus { color: @orange-4 !important; }}
-.-f-orange-5 { &:hover, &:focus { color: @orange-5 !important; }}
+
+
+// -----------------------------------------------------------------------------
 
 
 
 .-transparent-bg { background: @transparent !important; }
+.-white-bg       { background: @white       !important; }
+.-black-bg       { background: @black       !important; }
 
-.-white-bg  { background: @white !important;  }
-.-grey-1-bg { background: @grey-1 !important; }
-.-grey-2-bg { background: @grey-2 !important; }
-.-grey-3-bg { background: @grey-3 !important; }
-.-grey-4-bg { background: @grey-4 !important; }
-.-grey-5-bg { background: @grey-5 !important; }
-.-black-bg  { background: @black !important;  }
-
-.-brown-1-bg { background: @brown-1 !important; }
-.-brown-2-bg { background: @brown-2 !important; }
-.-brown-3-bg { background: @brown-3 !important; }
-.-brown-4-bg { background: @brown-4 !important; }
-.-brown-5-bg { background: @brown-5 !important; }
-
-.-blue-1-bg { background: @blue-1 !important; }
-.-blue-2-bg { background: @blue-2 !important; }
-.-blue-3-bg { background: @blue-3 !important; }
-.-blue-4-bg { background: @blue-4 !important; }
-.-blue-5-bg { background: @blue-5 !important; }
-
+.-grey-1-bg   { background: @grey-1   !important; }
+.-grey-2-bg   { background: @grey-2   !important; }
+.-grey-3-bg   { background: @grey-3   !important; }
+.-grey-4-bg   { background: @grey-4   !important; }
+.-grey-5-bg   { background: @grey-5   !important; }
+.-brown-1-bg  { background: @brown-1  !important; }
+.-brown-2-bg  { background: @brown-2  !important; }
+.-brown-3-bg  { background: @brown-3  !important; }
+.-brown-4-bg  { background: @brown-4  !important; }
+.-brown-5-bg  { background: @brown-5  !important; }
+.-blue-1-bg   { background: @blue-1   !important; }
+.-blue-2-bg   { background: @blue-2   !important; }
+.-blue-3-bg   { background: @blue-3   !important; }
+.-blue-4-bg   { background: @blue-4   !important; }
+.-blue-5-bg   { background: @blue-5   !important; }
 .-violet-1-bg { background: @violet-1 !important; }
 .-violet-2-bg { background: @violet-2 !important; }
 .-violet-3-bg { background: @violet-3 !important; }
 .-violet-4-bg { background: @violet-4 !important; }
 .-violet-5-bg { background: @violet-5 !important; }
-
-.-pink-1-bg { background: @pink-1 !important; }
-.-pink-2-bg { background: @pink-2 !important; }
-.-pink-3-bg { background: @pink-3 !important; }
-.-pink-4-bg { background: @pink-4 !important; }
-.-pink-5-bg { background: @pink-5 !important; }
-
-.-green-1-bg { background: @green-1 !important; }
-.-green-2-bg { background: @green-2 !important; }
-.-green-3-bg { background: @green-3 !important; }
-.-green-4-bg { background: @green-4 !important; }
-.-green-5-bg { background: @green-5 !important; }
-
-.-cyan-1-bg { background: @cyan-1 !important; }
-.-cyan-2-bg { background: @cyan-2 !important; }
-.-cyan-3-bg { background: @cyan-3 !important; }
-.-cyan-4-bg { background: @cyan-4 !important; }
-.-cyan-5-bg { background: @cyan-5 !important; }
-
-.-red-1-bg { background: @red-1 !important; }
-.-red-2-bg { background: @red-2 !important; }
-.-red-3-bg { background: @red-3 !important; }
-.-red-4-bg { background: @red-4 !important; }
-.-red-5-bg { background: @red-5 !important; }
-
+.-pink-1-bg   { background: @pink-1   !important; }
+.-pink-2-bg   { background: @pink-2   !important; }
+.-pink-3-bg   { background: @pink-3   !important; }
+.-pink-4-bg   { background: @pink-4   !important; }
+.-pink-5-bg   { background: @pink-5   !important; }
+.-green-1-bg  { background: @green-1  !important; }
+.-green-2-bg  { background: @green-2  !important; }
+.-green-3-bg  { background: @green-3  !important; }
+.-green-4-bg  { background: @green-4  !important; }
+.-green-5-bg  { background: @green-5  !important; }
+.-cyan-1-bg   { background: @cyan-1   !important; }
+.-cyan-2-bg   { background: @cyan-2   !important; }
+.-cyan-3-bg   { background: @cyan-3   !important; }
+.-cyan-4-bg   { background: @cyan-4   !important; }
+.-cyan-5-bg   { background: @cyan-5   !important; }
+.-red-1-bg    { background: @red-1    !important; }
+.-red-2-bg    { background: @red-2    !important; }
+.-red-3-bg    { background: @red-3    !important; }
+.-red-4-bg    { background: @red-4    !important; }
+.-red-5-bg    { background: @red-5    !important; }
 .-yellow-1-bg { background: @yellow-1 !important; }
 .-yellow-2-bg { background: @yellow-2 !important; }
 .-yellow-3-bg { background: @yellow-3 !important; }
 .-yellow-4-bg { background: @yellow-4 !important; }
 .-yellow-5-bg { background: @yellow-5 !important; }
-
 .-orange-1-bg { background: @orange-1 !important; }
 .-orange-2-bg { background: @orange-2 !important; }
 .-orange-3-bg { background: @orange-3 !important; }
@@ -260,71 +260,62 @@
 
 
 
+// -----------------------------------------------------------------------------
+
+
+
 .-f-transparent-bg { &:hover, &:focus { background: @transparent !important; }}
+.-f-white-bg       { &:hover, &:focus { background: @white       !important; }}
+.-f-black-bg       { &:hover, &:focus { background: @black       !important; }}
 
-.-f-white-bg  { &:hover, &:focus { background: @white !important;  }}
-.-f-grey-1-bg { &:hover, &:focus { background: @grey-1 !important; }}
-.-f-grey-2-bg { &:hover, &:focus { background: @grey-2 !important; }}
-.-f-grey-3-bg { &:hover, &:focus { background: @grey-3 !important; }}
-.-f-grey-4-bg { &:hover, &:focus { background: @grey-4 !important; }}
-.-f-grey-5-bg { &:hover, &:focus { background: @grey-5 !important; }}
-.-f-black-bg  { &:hover, &:focus { background: @black !important;  }}
-
-.-f-brown-1-bg { &:hover, &:focus { background: @brown-1 !important; }}
-.-f-brown-2-bg { &:hover, &:focus { background: @brown-2 !important; }}
-.-f-brown-3-bg { &:hover, &:focus { background: @brown-3 !important; }}
-.-f-brown-4-bg { &:hover, &:focus { background: @brown-4 !important; }}
-.-f-brown-5-bg { &:hover, &:focus { background: @brown-5 !important; }}
-
-.-f-blue-1-bg { &:hover, &:focus { background: @blue-1 !important; }}
-.-f-blue-2-bg { &:hover, &:focus { background: @blue-2 !important; }}
-.-f-blue-3-bg { &:hover, &:focus { background: @blue-3 !important; }}
-.-f-blue-4-bg { &:hover, &:focus { background: @blue-4 !important; }}
-.-f-blue-5-bg { &:hover, &:focus { background: @blue-5 !important; }}
-
+.-f-grey-1-bg   { &:hover, &:focus { background: @grey-1   !important; }}
+.-f-grey-2-bg   { &:hover, &:focus { background: @grey-2   !important; }}
+.-f-grey-3-bg   { &:hover, &:focus { background: @grey-3   !important; }}
+.-f-grey-4-bg   { &:hover, &:focus { background: @grey-4   !important; }}
+.-f-grey-5-bg   { &:hover, &:focus { background: @grey-5   !important; }}
+.-f-brown-1-bg  { &:hover, &:focus { background: @brown-1  !important; }}
+.-f-brown-2-bg  { &:hover, &:focus { background: @brown-2  !important; }}
+.-f-brown-3-bg  { &:hover, &:focus { background: @brown-3  !important; }}
+.-f-brown-4-bg  { &:hover, &:focus { background: @brown-4  !important; }}
+.-f-brown-5-bg  { &:hover, &:focus { background: @brown-5  !important; }}
+.-f-blue-1-bg   { &:hover, &:focus { background: @blue-1   !important; }}
+.-f-blue-2-bg   { &:hover, &:focus { background: @blue-2   !important; }}
+.-f-blue-3-bg   { &:hover, &:focus { background: @blue-3   !important; }}
+.-f-blue-4-bg   { &:hover, &:focus { background: @blue-4   !important; }}
+.-f-blue-5-bg   { &:hover, &:focus { background: @blue-5   !important; }}
 .-f-violet-1-bg { &:hover, &:focus { background: @violet-1 !important; }}
 .-f-violet-2-bg { &:hover, &:focus { background: @violet-2 !important; }}
 .-f-violet-3-bg { &:hover, &:focus { background: @violet-3 !important; }}
 .-f-violet-4-bg { &:hover, &:focus { background: @violet-4 !important; }}
 .-f-violet-5-bg { &:hover, &:focus { background: @violet-5 !important; }}
-
-.-f-pink-1-bg { &:hover, &:focus { background: @pink-1 !important; }}
-.-f-pink-2-bg { &:hover, &:focus { background: @pink-2 !important; }}
-.-f-pink-3-bg { &:hover, &:focus { background: @pink-3 !important; }}
-.-f-pink-4-bg { &:hover, &:focus { background: @pink-4 !important; }}
-.-f-pink-5-bg { &:hover, &:focus { background: @pink-5 !important; }}
-
-.-f-green-1-bg { &:hover, &:focus { background: @green-1 !important; }}
-.-f-green-2-bg { &:hover, &:focus { background: @green-2 !important; }}
-.-f-green-3-bg { &:hover, &:focus { background: @green-3 !important; }}
-.-f-green-4-bg { &:hover, &:focus { background: @green-4 !important; }}
-.-f-green-5-bg { &:hover, &:focus { background: @green-5 !important; }}
-
-.-f-cyan-1-bg { &:hover, &:focus { background: @cyan-1 !important; }}
-.-f-cyan-2-bg { &:hover, &:focus { background: @cyan-2 !important; }}
-.-f-cyan-3-bg { &:hover, &:focus { background: @cyan-3 !important; }}
-.-f-cyan-4-bg { &:hover, &:focus { background: @cyan-4 !important; }}
-.-f-cyan-5-bg { &:hover, &:focus { background: @cyan-5 !important; }}
-
-.-f-red-1-bg { &:hover, &:focus { background: @red-1 !important; }}
-.-f-red-2-bg { &:hover, &:focus { background: @red-2 !important; }}
-.-f-red-3-bg { &:hover, &:focus { background: @red-3 !important; }}
-.-f-red-4-bg { &:hover, &:focus { background: @red-4 !important; }}
-.-f-red-5-bg { &:hover, &:focus { background: @red-5 !important; }}
-
+.-f-pink-1-bg   { &:hover, &:focus { background: @pink-1   !important; }}
+.-f-pink-2-bg   { &:hover, &:focus { background: @pink-2   !important; }}
+.-f-pink-3-bg   { &:hover, &:focus { background: @pink-3   !important; }}
+.-f-pink-4-bg   { &:hover, &:focus { background: @pink-4   !important; }}
+.-f-pink-5-bg   { &:hover, &:focus { background: @pink-5   !important; }}
+.-f-green-1-bg  { &:hover, &:focus { background: @green-1  !important; }}
+.-f-green-2-bg  { &:hover, &:focus { background: @green-2  !important; }}
+.-f-green-3-bg  { &:hover, &:focus { background: @green-3  !important; }}
+.-f-green-4-bg  { &:hover, &:focus { background: @green-4  !important; }}
+.-f-green-5-bg  { &:hover, &:focus { background: @green-5  !important; }}
+.-f-cyan-1-bg   { &:hover, &:focus { background: @cyan-1   !important; }}
+.-f-cyan-2-bg   { &:hover, &:focus { background: @cyan-2   !important; }}
+.-f-cyan-3-bg   { &:hover, &:focus { background: @cyan-3   !important; }}
+.-f-cyan-4-bg   { &:hover, &:focus { background: @cyan-4   !important; }}
+.-f-cyan-5-bg   { &:hover, &:focus { background: @cyan-5   !important; }}
+.-f-red-1-bg    { &:hover, &:focus { background: @red-1    !important; }}
+.-f-red-2-bg    { &:hover, &:focus { background: @red-2    !important; }}
+.-f-red-3-bg    { &:hover, &:focus { background: @red-3    !important; }}
+.-f-red-4-bg    { &:hover, &:focus { background: @red-4    !important; }}
+.-f-red-5-bg    { &:hover, &:focus { background: @red-5    !important; }}
 .-f-yellow-1-bg { &:hover, &:focus { background: @yellow-1 !important; }}
 .-f-yellow-2-bg { &:hover, &:focus { background: @yellow-2 !important; }}
 .-f-yellow-3-bg { &:hover, &:focus { background: @yellow-3 !important; }}
 .-f-yellow-4-bg { &:hover, &:focus { background: @yellow-4 !important; }}
 .-f-yellow-5-bg { &:hover, &:focus { background: @yellow-5 !important; }}
-
 .-f-orange-1-bg { &:hover, &:focus { background: @orange-1 !important; }}
 .-f-orange-2-bg { &:hover, &:focus { background: @orange-2 !important; }}
 .-f-orange-3-bg { &:hover, &:focus { background: @orange-3 !important; }}
 .-f-orange-4-bg { &:hover, &:focus { background: @orange-4 !important; }}
 .-f-orange-5-bg { &:hover, &:focus { background: @orange-5 !important; }}
-
-
-
-
 
