@@ -9,7 +9,7 @@
 //  <div class='mui-input-wrapper'>
 //      <label class='mui-input-label'>Username</label>
 //      <div class='mui-input-hint'>
-//          <span>Select Your username (min 3 characters, only letters allowed)</span>
+//          <span>Your username (min 3 characters, only letters allowed)</span>
 //          <span class='mui-input-indicator'>
 //              <span class='validicon'>&check;</span>
 //              <span class='invalidicon'>&cross;</span>
@@ -32,7 +32,7 @@
 //  <div class='mui-input-wrapper'>
 //      <label class='mui-input-label'>Username</label>
 //      <div class='mui-input-hint'>
-//          <span>Select Your username (min 3 characters, only letters allowed)</span>
+//          <span>Your username (min 3 characters, only letters allowed)</span>
 //          <span class='mui-input-indicator'>
 //              <span class='validicon'>&check;</span>
 //              <span class='invalidicon'>&cross;</span>
@@ -41,31 +41,6 @@
 //      <div class='mui-input -icon-left' data-regexp='^[a-zA-Z]{3,}$'>
 //          <label class='icon -blue-3-bg'>&lowast;</label>
 //          <input type='text' id='TEz8D' placeholder='Select your username'>
-//      </div>
-//  </div>
-
-
-// @name Material input
-// @description Input component (material-style variation)
-// @component Input
-// @method validate() - validates input
-// @method isValid() - returns true if the input value is valid and false otherwise
-// @method getValue() - returns input value
-//
-// @markup
-//  <div class='mui-input-wrapper'>
-//      <div class='mui-input -material' data-regexp='^[a-zA-Z]{3,}$'>
-//          <label>
-//              <span class='mui-input-hint'>
-//                  <span class='_bigger-1'>First name</span>
-//                  <span class='_smaller-1'>(min 3 characters, only letters allowed)</span>
-//              </span>
-//              <span class='mui-input-indicator'>
-//                  <span class='validicon'>&check;</span>
-//                  <span class='invalidicon'>&cross;</span>
-//              </span>
-//          </label>
-//          <input type='text' id='8vrWA'>
 //      </div>
 //  </div>
 
@@ -174,51 +149,6 @@
             &:hover {
                 cursor: pointer;
             }
-        }
-    }
-    
-    &.-material {
-        margin-top: 1rem;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-radius: 0;
-        overflow: visible;
-        
-        &.-focused > label {
-            ._smaller-1;
-
-            transform: translateY(-200%);            
-            color: @grey-4;
-        }
-        
-        > label {
-            display: block;
-            width: 100%;
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            color: @black;
-            transition: all @default-animation-duration @default-animation-function;
-
-            &:hover {
-                cursor: text;
-            }
-        }
-
-        .@{muilessium-prefix}input-hint {
-            margin-bottom: 0;
-        }
-    }
-    
-    &.-material.-has-value {
-        > label {
-            ._smaller-1;
-
-            transform: translateY(-200%);            
-            color: @grey-4;
         }
     }
     
