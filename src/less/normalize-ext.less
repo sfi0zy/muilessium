@@ -1,5 +1,6 @@
-// @name Normalize-EXT
-// @description Some styles to extend normalize.css
+// -----------------------------------------------------------------------------
+// Muilessium-specific extension for Normalize.css
+// -----------------------------------------------------------------------------
 
 *,
 *:before,
@@ -35,6 +36,8 @@ body {
 
 a {
     color: @grey-5;
+    transition: color @default-animation-duration @default-animation-function,
+        background @default-animation-duration @default-animation-function;
     
     &:hover,
     &:focus {
@@ -50,6 +53,13 @@ a {
             content: attr(href)
         }
     }
+}
+
+hr {
+    border: 0;
+    height: 0;
+    width: 100%;
+    border-top: 1px solid @grey-5;
 }
 
 :focus {
