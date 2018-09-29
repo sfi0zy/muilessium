@@ -2,7 +2,7 @@
 ![version-badge](https://img.shields.io/npm/v/muilessium.svg?style=flat-square&colorB=00b5d6) ![npm-downloads](https://img.shields.io/npm/dt/muilessium.svg?style=flat-square&colorB=00b5d6) ![license-badge](https://img.shields.io/badge/dynamic/json.svg?style=flat-square&label=license&colorB=00b5d6&prefix=&suffix=&query=license&uri=https://raw.githubusercontent.com/sfi0zy/muilessium/master/package.json)
 
 ## Description
-Muilessium is a UI framework for static websites. The main idea of its development is to create simple, but powerful framework for landings, personal websites, blogs etc.
+Muilessium is a UI framework for static websites. The main purpose of its development is to create simple, but powerful framework for landings, personal websites, blogs etc.
 
 ## CDN
 https://unpkg.com/muilessium@1.0.0-beta.0/dist/css/muilessium.min.css

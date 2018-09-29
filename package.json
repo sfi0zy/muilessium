@@ -1,6 +1,6 @@
 {
   "name": "muilessium",
-  "version": "0.2.34",
+  "version": "1.0.0-beta.0",
   "description": "UI Framework",
   "keywords": "css, less, responsive, front-end, ui, components, framework",
   "author": "Ivan Bogachev <sfi0zy@gmail.com>",
@@ -48,7 +48,6 @@
     "object-fit-images": "^2.5.6",
     "postcss-cssnext": "^3.1.0",
     "postcss-fixes": "^2.0.1",
-    "simplebar": "^2.6.1",
     "smoothscroll-polyfill": "^0.3.6",
     "to-slug-case": "^1.0.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
