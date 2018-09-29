@@ -10,6 +10,7 @@
 //
 // Functions list:
 //  - onClick
+//  - onMove
 //  - onMouseOver
 //  - onMouseOut
 //
@@ -18,6 +19,14 @@
 
 function onClick(element, callback) {
     element.addEventListener('click', (e) => {
+        e.preventDefault();
+        callback(e);
+    });
+}
+
+
+function onMove(element, callback) {
+    element.addEventListener('mousemove', (e) => {
         e.preventDefault();
         callback(e);
     });
@@ -44,6 +53,7 @@ function onMouseOut(element, callback) {
 
 const MOUSE = {
     onClick,
+    onMove,
     onMouseOver,
     onMouseOut
 };

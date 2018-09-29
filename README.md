@@ -44,6 +44,7 @@ npm run prod
  - New colorful docs - all components and utilities on one page
  - New utilities - deepGet, deepSet, toLispCase, upperLimit, lowerLimit
  - New components - CustomScroll, Notification
+ - New mouse method - onMove
 #### Changed:
  - Structure of the global Muilessium object including names of the fields
  - Color scheme including names of the colors
