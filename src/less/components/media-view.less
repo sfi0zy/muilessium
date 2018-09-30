@@ -1,14 +1,14 @@
 // @name        Media view
-// @description Use -full-width class to create media view with max-width 100%
+// @description Use "-full-width" option to create media view with max-width 100%.
 //
 // @depends     image
 //
 //
 // @markup
 //  <div class='mui-media-view'>
-//      <img class='mui-image media -js-lazy-load' data-src='https://placehold.it/1200x800/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Lorem ipsum'>
+//      <img class='mui-image -rounded -js-lazy-load' data-src='https://placehold.it/1200x800/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Lorem ipsum'>
 //      <noscript>
-//          <img class='mui-image media' src='https://placehold.it/1200x800/4caf50/2e7d32' alt='Lorem ipsum'>
+//          <img class='mui-image' src='https://placehold.it/1200x800/4caf50/2e7d32' alt='Lorem ipsum'>
 //      </noscript>
 //      <div class='description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, ea.</div>
 //  </div>
@@ -22,7 +22,7 @@
         max-width: 100%;
     }
     
-    > img {
+    > .@{muilessium-prefix}image {
         max-width: 100%;
         margin-bottom: 1rem;
     }

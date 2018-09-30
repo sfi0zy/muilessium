@@ -1,5 +1,5 @@
 // @name        Carousel
-// @description Interval in seconds can be setted using data-attribute.
+// @description Interval in seconds can be setted using data-attribute. Use "-rounded" option to add default border-radius.
 //
 // @component   Carousel
 // @method      startRotation() - starts rotation
@@ -11,7 +11,7 @@
 //
 //
 // @markup
-//      <div class='mui-carousel' data-interval='4s'>
+//      <div class='mui-carousel -rounded' data-interval='4s'>
 //          <ul class='mui-slides'>
 //              <li class='mui-slide'>
 //                  <img class='mui-image background -js-lazy-load' data-src='https://placehold.it/1024x768/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Slide 1'>
@@ -64,6 +64,11 @@
     position: relative;    
     height: 20rem;
     width: 100%;
+
+    &.-rounded {
+        border-radius: @default-border-radius;
+        overflow: hidden;
+    }
 }
 
 
