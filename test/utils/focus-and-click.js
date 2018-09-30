@@ -516,6 +516,26 @@ module.exports = {
         });
 
         test.done();
+    },
+
+
+    clearFocus(test) {
+        document.body.innerHTML = '<div></div>';
+
+        const element = document.querySelector('div');
+
+        test.expect(1);
+
+        // ---------------
+
+        element.focus();
+        _.clearFocus();
+
+        // ---------------
+
+        test.notEqual(element, document.activeElement);
+
+        test.done();
     }
 };
 

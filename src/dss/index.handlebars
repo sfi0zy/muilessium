@@ -120,7 +120,7 @@
                         </a>
                     </div>
 
-                    <p class='mui-p _separate-1'>Muilessium is a UI framework for static websites. The main purpose of its development is to create simple, but powerful framework for landings, personal websites, blogs etc.</p>
+                    <p class='mui-p _separate-1'>Muilessium is a UI framework for static websites. 40+ components, 60+ utilities to make your code cleaner, LESS+RSCSS, fluid typography, keyboard and touchscreen support, understandable and well-organized code. The main purpose of its development is to create simple, but powerful framework for landings, personal websites, blogs etc.</p>
 
                     <div class='_separate-1'>
                         <a class='mui-button -green-3-bg -f-green-5-bg' href='https://github.com/sfi0zy/muilessium'>GitHub</a>
@@ -257,6 +257,7 @@
                         </a>
                     </div>
                     <div class='_smaller-2 -grey-3'>/src/less/fonts.less</div>
+                    <div class='_smaller-2 -grey-3'>/src/less/helpers.less</div>
 
                     <p class='mui-p _separate-1'>Typography in Muilessium is fluid, and it is based on default system fonts and _bigger-* and _smaller-* <a href='#helpers-overview'>helpers</a>.</p>
                     <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>These helpers have different behavior on different screen sizes.</p>
@@ -489,19 +490,22 @@
                         <li class='item'>DEPENDENCIES - dependencies for internal usage</li>
                         <li class='item'>POLYFILLS - polyfills for internal usage</li>
                     </ul>
-                    <p class='mui-p'>These objects are prepared to use them inside Muilessium, but you can use all of them too. They'll help you to make your code cleaner.</p>
-                    <div class='_separate-2'>
+                    <p class='mui-p'>These objects are prepared to use them inside Muilessium, but you can use all of them too. They'll help you to make your code cleaner. Take a look on this example of the ajax request:</p>
+                    <div class='_separate-1'>
                         <div class='code _smaller-1'>
                             <pre class='source-code'>const _      = Muilessium.UTILS;
 const STORE  = Muilessium.STORE;
 const EVENTS = Muilessium.EVENTS;
 
+// This can be in the first module...
 EVENTS.addEvent('data-updated');
 
+// This can be in the second one...
 EVENTS.addEventListener('data-updated', () =&gt; {
     console.log(STORE.get('my-data'));
 });
 
+// And this can be in th third module...
 _.ajax.get('https://...', (responseText) =&gt; {
     STORE.set('my-data', responseText);
     EVENTS.fireEvent('data-updated');
@@ -541,6 +545,22 @@ _.ajax.get('https://...', (responseText) =&gt; {
                         <li class='item'>images-loaded</li>
                         <li class='item'>store-updated</li>
                     </ol>
+                    <p class='mui-p _separate-1'>For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>const EVENTS = Muilessium.EVENTS;
+
+EVENTS.addEvent('my-event');
+
+EVENTS.addEventListener('my-event', () =&gt; {
+    console.log('it works');
+});
+
+EVENTS.addEventListener('scroll-start', () =&gt; {
+    EVENTS.fireEvent('my-event');
+});</pre>
+                        </div>
+                    </div>
                 </div>
                 <!-- /events overview -->
 
@@ -560,6 +580,17 @@ _.ajax.get('https://...', (responseText) =&gt; {
                         <li class='item'>set<span class='-grey-3'>(path, data)</span></li>
                         <li class='item'>get<span class='-grey-3'>(path)</span></li>
                     </ul>
+                    <p class='mui-p _separate-1'>For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>const STORE = Muilessium.STORE;
+
+STORE.set('my-data.a', 'AAA');
+STORE.set('my-data.b', 'BBB');
+
+console.log(STORE.get('my-data.a') + STORE.get('my-data.b'));</pre>
+                        </div>
+                    </div>
                 </div>
                 <!-- /stores overview -->
 
@@ -580,6 +611,26 @@ _.ajax.get('https://...', (responseText) =&gt; {
                         <li class='item'>create<span class='-grey-3'>(type, selector, options)</span></li>
                     </ul>
                     <p class='mui-p _separate-1'>All components should extend the base Component class. It should be exported as <i>Muilessium.FACTORY.BaseComponent</i>.</p>
+                    <p class='mui-p _separate-1'>For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>const FACTORY = Muilessium.FACTORY;
+
+class MyComponent extends FACTORY.BaseComponent {
+    constructor() {
+        super();
+        console.log('ok');
+    }
+}
+
+Muilessium.FACTORY.registerComponent('MyComponent', MyComponent);
+Muilessium.FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
+
+console.log(Muilessium.FACTORY.componentsCache.MyComponent);
+
+</pre>
+                        </div>
+                    </div>
                 </div>
                 <!-- /factory overview -->
 
@@ -626,6 +677,16 @@ _.ajax.get('https://...', (responseText) =&gt; {
                             </ul>
                         </li>
                     </ul>
+                    <p class='mui-p _separate-1'>For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>const MOUSE = Muilessium.MOUSE;
+
+MOUSE.onMove(document, (event) =&gt; {
+    console.log(event);
+});</pre>
+                        </div>
+                    </div>
                 </div>
                 <!-- /controls overview -->
 
@@ -634,8 +695,8 @@ _.ajax.get('https://...', (responseText) =&gt; {
                 <!-- utils overview -->
                 <div class='_separate-5'>
                     <div class='mui-row'>
-                        <a href='#utils'>
-                            <h3 class='_bigger-2' id='utils'>Utils</h3>
+                        <a href='#utils-overview'>
+                            <h3 class='_bigger-2' id='utils-overview'>Utils</h3>
                         </a>
                     </div>
                     <div class='_smaller-2 -grey-3'>/src/js/utils.js</div>
@@ -752,6 +813,16 @@ _.ajax.get('https://...', (responseText) =&gt; {
                             </ul>
                         </li>
                     </ul>
+                    <p class='mui-p _separate-1'>For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>const _ = Muilessium.UTILS;
+
+_.scrollToTop();
+_.animateElement(document.body, 'fade-out');
+_.animateElement(document.body, 'fade-in-left');</pre>
+                        </div>
+                    </div>
                 </div>
                 <!-- /utils overview -->
 
@@ -844,8 +915,7 @@ _.ajax.get('https://...', (responseText) =&gt; {
     | -fade-out-up
     | -fade-out-down ]'&gt;&lt;/div&gt;
 &lt;script&gt;
-    Muilessium.UTILS.activateAnimation(
-        document.querySelector('div'));
+    Muilessium.UTILS.activateAnimation(document.querySelector('div'));
 &lt;/script&gt;</pre>
                     </div>
 
@@ -871,7 +941,17 @@ _.ajax.get('https://...', (responseText) =&gt; {
 
                     <p class='mui-p _separate-1'>Muilessium has a number of components listed below. Every component has a markup shown in example and this markup should be used as is, because some initializations of components are based on their markups.</p>
 
-                    <p class='mui-p _separate-1'>All components are stored in <i>Muilessium.FACTORY.componentsCache</i>. If the main element of such component has an ID, the component can be obtained using <i>Muilessium.get(componentName, id)</i>.</p>
+                    <p class='mui-p _separate-1'>All components are stored in <i>Muilessium.FACTORY.componentsCache</i>. If the main element of such component has an ID, the component can be obtained using <i>Muilessium.get(componentName, id)</i>. For example:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>// Let we have an accordion with id='my-accordion'.
+
+const accordion = Muilessium.get('Accordion', 'my-accordion');
+
+accordion.unfoldAllItems();
+</pre>
+                        </div>
+                    </div>
 
                     {{#files}}
                         <div id='{{file}}' class='_allow-empty'></div>
@@ -1010,6 +1090,17 @@ _.ajax.get('https://...', (responseText) =&gt; {
             aside {
                 display: none !important;
             }
+        }
+
+
+        a,
+        a:visited {
+            color: #1565c0;
+        }
+
+        a:hover,
+        a:focus {
+            color: #000000;
         }
 
 
