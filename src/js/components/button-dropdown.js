@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - openDropdown()
 //  - closeDropdown()
 //  - toggleDropdown()
@@ -13,6 +14,8 @@
 
 
 import Component from '../component';
+
+import EVENTS from '../events';
 
 import KEYBOARD from '../controls/keyboard';
 
@@ -24,6 +27,7 @@ import { onFocus                  } from '../utils/focus-and-click';
 import { makeElementClickable     } from '../utils/focus-and-click';
 import { getFocusableChilds       } from '../utils/focus-and-click';
 import { goToNextFocusableElement } from '../utils/focus-and-click';
+import { clearFocus               } from '../utils/focus-and-click';
 import { extend                   } from '../utils/uncategorized';
 import { firstOfList              } from '../utils/uncategorized';
 import { lastOfList               } from '../utils/uncategorized';
@@ -43,11 +47,12 @@ export default class ButtonDropdown extends Component {
         });
 
         this.state = extend(this.state, {
-            opened: false
+            isOpened: false
         });
 
         this.initAria();
         this.initControls();
+        this.initEvents();
     }
 
 
@@ -125,6 +130,18 @@ export default class ButtonDropdown extends Component {
             this.closeDropdown();
 
             goToNextFocusableElement(lastOfList(getFocusableChilds(this.domCache.element)));
+        });
+
+        return this;
+    }
+
+
+    initEvents() {
+        EVENTS.addEventListener('scroll-start', () => {
+            if (this.state.isOpened) {
+                this.closeDropdown();
+                clearFocus();
+            }
         });
 
         return this;

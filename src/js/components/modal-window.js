@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - openModal()
 //  - closeModal()
 //
@@ -12,6 +13,8 @@
 
 
 import Component from '../component';
+
+import EVENTS from '../events';
 
 import KEYBOARD    from '../controls/keyboard';
 import TOUCHSCREEN from '../controls/touchscreen';
@@ -23,6 +26,7 @@ import { removeClass                  } from '../utils/classes';
 import { makeElementFocusable         } from '../utils/focus-and-click';
 import { makeElementNotFocusable      } from '../utils/focus-and-click';
 import { makeElementClickable         } from '../utils/focus-and-click';
+import { clearFocus                   } from '../utils/focus-and-click';
 import { extend                       } from '../utils/uncategorized';
 import { forEach                      } from '../utils/uncategorized';
 
@@ -46,6 +50,7 @@ export default class ModalWindow extends Component {
 
         this.initAria();
         this.initControls();
+        this.initEvents();
     }
 
 
@@ -80,6 +85,18 @@ export default class ModalWindow extends Component {
             { mouse: true, keyboard: false });
 
         TOUCHSCREEN.onPinchOut(this.domCache.modalWindow, this.closeModal.bind(this));
+
+        return this;
+    }
+
+
+    initEvents() {
+        EVENTS.addEventListener('scroll-start', () => {
+            if (this.state.isOpened) {
+                this.closeModal();
+                clearFocus();
+            }
+        });
 
         return this;
     }

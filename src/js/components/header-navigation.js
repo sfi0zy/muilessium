@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - openNavigation()
 //  - closeNavigation()
 //  - toggleNavigation()
@@ -31,6 +32,7 @@ import { makeElementClickable         } from '../utils/focus-and-click';
 import { makeChildElementsClickable   } from '../utils/focus-and-click';
 import { goToPreviousFocusableElement } from '../utils/focus-and-click';
 import { goToNextFocusableElement     } from '../utils/focus-and-click';
+import { clearFocus                   } from '../utils/focus-and-click';
 import { extend                       } from '../utils/uncategorized';
 import { forEach                      } from '../utils/uncategorized';
 import { firstOfList                  } from '../utils/uncategorized';
@@ -58,8 +60,7 @@ export default class HeaderNavigation extends Component {
         this.initAria();
         this.initControls();
         this.update();
-
-        EVENTS.addEventListener('resize-window-width', this.update.bind(this)); 
+        this.initEvents();
 
         this.state.initialized = true;
     }
@@ -111,6 +112,18 @@ export default class HeaderNavigation extends Component {
 
             goToNextFocusableElement(
                 lastOfList(this.domCache.focusables));
+        });
+
+        return this;
+    }
+
+
+    initEvents() {
+        EVENTS.addEventListener('resize-window-width', this.update.bind(this)); 
+
+        EVENTS.addEventListener('scroll-start', () => {
+            this.closeNavigation();
+            clearFocus();
         });
 
         return this;

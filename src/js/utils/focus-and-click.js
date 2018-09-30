@@ -20,6 +20,7 @@
 //  - makeChildElementsClickable(element, childs, callback, { mouse = true, keyboard = true } = {})
 //  - onFocus(element, callback)
 //  - onBlur(element, callback)
+//  - clearFocus()
 //
 // -----------------------------------------------------------------------------
 
@@ -259,4 +260,16 @@ export function onBlur(element, callback) {
     });
 }
 
+
+// Clear focus
+// -----------
+// Removes focus from the active element
+
+export function clearFocus() {
+    const element = document.activeElement;
+
+    return ifExists(element, () => {
+        element.blur();
+    });
+}
 
