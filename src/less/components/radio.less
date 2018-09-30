@@ -42,10 +42,10 @@
             cursor: pointer;
             
             > .icon {
-                border-color: @blue-4;
+                border-color: @radio-dot-color;
                 
                 &::after {
-                    background: @blue-4;
+                    background: @radio-dot-color;
                 }
             }
         }
@@ -57,8 +57,7 @@
         vertical-align: middle;        
         height: @default-ui-height;
         width: @default-ui-height;
-        background: @white;
-        border: 1px solid @grey-4;
+        border: 1px solid @radio-border-color;
         border-radius: 50%;
         transition: border-color @default-animation-duration @default-animation-function;
         
@@ -71,7 +70,7 @@
             transform: translateX(-50%) translateY(-50%);
             height: 0;
             width: 0;
-            background: @blue-4;
+            background: @radio-dot-color;
             border-radius: 50%;
             opacity: 0;
             transition: all @default-animation-duration @default-animation-function;

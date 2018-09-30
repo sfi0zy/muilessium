@@ -16,7 +16,7 @@
 //      <label>
 //          <span class='icon'>
 //              <span class='symbol'>
-//                  <svg class='mui-svg-icon -green-3'><use xlink:href="#svg-icon--check"></use></svg>
+//                  <svg class='mui-svg-icon'><use xlink:href="#svg-icon--check"></use></svg>
 //              </span>
 //          </span>
 //          <span class='text'>Lorem ipsum.</span>
@@ -40,7 +40,7 @@
             outline: none;
             
             > .icon {
-                border-color: @blue-3;
+                border-color: @checkbox-border-color-focused;
             }
         }
     }
@@ -51,7 +51,7 @@
         vertical-align: middle; 
         height: @default-ui-height;
         width: @default-ui-height;
-        border: 1px solid @black;
+        border: 1px solid @checkbox-border-color;
         border-radius: @default-border-radius;
         transition: border-color @default-animation-duration @default-animation-function;
         
@@ -62,13 +62,13 @@
             text-align: center;
             line-height: @default-ui-height;
             font-size: @default-ui-height * .8;
-            color: @grey-4;
+            color: @checkbox-icon-color;
             opacity: 0;
             transition: all @default-animation-duration @default-animation-function;
         }
 
         > .symbol > .mui-svg-icon {
-            fill: @green-3;
+            fill: @checkbox-icon-color;
         }
     }
     

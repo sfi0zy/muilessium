@@ -3,17 +3,21 @@
 //
 //
 // @markup
-//  <div class='mui-notification -message -left -white-bg _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-//  <div class='mui-notification -message -right -white-bg _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-//  <div class='mui-notification -banner -white -blue-4-bg'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+//  <div class='mui-notification -message -left _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+//  <div class='mui-notification -message -right _shadow-3 -js-animation -hidden-by-default'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+//  <div class='mui-notification -banner'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
 
 
 
 .@{muilessium-prefix}notification {
     padding: 1rem;
+    color: @notification-color;
+    background: @notification-background;
 
     &.-banner {
         text-align: center;
+        color: @notification-banner-color;
+        background: @notification-banner-background;
     }
 
     &.-message {

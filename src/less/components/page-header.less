@@ -6,24 +6,26 @@
 //
 //
 // @markup
-//  <header class='mui-page-header -blue-3-bg'>
+//  <header class='mui-page-header'>
 //      <div class='mui-header-logo _left'>
 //          <a class='link' href=''>
-//              <h1 class='-white'>Logo</h1>
+//              <h1>Logo</h1>
 //          </a>
 //      </div>
 //      <nav class='mui-header-navigation -mobile-version _right'>
-//          <div class='mui-navigation-toggle -hamburger -white -f-black'>
-//              <svg class='mui-svg-icon'><use xlink:href='#svg-icon--hamburger'></use></svg>
+//          <div class='mui-navigation-toggle -hamburger'>
+//              <svg class='mui-svg-icon'>
+//                  <use xlink:href='#svg-icon--hamburger'></use>
+//              </svg>
 //          </div>
-//          <ul class='linkslist -blue-3-bg'>
+//          <ul class='linkslist'>
 //              <li class='item'>
-//                  <a class='link -white -f-blue-4-bg' href=''>
+//                  <a class='link' href=''>
 //                      <span>home</span>
-//                      <span class='mui-badge -white -red-3-bg'>5</span>
+//                      <span class='mui-badge'>5</span>
 //                  </a>
 //              </li>
-//              <li class='item'><a class='link -white -f-blue-4-bg' href=''>about</a></li>
+//              <li class='item'><a class='link' href=''>about</a></li>
 //          </ul>
 //          <div class='mui-navigation-toggle mui-shadow-toggle'></div>
 //      </nav>
@@ -34,6 +36,8 @@
     #utils > .clearfix;
 
     position: relative;
-    max-height: 4rem;    
+    height: @default-ui-height * 2;    
+    max-height: @default-ui-height * 2;    
+    background: @page-header-background;
 }
 

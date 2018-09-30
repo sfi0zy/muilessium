@@ -11,10 +11,18 @@
 //  <div class='mui-input-wrapper'>
 //      <label class='mui-input-label'>Username</label>
 //      <div class='mui-input-hint'>
-//          <span>Your username (min 3 characters, only letters allowed)</span>
+//          <span>Username (min 3 characters, only letters allowed)</span>
 //          <span class='mui-input-indicator'>
-//              <span class='validicon'>&check;</span>
-//              <span class='invalidicon'>&cross;</span>
+//              <span class='validicon'>
+//                  <svg class='mui-svg-icon'>
+//                      <use xlink:href='#svg-icon--check'></use>
+//                  </svg>
+//              </span>
+//              <span class='invalidicon'>
+//                  <svg class='mui-svg-icon'>
+//                      <use xlink:href='#svg-icon--close'></use>
+//                  </svg>
+//              </span>
 //          </span>
 //      </div>
 //      <div class='mui-input' data-regexp='^[a-zA-Z]{3,}$' data-validation-delay='1000'>
@@ -27,7 +35,7 @@
     position: relative;    
     height: @default-ui-height;
     width: 100%;
-    border: 1px solid @grey-3;
+    border: 1px solid @input-border-color;
     border-radius: @default-border-radius;
     overflow: hidden;
     transition: border-color @default-animation-duration @default-animation-function;
@@ -41,14 +49,14 @@
         width: 100%;
         padding: 0 1rem;
         line-height: ~'calc(' @default-ui-height ~' - ' 2px ~')';
-        color: @black;
+        color: @input-color;
         background: transparent;
         outline: none;
         overflow: hidden;
         border: none;
 
         &::placeholder {
-            color: @grey-4;
+            color: @input-placeholder-color;
             text-indent: 0;
             opacity: 1;
             transition: all @default-animation-duration @default-animation-function;
@@ -57,10 +65,10 @@
     }
     
     &.-focused {
-        border-color: @blue-3;
+        border-color: @input-border-color-focused;
 
         > input {
-            color: @black;
+            color: @input-color;
 
             &::placeholder {
                 text-indent: -50rem;
@@ -70,18 +78,18 @@
     }
     
     &.-valid {
-        border-color: @green-3;
+        border-color: @input-valid-color;
         
         > input::placeholder {
-            color: @green-3;
+            color: @input-valid-color;
         }
     }
     
     &.-invalid {
-        border-color: @red-3;
+        border-color: @input-invalid-color;
         
         > input::placeholder {
-            color: @red-3;
+            color: @input-invalid-color;
         }
     }
 }
@@ -98,14 +106,14 @@
 .@{muilessium-prefix}input-hint {
     margin-bottom: .2rem;
     font-size: .8em;
-    color: @grey-4;
+    color: @input-hint-color;
 
     &.-valid {
-        color: @green-3;
+        color: @input-valid-color;
     }
 
     &.-invalid {
-        color: @red-3;
+        color: @input-invalid-color;
     }
 }
 
@@ -122,17 +130,30 @@
         transition: opacity @default-animation-duration @default-animation-function;
     }
 
+    > .validicon > .@{muilessium-prefix}svg-icon,
+    > .invalidicon > .@{muilessium-prefix}svg-icon {
+        fill: @input-hint-color;
+    }
+
     &.-valid {
         > .validicon {
             opacity: 1;
-            color: @green-3;
+            color: @input-valid-color;
+        }
+
+        > .validicon > .@{muilessium-prefix}svg-icon {
+            fill: @input-valid-color;
         }
     }
 
     &.-invalid {
         > .invalidicon {
             opacity: 1;
-            color: @red-3;
+            color: @input-invalid-color;
+        }
+
+        > .invalidicon > .@{muilessium-prefix}svg-icon {
+            fill: @input-invalid-color;
         }
     }
 }

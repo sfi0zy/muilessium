@@ -113,7 +113,7 @@
     width: inherit;
     padding: 1rem 6rem;
     text-align: center;
-    color: @white;
+    color: @carousel-color;
 
     &.-content-center {
         text-align: center;
@@ -159,8 +159,8 @@
         font-size: 1.5rem;
         line-height: 20rem;
         text-align: center;
-        color: @white;
-        background: fade(@black, 30%);
+        color: @carousel-controls-color;
+        background: @carousel-controls-background;
         transition: all @default-animation-duration @default-animation-function;
         
         &:hover,
@@ -168,7 +168,11 @@
         &.-focused {
             cursor: pointer;
             outline: none;
-            background: fade(@black, 50%);
+            background: @carousel-controls-background-focused;
+        }
+
+        > .@{muilessium-prefix}svg-icon {
+            fill: @carousel-controls-color;
         }
     }
     
@@ -204,7 +208,7 @@
         height: 1rem;
         width: 1rem;
         margin: 0 .2rem;
-        background: fade(@black, 30%);
+        background: @carousel-controls-background;
         border-radius: 50%;
         transition: all @default-animation-duration @default-animation-function;        
 
@@ -212,13 +216,7 @@
         &:focus {
             cursor: pointer;
             outline: none;
-            background: @black;
-        }
-
-        &:hover {
-            &:after {
-                background: @white;
-            }
+            background: @carousel-controls-background-focused;
         }
 
         &::after {
@@ -229,21 +227,14 @@
             transform: translateX(-50%) translateY(-50%);
             height: .5rem;
             width: .5rem;
-            background: fade(@white, 20%);
+            background: @transparent;
             border-radius: 50%;
             transition: all @default-animation-duration @default-animation-function;
         }
 
         &.-active {
             &::after {
-                background: fade(@white, 50%);
-            }
-
-            &:hover,
-            &:focus {
-                &:after {
-                    background: @white;
-                }
+                background: @carousel-controls-color;
             }
         }
     }

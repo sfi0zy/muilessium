@@ -13,8 +13,8 @@
 html {
     height: 100%;
 
-    color: @black;
-    background-color: @white;
+    color: @html-color;
+    background-color: @html-background;
 }
 
 body {
@@ -25,27 +25,33 @@ body {
 }
 
 ::-moz-selection {
-    color: @white;
-    background: @black;
+    color: @html-background;
+    background: @html-color;
 }
 
 ::selection {
-    color: @white;
-    background: @black;
+    color: @html-background;
+    background: @html-color;
 }
 
 a {
-    color: @grey-5;
+    color: @a-color;
     transition: color @default-animation-duration @default-animation-function,
-        background @default-animation-duration @default-animation-function;
+    background @default-animation-duration @default-animation-function;
+    text-decoration: none;
     
-    &:hover,
-    &:focus {
-        color: @black;
+    &:active {
+        color: @a-color-active;
     }
     
     &:visited {
-        color: @grey-5;
+        color: @a-color;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: @a-color-focused;
     }
     
     &:empty {
@@ -59,7 +65,7 @@ hr {
     border: 0;
     height: 0;
     width: 100%;
-    border-top: 1px solid @grey-5;
+    border-top: 1px solid @hr-color;
 }
 
 :focus {

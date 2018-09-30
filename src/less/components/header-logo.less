@@ -1,12 +1,14 @@
 // @name        Header logo
-// @description ...
+// @description Should be used inside the page header.
 //
 //
 // @markup
-//  <div class='mui-header-logo'>
-//      <a class='link -black -f-blue-4' href=''>
-//          <h1>Logo</h1>
-//      </a>
+//  <div class='mui-page-header'>
+//      <div class='mui-header-logo'>
+//          <a class='link' href=''>
+//              <h1>Logo</h1>
+//          </a>
+//      </div>
 //  </div>
 
 
@@ -14,9 +16,15 @@
     display: inline-block;    
     line-height: @default-ui-height * 2;
     user-select: none;
+    padding-left: 1rem;
     
     > .link {
-        color: @black;
+        color: @header-logo-color;
         text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: @header-logo-color-focused;
+        }
     }
 }

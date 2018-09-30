@@ -5,11 +5,11 @@
 // @markup
 //  <div class='mui-dropdown-options'>
 //      <div class='wrapper'>
-//          <div class='option -f-blue-4'>Option 1</div>
-//          <div class='option -f-blue-4'>Option 2</div>
-//          <div class='option -f-blue-4'>Option 3</div>
-//          <div class='option -f-blue-4'>Option 4</div>
-//          <div class='option -f-blue-4'>Option 5</div>
+//          <div class='option'>Option 1</div>
+//          <div class='option'>Option 2</div>
+//          <div class='option'>Option 3</div>
+//          <div class='option'>Option 4</div>
+//          <div class='option'>Option 5</div>
 //      </div>
 //  </div>
 
@@ -40,7 +40,7 @@
         padding: 1rem .5rem 1rem 1rem;
         text-align: left;
         border-radius: @default-border-radius;
-        background: @white;
+        background: @dropdown-options-background;
         
         &::after {
             content: '';
@@ -51,17 +51,18 @@
             width: 1rem;
             transform: translateX(-50%) translateY(calc(-50% + 1px)) rotate(45deg);
             z-index: 1;
-            background: @white;
+            background: @dropdown-options-background;
         }
     }
 
     > .wrapper > .option {
         cursor: pointer;
         transition: color @default-animation-duration @default-animation-function;
+        color: @dropdown-options-color;
 
         &:hover,
         &:focus {
-            color: @grey-4;
+            color: @dropdown-options-color-focused;
         }
     }
 

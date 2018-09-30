@@ -1,12 +1,11 @@
 // @name        Badge
-// @description Badge can be used in buttons or collections.
-//
+// @description Badge can be used in buttons or collections. It has "-rounded" and "-new" variants those can be used together".
 //
 // @markup
-//  <span class='mui-badge -red-3-bg'>5</span>
-//  <span class='mui-badge -rounded -red-3-bg'>5</span>
-//  <span class='mui-badge -new -red-3-bg'>5</span>
-//  <span class='mui-badge -new -rounded -red-3-bg'>5</span>
+//  <span class='mui-badge'>5</span>
+//  <span class='mui-badge -rounded'>5</span>
+//  <span class='mui-badge -new'>5</span>
+//  <span class='mui-badge -new -rounded'>5</span>
 
 
 .@{muilessium-prefix}badge {
@@ -17,8 +16,8 @@
     margin-left: .3em;
     line-height: 1.5;
     text-align: center; 
-    color: @white;
-    background: @grey-5;
+    color: @badge-color;
+    background: @badge-background;
     border-radius: 0;
     vertical-align: middle;
     transform: translateY(-.1em);

@@ -17,7 +17,9 @@
 //          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, excepturi!</p>
 //      </div>
 //      <div class='scrollicon'>
-//          <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-down'></use></svg>
+//          <svg class='mui-svg-icon'>
+//              <use xlink:href='#svg-icon--arrow-down'></use>
+//          </svg>
 //      </div>
 //  </div>
 
@@ -51,7 +53,7 @@
         width: 100%;
         padding: 1rem 4rem;
         text-align: center;
-        color: @white;
+        color: @hero-header-color;
     }
 
     > .scrollicon {
@@ -59,8 +61,12 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
-        color: @white;
+        color: @hero-header-color;
         user-select: none;
+    }
+
+    > .scrollicon > .@{muilessium-prefix}svg-icon {
+        fill: @hero-header-color;
     }
     
     &.-full-height {

@@ -1,43 +1,54 @@
 // @name        Button
-// @description Button can include an icon or a badge. Buttons can be used in more complex components like button-groups.
+// @description Button has a number of variants.
 //
-// @depends     badge*
+// @state -small
+// @state -big
+// @state -dangerous
+// @state -ghost
+// @state -light-ghost
+//
+// @markup
+//  <a class='mui-button'>button</a>
+
+
+// @name        Button with icon
+// @description ...
+//
 // @depends     svg-icon*
 //
 //
 // @markup
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>standard</a>
-//  <a class='mui-button -small -blue-3-bg -f-blue-4-bg'>small</a>
-//  <a class='mui-button -big -blue-3-bg -f-blue-4-bg'>big</a>
-//  <a class='mui-button -dangerous -red-3-bg -f-red-5-bg'>dangerous</a>
-//  <a class='mui-button -ghost -f-blue-2-bg'>ghost</a>
-//  <a class='mui-button -ghost -light -f-black-bg'>light ghost</a>
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>
-//      <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--check'></use></svg>
-//      <span>with icon</span>
+//  <a class='mui-button'>
+//      <svg class='mui-svg-icon'>
+//          <use xlink:href='#svg-icon--check'></use>
+//      </svg>
+//      <span>button</span>
 //  </a>
-//  <a class='mui-button -icon -blue-3-bg -f-blue-4-bg'>
-//      <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--check'></use></svg>
-//  </a>
-//  <a class='mui-button -blue-3-bg -f-blue-4-bg'>
-//      <span>with badge</span>
-//      <span class='mui-badge -black -white-bg'>5</span>
-//  </a>
-//  <a class='mui-button -badge-on-top -blue-3-bg -f-blue-4-bg'>
-//      <span>with badge on top</span>
-//      <span class='mui-badge -rounded -red-4-bg'>5</span>
-//  </a>
-//  <a class='mui-button -label-left -blue-3-bg -f-blue-4-bg'>
-//      <span>with label</span>
-//      <span class='label -green-3-bg'>label</span>
-//  </a>
-//  <a class='mui-button -label-right -blue-3-bg -f-blue-4-bg'>
-//      <span>with label</span>
-//      <span class='label -green-3-bg'>label</span>
+//  <a class='mui-button -icon'>
+//      <svg class='mui-svg-icon'>
+//          <use xlink:href='#svg-icon--check'></use>
+//      </svg>
 //  </a>
 
 
-.@{muilessium-prefix}button {
+// @name        Button with badge
+// @description ...
+//
+// @state -badge-on-top
+//
+// @depends     badge*
+//
+//
+// @markup
+//  <a class='mui-button'>
+//      <span>button</span>
+//      <span class='mui-badge -rounded'>5</span>
+//  </a>
+
+
+
+.@{muilessium-prefix}button,
+a.@{muilessium-prefix}button {
     display: inline-block;
     position: relative;    
     padding: 0 1em;
@@ -45,29 +56,33 @@
     line-height: 2;
     text-decoration: none;
     text-align: center;
-    color: @white;
-    background: @grey-4;
+    color: @button-color;
+    background: @button-background;
     border: none;
     border-radius: @default-border-radius;
     user-select: none;
     transition: all @default-animation-duration @default-animation-function;
+    cursor: pointer;
+
+    .@{muilessium-prefix}svg-icon {
+        fill: @button-color;
+    }
     
     &:visited {
-        color: @white;
-        background: @grey-4;
+        color: @button-color;
+        background: @button-background;
     }
     
     &:hover,
     &:focus {
-        color: @white;
-        cursor: pointer;
-        background: @grey-5;
+        color: @button-color-focused;
+        background: @button-background-focused;
         outline: none;
     }
     
     &:active {
-        cursor: pointer;
-        background: @black;
+        color: @button-color-active;
+        background: @button-background-active;
     }
     
     &.-small {
@@ -79,47 +94,59 @@
     }
     
     &.-dangerous {
-        color: @white;
-        background: @grey-5;
+        background: @button-dangerous-background;
         text-transform: uppercase;
         
         &:visited {
-            color: @white;
-            background: @grey-5;
+            background: @button-dangerous-background;
         }
         
         &:hover,
         &:focus {
-            background: @black;
+            background: @button-dangerous-background-focused;
         }
         
         &:active {
-            color: @white;
-            background: @black;
+            background: @button-dangerous-background-active;
         }
     }
     
     &.-ghost {
-        color: @black;
+        color: @button-ghost-color;
         background: @transparent;
-        border: 1px solid @black;
+        border: 1px solid @button-ghost-color;
+
+        .@{muilessium-prefix}svg-icon {
+            fill: @button-ghost-color;
+        }
         
         &:hover,
         &:focus {
-            color: @black;
-            background: @grey-2;
-            border-color: @black;
+            color: @button-ghost-color-focused;
+            background: @button-ghost-background-focused;
+
+            .@{muilessium-prefix}svg-icon {
+                fill: @button-ghost-color-focused;
+            }
+        }
+    }
+
+    &.-light-ghost {
+        color: @button-light-ghost-color;
+        background: @transparent;
+        border: 1px solid @button-light-ghost-color;
+
+        .@{muilessium-prefix}svg-icon {
+            fill: @button-light-ghost-color;
         }
 
-        &.-light {
-            color: @white;
-            border-color: @white;
+        &:hover,
+        &:focus {
+            color: @button-light-ghost-color-focused;
+            background: @button-light-ghost-background-focused;
 
-            &:hover,
-            &:focus {
-                color: @white;
-                background: @black;
-                border-color: @white;
+            .@{muilessium-prefix}svg-icon {
+                fill: @button-light-ghost-color-focused;
             }
         }
     }
@@ -128,11 +155,6 @@
         height: @default-ui-height;
         width:  @default-ui-height;
         padding: 0;
-    }
-
-    > .@{muilessium-prefix}badge {
-        color: @white;
-        background: @grey-5;
     }
 
     &.-badge-on-top {
@@ -144,36 +166,5 @@
         }
     }
 
-    > .label {
-        display: inline-block;
-        height: 100%;
-        padding: 0 1rem;
-        color: @white;
-        background: @grey-5;
-    }
-
-    &.-label-right {
-        #utils > .clearfix;
-
-        padding-right: 0;
-
-        > .label {
-            float: right;
-            margin-left: 1rem;
-            border-radius: 0 @default-border-radius @default-border-radius 0;
-        }
-    }
-
-    &.-label-left {
-        #utils > .clearfix;
-
-        padding-left: 0;
-
-        > .label {
-            float: left;
-            margin-right: 1rem;
-            border-radius: @default-border-radius 0 0 @default-border-radius;
-        }
-    }
 }
 

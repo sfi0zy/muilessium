@@ -20,13 +20,13 @@
 .@{muilessium-prefix}spoiler {
     > .title {
         display: inline-block;
-        color: @grey-4;
-        border-bottom: 1px dashed @grey-4;
+        color: @spoiler-title-color;
+        border-bottom: 1px dashed @spoiler-title-color;
         transition: color @default-animation-duration @default-animation-function;
 
         &:hover,
         &:focus {
-            color: @blue-4;
+            color: @spoiler-title-color-focused;
             cursor: pointer;
         }
     }

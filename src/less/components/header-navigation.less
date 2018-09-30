@@ -1,5 +1,5 @@
 // @name        Header navigation
-// @description ...
+// @description Should be used inside the page-header.
 //
 // @component   HeaderNavigation
 // @method      openNavigation()     - opens mobile navigation
@@ -12,22 +12,26 @@
 //
 //
 // @markup
-//  <nav class='mui-header-navigation -mobile-version'>
-//      <div class='mui-navigation-toggle -hamburger -f-blue-3'>
-//          <svg class='mui-svg-icon'><use xlink:href='#svg-icon--hamburger'></use></svg>
-//      </div>
-//      <ul class='linkslist'>
-//          <li class='item'>
-//              <a class='link' href=''>
-//                  <span>home</span>
-//                  <span class='mui-badge -red-3-bg' aria-label='5 news'>5</span>
-//              </a>
-//          </li>
-//          <li class='item'><a class='link' href=''>about</a></li>
-//          <li class='item'><a class='link' href=''>contacts</a></li>
-//      </ul>
-//      <div class='mui-shadow-toggle'></div>
-//  </nav>
+//  <div class='mui-page-header'>
+//      <nav class='mui-header-navigation -mobile-version'>
+//          <div class='mui-navigation-toggle -hamburger'>
+//              <svg class='mui-svg-icon'>
+//                  <use xlink:href='#svg-icon--hamburger'></use>
+//              </svg>
+//          </div>
+//          <ul class='linkslist'>
+//              <li class='item'>
+//                  <a class='link' href=''>
+//                      <span>home</span>
+//                      <span class='mui-badge' aria-label='5 news'>5</span>
+//                  </a>
+//              </li>
+//              <li class='item'><a class='link' href=''>about</a></li>
+//              <li class='item'><a class='link' href=''>contacts</a></li>
+//          </ul>
+//          <div class='mui-shadow-toggle'></div>
+//      </nav>
+// </div>
 
 
 .@{muilessium-prefix}header-navigation { 
@@ -48,13 +52,13 @@
         padding: 0 calc((@default-ui-height * 2 - 1em) / 2);        
         line-height: @default-ui-height * 2;
         text-decoration: none;
-        color: @black;
+        color: @header-navigation-color;
         transition: all @default-animation-duration @default-animation-function;        
 
         &:hover,
         &:focus {
-            color: @white;
-            background: @grey-4;
+            color: @header-navigation-color;
+            background: @header-navigation-background-focused;
             outline: none;
         }
     }
@@ -74,8 +78,8 @@
             font-size: 2rem;
             text-align: right;
             transform: translateX(100%);
-            background: @white;
-            box-shadow: 0 0 10rem darken(@default-shadow-color, 10%);
+            background: @header-navigation-background;
+            box-shadow: 0 0 10rem @default-shadow-color;
             transition: all @default-animation-duration @default-animation-function;
         }
         
@@ -90,7 +94,7 @@
             }
 
             &:not(:first-of-type) {
-                border-top: 1px solid @grey-3;
+                border-top: 1px solid @header-navigation-border-color;
             }
         }
         
@@ -106,7 +110,7 @@
             }
         
             > .@{muilessium-prefix}navigation-toggle.-hamburger {
-                color: @black;
+                color: @navigation-toggle-color;
             }
         }
     }
@@ -129,7 +133,8 @@
         line-height: @default-ui-height * 2;
         padding: 0 1rem;
         font-size: 2rem;
-        fill: @black;
+        color: @navigation-toggle-color;
+        fill: @navigation-toggle-color;
         transition: all @default-animation-duration @default-animation-function;
         
         &:hover {
@@ -138,7 +143,8 @@
         
         &:hover,
         &:focus {
-            fill: @grey-4;
+            fill: @navigation-toggle-color-focused;
+            color: @navigation-toggle-color-focused;
         }
 
         &:active {

@@ -23,16 +23,18 @@
 //              <div class='state'></div>
 //              <div class='mui-dropdown-options _shadow-1'>
 //                  <div class='wrapper'>
-//                      <div class='option -f-blue-4 -selected' data-value='red'>Red</div>
-//                      <div class='option -f-blue-4' data-value='green'>Green</div>
-//                      <div class='option -f-blue-4' data-value='blue'>Blue</div>
-//                      <div class='option -f-blue-4' data-value='orange'>Orange</div>
+//                      <div class='option -selected' data-value='red'>Red</div>
+//                      <div class='option' data-value='green'>Green</div>
+//                      <div class='option' data-value='blue'>Blue</div>
+//                      <div class='option' data-value='orange'>Orange</div>
 //                  </div>
 //              </div>
 //          </div>
 //          <div class='mui-shadow-toggle'></div>
 //          <div class='icon'>
-//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--arrow-down'></use></svg>
+//              <svg class='mui-svg-icon'>
+//                  <use xlink:href='#svg-icon--arrow-down'></use>
+//              </svg>
 //          </div>
 //      </div>
 //  </div>
@@ -51,10 +53,9 @@
         margin: 0;
         font-size: 1rem;
         line-height: @default-ui-height;
-        color: @black;
-        background: @white;
+        color: @select-dropdown-color;
         appearance: none;
-        border: 1px solid @grey-3;
+        border: 1px solid @select-dropdown-border-color;
         border-radius: @default-border-radius;
         outline: none;
         transition: border-color @default-animation-duration @default-animation-function;
@@ -62,7 +63,7 @@
         &:hover,
         &:focus {
             cursor: pointer;
-            border-color: @blue-3;
+            border-color: @select-dropdown-border-color-focused;
         }
     }
     
@@ -75,10 +76,14 @@
         width: @default-ui-height;
         line-height: @default-ui-height;
         text-align: center;
-        color: @white;
+        color: @select-dropdown-color;
         border-top-right-radius: @default-border-radius;
         border-bottom-right-radius: @default-border-radius;
         pointer-events: none;
+    }
+
+    > .icon > .@{muilessium-prefix}svg-icon {
+        fill: @select-dropdown-color;
     }
 
     .@{muilessium-prefix}dropdown-options {

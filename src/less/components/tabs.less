@@ -37,9 +37,9 @@
         padding: 0 1rem;
         text-align: center;
         line-height: @default-ui-height;
-        color: @black;
-        background: @grey-2;
-        border: 1px solid @grey-3;
+        color: @tabs-color;
+        background: @tabs-secondary-background;
+        border: 1px solid @tabs-border-color;
         border-top-left-radius: @default-border-radius;
         border-top-right-radius: @default-border-radius;
         transition: all @default-animation-duration @default-animation-function;
@@ -51,19 +51,20 @@
         &:hover,
         &:focus {
             cursor: pointer;
-            background: @blue-3;
+            background: @tabs-background-focused;
+            color: @tabs-color-focused;
         }
 
         &.-active {
-            color: @black;
-            background: @white;
-            border-bottom-color: @white;
+            color: @tabs-color;
+            background: @tabs-background;
+            border-bottom-color: @tabs-background;
         }
     }
     
     > .tabs {
         margin: 0;        
-        border: 1px solid @grey-3;
+        border: 1px solid @tabs-border-color;
         border-top: none;
         border-bottom-left-radius: @default-border-radius;
         border-bottom-right-radius: @default-border-radius;
@@ -76,12 +77,12 @@
         float: left;
         width: ~'calc(100% - 1px)';
         padding: 1rem;
-        color: @black;
-        background: @white;
+        color: @tabs-color;
+        background: @tabs-background;
         opacity: 0;
         transform: rotateX(90deg);
         transition: all @default-animation-duration @default-animation-function;
-        border-bottom: 1px solid @white;
+        border-bottom: 1px solid @tabs-background;
         border-bottom-left-radius: @default-border-radius;
         border-bottom-right-radius: @default-border-radius;
         

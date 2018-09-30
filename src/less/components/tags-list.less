@@ -7,7 +7,9 @@
 // @markup
 //      <div class='mui-tags-list' aria-label='Tags list'>
 //          <div class='mui-tag-wrapper -icon' role='presentation'>
-//              <svg class='mui-svg-icon'><use xlink:href='#svg-icon--tags'></use></svg>
+//              <svg class='mui-svg-icon'>
+//                  <use xlink:href='#svg-icon--tags'></use>
+//              </svg>
 //          </div>
 //          <div class='mui-tag-wrapper'><a href='' class='mui-tag'>html</a></div>
 //          <div class='mui-tag-wrapper'><a href='' class='mui-tag'>css</a></div>
@@ -22,21 +24,21 @@
 
     display: inline-block;    
     text-decoration: none;
-    color: @grey-4;
+    color: @tags-list-color;
     transition: all @default-animation-duration @default-animation-function;
     
     &:visited {
-        color: @grey-4;
+        color: @tags-list-color;
     }
     
     &:hover,
     &:focus {
         cursor: pointer;
-        color: @blue-4;
+        color: @tags-list-color-focused;
     }
     
     &:active {
-        color: @black;
+        color: @tags-list-color-active;
     }
 }
 
@@ -66,22 +68,11 @@
     > .@{muilessium-prefix}tag-wrapper.-icon {
         ._smaller-1;
 
-        color: @grey-4;
-        fill: @grey-4;
+        color: @tags-list-color;
+        fill: @tags-list-color;
 
         > .mui-svg-icon {
             transform: none;
-        }
-    }
-    
-    &.-solid {
-        > .@{muilessium-prefix}tag-wrapper {
-            background: @grey-2;
-            padding: 0 .5rem;
-            
-            > .@{muilessium-prefix}tag:after {
-                content: '';
-            }
         }
     }
 }

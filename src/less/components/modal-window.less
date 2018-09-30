@@ -11,7 +11,7 @@
 //
 //
 // @markup
-// <div class='mui-button -blue-3-bg -f-blue-4-bg' data-modal-opener='dss-5bjaz9eq'>Show big image</div>
+// <div class='mui-button' data-modal-opener='dss-5bjaz9eq'>Show big image</div>
 // <div class='mui-modal-window' id='dss-5bjaz9eq'>
 //     <div class='window _shadow-3'>
 //         <div class='content -image'>
@@ -21,7 +21,9 @@
 //              </noscript>
 //         </div>
 //         <div class='closeicon'>
-//              <svg class='mui-svg-icon -black'><use xlink:href='#svg-icon--close'></use></svg>
+//              <svg class='mui-svg-icon'>
+//                  <use xlink:href='#svg-icon--close'></use>
+//              </svg>
 //         </div>
 //     </div>
 //     <div class='mui-shadow-toggle'></div>
@@ -76,18 +78,26 @@
         line-height: 2rem;
         text-align: center;
         border-radius: 50%;
-        background: @white;
-        border: 2px solid @grey-3;
-        color: @grey-4;
+        background: @modal-window-closeicon-background;
+        border: 2px solid @modal-window-closeicon-border-color;
+        color: @modal-window-closeicon-color;
         cursor: pointer;
         z-index: 2;
         box-sizing: content-box;
         transition: all @default-animation-function @default-animation-duration;
 
+        > .@{muilessium-prefix}svg-icon {
+            fill: @modal-window-closeicon-color;
+        }
+
         &:hover,
         &:focus {
-            background: @grey-3;
-            color: @grey-5;
+            background: @modal-window-closeicon-background-focused;
+            color: @modal-window-closeicon-color-focused;
+
+            > .@{muilessium-prefix}svg-icon {
+                fill: @modal-window-closeicon-color-focused;
+            }
         }
     }
 
@@ -100,7 +110,7 @@
         width: 100vw;
 
         &.-visible {
-            background: fade(@black, 25);
+            background: @default-shadow-color;
         }
     }
 }

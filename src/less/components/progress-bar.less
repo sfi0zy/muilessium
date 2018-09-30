@@ -34,14 +34,14 @@
 
 .@{muilessium-prefix}progress-bar {
     position: relative;
-    background: @grey-2;
+    background: @progress-bar-background;
     border-radius: @default-border-radius;
     overflow: hidden; 
 
     > .indicator {
         height: @default-ui-height;
         width: 0;
-        background: @blue-3;
+        background: @progress-bar-color;
     }
 
     > .value {
@@ -52,7 +52,7 @@
         width: 100%;
         line-height: @default-ui-height;
         text-align: center;
-        color: @grey-5;
+        color: @progress-bar-value-color;
     }
 
     &.-radial {
@@ -79,11 +79,11 @@
         }
 
         > .indicator > .background {
-            stroke: @grey-2;
+            stroke: @progress-bar-background;
         }
 
         > .indicator > .progress {
-            stroke: @blue-3;
+            stroke: @progress-bar-color;
             stroke-dasharray:  213.628; /* 2 PI R */
             stroke-dashoffset: 213.628; /* 2 PI R */
         }

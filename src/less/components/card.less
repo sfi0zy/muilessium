@@ -4,7 +4,7 @@
 //
 // @markup
 //  <div class='mui-card _shadow-1'>
-//      <div class='header -blue-3-bg'>
+//      <div class='header'>
 //          <h5>Lorem ipsum</h5>
 //      </div>
 //      <div class='content'>
@@ -40,12 +40,14 @@
     position: relative;    
     overflow: hidden;
     border-radius: @default-border-radius;
+    color: @card-color;
+    @background: @card-background;
     
     > .header {
         padding: 1rem;
         text-align: center;
-        color: @white;
-        background: @grey-4;
+        color: @card-header-color;
+        background: @card-header-background;
         border-top-left-radius: @default-border-radius;
         border-top-right-radius: @default-border-radius;
     }

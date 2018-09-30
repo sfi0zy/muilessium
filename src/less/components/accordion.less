@@ -14,18 +14,22 @@
 // @markup
 //  <ul class='mui-accordion'>
 //      <li class='item'>
-//          <div class='title -white -blue-3-bg -f-blue-4-bg'>
+//          <div class='title'>
 //              <div class='indicator'>
-//                  <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-right'></use></svg>
+//                  <svg class='mui-svg-icon'>
+//                      <use xlink:href='#svg-icon--arrow-right'></use>
+//                  </svg>
 //              </div>
 //              <span>Lorem</span>
 //          </div>
 //          <div class='content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, quaerat!</div>
 //      </li>
 //      <li class='item'>
-//          <div class='title -white -blue-3-bg -f-blue-4-bg'>
+//          <div class='title'>
 //              <div class='indicator'>
-//                  <svg class='mui-svg-icon -white'><use xlink:href='#svg-icon--arrow-right'></use></svg>
+//                  <svg class='mui-svg-icon'>
+//                      <use xlink:href='#svg-icon--arrow-right'></use>
+//                  </svg>
 //              </div>
 //              <span>Lorem</span>
 //          </div>
@@ -36,13 +40,15 @@
 
 .@{muilessium-prefix}accordion {
     list-style: none;
+    background: @accordion-background;
+    color: @accordion-color;
     
     > .item {
         display: block;
         position: relative;        
         margin: 0;
         padding: 0 1rem;
-        border: 1px solid @grey-2;
+        border: 1px solid @accordion-border-color;
         overflow: hidden;
         
         &:first-of-type {
@@ -67,14 +73,15 @@
         width: ~'calc(100% + 2rem)';
         padding: 1rem;
         line-height: 1;
-        background: @grey-2;
+        background: @accordion-title-background;
+        color: @accordion-title-color;
         transition: border-bottom-left-radius  @default-animation-duration @default-animation-function,
                     border-bottom-right-radius @default-animation-duration @default-animation-function;
         
         &:hover,
         &:focus {
             cursor: pointer;
-            background: @grey-3;
+            background: @accordion-title-background-focused;
         }
     }
 
@@ -94,6 +101,10 @@
         width: 1em;
         transition: transform @default-animation-duration @default-animation-function;
         user-select: none;
+    }
+
+    > .item > .title > .indicator > svg {
+        fill: @accordion-title-color;
     }
 
     > .item > .content {

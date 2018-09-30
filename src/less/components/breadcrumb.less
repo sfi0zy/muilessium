@@ -5,10 +5,10 @@
 //
 //
 // @markup
-//  <div class='mui-breadcrumb -blue-3-bg'>
-//      <a class='link -white -f-blue-2' href=''>category</a>
-//      <a class='link -white -f-blue-2' href=''>subcategory</a>
-//      <a class='link -white -f-blue-2' href=''>title</a>
+//  <div class='mui-breadcrumb'>
+//      <a class='link' href=''>category</a>
+//      <a class='link' href=''>subcategory</a>
+//      <a class='link' href=''>title</a>
 //  </div>
 
 
@@ -16,20 +16,22 @@
     height: @default-ui-height;    
     padding: 0 1rem;
     line-height: @default-ui-height;
-    background: @grey-2;
+    background: @breadcrumb-background;
     border-radius: @default-border-radius;
     
     > .link {
         text-decoration: none;
+        color: @breadcrumb-color;
         
         &:not(:last-of-type)::after {
             content: '\0203A';
             padding: 0 .5rem;
+            color: @breadcrumb-color;
         }
 
         &:hover,
         &:focus {
-            color: @grey-3;
+            color: @breadcrumb-color-focused;
         }
     }
     
