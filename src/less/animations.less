@@ -141,6 +141,7 @@
 .-js-animation {
     &.-hidden-by-default {
         opacity: 0;
+        pointer-events: none;
     }
 
     &.-scrollfire-point {
@@ -150,60 +151,70 @@
     &.-fade-in {
         &.-activated {
             animation: mui-fade-in forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: auto;
         }
     }
 
     &.-fade-in-left {
         &.-activated {
             animation: mui-fade-in-left forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: auto;
         }
     }
 
     &.-fade-in-up {
         &.-activated {
             animation: mui-fade-in-up forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: auto;
         }
     }
 
     &.-fade-in-right {
         &.-activated {
             animation: mui-fade-in-right forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: auto;
         }
     }
 
     &.-fade-in-down {
         &.-activated {
             animation: mui-fade-in-down forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: auto;
         }
     }
 
     &.-fade-out {
         &.-activated {
             animation: mui-fade-out forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: none;
         }
     }
 
     &.-fade-out-left {
         &.-activated {
             animation: mui-fade-out-left forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: none;
         }
     }
 
     &.-fade-out-up {
         &.-activated {
             animation: mui-fade-out-up forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: none;
         }
     }
 
     &.-fade-out-right {
         &.-activated {
             animation: mui-fade-out-right forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: none;
         }
     }
 
     &.-fade-out-down {
         &.-activated {
             animation: mui-fade-out-down forwards @default-animation-duration * 2 @default-animation-function;
+            pointer-events: none;
         }
     }
 }
