@@ -48,7 +48,7 @@ export default class Checkbox extends Component {
     initAria() {
         aria.setRole(this.domCache.label, 'checkbox');
 
-        const inputId = this.domCache.input.getAttribute('id') || aria.setId(this.domCache.input);
+        const inputId = aria.setId(this.domCache.input);
 
         setAttribute(this.domCache.label, 'for', inputId);
 

@@ -56,9 +56,15 @@ function removeRole(element) {
 // Set id
 // ------
 // Sets ID to the element (generates a random ID if ID not passed as a parameter),
-// returns this ID
+// returns this ID. If element has an ID returns that ID.
 
 function setId(element, id) {
+    const currentId = getAttribute(element, 'id');
+
+    if (currentId) {
+        return currentId;
+    }
+
     const newId = id || (`mui-id-${generateRandomString(6)}`);
 
     setAttribute(element, 'id', newId);

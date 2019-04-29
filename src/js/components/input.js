@@ -60,7 +60,7 @@ export default class Input extends Component {
 
 
     initAria() {
-        const inputId = getAttribute(this.domCache.input, 'id') || aria.setId(this.domCache.input);
+        const inputId = aria.setId(this.domCache.input);
 
         ifNodeList(this.domCache.labels, () => {
             aria.set(this.domCache.input, 'labelledby', aria.setId(this.domCache.labels[0]));

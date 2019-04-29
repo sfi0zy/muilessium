@@ -47,7 +47,7 @@ export default class Textarea extends Component {
 
 
     initAria() {
-        const textareaId = getAttribute(this.domCache.textarea, 'id') || aria.setId(this.domCache.textarea);
+        const textareaId = aria.setId(this.domCache.textarea);
 
         ifNodeList(this.domCache.labels, () => {
             aria.set(this.domCache.textarea, 'labelledby', aria.setId(this.domCache.labels[0]));
