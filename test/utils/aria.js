@@ -95,23 +95,25 @@ module.exports = {
 
 
     setId(test) {
-        document.body.innerHTML = '<div></div>';
+        document.body.innerHTML = '<div></div><div id="test"></div>';
 
-        const element = document.querySelector('div');
-
-        // ---------------
-
-        _.aria.setId(element, 'test-id');
+        const elements = document.querySelectorAll('div');
 
         // ---------------
 
-        test.equal(element.getAttribute('id'), 'test-id', 'It should set the id of the element to the selected value.');
+        _.aria.setId(elements[0], 'new-id');
+        _.aria.setId(elements[1], 'new-id');
+
+        // ---------------
+
+        test.equal(elements[0].getAttribute('id'), 'new-id', 'It should set the id of the element to the selected value.');
+        test.equal(elements[1].getAttribute('id'), 'test', 'It should not replace the existing id.');
 
         test.doesNotThrow(() => {
             _.aria.setId(null);
             _.aria.setId(undefined);
-            _.aria.setId(element, null);
-            _.aria.setId(element, undefined);
+            _.aria.setId(elements[0], null);
+            _.aria.setId(elements[0], undefined);
         });
 
         test.done();
