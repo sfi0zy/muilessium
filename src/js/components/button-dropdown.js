@@ -148,7 +148,7 @@ export default class ButtonDropdown extends Component {
     }
 
 
-    openDropdown({ focusFirst = true }) {
+    openDropdown(focusFirst = true) {
         addClass(this.domCache.element,    '-opened');
         addClass(this.domCache.shadow, '-visible');
 
@@ -180,11 +180,11 @@ export default class ButtonDropdown extends Component {
     }
 
 
-    toggleDropdown({ focusFirstWhenOpened = true }) {
+    toggleDropdown(focusFirstWhenOpened = true) {
         if (this.state.isOpened) {
             this.closeDropdown();
         } else {
-            this.openDropdown({ focusFirst: focusFirstWhenOpened });
+            this.openDropdown(focusFirstWhenOpened);
         }
 
         return this;
