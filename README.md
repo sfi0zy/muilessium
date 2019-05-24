@@ -5,9 +5,10 @@
 Muilessium is a UI framework for static websites. 40+ components, 60+ utilities to make your code cleaner, LESS+RSCSS, fluid typography, keyboard and touchscreen support, understandable and well-organized code. The main purpose of its development is to create simple, but powerful framework for landings, personal websites, blogs etc.
 
 ## CDN
-https://unpkg.com/muilessium/dist/css/muilessium.min.css
-
-https://unpkg.com/muilessium/dist/js/muilessium.min.js
+```html
+<link rel='stylesheet' href='https://unpkg.com/muilessium/dist/css/muilessium.min.css'>
+<script src='https://unpkg.com/muilessium/dist/js/muilessium.min.js'></script>
+```
 
 ## NPM
 ```sh
@@ -36,6 +37,6 @@ npm run prod
 ## License
 MIT License
 
-Copyright (c) 2016-2018 Ivan Bogachev <sfi0zy@gmail.com>
+Copyright (c) 2016-2019 Ivan Bogachev <sfi0zy@gmail.com>
 
 
