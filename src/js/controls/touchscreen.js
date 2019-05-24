@@ -11,6 +11,8 @@
 // Functions list:
 //  - onSwipeLeft
 //  - onSwipeRight
+//  - onSwipeUp
+//  - onSwipeDown
 //  - onPinchOut
 //
 // -----------------------------------------------------------------------------
@@ -35,6 +37,28 @@ function onSwipeRight(element, callback) {
 }
 
 
+function onSwipeUp(element, callback) {
+    const hammertime = new Hammer(element);
+
+    hammertime.get('swipe').set({
+        direction: Hammer.DIRECTION_VERTICAL
+    });
+
+    hammertime.on('swipeup', callback);
+}
+
+
+function onSwipeDown(element, callback) {
+    const hammertime = new Hammer(element);
+
+    hammertime.get('swipe').set({
+        direction: Hammer.DIRECTION_VERTICAL
+    });
+
+    hammertime.on('swipedown', callback);
+}
+
+
 function onPinchOut(element, callback) {
     const hammertime = new Hammer(element);
 
@@ -48,6 +72,8 @@ function onPinchOut(element, callback) {
 const TOUCHSCREEN = {
     onSwipeLeft,
     onSwipeRight,
+    onSwipeUp,
+    onSwipeDown,
     onPinchOut
 };
 
