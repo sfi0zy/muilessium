@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - getValue()
 //
 // -----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ export default class Textarea extends Component {
 
         this.initAria();
         this.initControls();
+        this.initEvents();
     }
 
 
@@ -79,6 +81,11 @@ export default class Textarea extends Component {
     }
 
 
+    initEvents() {
+        this.addEvent('update-state');
+    }
+
+
     focusEventHandler() {
         addClass(this.domCache.element, '-focused');
 
@@ -105,6 +112,8 @@ export default class Textarea extends Component {
         } else {
             addClass(this.domCache.element, '-has-value');
         }
+
+        this.fireEvent('update-state');
     }
 
 

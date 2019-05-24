@@ -995,7 +995,7 @@ accordion.unfoldAllItems();
                                     <p class='mui-p _separate-1'>{{ description }}</p>
                                 {{/if}}
                                 {{#if component }}
-                                    <div class='_separate-1 _smaller-1'>[[ {{ component }} ]] <span class='-grey-3'>- Use Muilessium.get('{{ component }}', id) to get it.</span></div>
+                                    <div class='_separate-1 _smaller-1'><span class='-green-3'><b>(!) {{ component }}</b></span> <span class='-grey-3'>- Use Muilessium.get('{{ component }}', id) to get it.</span></div>
                                 {{/if}}
                                 {{#if method}}
                                     <div class='_separate-1'>
@@ -1011,11 +1011,11 @@ accordion.unfoldAllItems();
                                         </ul>
                                     </div>
                                 {{/if}}
-                                {{#depends}}
-                                    <div class='_smaller-1 -brown-4'>Depends on {{ depends }}</div>
-                                {{/depends}}
+                                {{#event}}
+                                    <div class='_smaller-1'><span class='-green-3'>Event: {{ event }}</span> <span class='-grey-3'>- Use {{ ../component }}.addEventListener('{{ event }}', () => { /* . . . */ }) to subscribe.</span></div>
+                                {{/event}}
                                 {{#requires}}
-                                    <div class='_smaller-1 -red-3'>Requires {{ requires }}</div>
+                                    <div class='_smaller-1 -violet-3'>Requires {{ requires }}</div>
                                 {{/requires}}
                                 {{#if markup}}
                                     <div class='_separate-1'>
