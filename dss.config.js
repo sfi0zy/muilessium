@@ -23,9 +23,9 @@ module.exports = {
             return line;
         },
 
-        depends(i, line) {
+        event(i, line) {
             return {
-                depends: line
+                event: line
             };
         },
 
