@@ -979,7 +979,29 @@ accordion.unfoldAllItems();
 </pre>
                         </div>
                     </div>
-                    <p class='mui-p'>Components can have local events. See <a href='#events-overview'>events overview</a> for more information.</p>
+                    <p class='mui-p _separate-1'>Components can have local events. Their behavior is similar to the main <a href='#events-overview'>events observer</a>.</p>
+
+                    <p class='mui-p _separate-1'>All components should extend the <i>BaseComponent</i> and should be created by the <i>Muilessium.FACTORY</i>. See <a href='#factory-overview'>factory overview</a> for more information. The <i>BaseComponent</i> have default methods:</p>
+
+                    <ul class='mui-list _smaller-1 _separate-1'>
+                        <li class='item'>initAria()</li>
+                        <li class='item'>initControls()</li>
+                        <li class='item'>initEvents()</li>
+                        <li class='item'>addEvent()</li>
+                        <li class='item'>addEventListener()</li>
+                        <li class='item'>fireEvent()</li>
+                    </ul>
+
+                    <p class='mui-p _separate-1'>and default fields:</p>
+
+                    <ul class='mui-list _smaller-1 _separate-1'>
+                        <li class='item'>domCache</li>
+                        <li class='item'>state</li>
+                    </ul>
+
+                    <p class='mui-p _separate-1'>Use them to keep the structure of the components.</p>
+
+                    <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>Run "console.log(Muilessium.FACTORY.componentsCache.Checkbox[0])" on this page to see an example.</p>
 
                     {{#files}}
                         <div id='{{file}}' class='_allow-empty'></div>
