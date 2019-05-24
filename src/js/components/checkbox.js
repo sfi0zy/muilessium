@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - setCheckbox()
 //  - unsetCheckbox()
 //  - toggleCheckbox()
@@ -42,6 +43,7 @@ export default class Checkbox extends Component {
 
         this.initAria();
         this.initControls();
+        this.initEvents();
     }
 
 
@@ -74,12 +76,19 @@ export default class Checkbox extends Component {
     }
 
 
+    initEvents() {
+        this.addEvent('update-state');
+    }
+
+
     setCheckbox() {
         this.state.isChecked = true;
         this.domCache.input.checked = true;
 
         addClass(this.domCache.element, '-checked');
         aria.set(this.domCache.label, 'checked', true);
+
+        this.fireEvent('update-state');
 
         return this;
     }
@@ -91,6 +100,8 @@ export default class Checkbox extends Component {
 
         removeClass(this.domCache.element, '-checked');
         aria.set(this.domCache.label, 'checked', false);
+
+        this.fireEvent('update-state');
 
         return this;
     }

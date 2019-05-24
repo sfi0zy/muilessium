@@ -98,6 +98,9 @@ export default class ModalWindow extends Component {
             }
         });
 
+        this.addEvent('open-modal');
+        this.addEvent('close-modal');
+
         return this;
     }
 
@@ -113,6 +116,8 @@ export default class ModalWindow extends Component {
             this.state.isOpened = true;
 
             this.domCache.modalWindow.focus();
+
+            this.fireEvent('open-modal');
         }
 
         return this;
@@ -133,6 +138,8 @@ export default class ModalWindow extends Component {
                 this.state.savedOpener.focus();
                 this.state.savedOpener = null;
             }
+
+            this.fireEvent('close-modal');
         }
 
         return this;

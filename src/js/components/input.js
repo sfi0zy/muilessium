@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - validate()
 //  - getValue()
 //  - isValid()
@@ -56,6 +57,7 @@ export default class Input extends Component {
 
         this.initAria();
         this.initControls();
+        this.initEvents();
     }
 
 
@@ -90,6 +92,11 @@ export default class Input extends Component {
         this.domCache.input.addEventListener('keydown', this.changeValueHandler.bind(this));
 
         return this;
+    }
+
+
+    initEvents() {
+        this.addEvent('update-state');
     }
 
 
@@ -136,6 +143,8 @@ export default class Input extends Component {
 
             validationTimeout = setTimeout(this.validate.bind(this), this.state.validationDelay);
         }
+
+        this.fireEvent('update-state');
 
         return this;
     }

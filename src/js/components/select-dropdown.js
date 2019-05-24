@@ -230,6 +230,8 @@ export default class SelectDropdown extends Component {
             }
         });
 
+        this.addEvent('update-state');
+
         return this;
     }
 
@@ -255,7 +257,7 @@ export default class SelectDropdown extends Component {
         if (focusFirst) {
             firstOfList(this.domCache.optionsList).focus();
         }
-    
+
         return this;
     }
 
@@ -297,6 +299,8 @@ export default class SelectDropdown extends Component {
 
         aria.set(this.domCache.select, 'activedescendant',
             getAttribute(this.domCache.optionsList[this.state.selectedIndex], 'id'));
+
+        this.fireEvent('update-state');
 
         return this;
     }

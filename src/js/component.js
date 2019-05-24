@@ -14,6 +14,8 @@
 //       Controls (keyboard, mouse or touchscreen) should be initialized here.
 //       It is useful to use utilities from /src/js/utils/ and wrappers from
 //       /src/js/controls/
+//   initEvents()
+//       Events should be initialized here.
 //   addEvent(...)
 //       Should be used to add local event to the component. Collect global
 //       events i the global EVENTS object. See /src/js/events.js
@@ -43,6 +45,11 @@ export default class Component {
 
 
     initControls() {
+        return this;
+    }
+
+
+    initEvents() {
         return this;
     }
 

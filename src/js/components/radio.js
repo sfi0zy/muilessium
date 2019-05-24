@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) initEvents()
 //  - updateState(index)
 //  - getState()
 //
@@ -40,6 +41,7 @@ export default class Radio extends Component {
 
         this.initAria();
         this.initControls();
+        this.initEvents();
         this.updateState();
     }
 
@@ -80,6 +82,11 @@ export default class Radio extends Component {
     }
 
 
+    initEvents() {
+        this.addEvent('update-state');
+    }
+
+
     updateState(index) {
         if ((typeof index !== 'number') || (index < 0) || (index > this.domCache.inputs.length - 1)) {
             return this;
@@ -94,6 +101,8 @@ export default class Radio extends Component {
         aria.set(this.domCache.labels[index], 'checked', true);
 
         this.state.checkedIndex = index;
+
+        this.fireEvent('update-state');
 
         return this;
     }

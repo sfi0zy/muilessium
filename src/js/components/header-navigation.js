@@ -126,6 +126,9 @@ export default class HeaderNavigation extends Component {
             clearFocus();
         });
 
+        this.addEvent('open-navigation');
+        this.addEvent('close-navigation');
+
         return this;
     }
 
@@ -142,6 +145,8 @@ export default class HeaderNavigation extends Component {
             aria.set(this.domCache.linksList, 'hidden', false);
 
             firstOfList(this.domCache.focusables).focus();
+
+            this.fireEvent('open-navigation');
         }
 
         return this;
@@ -160,6 +165,8 @@ export default class HeaderNavigation extends Component {
             aria.set(this.domCache.linksList, 'hidden', true);
 
             this.domCache.hamburger.focus();
+
+            this.fireEvent('close-navigation');
         }
 
         return this;
