@@ -585,6 +585,7 @@ EVENTS.addEventListener('scroll-start', () =&gt; {
 });</pre>
                         </div>
                     </div>
+                    <p class='mui-p'>All components have the similar methods to work with their local events. You should store global events in the EVENTS object and the local events in the components themselves.</p>
                 </div>
                 <!-- /events overview -->
 
@@ -697,6 +698,8 @@ console.log(Muilessium.FACTORY.componentsCache.MyComponent);
                             <ul class='mui-list'>
                                 <li class='item'>onSwipeLeft(element, callback)</li>
                                 <li class='item'>onSwipeRight(element, callback)</li>
+                                <li class='item'>onSwipeUp(element, callback)</li>
+                                <li class='item'>onSwipeDown(element, callback)</li>
                                 <li class='item'>onPinchOut(element, callback)</li>
                             </ul>
                         </li>
@@ -976,6 +979,7 @@ accordion.unfoldAllItems();
 </pre>
                         </div>
                     </div>
+                    <p class='mui-p'>Components can have local events. See <a href='#events-overview'>events overview</a> for more information.</p>
 
                     {{#files}}
                         <div id='{{file}}' class='_allow-empty'></div>
