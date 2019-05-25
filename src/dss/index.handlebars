@@ -589,7 +589,8 @@ EVENTS.addEventListener('scroll-start', () =&gt; {
 });</pre>
                         </div>
                     </div>
-                    <p class='mui-p'>All components have the similar methods to work with their local events. You should store global events in the EVENTS object and the local events in the components themselves.</p>
+                    <p class='mui-p'>All components have the similar methods to work with their local events. You should store global events in the <i>EVENTS</i> object and the local events in the components themselves.</p>
+                    <p class='mui-p _separate-1'>When You use <i>addEventListener</i>, the state of the global <i>EVENTS</i> object or the state of the component will be passed to the callback automatically.</p>
                 </div>
                 <!-- /events overview -->
 
@@ -1038,7 +1039,7 @@ accordion.unfoldAllItems();
                                     </div>
                                 {{/if}}
                                 {{#event}}
-                                    <div class='_smaller-1'><span class='-green-3'>Event: {{ event }}</span> <span class='-grey-3'>- Use {{ ../component }}.addEventListener('{{ event }}', () => { /* . . . */ }) to subscribe.</span></div>
+                                    <div class='_smaller-1'><span class='-green-3'>Event: {{ event }}</span> <span class='-grey-3'>- Use {{ ../component }}.addEventListener('{{ event }}', (state) => { /* . . . */ }) to subscribe.</span></div>
                                 {{/event}}
                                 {{#requires}}
                                     <div class='_smaller-1 -violet-3'>Requires {{ requires }}</div>
