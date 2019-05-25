@@ -6,8 +6,13 @@
 //  - isEmpty()
 //  - push(data)
 //  - pop()
+//  - at(index)
+//  - toString()
 //
 // -----------------------------------------------------------------------------
+
+
+import { forEach } from '../utils/uncategorized';
 
 
 class Node {
@@ -20,15 +25,25 @@ class Node {
 
 
 export default class CircularDoublyLinkedList {
-    constructor() {
+    constructor(arr) {
         this.head = null;
         this.tail = null;
-        this.size = 0;
+        this.length = 0;
+
+        if (arr) {
+            arr = Array.from(arr);
+
+            if (Array.isArray(arr)) {
+                forEach(arr, (item) => {
+                    this.push(item);
+                });
+            }
+        }
     }
 
 
     isEmpty() {
-        return this.size === 0;
+        return this.length === 0;
     }
 
 
@@ -50,7 +65,7 @@ export default class CircularDoublyLinkedList {
             this.tail = node;
         }
 
-        this.size++;
+        this.length++;
 
         return this;
     }
@@ -66,9 +81,20 @@ export default class CircularDoublyLinkedList {
             this.tail = this.tail.prev;
         }
 
-        this.size--;
+        this.length--;
 
         return this;
+    }
+
+
+    at(index) {
+        let node = this.head;
+
+        for (let i = 0; i < index; i++) {
+            node = node.next;
+        }
+
+        return node;
     }
 
 
@@ -77,7 +103,7 @@ export default class CircularDoublyLinkedList {
 
         let node = this.head;
 
-        for (let i = 0; i < this.size; i++) {
+        for (let i = 0; i < this.length; i++) {
             result += `${node.data.toString()},`;
 
             node = node.next;
