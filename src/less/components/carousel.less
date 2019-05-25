@@ -1,10 +1,12 @@
 // @name        Carousel
-// @description Interval in seconds can be setted using data-attribute. Use "-rounded" option to add default border-radius.
+// @description You should use 3 or more slides. Interval in seconds can be setted using data-attribute. Use "-rounded" option to add default border-radius.
 //
 // @component   Carousel
 // @method      startRotation() - starts rotation
 // @method      stopRotation()  - stops rotation
-// @method      rotate(param)   - rotates carousel to the selected slide ('next', 'prev' or selected by numerical index)
+// @method      rotateNext()    - rotates carousel
+// @method      rotatePrev()    - rotates carousel
+// @method      rotate(index)   - rotates carousel to the selected slide
 //
 // @requires image
 // @requires svg-icon
@@ -78,6 +80,7 @@
     width: inherit;
     margin: 0;
     list-style: none;
+    background: @carousel-background;
 }
 
 
@@ -90,17 +93,27 @@
     overflow: hidden;
     margin: 0 !important;
     opacity: 0;
-    transition: opacity 600ms @default-animation-function;
+    transition: opacity 600ms @default-animation-function,
+                transform 600ms @default-animation-function;
 
     &.-active {
         opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.-prev {
+        transform: translateX(-100%);
+    }
+
+    &.-next {
+        transform: translateX(100%);
     }
     
     > img.background {
         #utils > .object-fit-cover;
 
         height: inherit;
-        width: inherit;        
+        width: inherit;
     }
 
 }

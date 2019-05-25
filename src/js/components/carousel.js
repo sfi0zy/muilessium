@@ -9,7 +9,9 @@
 //  - stopRotation()
 //  - makeSlideActive(index)
 //  - makeSlideInactive(index)
-//  - rotate(param)
+//  - rotateNext()
+//  - rotatePrev()
+//  - rotate(index)
 //
 // -----------------------------------------------------------------------------
 
@@ -19,6 +21,8 @@ import Component from '../component';
 import MOUSE       from '../controls/mouse';
 import KEYBOARD    from '../controls/keyboard';
 import TOUCHSCREEN from '../controls/touchscreen';
+
+import CircularDoublyLinkedList from '../data-types/circular-doubly-linked-list';
 
 import { addClass                   } from '../utils/classes';
 import { removeClass                } from '../utils/classes';
@@ -36,7 +40,7 @@ export default class Carousel extends Component {
         super(element, options);
 
         this.domCache = extend(this.domCache, {
-            slides: element.querySelectorAll('.mui-slide'),
+            slides: new CircularDoublyLinkedList(element.querySelectorAll('.mui-slide')),
             controls: {
                 prev: element.querySelectorAll('.prev'),
                 next: element.querySelectorAll('.next')
@@ -46,7 +50,7 @@ export default class Carousel extends Component {
 
         this.state = extend(this.state, {
             numberOfSlides: this.domCache.slides.length,
-            currentSlide: 0,
+            activeSlideIndex: 0,
             interval: (parseFloat(element.getAttribute('data-interval'), 10) || 5),
             isRotating: false,
             rotateInterval: null
@@ -95,19 +99,19 @@ export default class Carousel extends Component {
         });
 
         makeChildElementsClickable(this.domCache.element, this.domCache.controls.prev,
-            this.rotate.bind(this, 'prev'), { mouse: true, keyboard: false });
+            this.rotatePrev.bind(this), { mouse: true, keyboard: false });
         makeChildElementsClickable(this.domCache.element, this.domCache.controls.next,
-            this.rotate.bind(this, 'next'), { mouse: true, keyboard: false });
+            this.rotateNext.bind(this), { mouse: true, keyboard: false });
 
         makeChildElementsClickable(this.domCache.element, this.domCache.indicators, (index) => {
             this.rotate(index);
         }, { mouse: true, keyboard: false });
 
-        TOUCHSCREEN.onSwipeRight(this.domCache.element, this.rotate.bind(this, 'prev'));
-        TOUCHSCREEN.onSwipeLeft(this.domCache.element,  this.rotate.bind(this, 'next'));
+        TOUCHSCREEN.onSwipeRight(this.domCache.element, this.rotatePrev.bind(this));
+        TOUCHSCREEN.onSwipeLeft(this.domCache.element,  this.rotateNext.bind(this));
 
-        KEYBOARD.onArrowLeftPressed(this.domCache.element, this.rotate.bind(this, 'prev'));
-        KEYBOARD.onArrowRightPressed(this.domCache.element, this.rotate.bind(this, 'next'));
+        KEYBOARD.onArrowLeftPressed(this.domCache.element, this.rotatePrev.bind(this));
+        KEYBOARD.onArrowRightPressed(this.domCache.element, this.rotateNext.bind(this));
 
         return this;
     }
@@ -116,7 +120,7 @@ export default class Carousel extends Component {
     startRotation() {
         if (!this.state.isRotating) {
             this.state.rotateInterval = setInterval(
-                this.rotate.bind(this, 'next'),
+                this.rotateNext.bind(this),
                 this.state.interval * 1000);
 
             this.state.isRotating = true;
@@ -137,47 +141,57 @@ export default class Carousel extends Component {
 
 
     makeSlideActive(index) {
-        addClass(this.domCache.slides[index],     '-active');
+        const slide = this.domCache.slides.at(index);
+
+        addClass(slide.data,      '-active');
+        addClass(slide.prev.data, '-prev');
+        addClass(slide.next.data, '-next');
+
         addClass(this.domCache.indicators[index], '-active');
+
+        this.state.activeSlideIndex = index;
 
         return this;
     }
 
 
     makeSlideInactive(index) {
-        removeClass(this.domCache.slides[index],     '-active');
+        const slide = this.domCache.slides.at(index);
+
+        removeClass(slide.data,      '-active');
+        removeClass(slide.prev.data, '-prev');
+        removeClass(slide.next.data, '-next');
+
         removeClass(this.domCache.indicators[index], '-active');
 
         return this;
     }
 
 
-    rotate(param) {
-        const { currentSlide } = this.state;
-        let nextSlide = 0;
+    rotateNext() {
+        this.makeSlideInactive(this.state.activeSlideIndex);
 
-        if (typeof param === 'string') {
-            switch (param) {
-            case 'next':
-                nextSlide = (currentSlide + 1) % this.state.numberOfSlides;
-                break;
-            case 'prev':
-                nextSlide =
-                    ((currentSlide - 1) + this.state.numberOfSlides) % this.state.numberOfSlides;
-                break;
-            default:
-                return null;
-            }
-        } else if (typeof param === 'number' && param >= 0 && param < this.state.numberOfSlides) {
-            nextSlide = param;
-        } else {
-            return null;
-        }
+        this.state.activeSlideIndex =
+            (this.state.activeSlideIndex + 1) % this.state.numberOfSlides;
 
-        this.makeSlideInactive(currentSlide);
-        this.makeSlideActive(nextSlide);
+        this.makeSlideActive(this.state.activeSlideIndex);
+    }
 
-        this.state.currentSlide = nextSlide;
+
+    rotatePrev() {
+        this.makeSlideInactive(this.state.activeSlideIndex);
+
+        this.state.activeSlideIndex =
+            ((this.state.activeSlideIndex + this.state.numberOfSlides) - 1)
+                % this.state.numberOfSlides;
+
+        this.makeSlideActive(this.state.activeSlideIndex);
+    }
+
+
+    rotate(index) {
+        this.makeSlideInactive(this.state.activeSlideIndex);
+        this.makeSlideActive(index);
 
         return this;
     }
