@@ -9,6 +9,7 @@ import STORE        from './store';
 import FACTORY      from './factory';
 import DEPENDENCIES from './dependencies';
 import POLYFILLS    from './polyfills';
+import DATA_TYPES   from './data-types';
 import KEYBOARD     from './controls/keyboard';
 import MOUSE        from './controls/mouse';
 import TOUCHSCREEN  from './controls/touchscreen';
@@ -22,6 +23,7 @@ class Muilessium {
         this.FACTORY      = FACTORY;
         this.DEPENDENCIES = DEPENDENCIES;
         this.POLYFILLS    = POLYFILLS;
+        this.DATA_TYPES   = DATA_TYPES;
         this.KEYBOARD     = KEYBOARD;
         this.MOUSE        = MOUSE;
         this.TOUCHSCREEN  = TOUCHSCREEN;
