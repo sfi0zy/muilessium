@@ -34,7 +34,7 @@
 
 class Events {
     constructor() {
-        this.data = {
+        this.state = {
             window: {}
         };
 
@@ -42,7 +42,7 @@ class Events {
             
         };
 
-        this.eventsData = {};
+        this.events = {};
 
         this.initDefaultEvents();
     }
@@ -59,8 +59,8 @@ class Events {
         this.addEvent('resize-window-height');
         this.addEvent('resize-window-width');
 
-        this.data.window.height = window.innerHeight;
-        this.data.window.width  = window.innerWidth;
+        this.state.window.height = window.innerHeight;
+        this.state.window.width  = window.innerWidth;
 
         this.timeouts.resizeWindow       = null;
 
@@ -70,13 +70,13 @@ class Events {
             const height = window.innerHeight;
             const width  = window.innerWidth;
 
-            if (this.data.window.height !== height) {
-                this.data.window.height = height;
+            if (this.state.window.height !== height) {
+                this.state.window.height = height;
                 this.fireEvent('resize-window-height');
             }
 
-            if (this.data.window.width !== width) {
-                this.data.window.width = width;
+            if (this.state.window.width !== width) {
+                this.state.window.width = width;
                 this.fireEvent('resize-window-width');
             }
         });
@@ -108,8 +108,8 @@ class Events {
 
 
     addEvent(name) {
-        if (!(name in this.eventsData)) {
-            this.eventsData[name] = {
+        if (!(name in this.events)) {
+            this.events[name] = {
                 callbacks: [],
                 counter: 0
             };
@@ -120,10 +120,10 @@ class Events {
 
 
     addEventListener(name, callback, executeIfAlreadyFired = false) {
-        if ((name in this.eventsData) && (typeof callback === 'function')) {
-            this.eventsData[name].callbacks.push(callback);
+        if ((name in this.events) && (typeof callback === 'function')) {
+            this.events[name].callbacks.push(callback);
 
-            if (executeIfAlreadyFired && (this.eventsData[name].counter > 0)) {
+            if (executeIfAlreadyFired && (this.events[name].counter > 0)) {
                 callback();
             }
         }
@@ -133,12 +133,12 @@ class Events {
 
 
     fireEvent(name) {
-        if (name in this.eventsData) {
-            this.eventsData[name].counter++;
+        if (name in this.events) {
+            this.events[name].counter++;
 
-            this.eventsData[name].callbacks.forEach((callback) => {
+            this.events[name].callbacks.forEach((callback) => {
                 if (typeof callback === 'function') {
-                    callback();
+                    callback(this.state);
                 }
             });
         }
