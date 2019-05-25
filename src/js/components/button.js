@@ -19,7 +19,9 @@ export default class Button extends Component {
         super(element, options);
         
         this.initAria();
+        this.initEvents();
     }
+
 
     initAria() {
         if (!aria.getRole(this.domCache.element)) {
@@ -29,6 +31,14 @@ export default class Button extends Component {
         }
 
         return this;
+    }
+
+
+    initEvents() {
+        this.addEvent('click');
+
+        this.domCache.element.addEventListener('click',
+            this.fireEvent.bind(this, 'click'));
     }
 }
 
