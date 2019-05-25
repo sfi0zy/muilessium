@@ -85,7 +85,7 @@ export default class Component {
 
             this.events[name].callbacks.forEach((callback) => {
                 if (typeof callback === 'function') {
-                    callback();
+                    callback(this.state);
                 }
             });
         }
