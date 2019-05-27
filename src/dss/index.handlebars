@@ -161,20 +161,29 @@
                         </a>
                     </div>
                     <div class='_separate-1'>
-                        <h4>Basic example</h4>
+                        <h4>Basic layout</h4>
                         <p class='mui-p _separate-1'>The basic page layout is shown in this example. You'll see how to use header with logo and navigation, content containers and footer.</p>
-                        <p class='codepen' data-preview='true' data-height='500' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='OGqzyK' style='height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - basic example'>
-                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/OGqzyK/'>Muilessium 1.0 - basic example</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
+                        <p class='codepen' data-preview='true' data-height='500' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='YbvrLQ' style='height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - basic example'>
+                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/YbvrLQ/'>Muilessium 1.0 - Basic layout</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
                         </p>
                     </div>
 
                     <div class='_separate-1'>
-                        <h4>Form example</h4>
+                        <h4>Form validation</h4>
                         <p class='mui-p _separate-1'>In this example, you'll see how to create forms with Muilessium, how to use components in scripts and how to validate inputs.</p>
-                        <p class='codepen' data-preview='true' data-height='532' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='yrwpOV' style='height: 532px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - form example'>
-                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/yrwpOV/'>Muilessium 1.0 - form example</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
+                        <p class='codepen' data-preview='true' data-height='532' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='rgKGrN' style='height: 532px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - form example'>
+                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/rgKGrN/'>Muilessium 1.0 - Form validation</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
                         </p>
                     </div>
+
+                    <div class='_separate-1'>
+                        <h4>Custom component</h4>
+                        <p class='mui-p _separate-1'>Here is a simple example of the custom component.</p>
+                        <p class='codepen' data-preview='true' data-height='532' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='ZNRXvd' style='height: 532px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - form example'>
+                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/ZNRXvd/'>Muilessium 1.0 - Custom component</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
+                        </p>
+                    </div>
+
                 </div>
                 <!-- /Examples -->
 
@@ -647,8 +656,8 @@ console.log(STORE.get('my-data.a') + STORE.get('my-data.b'));</pre>
                             <pre class='source-code'>const FACTORY = Muilessium.FACTORY;
 
 class MyComponent extends FACTORY.BaseComponent {
-    constructor() {
-        super();
+    constructor(element, options) {
+        super(element, options);
         console.log('ok');
     }
 }
