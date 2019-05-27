@@ -1,5 +1,5 @@
 // @name        Content container
-// @description Container for content with limited width.
+// @description Container for content with limited width. Has two options: -no-limit-width (removes limit) and -with-gutter (adds paddings).
 //
 //
 // @markup
@@ -16,6 +16,11 @@
     
     &.-no-limit-width {
         max-width: 100%;
+    }
+
+    &.-with-gutter {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
