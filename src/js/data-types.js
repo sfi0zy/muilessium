@@ -8,13 +8,15 @@
 
 
 import CircularDoublyLinkedList from './data-types/circular-doubly-linked-list';
+import Stack                    from './data-types/stack';
 
 
 // -----------------------------------------------------------------------------
 
 
 const DATA_TYPES = {
-    CircularDoublyLinkedList
+    CircularDoublyLinkedList,
+    Stack
 };
 
 
