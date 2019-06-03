@@ -19,7 +19,8 @@
   ],
   "scripts": {
     "dev": "./node_modules/.bin/gulp server",
-    "prod": "./node_modules/.bin/gulp --production"
+    "prod": "./node_modules/.bin/gulp --production",
+    "save-installed": "node ./npm-save-installed"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
