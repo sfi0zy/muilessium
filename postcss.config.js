@@ -1,6 +1,6 @@
 module.exports = {
     plugins: [
-        require('postcss-cssnext')({
+        require('postcss-preset-env')({
             warnForDuplicates: false,
             features: {
                 rem: {
@@ -10,7 +10,12 @@ module.exports = {
             }
         }),
         require('postcss-fixes')({ preset: 'safe' }),
-        require('doiuse')(require('./doiuse.config.js'))
+        require('doiuse')(require('./doiuse.config.js')),
+        require('cssnano')({
+            discardComments: {
+                removeAll: true
+            }
+        })
     ]
 };
 

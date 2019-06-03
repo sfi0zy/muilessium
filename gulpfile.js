@@ -22,7 +22,6 @@ gulp.task('less', () => {
         .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.init()))
         .pipe($.less())
         .pipe($.postcss())
-        .pipe($.cssnano({ discardComments: { removeAll: true } }))
         .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.write()))
         .pipe($.rename('muilessium.min.css'))
         .pipe($.size({ showFiles: true }))
