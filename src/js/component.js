@@ -23,8 +23,15 @@
 //       Should be used to subscribe to local event of the component.
 //   fireEvent(...)
 //       Executes all callbacks for the local event.
+//   saveState()
+//       Saves the state of the component
+//   restoreState()
+//       Restores the last saved state
 //
 // -----------------------------------------------------------------------------
+
+
+import Stack from './data-types/stack';
 
 
 export default class Component {
@@ -34,6 +41,7 @@ export default class Component {
         };
 
         this.state = {};
+        this.savedStates = new Stack();
 
         this.events = {};
     }
@@ -88,6 +96,26 @@ export default class Component {
                     callback(this.state);
                 }
             });
+        }
+
+        return this;
+    }
+
+
+    saveState() {
+        const currentState = JSON.stringify(this.state);
+
+        this.savedStates.push(currentState);
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.state = oldState;
         }
 
         return this;
