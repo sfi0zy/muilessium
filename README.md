@@ -29,7 +29,7 @@ node_modules/muilessium/dist/js/muilessium.min.js
 ```sh
 git clone https://github.com/sfi0zy/muilessium.git
 cd muilessium
-npm i
+npm ci
 npm run dev
 npm run prod
 ```
