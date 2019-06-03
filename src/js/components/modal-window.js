@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - openModal()
 //  - closeModal()
 //
@@ -100,6 +101,21 @@ export default class ModalWindow extends Component {
 
         this.addEvent('open-modal');
         this.addEvent('close-modal');
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            if (oldState.isOpened) {
+                this.openModal();
+            } else {
+                this.closeModal();
+            }
+        }
 
         return this;
     }

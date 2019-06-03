@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - updateState(index)
 //  - getState()
 //
@@ -87,18 +88,32 @@ export default class Radio extends Component {
     }
 
 
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.updateState(oldState.checkedIndex);
+        }
+
+        return this;
+    }
+
+
     updateState(index) {
-        if ((typeof index !== 'number') || (index < 0) || (index > this.domCache.inputs.length - 1)) {
+        if ((typeof index !== 'number') || (index > this.domCache.inputs.length - 1)) {
             return this;
         }
 
-        this.domCache.inputs[index].checked = true;
-
         if (this.state.checkedIndex >= 0) {
+            this.domCache.inputs[this.state.checkedIndex].checked = false;
             aria.set(this.domCache.labels[this.state.checkedIndex], 'checked', false);
         }
 
-        aria.set(this.domCache.labels[index], 'checked', true);
+        if (index >= 0) {
+            this.domCache.inputs[index].checked = true;
+
+            aria.set(this.domCache.labels[index], 'checked', true);
+        }
 
         this.state.checkedIndex = index;
 

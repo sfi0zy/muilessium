@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - openNavigation()
 //  - closeNavigation()
 //  - toggleNavigation()
@@ -128,6 +129,21 @@ export default class HeaderNavigation extends Component {
 
         this.addEvent('open-navigation');
         this.addEvent('close-navigation');
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            if (oldState.opened) {
+                this.openNavigation();
+            } else {
+                this.closeNavigation();
+            }
+        }
 
         return this;
     }

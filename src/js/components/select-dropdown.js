@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - getSelectedIndex()
 //  - openDropdown()
 //  - closeDropdown()
@@ -231,6 +232,23 @@ export default class SelectDropdown extends Component {
         });
 
         this.addEvent('update-state');
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.updateState(oldState.selectedIndex);
+
+            if (oldState.isOpened) {
+                this.openDropdown();
+            } else {
+                this.closeDropdown();
+            }
+        }
 
         return this;
     }

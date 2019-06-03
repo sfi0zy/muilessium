@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) restoreState()
 //  - makeTabActive(index)
 //  - makeTabInactive(index)
 //  - goToPreviousTab()
@@ -90,6 +91,18 @@ export default class Tabs extends Component {
 
         TOUCHSCREEN.onSwipeRight(this.domCache.element, this.goToPreviousTab.bind(this));
         TOUCHSCREEN.onSwipeLeft(this.domCache.element, this.goToNextTab.bind(this));
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.makeTabInactive(this.state.current);
+            this.makeTabActive(oldState.current);
+        }
 
         return this;
     }

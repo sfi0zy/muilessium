@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) restoreState()
 //  - foldItem(index)
 //  - foldAllItems()
 //  - unfoldItem(index)
@@ -40,6 +41,14 @@ export default class Accordion extends Component {
             titles:     element.querySelectorAll('.title'),
             indicators: element.querySelectorAll('.indicator'),
             contents:   element.querySelectorAll('.content')
+        });
+
+        this.state = extend(this.state, {
+            isExpanded: []
+        });
+
+        forEach(this.domCache.items, (item, index) => {
+            this.state.isExpanded[index] = false;
         });
 
         this.initAria();
@@ -96,11 +105,30 @@ export default class Accordion extends Component {
     }
 
 
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            forEach(oldState.isExpanded, (isExpanded, index) => {
+                if (isExpanded) {
+                    this.unfoldItem(index);
+                } else {
+                    this.foldItem(index);
+                }
+            });
+        }
+
+        return this; 
+    }
+
+
     foldItem(index) {
         removeClass(this.domCache.items[index], '-unfold');
 
         aria.set(this.domCache.titles[index],   'expanded', false);
         aria.set(this.domCache.contents[index], 'hidden',   true);
+
+        this.state.isExpanded[index] = false;
 
         return this;
     }
@@ -121,6 +149,8 @@ export default class Accordion extends Component {
         aria.set(this.domCache.titles[index],   'expanded', true);
         aria.set(this.domCache.contents[index], 'hidden',   false);
 
+        this.state.isExpanded[index] = true;
+
         return this;
     }
 
@@ -139,6 +169,8 @@ export default class Accordion extends Component {
 
         aria.toggleState(this.domCache.titles[index],   'expanded');
         aria.toggleState(this.domCache.contents[index], 'hidden');
+
+        this.state.isExpanded[index] = !this.state.isExpanded[index];
 
         return this;
     }

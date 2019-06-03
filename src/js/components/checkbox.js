@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - setCheckbox()
 //  - unsetCheckbox()
 //  - toggleCheckbox()
@@ -78,6 +79,21 @@ export default class Checkbox extends Component {
 
     initEvents() {
         this.addEvent('update-state');
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            if (oldState.isChecked) {
+                this.setCheckbox();
+            } else {
+                this.unsetCheckbox();
+            }
+        }
+
+        return this;
     }
 
 
