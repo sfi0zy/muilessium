@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - validate()
 //  - getValue()
 //  - isValid()
@@ -97,6 +98,19 @@ export default class Input extends Component {
 
     initEvents() {
         this.addEvent('update-state');
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.domCache.input.value = oldState.value;
+
+            this.changeValueHandler();
+        }
+
+        return this;
     }
 
 

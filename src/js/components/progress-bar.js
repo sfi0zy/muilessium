@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 //
 // Methods list:
-//  - (default) initAria()
+//  - (default) restoreState()
 //  - setValue(newValue)
 //  - getValue()
 //
@@ -38,6 +38,18 @@ export default class ProgressBar extends Component {
 
         this.setValue(this.state.value);
     }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.setValue(oldState.value);
+        }
+
+        return this;
+    }
+
 
     setValue(newValue) {
         let sign = 1;

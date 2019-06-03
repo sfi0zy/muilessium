@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - getValue()
 //
 // -----------------------------------------------------------------------------
@@ -16,7 +17,6 @@ import Component from '../component';
 import aria from '../utils/aria';
 
 import { setAttribute             } from '../utils/attributes';
-import { getAttribute             } from '../utils/attributes';
 import { ifNodeList               } from '../utils/checks';
 import { addClass                 } from '../utils/classes';
 import { removeClass              } from '../utils/classes';
@@ -83,6 +83,18 @@ export default class Textarea extends Component {
 
     initEvents() {
         this.addEvent('update-state');
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.domCache.textarea.value = oldState.value;
+            this.changeEventHandler();
+        }
+
+        return this;
     }
 
 

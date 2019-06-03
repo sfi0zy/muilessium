@@ -5,6 +5,7 @@
 // Methods list:
 //  - (default) initAria()
 //  - (default) initControls()
+//  - (default) restoreState()
 //  - startRotation()
 //  - stopRotation()
 //  - makeSlideActive(index)
@@ -112,6 +113,17 @@ export default class Carousel extends Component {
 
         KEYBOARD.onArrowLeftPressed(this.domCache.element, this.rotatePrev.bind(this));
         KEYBOARD.onArrowRightPressed(this.domCache.element, this.rotateNext.bind(this));
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            this.rotate(oldState.activeSlideIndex);
+        }
 
         return this;
     }

@@ -6,6 +6,7 @@
 //  - (default) initAria()
 //  - (default) initControls()
 //  - (default) initEvents()
+//  - (default) restoreState()
 //  - openDropdown()
 //  - closeDropdown()
 //  - toggleDropdown()
@@ -143,6 +144,21 @@ export default class ButtonDropdown extends Component {
                 clearFocus();
             }
         });
+
+        return this;
+    }
+
+
+    restoreState() {
+        if (!this.savedStates.isEmpty()) {
+            const oldState = JSON.parse(this.savedStates.pop());
+
+            if (oldState.isOpened) {
+                this.openDropdown();
+            } else {
+                this.closeDropdown();
+            }
+        }
 
         return this;
     }
