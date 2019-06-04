@@ -44,28 +44,28 @@
 
 .@{muilessium-prefix}select-dropdown {
     position: relative;    
-    height: @default-ui-height;
+    height: @defaults[ui-height];
     width: 100%;
     user-select: none;
     
     > .select {
-        height: @default-ui-height;
+        height: @defaults[ui-height];
         width: 100%;
         padding: 0 1rem;
         margin: 0;
         font-size: 1rem;
-        line-height: @default-ui-height;
-        color: @select-dropdown-color;
+        line-height: @defaults[ui-height];
+        color: @select-dropdown[color];
         appearance: none;
-        border: 1px solid @select-dropdown-border-color;
-        border-radius: @default-border-radius;
+        border: 1px solid @select-dropdown[border-color];
+        border-radius: @defaults[border-radius];
         outline: none;
-        transition: border-color @default-animation-duration @default-animation-function;
+        transition: border-color @defaults[animation-duration] @defaults[animation-function];
 
         &:hover,
         &:focus {
             cursor: pointer;
-            border-color: @select-dropdown-border-color-focused;
+            border-color: @select-dropdown[border-color-focused];
         }
     }
     
@@ -74,18 +74,18 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: @default-ui-height;
-        width: @default-ui-height;
-        line-height: @default-ui-height;
+        height: @defaults[ui-height];
+        width: @defaults[ui-height];
+        line-height: @defaults[ui-height];
         text-align: center;
-        color: @select-dropdown-color;
-        border-top-right-radius: @default-border-radius;
-        border-bottom-right-radius: @default-border-radius;
+        color: @select-dropdown[color];
+        border-top-right-radius: @defaults[border-radius];
+        border-bottom-right-radius: @defaults[border-radius];
         pointer-events: none;
     }
 
     > .icon > .@{muilessium-prefix}svg-icon {
-        fill: @select-dropdown-color;
+        fill: @select-dropdown[color];
     }
 
     .@{muilessium-prefix}dropdown-options {
@@ -96,7 +96,7 @@
         left: 0;
         width: 100%;
         transform: translateY(80%);
-        transition: all @default-animation-duration @default-animation-function;
+        transition: all @defaults[animation-duration] @defaults[animation-function];
     }
 
     &.-opened {

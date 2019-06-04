@@ -14,16 +14,17 @@
 
 .@{muilessium-prefix}header-logo {
     display: inline-block;    
-    line-height: @default-ui-height * 2;
+    line-height: @defaults[ui-height] * 2;
     user-select: none;
     
     > .link {
-        color: @header-logo-color;
+        color: @header-logo[color];
         text-decoration: none;
 
         &:hover,
         &:focus {
-            color: @header-logo-color-focused;
+            color: @header-logo[color-focused];
         }
     }
 }
+

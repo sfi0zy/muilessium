@@ -32,11 +32,11 @@
         display: table;
         width: 100%;
         margin: 0;
-        border: 1px solid @collection-border-color;
+        border: 1px solid @collection[border-color];
 
         &:first-of-type {
-            border-top-left-radius: @default-border-radius;    
-            border-top-right-radius: @default-border-radius;    
+            border-top-left-radius: @defaults[border-radius];    
+            border-top-right-radius: @defaults[border-radius];    
         }
         
         &:not(:first-of-type) {
@@ -44,8 +44,8 @@
         }
         
         &:last-of-type {
-            border-bottom-left-radius: @default-border-radius;    
-            border-bottom-right-radius: @default-border-radius;    
+            border-bottom-left-radius: @defaults[border-radius];    
+            border-bottom-right-radius: @defaults[border-radius];    
         }
     }
 

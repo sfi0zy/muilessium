@@ -52,16 +52,16 @@
     
     > .linkslist > .item > .link {
         display: inline-block;
-        padding: 0 calc((@default-ui-height * 2 - 1em) / 2);        
-        line-height: @default-ui-height * 2;
+        padding: 0 calc((@defaults[ui-height] * 2 - 1em) / 2);        
+        line-height: @defaults[ui-height] * 2;
         text-decoration: none;
-        color: @header-navigation-color;
-        transition: all @default-animation-duration @default-animation-function;        
+        color: @header-navigation[color];
+        transition: all @defaults[animation-duration] @defaults[animation-function];        
 
         &:hover,
         &:focus {
-            color: @header-navigation-color;
-            background: @header-navigation-background-focused;
+            color: @header-navigation[color];
+            background: @header-navigation[background-focused];
             outline: none;
         }
     }
@@ -81,9 +81,9 @@
             font-size: 2rem;
             text-align: right;
             transform: translateX(100%);
-            background: @header-navigation-background;
-            box-shadow: 0 0 10rem @default-shadow-color;
-            transition: all @default-animation-duration @default-animation-function;
+            background: @header-navigation[background];
+            box-shadow: 0 0 10rem @shadow-color;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
         
         > .linkslist > .item {
@@ -97,7 +97,7 @@
             }
 
             &:not(:first-of-type) {
-                border-top: 1px solid @header-navigation-border-color;
+                border-top: 1px solid @header-navigation[border-color];
             }
         }
         
@@ -113,7 +113,7 @@
             }
         
             > .@{muilessium-prefix}navigation-toggle.-hamburger {
-                color: @navigation-toggle-color;
+                color: @navigation-toggle[color];
             }
         }
     }
@@ -132,13 +132,13 @@
         display: inline-block;
         position: relative;
         float: right;
-        height: @default-ui-height * 2;
-        line-height: @default-ui-height * 2;
+        height: @defaults[ui-height] * 2;
+        line-height: @defaults[ui-height] * 2;
         padding: 0 1rem;
         font-size: 2rem;
-        color: @navigation-toggle-color;
-        fill: @navigation-toggle-color;
-        transition: all @default-animation-duration @default-animation-function;
+        color: @navigation-toggle[color];
+        fill: @navigation-toggle[color];
+        transition: all @defaults[animation-duration] @defaults[animation-function];
         
         &:hover {
             cursor: pointer;
@@ -146,8 +146,8 @@
         
         &:hover,
         &:focus {
-            fill: @navigation-toggle-color-focused;
-            color: @navigation-toggle-color-focused;
+            fill: @navigation-toggle[color-focused];
+            color: @navigation-toggle[color-focused];
         }
 
         &:active {

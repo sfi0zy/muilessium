@@ -31,7 +31,7 @@
     overflow: hidden;
     
     > .background {
-        #utils > .object-fit-cover;
+        ._object-fit-cover;
 
         height: inherit;
         width: inherit;        
@@ -53,7 +53,7 @@
         width: 100%;
         padding: 1rem 4rem;
         text-align: center;
-        color: @hero-header-color;
+        color: @hero-header[color];
     }
 
     > .scrollicon {
@@ -61,12 +61,12 @@
         bottom: 1rem;
         left: 50%;
         transform: translateX(-50%);
-        color: @hero-header-color;
+        color: @hero-header[color];
         user-select: none;
     }
 
     > .scrollicon > .@{muilessium-prefix}svg-icon {
-        fill: @hero-header-color;
+        fill: @hero-header[color];
     }
     
     &.-full-height {

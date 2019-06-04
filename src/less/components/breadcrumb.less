@@ -13,25 +13,25 @@
 
 
 .@{muilessium-prefix}breadcrumb {
-    height: @default-ui-height;    
+    height: @defaults[ui-height];    
     padding: 0 1rem;
-    line-height: @default-ui-height;
-    background: @breadcrumb-background;
-    border-radius: @default-border-radius;
+    line-height: @defaults[ui-height];
+    background: @breadcrumb[background];
+    border-radius: @defaults[border-radius];
     
     > .link {
         text-decoration: none;
-        color: @breadcrumb-color;
+        color: @breadcrumb[color];
         
         &:not(:last-of-type)::after {
             content: '\0203A';
             padding: 0 .5rem;
-            color: @breadcrumb-color;
+            color: @breadcrumb[color];
         }
 
         &:hover,
         &:focus {
-            color: @breadcrumb-color-focused;
+            color: @breadcrumb[color-focused];
         }
     }
     

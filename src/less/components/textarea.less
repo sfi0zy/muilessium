@@ -26,23 +26,23 @@
         max-width: 100%;
         min-height: 10rem;
         padding: 1em;
-        color: @textarea-color;
-        border: 1px solid @textarea-border-color;
+        color: @textarea[color];
+        border: 1px solid @textarea[border-color];
         outline: none;
         resize: none;
         overflow: auto;
-        border-radius: @default-border-radius;
+        border-radius: @defaults[border-radius];
 
         &::placeholder {
-            color: @textarea-placeholder-color;
+            color: @textarea[placeholder-color];
             text-indent: 0;
             opacity: 1;
-            transition: all @default-animation-duration @default-animation-function;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
 
         &:focus {
-            color: @textarea-color;
-            border-color: @textarea-border-color-focused;
+            color: @textarea[color];
+            border-color: @textarea[border-color-focused];
 
             &::placeholder {
                 text-indent: -50rem;
@@ -59,7 +59,7 @@
 
     &.-has-value {
         > textarea {
-            color: @textarea-color;
+            color: @textarea[color];
         }
     }
 }

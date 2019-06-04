@@ -31,14 +31,14 @@
 
     &.-striped {
         tr:nth-child(2n-1) {
-            background: @table-secondary-background-color;
+            background: @table[secondary-background-color];
         }
     }
 
     /* Use 'tr', 'th' and 'td' instead of CSS classes for simple HTML markup. */
 
     tr:not(:last-of-type) {
-        border-bottom: 1px solid @table-border-color;
+        border-bottom: 1px solid @table[border-color];
     }
 
     th {

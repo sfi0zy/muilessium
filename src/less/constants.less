@@ -3,22 +3,33 @@
 // -----------------------------------------------------------------------------
 
 
-@muilessium-prefix:            mui-;
+@muilessium-prefix: mui-;
 
-@grid-breakpoint-small:        400;
-@grid-breakpoint-small-px:     400px;
-@grid-breakpoint-medium:       600;
-@grid-breakpoint-medium-px:    600px;
-@grid-breakpoint-large:        1200;
-@grid-breakpoint-large-px:     1200px;
 
-@max-container-width:          1100px;
+@grid: {
+    breakpoint-small:     400;
+    breakpoint-small-px:  400px;
+    breakpoint-medium:    600;
+    breakpoint-medium-px: 600px;
+    breakpoint-large:     1200;
+    breakpoint-large-px:  1200px;
+    max-container-width:  1100px;
+}
 
-@default-shadow-color:         fade(@black, 30%);
 
-@default-animation-function:   cubic-bezier(.53, .05, .13, .94);
-@default-animation-duration:   210ms;
+@font-size: {
+    min: 14;
+    min-px: 14px;
+    max: 20;
+    max-px: 20px;
+}
 
-@default-border-radius:        .2rem;
-@default-ui-height:            2rem;
+
+
+@defaults: {
+    animation-function:   cubic-bezier(.53, .05, .13, .94);
+    animation-duration:   210ms;
+    border-radius:        .2rem;
+    ui-height:            2rem;
+}
 

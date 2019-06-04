@@ -24,21 +24,21 @@
 
     display: inline-block;    
     text-decoration: none;
-    color: @tags-list-color;
-    transition: all @default-animation-duration @default-animation-function;
+    color: @tags-list[color];
+    transition: all @defaults[animation-duration] @defaults[animation-function];
     
     &:visited {
-        color: @tags-list-color;
+        color: @tags-list[color];
     }
     
     &:hover,
     &:focus {
         cursor: pointer;
-        color: @tags-list-color-focused;
+        color: @tags-list[color-focused];
     }
     
     &:active {
-        color: @tags-list-color-active;
+        color: @tags-list[color-active];
     }
 }
 
@@ -68,8 +68,8 @@
     > .@{muilessium-prefix}tag-wrapper.-icon {
         ._smaller-1;
 
-        color: @tags-list-color;
-        fill: @tags-list-color;
+        color: @tags-list[color];
+        fill: @tags-list[color];
 
         > .mui-svg-icon {
             transform: none;

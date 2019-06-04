@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// Grid
+// -----------------------------------------------------------------------------
+
 .@{muilessium-prefix}row {
     display: flex;
     flex: 0 1 auto;
@@ -16,7 +20,7 @@
     &.-s-between { justify-content: space-between; }
 
 
-    @media screen and (min-width: @grid-breakpoint-medium-px) {
+    @media screen and (min-width: @grid[breakpoint-medium-px]) {
         &.-m-start  { justify-content: flex-start; text-align: start;  }
         &.-m-center { justify-content: center;     text-align: center; }
         &.-m-end    { justify-content: flex-end;   text-align: end;    }
@@ -30,7 +34,7 @@
     }
 
 
-    @media screen and (min-width: @grid-breakpoint-large-px) {
+    @media screen and (min-width: @grid[breakpoint-large-px]) {
         &.-l-start  { justify-content: flex-start; text-align: start;  }
         &.-l-center { justify-content: center;     text-align: center; }
         &.-l-end    { justify-content: flex-end;   text-align: end;    }
@@ -56,7 +60,7 @@
         padding-right: 1rem;
     }
 
-    @media screen and (max-width: @grid-breakpoint-small-px) {
+    @media screen and (max-width: @grid[breakpoint-small-px]) {
         flex-basis: 100%;
         max-width: 100%;
     }
@@ -87,7 +91,7 @@
     &.-s-offset-11 { margin-left: 91.66666667%; }
 
 
-    @media screen and (min-width: @grid-breakpoint-medium-px) {
+    @media screen and (min-width: @grid[breakpoint-medium-px]) {
         &.-m1  { flex-basis:  8.33333333%; max-width:  8.33333333%; }
         &.-m2  { flex-basis: 16.66666667%; max-width: 16.66666667%; }
         &.-m3  { flex-basis: 25%;          max-width: 25%;          }
@@ -120,7 +124,7 @@
     }
 
 
-    @media screen and (min-width: @grid-breakpoint-large-px) {
+    @media screen and (min-width: @grid[breakpoint-large-px]) {
         &.-l1  { flex-basis:  8.33333333%; max-width:  8.33333333%; }
         &.-l2  { flex-basis: 16.66666667%; max-width: 16.66666667%; }
         &.-l3  { flex-basis: 25%;          max-width: 25%;          }
@@ -152,3 +156,4 @@
         }
     }
 }
+

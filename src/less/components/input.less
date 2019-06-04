@@ -35,42 +35,42 @@
 
 .@{muilessium-prefix}input {
     position: relative;    
-    height: @default-ui-height;
+    height: @defaults[ui-height];
     width: 100%;
-    border: 1px solid @input-border-color;
-    border-radius: @default-border-radius;
+    border: 1px solid @input[border-color];
+    border-radius: @defaults[border-radius];
     overflow: hidden;
-    transition: border-color @default-animation-duration @default-animation-function;
+    transition: border-color @defaults[animation-duration] @defaults[animation-function];
     
     &:hover {
         cursor: pointer;
     }
     
     > input {
-        height: ~'calc(' @default-ui-height ~' - ' 2px ~')';
+        height: ~'calc(' @defaults[ui-height] ~' - ' 2px ~')';
         width: 100%;
         padding: 0 1rem;
-        line-height: ~'calc(' @default-ui-height ~' - ' 2px ~')';
-        color: @input-color;
+        line-height: ~'calc(' @defaults[ui-height] ~' - ' 2px ~')';
+        color: @input[color];
         background: transparent;
         outline: none;
         overflow: hidden;
         border: none;
 
         &::placeholder {
-            color: @input-placeholder-color;
+            color: @input[placeholder-color];
             text-indent: 0;
             opacity: 1;
-            transition: all @default-animation-duration @default-animation-function;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
 
     }
     
     &.-focused {
-        border-color: @input-border-color-focused;
+        border-color: @input[border-color-focused];
 
         > input {
-            color: @input-color;
+            color: @input[color];
 
             &::placeholder {
                 text-indent: -50rem;
@@ -80,18 +80,18 @@
     }
     
     &.-valid {
-        border-color: @input-valid-color;
+        border-color: @input[valid-color];
         
         > input::placeholder {
-            color: @input-valid-color;
+            color: @input[valid-color];
         }
     }
     
     &.-invalid {
-        border-color: @input-invalid-color;
+        border-color: @input[invalid-color];
         
         > input::placeholder {
-            color: @input-invalid-color;
+            color: @input[invalid-color];
         }
     }
 }
@@ -108,14 +108,14 @@
 .@{muilessium-prefix}input-hint {
     margin-bottom: .2rem;
     font-size: .8em;
-    color: @input-hint-color;
+    color: @input[hint-color];
 
     &.-valid {
-        color: @input-valid-color;
+        color: @input[valid-color];
     }
 
     &.-invalid {
-        color: @input-invalid-color;
+        color: @input[invalid-color];
     }
 }
 
@@ -129,33 +129,33 @@
         position: absolute;
         line-height: 1.5;
         opacity: 0;
-        transition: opacity @default-animation-duration @default-animation-function;
+        transition: opacity @defaults[animation-duration] @defaults[animation-function];
     }
 
     > .validicon > .@{muilessium-prefix}svg-icon,
     > .invalidicon > .@{muilessium-prefix}svg-icon {
-        fill: @input-hint-color;
+        fill: @input[hint-color];
     }
 
     &.-valid {
         > .validicon {
             opacity: 1;
-            color: @input-valid-color;
+            color: @input[valid-color];
         }
 
         > .validicon > .@{muilessium-prefix}svg-icon {
-            fill: @input-valid-color;
+            fill: @input[valid-color];
         }
     }
 
     &.-invalid {
         > .invalidicon {
             opacity: 1;
-            color: @input-invalid-color;
+            color: @input[invalid-color];
         }
 
         > .invalidicon > .@{muilessium-prefix}svg-icon {
-            fill: @input-invalid-color;
+            fill: @input[invalid-color];
         }
     }
 }

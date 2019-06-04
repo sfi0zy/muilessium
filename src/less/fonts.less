@@ -2,27 +2,19 @@
 // Fonts
 // -----------------------------------------------------------------------------
 
-@default-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
-@min-font-size: 14;
-@min-font-size-px: 14px;
-@max-font-size: 20;
-@max-font-size-px: 20px;
-
-
 html {
-    font-family: @default-font-family;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
     // Font size formula (for default values):
     // size = ( 14px + (20 - 14) * ((100vw - 400px) / ( 1200 - 400)))
-    font-size: ~'calc(' @min-font-size-px ~' + (' @max-font-size ~' - ' @min-font-size ~') * ((100vw - ' @grid-breakpoint-small-px ~') / (' @grid-breakpoint-large ~' - ' @grid-breakpoint-small ~')))';
+    font-size: ~'calc(' @font-size[min-px] ~' + (' @font-size[max] ~' - ' @font-size[min] ~') * ((100vw - ' @grid[breakpoint-small-px] ~') / (' @grid[breakpoint-large] ~' - ' @grid[breakpoint-small] ~')))';
 
-    @media screen and (max-width: @grid-breakpoint-small-px) {
-        font-size: @min-font-size-px;
+    @media screen and (max-width: @grid[breakpoint-small-px]) {
+        font-size: @font-size[min-px];
     }
 
-    @media screen and (min-width: @grid-breakpoint-large-px) {
-        font-size: @max-font-size-px;
+    @media screen and (min-width: @grid[breakpoint-large-px]) {
+        font-size: @font-size[max-px];
     }
 
     line-height: 1.50;

@@ -40,20 +40,20 @@
 
 .@{muilessium-prefix}accordion {
     list-style: none;
-    background: @accordion-background;
-    color: @accordion-color;
+    background: @accordion[background];
+    color: @accordion[color];
     
     > .item {
         display: block;
         position: relative;        
         margin: 0;
         padding: 0 1rem;
-        border: 1px solid @accordion-border-color;
+        border: 1px solid @accordion[border-color];
         overflow: hidden;
         
         &:first-of-type {
-            border-top-left-radius: @default-border-radius;    
-            border-top-right-radius: @default-border-radius;    
+            border-top-left-radius: @defaults[border-radius];    
+            border-top-right-radius: @defaults[border-radius];    
         }
         
         &:not(:first-of-type) {
@@ -61,8 +61,8 @@
         }
         
         &:last-of-type {
-            border-bottom-left-radius: @default-border-radius;    
-            border-bottom-right-radius: @default-border-radius;    
+            border-bottom-left-radius: @defaults[border-radius];    
+            border-bottom-right-radius: @defaults[border-radius];    
         }
     }
     
@@ -73,38 +73,38 @@
         width: ~'calc(100% + 2rem)';
         padding: 1rem;
         line-height: 1;
-        background: @accordion-title-background;
-        color: @accordion-title-color;
-        transition: border-bottom-left-radius  @default-animation-duration @default-animation-function,
-                    border-bottom-right-radius @default-animation-duration @default-animation-function;
+        background: @accordion[title-background];
+        color: @accordion[title-color];
+        transition: border-bottom-left-radius  @defaults[animation-duration] @defaults[animation-function],
+                    border-bottom-right-radius @defaults[animation-duration] @defaults[animation-function];
         
         &:hover,
         &:focus {
             cursor: pointer;
-            background: @accordion-title-background-focused;
+            background: @accordion[title-background-focused];
         }
     }
 
     > .item:first-of-type > .title {
-        border-top-left-radius: @default-border-radius;
-        border-top-right-radius: @default-border-radius;
+        border-top-left-radius: @defaults[border-radius];
+        border-top-right-radius: @defaults[border-radius];
     }
 
     > .item:last-of-type:not(.-opened) > .title {
-        border-bottom-left-radius: @default-border-radius;
-        border-bottom-right-radius: @default-border-radius;
+        border-bottom-left-radius: @defaults[border-radius];
+        border-bottom-right-radius: @defaults[border-radius];
     }
 
     > .item > .title > .indicator {
         display: inline-block;
         height: 1em;
         width: 1em;
-        transition: transform @default-animation-duration @default-animation-function;
+        transition: transform @defaults[animation-duration] @defaults[animation-function];
         user-select: none;
     }
 
     > .item > .title > .indicator > svg {
-        fill: @accordion-title-color;
+        fill: @accordion[title-color];
     }
 
     > .item > .content {
@@ -112,7 +112,7 @@
         overflow: hidden;
         opacity: 0;
         transform: rotateX(90deg);
-        transition: all @default-animation-duration @default-animation-function;
+        transition: all @defaults[animation-duration] @defaults[animation-function];
         will-change: max-height, margin, opacity, transform;
 
         @media print {
@@ -129,12 +129,12 @@
             margin: 1rem 0;
             opacity: 1;
             transform: rotateX(0);
-            transition: all @default-animation-duration @default-animation-function;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
 
         > .title {
-            border-bottom-left-radius: @default-border-radius;
-            border-bottom-right-radius: @default-border-radius;
+            border-bottom-left-radius: @defaults[border-radius];
+            border-bottom-right-radius: @defaults[border-radius];
         }
 
         > .title > .indicator {

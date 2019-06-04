@@ -42,7 +42,7 @@
     z-index: 10;
     opacity: 0;
     pointer-events: none;
-    transition: opacity @default-animation-function 600ms;
+    transition: opacity @defaults[animation-function] 600ms;
 
     &.-opened {
         opacity: 1;
@@ -81,25 +81,25 @@
         line-height: 2rem;
         text-align: center;
         border-radius: 50%;
-        background: @modal-window-closeicon-background;
-        border: 2px solid @modal-window-closeicon-border-color;
-        color: @modal-window-closeicon-color;
+        background: @modal-window[closeicon-background];
+        border: 2px solid @modal-window[closeicon-border-color];
+        color: @modal-window[closeicon-color];
         cursor: pointer;
         z-index: 2;
         box-sizing: content-box;
-        transition: all @default-animation-function @default-animation-duration;
+        transition: all @defaults[animation-function] @defaults[animation-duration];
 
         > .@{muilessium-prefix}svg-icon {
-            fill: @modal-window-closeicon-color;
+            fill: @modal-window[closeicon-color];
         }
 
         &:hover,
         &:focus {
-            background: @modal-window-closeicon-background-focused;
-            color: @modal-window-closeicon-color-focused;
+            background: @modal-window[closeicon-background-focused];
+            color: @modal-window[closeicon-color-focused];
 
             > .@{muilessium-prefix}svg-icon {
-                fill: @modal-window-closeicon-color-focused;
+                fill: @modal-window[closeicon-color-focused];
             }
         }
     }
@@ -113,7 +113,8 @@
         width: 100vw;
 
         &.-visible {
-            background: @default-shadow-color;
+            background: @shadow-color;
         }
     }
 }
+

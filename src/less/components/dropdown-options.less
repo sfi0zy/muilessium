@@ -20,7 +20,7 @@
     z-index: 11;
     position: relative;
     width: 100%;
-    border-radius: @default-border-radius;
+    border-radius: @defaults[border-radius];
 
     &::before {
         ._shadow-1;
@@ -39,8 +39,8 @@
         position: relative;
         padding: 1rem .5rem 1rem 1rem;
         text-align: left;
-        border-radius: @default-border-radius;
-        background: @dropdown-options-background;
+        border-radius: @defaults[border-radius];
+        background: @dropdown-options[background];
         
         &::after {
             content: '';
@@ -51,18 +51,18 @@
             width: 1rem;
             transform: translateX(-50%) translateY(calc(-50% + 1px)) rotate(45deg);
             z-index: 1;
-            background: @dropdown-options-background;
+            background: @dropdown-options[background];
         }
     }
 
     > .wrapper > .option {
         cursor: pointer;
-        transition: color @default-animation-duration @default-animation-function;
-        color: @dropdown-options-color;
+        transition: color @defaults[animation-duration] @defaults[animation-function];
+        color: @dropdown-options[color];
 
         &:hover,
         &:focus {
-            color: @dropdown-options-color-focused;
+            color: @dropdown-options[color-focused];
         }
     }
 

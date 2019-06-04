@@ -39,17 +39,17 @@
     display: block;
     position: relative;    
     overflow: hidden;
-    border-radius: @default-border-radius;
-    color: @card-color;
-    @background: @card-background;
+    border-radius: @defaults[border-radius];
+    color: @card[color];
+    background: @card[background];
     
     > .header {
         padding: 1rem;
         text-align: center;
-        color: @card-header-color;
-        background: @card-header-background;
-        border-top-left-radius: @default-border-radius;
-        border-top-right-radius: @default-border-radius;
+        color: @card[header-color];
+        background: @card[header-background];
+        border-top-left-radius: @defaults[border-radius];
+        border-top-right-radius: @defaults[border-radius];
     }
 
     > .content {

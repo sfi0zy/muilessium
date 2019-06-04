@@ -24,13 +24,13 @@
         z-index: 0;
         
         &:first-of-type {
-            border-top-left-radius: @default-border-radius;
-            border-bottom-left-radius: @default-border-radius;
+            border-top-left-radius: @defaults[border-radius];
+            border-bottom-left-radius: @defaults[border-radius];
         }
         
         &:last-of-type {
-            border-top-right-radius: @default-border-radius;
-            border-bottom-right-radius: @default-border-radius;
+            border-top-right-radius: @defaults[border-radius];
+            border-bottom-right-radius: @defaults[border-radius];
         }
         
         &:not(:first-of-type) {
@@ -51,13 +51,13 @@
             border: none;
 
             &:first-of-type {
-                border-top-left-radius: @default-border-radius;
-                border-top-right-radius: @default-border-radius;
+                border-top-left-radius: @defaults[border-radius];
+                border-top-right-radius: @defaults[border-radius];
             }
 
             &:last-of-type {
-                border-bottom-left-radius: @default-border-radius;
-                border-bottom-right-radius: @default-border-radius;
+                border-bottom-left-radius: @defaults[border-radius];
+                border-bottom-right-radius: @defaults[border-radius];
             }
 
             &:not(:first-of-type) {

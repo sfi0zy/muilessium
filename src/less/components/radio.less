@@ -44,10 +44,10 @@
             cursor: pointer;
             
             > .icon {
-                border-color: @radio-dot-color;
+                border-color: @radio[dot-color];
                 
                 &::after {
-                    background: @radio-dot-color;
+                    background: @radio[dot-color];
                 }
             }
         }
@@ -57,11 +57,11 @@
         display: inline-block;
         position: relative;
         vertical-align: middle;        
-        height: @default-ui-height;
-        width: @default-ui-height;
-        border: 1px solid @radio-border-color;
+        height: @defaults[ui-height];
+        width: @defaults[ui-height];
+        border: 1px solid @radio[border-color];
         border-radius: 50%;
-        transition: border-color @default-animation-duration @default-animation-function;
+        transition: border-color @defaults[animation-duration] @defaults[animation-function];
         
         &::after {
             content: '';
@@ -72,18 +72,18 @@
             transform: translateX(-50%) translateY(-50%);
             height: 0;
             width: 0;
-            background: @radio-dot-color;
+            background: @radio[dot-color];
             border-radius: 50%;
             opacity: 0;
-            transition: all @default-animation-duration @default-animation-function;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
     }
     
     > input[type=radio]:checked + label > .icon {
         &::after {
             opacity: 1;
-            height: @default-ui-height * .4;
-            width: @default-ui-height * .4;
+            height: @defaults[ui-height] * .4;
+            width: @defaults[ui-height] * .4;
         }
     }
     

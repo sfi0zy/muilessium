@@ -3,112 +3,241 @@
 // -----------------------------------------------------------------------------
 
 
-@html-color:                                @black;
-@html-background:                           @white;
-@a-color:                                   @black;
-@a-color-focused:                           @blue-4;
-@a-color-active:                            @black;
-@hr-color:                                  @grey-3;
+@html: {
+    color: @black;
+    background: @white;
+}
 
-@accordion-background:                      @white;
-@accordion-color:                           @black;
-@accordion-title-background:                @blue-4;
-@accordion-title-background-focused:        @blue-5;
-@accordion-title-color:                     @white;
-@accordion-border-color:                    @grey-2;
-@badge-color:                               @white;
-@badge-background:                          @red-3;
-@blockquote-color:                          @black;
-@blockquote-color-author:                   @grey-3;
-@breadcrumb-color:                          @white;
-@breadcrumb-color-focused:                  @black;
-@breadcrumb-background:                     @blue-4;
-@button-color:                              @white;
-@button-color-focused:                      @white;
-@button-color-active:                       @white;
-@button-background:                         @blue-4;
-@button-background-focused:                 @blue-5;
-@button-background-active:                  @black;
-@button-dangerous-background:               @red-3;
-@button-dangerous-background-focused:       @red-5;
-@button-dangerous-background-active:        @black;
-@button-ghost-color:                        @black;
-@button-ghost-color-focused:                @white;
-@button-ghost-background-focused:           @blue-4;
-@button-light-ghost-color:                  @white;
-@button-light-ghost-color-focused:          @white;
-@button-light-ghost-background-focused:     @blue-4;
-@card-color:                                @black;
-@card-background:                           @white;
-@card-header-color:                         @white;
-@card-header-background:                    @grey-5;
-@carousel-color:                            @white;
-@carousel-background:                       @grey-5;
-@carousel-controls-color:                   @white;
-@carousel-controls-background:              fade(@black, 30%);
-@carousel-controls-background-focused:      fade(@black, 60%);
-@checkbox-icon-color:                       @green-3;
-@checkbox-border-color:                     @black;
-@checkbox-border-color-focused:             @blue-4;
-@collection-border-color:                   @grey-3;
-@dropdown-options-color:                    @black;
-@dropdown-options-color-focused:            @blue-4;
-@dropdown-options-background:               @white;
-@header-logo-color:                         @white;
-@header-logo-color-focused:                 @blue-4;
-@header-navigation-background:              @black;
-@header-navigation-color:                   @white;
-@header-navigation-background-focused:      @blue-4;
-@header-navigation-border-color:            @grey-4;
-@navigation-toggle-color:                   @white;
-@navigation-toggle-color-focused:           @blue-4;
-@hero-header-color:                         @white;
-@input-color:                               @black;
-@input-hint-color:                          @grey-4;
-@input-border-color:                        @grey-4;
-@input-border-color-focused:                @blue-4;
-@input-valid-color:                         @green-3;
-@input-invalid-color:                       @red-3;
-@input-placeholder-color:                   @grey-3;
-@marker-background:                         @yellow-3;
-@media-view-color:                          @grey-4;
-@modal-window-closeicon-color:              @black;
-@modal-window-closeicon-color-focused:      @white;
-@modal-window-closeicon-border-color:       @grey-3;
-@modal-window-closeicon-background:         @white;
-@modal-window-closeicon-background-focused: @red-3;
-@notification-color:                        @black;
-@notification-background:                   @white;
-@notification-banner-color:                 @white;
-@notification-banner-background:            @blue-4;
-@page-header-background:                    @black;
-@page-footer-background:                    @black;
-@page-footer-color:                         @white;
-@progress-bar-background:                   @grey-2;
-@progress-bar-color:                        @blue-4;
-@progress-bar-value-color:                  @black;
-@radio-dot-color:                           @blue-4;
-@radio-border-color:                        @grey-4;
-@ribbon-color:                              @black;
-@ribbon-background:                         @white;
-@select-dropdown-color:                     @black;
-@select-dropdown-border-color:              @grey-3;
-@select-dropdown-border-color-focused:      @blue-4;
-@spoiler-title-color:                       @grey-4;
-@spoiler-title-color-focused:               @blue-4;
-@table-border-color:                        @grey-3;
-@table-secondary-background-color:          @grey-1;
-@tabs-color:                                @black;
-@tabs-color-focused:                        @white;
-@tabs-background:                           @white;
-@tabs-background-focused:                   @blue-4;
-@tabs-secondary-background:                 @grey-2;
-@tabs-border-color:                         @grey-3;
-@tags-list-color:                           @grey-4;
-@tags-list-color-focused:                   @blue-4;
-@tags-list-color-active:                    @blue-5;
-@textarea-color:                            @black;
-@textarea-placeholder-color:                @grey-3;
-@textarea-border-color:                     @grey-4;
-@textarea-border-color-focused:             @blue-4;
+
+@a: {
+    color: @black;
+    color-focused: @blue-4;
+    color-active:  @black;
+}
+
+
+@hr: {
+    color: @grey-3;
+}
+
+
+@accordion: {
+    background: @white;
+    color: @black;
+    title-background: @blue-4;
+    title-background-focused: @blue-5;
+    title-color: @white;
+    border-color: @grey-2;
+}
+
+
+@badge: {
+    color: @white;
+    background: @red-3;
+}
+
+
+@blockquote: {
+    color: @black;
+    color-author: @grey-3;
+}
+
+
+@breadcrumb: {
+    color: @white;
+    color-focused: @black;
+    background: @blue-4;
+}
+
+
+@button: {
+    color: @white;
+    color-focused: @white;
+    color-active: @white;
+    background: @blue-4;
+    background-focused: @blue-5;
+    background-active: @black;
+    dangerous-background: @red-3;
+    dangerous-background-focused: @red-5;
+    dangerous-background-active: @black;
+    ghost-color: @black;
+    ghost-color-focused: @white;
+    ghost-background-focused: @blue-4;
+    light-ghost-color: @white;
+    light-ghost-color-focused: @white;
+    light-ghost-background-focused: @blue-4;
+}
+
+
+@card: {
+    color: @black;
+    background: @white;
+    header-color: @white;
+    header-background: @grey-5;
+}
+
+
+@carousel: {
+    color: @white;
+    background: @grey-5;
+    controls-color: @white;
+    controls-background: fade(@black, 30%);
+    controls-background-focused: fade(@black, 60%);
+}
+
+
+@checkbox: {
+    icon-color: @green-3;
+    border-color: @black;
+    border-color-focused: @blue-4;
+}
+
+
+@collection: {
+    border-color: @grey-3;
+}
+
+
+@dropdown-options: {
+    color: @black;
+    color-focused: @blue-4;
+    background: @white;
+}
+
+
+@header-logo: {
+    color: @white;
+    color-focused: @blue-4;
+}
+
+
+@header-navigation: {
+    background: @black;
+    color: @white;
+    background-focused: @blue-4;
+    border-color: @grey-4;
+}
+
+
+@navigation-toggle: {
+    color: @white;
+    color-focused: @blue-4;
+}
+
+
+@hero-header: {
+    color: @white;
+}
+
+
+@input: {
+    color: @black;
+    hint-color: @grey-4;
+    border-color: @grey-4;
+    border-color-focused: @blue-4;
+    valid-color: @green-3;
+    invalid-color: @red-3;
+    placeholder-color: @grey-3;
+}
+
+
+@marker: {
+    background: @yellow-3;
+}
+
+
+@media-view: {
+    color: @grey-4;
+}
+
+
+@modal-window: {
+    closeicon-color: @black;
+    closeicon-color-focused: @white;
+    closeicon-border-color: @grey-3;
+    closeicon-background: @white;
+    closeicon-background-focused: @red-3;
+}
+
+
+@notification: {
+    color: @black;
+    background: @white;
+    banner-color: @white;
+    banner-background: @blue-4;
+}
+
+
+@page-header: {
+    background: @black;
+}
+
+
+@page-footer: {
+    background: @black;
+    color: @white;
+}
+
+
+@progress-bar: {
+    background: @grey-2;
+    color: @blue-4;
+    value-color: @black;
+}
+
+
+@radio: {
+    dot-color: @blue-4;
+    border-color: @grey-4;
+}
+
+
+@ribbon: {
+    color: @black;
+    background: @white;
+}
+
+
+@select-dropdown: {
+    color: @black;
+    border-color: @grey-3;
+    border-color-focused: @blue-4;
+}
+
+
+@spoiler: {
+    title-color: @grey-4;
+    title-color-focused: @blue-4;
+}
+
+
+@table: {
+    border-color: @grey-3;
+    secondary-background-color: @grey-1;
+}
+
+
+@tabs: {
+    color: @black;
+    color-focused: @white;
+    background: @white;
+    background-focused: @blue-4;
+    secondary-background: @grey-2;
+    border-color: @grey-3;
+}
+
+
+@tags-list: {
+    color: @grey-4;
+    color-focused: @blue-4;
+    color-active: @blue-5;
+}
+
+
+@textarea: {
+    color: @black;
+    placeholder-color: @grey-3;
+    border-color: @grey-4;
+    border-color-focused: @blue-4;
+}
 

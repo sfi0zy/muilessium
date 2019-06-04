@@ -34,14 +34,14 @@
 
 .@{muilessium-prefix}progress-bar {
     position: relative;
-    background: @progress-bar-background;
-    border-radius: @default-border-radius;
+    background: @progress-bar[background];
+    border-radius: @defaults[border-radius];
     overflow: hidden; 
 
     > .indicator {
-        height: @default-ui-height;
+        height: @defaults[ui-height];
         width: 0;
-        background: @progress-bar-color;
+        background: @progress-bar[color];
     }
 
     > .value {
@@ -50,14 +50,14 @@
         left: 0;
         height: 100%;
         width: 100%;
-        line-height: @default-ui-height;
+        line-height: @defaults[ui-height];
         text-align: center;
-        color: @progress-bar-value-color;
+        color: @progress-bar[value-color];
     }
 
     &.-radial {
-        height: @default-ui-height * 4;
-        width:  @default-ui-height * 4;
+        height: @defaults[ui-height] * 4;
+        width:  @defaults[ui-height] * 4;
         background: transparent;
 
         &.-align-center {
@@ -75,21 +75,21 @@
         > .indicator > .background,
         > .indicator > .progress {
             fill: none;
-            stroke-width: @default-ui-height / 2;
+            stroke-width: @defaults[ui-height] / 2;
         }
 
         > .indicator > .background {
-            stroke: @progress-bar-background;
+            stroke: @progress-bar[background];
         }
 
         > .indicator > .progress {
-            stroke: @progress-bar-color;
+            stroke: @progress-bar[color];
             stroke-dasharray:  213.628; /* 2 PI R */
             stroke-dashoffset: 213.628; /* 2 PI R */
         }
 
         > .value {
-            line-height: @default-ui-height * 4;
+            line-height: @defaults[ui-height] * 4;
         }
     }
 }

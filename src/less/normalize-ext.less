@@ -10,12 +10,13 @@
     box-sizing: border-box;
 }
 
+
 html {
     height: 100%;
-
-    color: @html-color;
-    background-color: @html-background;
+    color: @html[color];
+    background-color: @html[background];
 }
+
 
 body {
     display: flex;
@@ -24,33 +25,30 @@ body {
     min-width: 320px;
 }
 
-::-moz-selection {
-    color: @html-background;
-    background: @html-color;
-}
 
 ::selection {
-    color: @html-background;
-    background: @html-color;
+    color: @html[background];
+    background: @html[color];
 }
 
+
 a {
-    color: @a-color;
-    transition: color @default-animation-duration @default-animation-function,
-    background @default-animation-duration @default-animation-function;
+    color: @a[color];
+    transition: color @defaults[animation-duration] @defaults[animation-function],
+        background @defaults[animation-duration] @defaults[animation-function];
     text-decoration: none;
     
     &:active {
-        color: @a-color-active;
+        color: @a[color-active];
     }
     
     &:visited {
-        color: @a-color;
+        color: @a[color];
     }
 
     &:hover,
     &:focus {
-        color: @a-color-focused;
+        color: @a[color-focused];
     }
     
     &:empty {
@@ -60,20 +58,24 @@ a {
     }
 }
 
+
 hr {
     border: 0;
     height: 0;
     width: 100%;
-    border-top: 1px solid @hr-color;
+    border-top: 1px solid @hr[color];
 }
+
 
 :focus {
     outline: none;
 }
 
+
 div:empty:not(.indicator):not(.mui-navigation-toggle):not(._allow-empty):not(.mui-shadow-toggle):not(.scrollbar) {
     display: none;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -81,9 +83,11 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+
 abbr {
     text-transform: uppercase;
 }
+
 
 img {
     display: block;

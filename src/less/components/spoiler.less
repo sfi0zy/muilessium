@@ -20,13 +20,13 @@
 .@{muilessium-prefix}spoiler {
     > .title {
         display: inline-block;
-        color: @spoiler-title-color;
-        border-bottom: 1px dashed @spoiler-title-color;
-        transition: color @default-animation-duration @default-animation-function;
+        color: @spoiler[title-color];
+        border-bottom: 1px dashed @spoiler[title-color];
+        transition: color @defaults[animation-duration] @defaults[animation-function];
 
         &:hover,
         &:focus {
-            color: @spoiler-title-color-focused;
+            color: @spoiler[title-color-focused];
             cursor: pointer;
         }
     }
@@ -38,7 +38,7 @@
         opacity: 0;
         overflow: hidden;
         transform: rotateX(90deg) translateY(-40%);
-        transition: all @default-animation-duration @default-animation-function;
+        transition: all @defaults[animation-duration] @defaults[animation-function];
         will-change: opacity, max-height, transform;
 
         @media print {
@@ -56,3 +56,4 @@
         }
     }
 }
+

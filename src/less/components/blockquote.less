@@ -12,13 +12,13 @@
 .@{muilessium-prefix}blockquote {
     display: block;    
     padding: 1rem 2rem;
-    color: @blockquote-color;
+    color: @blockquote[color];
     
     .text {
         ._bigger-1;
 
         display: block;
-        max-width: @max-container-width;
+        max-width: @grid[max-container-width];
         margin: 0 auto .5rem;
         font-weight: 600;
         text-align: center;
@@ -34,10 +34,10 @@
     
     .author {
         display: block;
-        max-width: @max-container-width;
+        max-width: @grid[max-container-width];
         margin: 0 auto;
         text-align: right;
-        color: @blockquote-color-author;
+        color: @blockquote[color-author];
     }
 }
 

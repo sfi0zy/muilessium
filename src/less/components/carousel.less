@@ -68,7 +68,7 @@
     width: 100%;
 
     &.-rounded {
-        border-radius: @default-border-radius;
+        border-radius: @defaults[border-radius];
         overflow: hidden;
     }
 }
@@ -80,7 +80,7 @@
     width: inherit;
     margin: 0;
     list-style: none;
-    background: @carousel-background;
+    background: @carousel[background];
 }
 
 
@@ -93,8 +93,8 @@
     overflow: hidden;
     margin: 0 !important;
     opacity: 0;
-    transition: opacity 600ms @default-animation-function,
-                transform 600ms @default-animation-function;
+    transition: opacity 600ms @defaults[animation-function],
+                transform 600ms @defaults[animation-function];
 
     &.-active {
         opacity: 1;
@@ -110,7 +110,7 @@
     }
     
     > img.background {
-        #utils > .object-fit-cover;
+        ._object-fit-cover;
 
         height: inherit;
         width: inherit;
@@ -126,7 +126,7 @@
     width: inherit;
     padding: 1rem 6rem;
     text-align: center;
-    color: @carousel-color;
+    color: @carousel[color];
 
     &.-content-center {
         text-align: center;
@@ -172,20 +172,20 @@
         font-size: 1.5rem;
         line-height: 20rem;
         text-align: center;
-        color: @carousel-controls-color;
-        background: @carousel-controls-background;
-        transition: all @default-animation-duration @default-animation-function;
+        color: @carousel[controls-color];
+        background: @carousel[controls-background];
+        transition: all @defaults[animation-duration] @defaults[animation-function];
         
         &:hover,
         &:focus,
         &.-focused {
             cursor: pointer;
             outline: none;
-            background: @carousel-controls-background-focused;
+            background: @carousel[controls-background-focused];
         }
 
         > .@{muilessium-prefix}svg-icon {
-            fill: @carousel-controls-color;
+            fill: @carousel[controls-color];
         }
     }
     
@@ -221,15 +221,15 @@
         height: 1rem;
         width: 1rem;
         margin: 0 .2rem;
-        background: @carousel-controls-background;
+        background: @carousel[controls-background];
         border-radius: 50%;
-        transition: all @default-animation-duration @default-animation-function;        
+        transition: all @defaults[animation-duration] @defaults[animation-function];
 
         &:hover,
         &:focus {
             cursor: pointer;
             outline: none;
-            background: @carousel-controls-background-focused;
+            background: @carousel[controls-background-focused];
         }
 
         &::after {
@@ -242,12 +242,12 @@
             width: .5rem;
             background: @transparent;
             border-radius: 50%;
-            transition: all @default-animation-duration @default-animation-function;
+            transition: all @defaults[animation-duration] @defaults[animation-function];
         }
 
         &.-active {
             &::after {
-                background: @carousel-controls-color;
+                background: @carousel[controls-color];
             }
         }
     }

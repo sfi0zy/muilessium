@@ -36,13 +36,13 @@
         width: 1px;        
         padding: 0 1rem;
         text-align: center;
-        line-height: @default-ui-height;
-        color: @tabs-color;
-        background: @tabs-secondary-background;
-        border: 1px solid @tabs-border-color;
-        border-top-left-radius: @default-border-radius;
-        border-top-right-radius: @default-border-radius;
-        transition: all @default-animation-duration @default-animation-function;
+        line-height: @defaults[ui-height];
+        color: @tabs[color];
+        background: @tabs[secondary-background];
+        border: 1px solid @tabs[border-color];
+        border-top-left-radius: @defaults[border-radius];
+        border-top-right-radius: @defaults[border-radius];
+        transition: all @defaults[animation-duration] @defaults[animation-function];
 
         &:not(:first-of-type) {
             border-left: none;
@@ -51,25 +51,25 @@
         &:hover,
         &:focus {
             cursor: pointer;
-            background: @tabs-background-focused;
-            color: @tabs-color-focused;
+            background: @tabs[background-focused];
+            color: @tabs[color-focused];
         }
 
         &.-active {
-            color: @tabs-color;
-            background: @tabs-background;
-            border-bottom-color: @tabs-background;
+            color: @tabs[color];
+            background: @tabs[background];
+            border-bottom-color: @tabs[background];
         }
     }
     
     > .tabs {
+        ._clearfix;
+
         margin: 0;        
-        border: 1px solid @tabs-border-color;
+        border: 1px solid @tabs[border-color];
         border-top: none;
-        border-bottom-left-radius: @default-border-radius;
-        border-bottom-right-radius: @default-border-radius;
-        
-        #utils > .clearfix;
+        border-bottom-left-radius: @defaults[border-radius];
+        border-bottom-right-radius: @defaults[border-radius];
     }
     
     > .tabs > .tab {
@@ -77,14 +77,14 @@
         float: left;
         width: ~'calc(100% - 1px)';
         padding: 1rem;
-        color: @tabs-color;
-        background: @tabs-background;
+        color: @tabs[color];
+        background: @tabs[background];
         opacity: 0;
         transform: rotateX(90deg);
-        transition: all @default-animation-duration @default-animation-function;
-        border-bottom: 1px solid @tabs-background;
-        border-bottom-left-radius: @default-border-radius;
-        border-bottom-right-radius: @default-border-radius;
+        transition: all @defaults[animation-duration] @defaults[animation-function];
+        border-bottom: 1px solid @tabs[background];
+        border-bottom-left-radius: @defaults[border-radius];
+        border-bottom-right-radius: @defaults[border-radius];
         
         &:not(:first-of-type) {
             margin-left: ~'calc(-100% + 1px)';
