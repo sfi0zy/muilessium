@@ -1,19 +1,59 @@
 const gulp         = require('gulp');
 const $            = require('gulp-load-plugins')();
 const fs           = require('fs');
+const path         = require('path');
 const argv         = require('yargs').argv;
 const webpack      = require('webpack-stream');
 const browserSync  = require('browser-sync').create();
 
+require('colors');
 
 const pkg         = JSON.parse(fs.readFileSync('./package.json'));
 const ENVIRONMENT = argv.production ? 'production' : 'development';
 
 
-console.log('\x1b[33m%s %s\x1b[0m\n  ⇒ %s', ' ',
-    ENVIRONMENT.toUpperCase(), `${pkg.name} v${pkg.version}`);
-console.log('\x1b[36m%s %s\x1b[0m\n  ⇒ %s', ' ',
-    'Browsers:', pkg.browserslist);
+
+// -----------------------------------------------------------------------------
+
+console.log(`${Date.now().toString().white}\n`);
+console.log(ENVIRONMENT.toUpperCase().yellow);
+console.log(`${pkg.name.red} ${pkg.version.green}\n`);
+console.log('%s\n'.blue, pkg.browserslist);
+console.log('DEV DEPENDENCIES:');
+
+let isDependenciesSaved = true;
+
+Object.keys(pkg.devDependencies).forEach((dependency) => {
+    const depPackage =
+        JSON.parse(
+            fs.readFileSync(
+                path.join('node_modules', dependency, 'package.json'), 'utf-8'));
+
+    if (depPackage._requested.registry) {
+        if (depPackage.version !== pkg.devDependencies[dependency]) {
+            console.log('NPM %s@%s'.green, dependency, depPackage.version.red);
+            isDependenciesSaved = false;
+        } else {
+            console.log('NPM %s@%s'.green, dependency, depPackage.version);
+        }
+    } else {
+        if (depPackage._resolved !== pkg.devDependencies[dependency]) {
+            console.log('--- %s@%s'.blue, dependency, depPackage._resolved.red);
+            isDependenciesSaved = false;
+        } else {
+            console.log('--- %s@%s'.blue, dependency, depPackage._resolved);
+        }
+    }
+});
+
+if (!isDependenciesSaved) {
+    console.log('Dependencies in the package.json are not saved correctly.'.red);
+    console.log('Run `npm run save-installed` to fix it.'.red);
+}
+
+console.log('\n\n\n');
+
+// -----------------------------------------------------------------------------
 
 
 

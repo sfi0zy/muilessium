@@ -1,3 +1,6 @@
+require('colors');
+
+
 module.exports = {
     ignore: [
         'viewport-units',   // Only vmax isn't supported in IE11.
@@ -20,9 +23,9 @@ module.exports = {
 
 
         if (info.featureData.missing) {
-            status = '\x1b[31mNOT SUPPORTED\x1b[0m';
+            status = 'NOT SUPPORTED'.red;
         } else if (info.featureData.partial) {
-            status = '\x1b[33mPARTIAL SUPPORT\x1b[0m';
+            status = 'PARTIAL SUPPORT'.yellow;
         }
 
         console.log(`\n${status}:\n\n    ${selector} {\n        ${property};\n    }\n`);

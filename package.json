@@ -28,6 +28,7 @@
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
     "browser-sync": "2.26.5",
+    "colors": "1.3.3",
     "cssnano": "4.1.10",
     "doiuse": "4.2.0",
     "eslint-config-airbnb-base": "12.1.0",

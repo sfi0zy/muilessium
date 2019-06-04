@@ -1,3 +1,6 @@
+require('colors');
+
+
 module.exports = {
     plugins: [
         require('postcss-preset-env')({
@@ -11,15 +14,13 @@ module.exports = {
         }),
         require('postcss-fixes')({ preset: 'safe' }),
         require('list-selectors').plugin((list) => {
-            const inspect = require('util').inspect;
+            console.log('\n\n');
 
-            console.log('\x1b[36m');
-            console.log('SELECTORS:');
-            console.log(inspect(list.selectors, { maxArrayLength: null }));
-            console.log('\x1b[31m');
-            console.log('IDS:');
-            console.log(inspect(list.simpleSelectors.ids, { maxArrayLength: null }));
-            console.log('\x1b[0m');
+            list.simpleSelectors.ids.forEach((id) => {
+                console.log(`${'ID'.red}:\n\n    ${id} {\n        . . .\n    }`);
+            });
+
+            console.log('\n');
         }),
         require('doiuse')(require('./doiuse.config.js')),
         require('cssnano')({

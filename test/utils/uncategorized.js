@@ -62,8 +62,7 @@ module.exports = {
 
 
     lazyLoadImages(test) {
-        log.warning('imagesLoaded does not work with jsdom.',
-            'The lazyLoadImages utility should be tested manually');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         const src    = 'http://via.placeholder.com/100x100';
         const srcset = 'http://via.placeholder.com/100x100 1x, http://via.placeholder.com/200x200 2x';
@@ -102,8 +101,7 @@ module.exports = {
 
 
     initAnchorLinks(test) {
-        log.warning('Window.scroll is not implemented in jsdom.',
-            'All scroll utilities should be tested manually.');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML =
                 `<a href='#test-id'></a>
@@ -363,8 +361,7 @@ module.exports = {
 
 
     forEach(test) {
-        log.warning('Cannot check if the delays are correct.',
-            'The forEach utility with delay should be tested manually.');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML =
                 `<div id='first'></div>

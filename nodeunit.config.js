@@ -1,18 +1,29 @@
+require('colors');
+
+
 module.exports = {
     log: {
         error(title, text) {
-            console.log('\x1b[31m%s %s\x1b[0m\n  ⇒ %s', '!', title, text);
+            if (text) {
+                console.log(`${'%s %s'.red}\n  ⇒ %s`, '!', title, text);
+            } else {
+                console.log(`${'%s %s'.red}\n`, '!', title);
+            }
         },
 
         warning(title, text) {
-            console.log('\x1b[33m%s %s\x1b[0m\n  ⇒ %s', '!', title, text);
+            if (text) {
+                console.log(`${'%s %s'.yellow}\n  ⇒ %s`, '!', title, text);
+            } else {
+                console.log(`${'%s %s'.yellow}\n`, '!', title);
+            }
         },
 
         info(title, text) {
             if (text) {
-                console.log('\x1b[36m%s %s\x1b[0m\n  ⇒ %s', ' ', title, text);
+                console.log(`${'%s %s'.blue}\n  ⇒ %s`, ' ', title, text);
             } else {
-                console.log('\x1b[36m%s %s\x1b[0m', ' ', title);
+                console.log(`${'%s %s'.blue}`, ' ', title);
             }
         }
     }

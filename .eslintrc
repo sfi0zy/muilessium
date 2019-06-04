@@ -29,5 +29,6 @@
         "prefer-destructuring":              "off",
         "no-console":                        "off",
         "global-require":                    "off",
+        "no-lonely-if":                      "off"
     }
 }

@@ -16,11 +16,9 @@ const log = require('../../nodeunit.config.js').log;
 const   _ = require('../../src/js/utils.js').default;
 
 
-
 module.exports = {
     typeText(test) {
-        log.warning('The appearance is important.',
-            'All utilities for the animations should be tested manually.');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML = '<div></div>';
 
@@ -57,6 +55,8 @@ module.exports = {
 
     
     typeTexts(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '<div></div>';
 
         const element = document.querySelector('div');
@@ -79,6 +79,8 @@ module.exports = {
 
 
     activateAnimation(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '<div class="other-class"></div>';
 
         const element = document.querySelector('div');
@@ -103,6 +105,8 @@ module.exports = {
 
 
     animateElement(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '<div class="other-class fade-in"></div>';
 
         const element = document.querySelector('div');

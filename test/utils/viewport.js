@@ -18,8 +18,7 @@ const   _ = require('../../src/js/utils.js').default;
 
 module.exports = {
     isInViewport(test) {
-        log.warning('The rendering is not implemented in jsdom.',
-            'All viewport utilities should be tested manually.');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML = '<div></div>';
 
@@ -44,6 +43,8 @@ module.exports = {
 
 
     isAboveViewport(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '<div></div>';
 
         const element = document.querySelector('div');

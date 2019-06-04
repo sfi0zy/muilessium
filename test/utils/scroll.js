@@ -26,10 +26,10 @@ window.scroll = () => {};
 window.HTMLElement.prototype.scrollIntoView = () => {};
 
 
+
 module.exports = {
     scrollTo(test) {
-        log.warning('Window.scroll is not implemented in jsdom.',
-            'All scroll utilities should be tested manually.');
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML = '<div></div>';
 
@@ -59,6 +59,8 @@ module.exports = {
 
 
     scrollToTop(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '';
 
         // ---------------
@@ -83,6 +85,8 @@ module.exports = {
 
 
     scrollFire(test) {
+        log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
+
         document.body.innerHTML = '<div></div>';
  
         const element = document.querySelector('div');
