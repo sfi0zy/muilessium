@@ -42,7 +42,7 @@
 ._smaller-4 { font-size: .58em !important; }
 ._smaller-5 { font-size: .52em !important; }
 
-@media screen and (max-width: @grid-breakpoint-medium-px) {
+@media screen and (max-width: @grid[breakpoint-medium-px]) {
     ._smaller-5 { ._smaller-4; } 
     ._smaller-4 { ._smaller-3; }
     ._smaller-3 { ._smaller-2; }
@@ -50,7 +50,7 @@
     ._smaller-1 { font-size: 1em !important; }
 }
 
-@media screen and (max-width: @grid-breakpoint-small-px) {
+@media screen and (max-width: @grid[breakpoint-small-px]) {
     ._smaller-5 { ._smaller-3; }
     ._smaller-4 { ._smaller-2; }
     ._smaller-3 { ._smaller-1; }
@@ -110,11 +110,11 @@
 
 // Shadows
 
-._shadow-1 { box-shadow: 0 0    4px @default-shadow-color !important; }
-._shadow-2 { box-shadow: 0 1px  6px @default-shadow-color !important; }
-._shadow-3 { box-shadow: 0 2px 10px @default-shadow-color !important; }
-._shadow-4 { box-shadow: 0 3px 15px @default-shadow-color !important; }
-._shadow-5 { box-shadow: 0 6px 20px @default-shadow-color !important; }
+._shadow-1 { box-shadow: 0 0    4px @shadow-color !important; }
+._shadow-2 { box-shadow: 0 1px  6px @shadow-color !important; }
+._shadow-3 { box-shadow: 0 2px 10px @shadow-color !important; }
+._shadow-4 { box-shadow: 0 3px 15px @shadow-color !important; }
+._shadow-5 { box-shadow: 0 6px 20px @shadow-color !important; }
 
 
 
@@ -171,4 +171,16 @@
 }
 
 
+._clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+    
+._object-fit-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
 
