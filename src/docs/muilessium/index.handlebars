@@ -242,10 +242,10 @@ class MyComponent extends FACTORY.BaseComponent {
     }
 }
 
-Muilessium.FACTORY.registerComponent('MyComponent', MyComponent);
-Muilessium.FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
+FACTORY.registerComponent('MyComponent', MyComponent);
+FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
 
-console.log(Muilessium.FACTORY.componentsCache.MyComponent);
+console.log(FACTORY.componentsCache.MyComponent);
 
 </pre>
                         </div>
@@ -484,10 +484,10 @@ class MyComponent extends FACTORY.BaseComponent {
     }
 }
 
-Muilessium.FACTORY.registerComponent('MyComponent', MyComponent);
-Muilessium.FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
+FACTORY.registerComponent('MyComponent', MyComponent);
+FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
 
-console.log(Muilessium.FACTORY.componentsCache.MyComponent);
+console.log(FACTORY.componentsCache.MyComponent);
 
 </pre>
                         </div>
@@ -495,7 +495,7 @@ console.log(Muilessium.FACTORY.componentsCache.MyComponent);
 
                     <p class='mui-p _separate-1'>The default set of components is <a href='../muilessium-ui/'>Muilessium-UI</a>. Examples listed below will use it.</p>
 
-                    <p class='mui-p _separate-1'>If the main element of such component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):</p>
+                    <p class='mui-p _separate-1'>If the main element of component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):</p>
                     <div class='_separate-1'>
                         <div class='code _smaller-1'>
                             <pre class='source-code'>// Let we have an accordion with id='my-accordion'.
@@ -523,14 +523,14 @@ checkbox.addEventListener('update-state', (state) =&gt; {
                     <p class='mui-p _separate-1'>The BaseComponent have default methods:</p>
 
                     <ul class='mui-list _smaller-1 _separate-1'>
-                        <li class='item'>initAria()</li>
-                        <li class='item'>initControls()</li>
-                        <li class='item'>initEvents()</li>
-                        <li class='item'>addEvent()</li>
-                        <li class='item'>addEventListener()</li>
-                        <li class='item'>fireEvent()</li>
-                        <li class='item'>saveState()</li>
-                        <li class='item'>restoreState()</li>
+                        <li class='item'>initAria<span class='-grey-3'>()</span></li>
+                        <li class='item'>initControls<span class='-grey-3'>()</span></li>
+                        <li class='item'>initEvents<span class='-grey-3'>()</span></li>
+                        <li class='item'>addEvent<span class='-grey-3'>(name)</span></li>
+                        <li class='item'>addEventListener<span class='-grey-3'>(name, callback, executeIfAlreadyFired=false)</span></li>
+                        <li class='item'>fireEvent<span class='-grey-3'>(name)</span></li>
+                        <li class='item'>saveState<span class='-grey-3'>()</span></li>
+                        <li class='item'>restoreState<span class='-grey-3'>()</span></li>
                     </ul>
 
                     <p class='mui-p _separate-1'>...and default fields:</p>
