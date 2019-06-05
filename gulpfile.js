@@ -6,16 +6,19 @@ const argv         = require('yargs').argv;
 const webpack      = require('webpack-stream');
 const browserSync  = require('browser-sync').create();
 
+
+
 require('colors');
+
+
 
 const pkg         = JSON.parse(fs.readFileSync('./package.json'));
 const ENVIRONMENT = argv.production ? 'production' : 'development';
 
 
 
-// -----------------------------------------------------------------------------
-
-console.log(`${Date.now().toString().white}\n`);
+console.log(`${(new Date()).toString().white}\n`);
+console.log(`> ${argv.$0} ${argv._}`);
 console.log(ENVIRONMENT.toUpperCase().yellow);
 console.log(`${pkg.name.red} ${pkg.version.green}\n`);
 console.log('%s\n'.blue, pkg.browserslist);
@@ -53,91 +56,207 @@ if (!isDependenciesSaved) {
 
 console.log('\n\n\n');
 
+
+
 // -----------------------------------------------------------------------------
 
 
 
-gulp.task('less', () => {
-    return gulp.src('./src/less/main.less')
-        .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.init()))
-        .pipe($.less())
-        .pipe($.postcss())
-        .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.write()))
-        .pipe($.rename('muilessium.min.css'))
-        .pipe($.size({ showFiles: true }))
-        .pipe(gulp.dest('./dist/css'))
-        .pipe(browserSync.stream());
-});
-
-
-gulp.task('js', () => {
-    return gulp.src('./src/js/main.js')
-        .pipe(webpack(require('./webpack.config.js')[ENVIRONMENT]))
-        .pipe($.rename('muilessium.min.js'))
-        .pipe(gulp.dest('./dist/js'))
-        .pipe(browserSync.stream());
-});
-
-
-gulp.task('lint-js', () => {
-    return gulp.src('./src/**/*.js')
+gulp.task('muilessium:lint-js', () => {
+    return gulp.src('./src/muilessium/**/*.js')
         .pipe($.eslint())
         .pipe($.eslint.format())
         .pipe($.eslint.failAfterError());
 });
 
 
-gulp.task('dss', () => {
-    return gulp.src('./src/less/components/*.less')
-        .pipe($.dss(require('./dss.config.js')))
+gulp.task('muilessium:test-js', () => {
+    return gulp.src('./src/muilessium/tests/utils/*.js')
+        .pipe($.nodeunit());
+});
+
+
+gulp.task('muilessium:compile-js', () => {
+    return gulp.src('./src/muilessium/main.js')
+        .pipe(webpack(require('./webpack.config.js')[ENVIRONMENT]))
+        .pipe($.rename('muilessium.min.js'))
         .pipe(gulp.dest('./dist'))
         .pipe(browserSync.stream());
 });
 
 
-gulp.task('test', () => {
-    return gulp.src('./test/utils/*.js')
-        .pipe($.nodeunit());
+gulp.task('muilessium', gulp.series(
+    'muilessium:lint-js',
+    'muilessium:test-js',
+    'muilessium:compile-js'
+));
+
+
+
+// -----------------------------------------------------------------------------
+
+
+
+gulp.task('muilessium-ui:lint-js', () => {
+    return gulp.src('./src/muilessium-ui/**/*.js')
+        .pipe($.eslint())
+        .pipe($.eslint.format())
+        .pipe($.eslint.failAfterError());
 });
+
+
+gulp.task('muilessium-ui:compile-js', () => {
+    return gulp.src('./src/muilessium-ui/main.js')
+        .pipe(webpack(require('./webpack.config.js')[ENVIRONMENT]))
+        .pipe($.rename('muilessium-ui.min.js'))
+        .pipe(gulp.dest('./dist'))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('muilessium-ui:compile-less', () => {
+    return gulp.src('./src/muilessium-ui/main.less')
+        .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.init()))
+        .pipe($.less())
+        .pipe($.postcss())
+        .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.write()))
+        .pipe($.rename('muilessium-ui.min.css'))
+        .pipe($.size({ showFiles: true }))
+        .pipe(gulp.dest('./dist'))
+        .pipe(browserSync.stream());
+});
+
+
+
+gulp.task('muilessium-ui', gulp.series(
+    'muilessium-ui:lint-js',
+    'muilessium-ui:compile-js',
+    'muilessium-ui:compile-less'
+));
+
+
+
+// -----------------------------------------------------------------------------
+
+
+
+gulp.task('docs:main', () => {
+    return gulp.src('./src/muilessium-ui/components/**/*.less')
+        .pipe($.dss({
+            templatePath: './src/docs',
+            parsers: require('./dss.parsers.js'),
+            outputPath: './dist'
+        }))
+        .pipe(gulp.dest('./dist'))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('docs:muilessium', () => {
+    return gulp.src('./src/muilessium-ui/components/**/*.less')
+        .pipe($.dss({
+            templatePath: './src/docs/muilessium',
+            parsers: require('./dss.parsers.js'),
+            outputPath: './dist/muilessium'
+        }))
+        .pipe(gulp.dest('./dist/muilessium'))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('docs:muilessium-ui', () => {
+    return gulp.src('./src/muilessium-ui/components/**/*.less')
+        .pipe($.dss({
+            templatePath: './src/docs/muilessium-ui',
+            parsers: require('./dss.parsers.js'),
+            outputPath: './dist/muilessium-ui'
+        }))
+        .pipe(gulp.dest('./dist/muilessium-ui'))
+        .pipe(browserSync.stream());
+});
+
+
+gulp.task('docs', gulp.series(
+    'docs:main',
+    'docs:muilessium',
+    'docs:muilessium-ui',
+));
+
+
+
+// -----------------------------------------------------------------------------
+
 
 
 gulp.task('browser-sync', () => {
     browserSync.init({
         server: {
             baseDir: './dist'
-        }
+        },
+        files: ['./src/**']
     });
 
     gulp.watch([
-        './src/less/*.less',
-        './src/less/components/*.less'
-    ], gulp.parallel('less', 'dss'));
+        './src/muilessium/**/*.js',
+    ], gulp.series('muilessium:compile-js'));
 
     gulp.watch([
-        './src/js/*.js',
-        './src/js/*/*.js'
-    ], gulp.parallel('js'));
+        './src/muilessium-ui/**/*.js',
+    ], gulp.series('muilessium-ui:compile-js'));
 
     gulp.watch([
-        './src/dss/index.handlebars'
-    ], gulp.parallel('dss'));
+        './src/muilessium-ui/**/*.less',
+    ], gulp.series('muilessium-ui:compile-less'));
+
+    gulp.watch([
+        './src/docs/*.handlebars'
+    ], gulp.series('docs:main'));
+
+    gulp.watch([
+        './src/docs/muilessium/*.handlebars'
+    ], gulp.series('docs:muilessium'));
+
+    gulp.watch([
+        './src/docs/muilessium-ui/*.handlebars'
+    ], gulp.series('docs:muilessium-ui'));
 });
 
 
+
+
 gulp.task('default', (done) => {
-    if (ENVIRONMENT === 'production') {
-        gulp.series('less', 'lint-js', 'test', 'js', 'dss')();
-    } else {
-        gulp.series('less', 'js', 'dss')();
+    switch (ENVIRONMENT) {
+        case 'production': {
+            gulp.series(
+                'muilessium',
+                'muilessium-ui',
+                'docs'
+            )();
+
+            break;
+        }
+
+        case 'development': {
+            gulp.series(
+                'muilessium:compile-js',
+                'muilessium-ui:compile-js',
+                'muilessium-ui:compile-less',
+                'docs',
+                'browser-sync'
+            )();
+
+            break;
+        }
+
+        default: {
+            break;
+        }
     }
 
     done();
 });
 
 
-gulp.task('server', (done) => {
-    gulp.series('default', 'browser-sync')();
 
-    done();
-});
+gulp.task('serve', gulp.series('default', 'browser-sync'));
 

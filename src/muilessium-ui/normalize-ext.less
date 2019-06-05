@@ -1,0 +1,97 @@
+// -----------------------------------------------------------------------------
+// Muilessium-UI-specific extension for Normalize.css
+// -----------------------------------------------------------------------------
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    height: 100%;
+    color: @html[color];
+    background-color: @html[background];
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 320px;
+}
+
+
+::selection {
+    color: @html[background];
+    background: @html[color];
+}
+
+
+a {
+    color: @a[color];
+    transition: color @defaults[animation-duration] @defaults[animation-function],
+        background @defaults[animation-duration] @defaults[animation-function];
+    text-decoration: none;
+    
+    &:active {
+        color: @a[color-active];
+    }
+    
+    &:visited {
+        color: @a[color];
+    }
+
+    &:hover,
+    &:focus {
+        color: @a[color-focused];
+    }
+    
+    &:empty {
+        &::after {
+            content: attr(href)
+        }
+    }
+}
+
+
+hr {
+    border: 0;
+    height: 0;
+    width: 100%;
+    border-top: 1px solid @hr[color];
+}
+
+
+:focus {
+    outline: none;
+}
+
+
+div:empty:not(.indicator):not(.mui-navigation-toggle):not(._allow-empty):not(.mui-shadow-toggle):not(.scrollbar) {
+    display: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+
+abbr {
+    text-transform: uppercase;
+}
+
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+

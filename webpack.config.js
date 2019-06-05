@@ -1,5 +1,6 @@
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
+
 module.exports = {
     development: {
         devtool: 'eval',

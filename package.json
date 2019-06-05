@@ -18,7 +18,7 @@
     "Edge >= 12"
   ],
   "scripts": {
-    "dev": "./node_modules/.bin/gulp server",
+    "dev": "./node_modules/.bin/gulp",
     "prod": "./node_modules/.bin/gulp --production",
     "save-installed": "node ./npm-save-installed"
   },

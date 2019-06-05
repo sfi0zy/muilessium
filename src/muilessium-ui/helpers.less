@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// Helpers
+// -----------------------------------------------------------------------------
+
+
+// Text-align
+
+._text-left    { text-align: left    !important; }
+._text-right   { text-align: right   !important; }
+._text-center  { text-align: center  !important; }
+._text-justify { text-align: justify !important; }
+
+
+
+// Case
+
+._uppercase  { text-transform: uppercase  !important; }
+._lowercase  { text-transform: lowercase  !important; }
+._capitalize { text-transform: capitalize !important; }
+
+
+
+// Font-size
+
+._smaller-0 { font-size: 1em   !important; }
+._smaller-1 { font-size: .80em !important; }
+._smaller-2 { font-size: .72em !important; }
+._smaller-3 { font-size: .64em !important; }
+._smaller-4 { font-size: .58em !important; }
+._smaller-5 { font-size: .52em !important; }
+
+@media screen and (max-width: @grid[breakpoint-medium-px]) {
+    ._smaller-5 { ._smaller-4; } 
+    ._smaller-4 { ._smaller-3; }
+    ._smaller-3 { ._smaller-2; }
+    ._smaller-2 { ._smaller-1; }
+    ._smaller-1 { font-size: 1em !important; }
+}
+
+@media screen and (max-width: @grid[breakpoint-small-px]) {
+    ._smaller-5 { ._smaller-3; }
+    ._smaller-4 { ._smaller-2; }
+    ._smaller-3 { ._smaller-1; }
+    ._smaller-2 { font-size: 1em !important; }
+    ._smaller-1 { font-size: 1em !important; }
+}
+
+._bigger-0 { font-size: 1em    !important; }
+._bigger-1 { font-size: 1.25em !important; }
+._bigger-2 { font-size: 1.56em !important; }
+._bigger-3 { font-size: 1.95em !important; }
+._bigger-4 { font-size: 2.44em !important; }
+._bigger-5 { font-size: 3.05em !important; }
+
+
+
+// Line-height
+
+._line-1r   { line-height: 1rem !important; }
+._line-1-25 { line-height: 1.25 !important; }
+._line-1-50 { line-height: 1.50 !important; }
+._line-1-75 { line-height: 1.75 !important; }
+._line-2r   { line-height: 2rem !important; }
+._line-3r   { line-height: 3rem !important; }
+._line-4r   { line-height: 4rem !important; }
+._line-5r   { line-height: 5rem !important; }
+
+
+
+// Floats
+
+._left  { float: left  !important; }
+._right { float: right !important; }
+
+
+
+// Margins
+
+._separate-1 { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+._separate-2 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
+._separate-3 { margin-top: 3rem !important; margin-bottom: 3rem !important; }
+._separate-4 { margin-top: 4rem !important; margin-bottom: 4rem !important; }
+._separate-5 { margin-top: 5rem !important; margin-bottom: 5rem !important; }
+
+._separate-top-1 { margin-top: 1rem !important; }
+._separate-top-2 { margin-top: 2rem !important; }
+._separate-top-3 { margin-top: 3rem !important; }
+._separate-top-4 { margin-top: 4rem !important; }
+._separate-top-5 { margin-top: 5rem !important; }
+
+._separate-bottom-1 { margin-bottom: 1rem !important; }
+._separate-bottom-2 { margin-bottom: 2rem !important; }
+._separate-bottom-3 { margin-bottom: 3rem !important; }
+._separate-bottom-4 { margin-bottom: 4rem !important; }
+._separate-bottom-5 { margin-bottom: 5rem !important; }
+
+
+// Shadows
+
+._shadow-1 { box-shadow: 0 0    4px @shadow-color !important; }
+._shadow-2 { box-shadow: 0 1px  6px @shadow-color !important; }
+._shadow-3 { box-shadow: 0 2px 10px @shadow-color !important; }
+._shadow-4 { box-shadow: 0 3px 15px @shadow-color !important; }
+._shadow-5 { box-shadow: 0 6px 20px @shadow-color !important; }
+
+
+
+// Pointer-events
+
+._disabled {
+    color: @grey-3 !important;
+    pointer-events: none !important;
+}
+
+._disable-pointer-events {
+    pointer-events: none !important;
+}
+
+._disable-pointer-events-hard,
+._disable-pointer-events-hard * {
+    pointer-events: none !important;
+}
+
+
+
+
+// Others
+
+._no-overflow {
+    overflow: hidden !important;
+}
+
+
+._no-decoration {
+    text-decoration: none;
+}
+
+
+._truncate-line {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+
+._no-break {
+    white-space: nowrap !important;
+}
+
+
+._allow-empty {
+    /* by default all empty elements are hidden, this class allows to show empty element */
+}
+
+
+._hidden {
+    display: none !important;
+}
+
+
+._clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+    
+._object-fit-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
+

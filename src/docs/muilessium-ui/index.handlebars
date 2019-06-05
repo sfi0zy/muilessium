@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta http-equiv='content-type' content='text/html;charset=UTF-8' />
+    <meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1'>
+    <title>Muilessium-UI (docs)</title>
+
+    <link rel='apple-touch-icon' sizes='180x180' href='../favicons/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='../favicons/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='../favicons/favicon-16x16.png'>
+    <link rel='manifest' href='../favicons/manifest.json'>
+    <link rel='mask-icon' href='../favicons/safari-pinned-tab.svg' color='#050505'>
+    <meta name='theme-color' content='#ffffff'>
+
+    <link rel='prefetch' href='../muilessium.min.js?v={{ project.version }}'>
+    <link rel='prefetch' href='../muilessium-ui.min.css?v={{ project.version }}'>
+    <link rel='prefetch' href='../muilessium-ui.min.js?v={{ project.version }}'>
+
+    <style>.-black{color:#000!important;fill:#000!important}.-blue-1-bg{background:#e3f2fd!important}.-orange-3-bg{background:#ff9800!important}._smaller-1{font-size:.8em!important}._smaller-2{font-size:.72em!important}@media screen and (max-width:600px){._smaller-1,._smaller-2{font-size:1em!important}}@media screen and (max-width:400px){._smaller-1,._smaller-2{font-size:1em!important}}._bigger-0{font-size:1em!important}._bigger-2{font-size:1.56em!important}._line-1-25{line-height:1.25!important}._line-4r{line-height:4rem!important}._left{float:left!important}._right{float:right!important}._separate-1{margin-top:1rem!important;margin-bottom:1rem!important}._separate-3{margin-top:3rem!important;margin-bottom:3rem!important}._separate-5{margin-top:5rem!important;margin-bottom:5rem!important}._shadow-3{box-shadow:0 2px 10px rgba(0,0,0,.3)!important}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}aside,header{display:block}h1{font-size:2em;margin:.67em 0}main{display:block}hr{box-sizing:content-box;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}svg:not(:root){overflow:hidden}input{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}input{overflow:visible}[type=checkbox]{box-sizing:border-box;padding:0}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{height:100%;color:#000;background-color:#fff}body{display:flex;flex-direction:column;min-height:100%;min-width:320px}a{text-decoration:none}a,a:visited{color:#000}hr{border:0;height:0;width:100%;border-top:1px solid #9e9e9e}:focus{outline:none}div:empty:not(.indicator):not(.mui-navigation-toggle):not(._allow-empty):not(.mui-shadow-toggle):not(.scrollbar){display:none}h1,h2,h3,h4{margin:0;padding:0;line-height:1.2}img{display:block;height:auto;max-width:100%}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-size:calc(14px + 6*(100vw - 400px)/800);line-height:1.5}@media screen and (max-width:400px){html{font-size:14px}}@media screen and (min-width:1200px){html{font-size:20px}}h1{font-size:3.05em!important}h2{font-size:2.44em!important}h3{font-size:1.95em!important}h4{font-size:1.56em!important}.mui-badge{font-size:.8em!important;display:inline-block;padding:0 .5em;margin-left:.3em;line-height:1.5;text-align:center;color:#fff;background:#f44336;border-radius:0;vertical-align:middle;transform:translateY(-.1em)}.mui-button,a.mui-button{display:inline-block;position:relative;padding:0 1em;font-size:1rem;line-height:2;text-decoration:none;text-align:center;color:#fff;background:#1565c0;border:none;border-radius:.2rem}.mui-button:visited,a.mui-button:visited{color:#fff;background:#1565c0}.mui-checkbox>input[type=checkbox]{display:none}.mui-content-container{position:relative;width:90%;max-width:1100px;margin:0 auto}.mui-content-container:after{content:"";display:table;clear:both}.mui-page-container{flex:1 0 auto;overflow:auto}.mui-row{display:flex;flex:0 1 auto;flex-direction:row;flex-wrap:wrap}.mui-column{flex:0 0 auto;flex-grow:1;flex-basis:0;max-width:100%}@media screen and (max-width:400px){.mui-column{flex-basis:100%;max-width:100%}}.mui-column.-s12{flex-basis:100%;max-width:100%}@media screen and (min-width:600px){.mui-column.-m3{flex-basis:25%;max-width:25%}.mui-column.-m9{flex-basis:75%;max-width:75%}}.mui-header-logo{display:inline-block;line-height:4rem}.mui-header-logo>.link{color:#fff;text-decoration:none}.mui-header-navigation>.linkslist{list-style:none;margin:0}.mui-header-navigation>.linkslist>.item{display:inline-block;margin:0}.mui-header-navigation>.linkslist>.item>.link{display:inline-block;padding:0 calc((4rem - 1em)/2);line-height:4rem;text-decoration:none;color:#fff}.mui-header-navigation.-mobile-version>.linkslist{display:block;visibility:hidden;position:fixed;top:0;right:0;z-index:11;overflow-y:scroll;height:100%;width:80%;padding:1rem;font-size:2rem;text-align:right;transform:translateX(100%);background:#000;box-shadow:0 0 10rem rgba(0,0,0,.3)}.mui-header-navigation.-mobile-version>.linkslist>.item{display:block;overflow:hidden;margin-left:0}.mui-header-navigation.-mobile-version>.linkslist>.item:first-of-type{margin-top:4rem}.mui-header-navigation.-mobile-version>.linkslist>.item:not(:first-of-type){border-top:1px solid #424242}.mui-header-navigation.-mobile-version>.linkslist>.item>.link{display:block;padding:.5rem 1rem}.mui-hero-header>.effects{position:absolute;top:0;left:0;height:inherit;width:inherit}.mui-image{margin-left:auto;margin-right:auto}.mui-image.-js-lazy-load{opacity:0}ul.mui-list{list-style-position:inside}ul.mui-list.-no-bullets{list-style:none}ul.mui-list .item:not(:first-of-type){margin-top:.5rem}.mui-modal-window{position:fixed;top:0;left:0;height:100%;width:100%;z-index:10;opacity:0}.mui-modal-window>.window{position:absolute;top:50%;left:50%;max-width:80vw;max-height:80vh;transform:translateX(-50%) translateY(-50%);z-index:11}.mui-modal-window>.window>.content{overflow:hidden;border-radius:.2rem}.mui-modal-window>.window>.content.-image .mui-image{max-height:80vh;max-width:80vw}.mui-modal-window>.window>.closeicon{position:absolute;top:-1rem;right:-1rem;height:2rem;width:2rem;font-size:1.6rem;line-height:2rem;text-align:center;border-radius:50%;background:#fff;border:2px solid #9e9e9e;color:#000;z-index:2;box-sizing:content-box}.mui-modal-window>.window>.closeicon>.mui-svg-icon{fill:#000}.mui-modal-window>.mui-shadow-toggle{position:fixed;z-index:10;top:0;left:0;height:100vh;width:100vw}.mui-notification{padding:1rem;color:#000;background:#fff}.mui-notification.-message{position:fixed;bottom:1rem;width:20rem;max-width:20rem;border-radius:.3rem;z-index:20;opacity:0}@media screen and (max-width:22rem){.mui-notification.-message{width:calc(100% - 2rem);max-width:calc(100% - 2rem)}}.mui-notification.-message.-left{left:1rem}.mui-notification.-message.-right{right:1rem}.mui-page-header{position:relative;height:4rem;max-height:4rem;background:#000}.mui-page-header:after{content:"";display:table;clear:both}.mui-p{display:block;margin:0 auto;text-align:justify;text-align-last:left}.mui-progress-bar>.value{position:absolute;top:0;left:0;height:100%;width:100%;line-height:2rem;text-align:center;color:#000}.mui-progress-bar.-radial>.value{line-height:8rem}.mui-scroll-fix{position:fixed;top:0;left:0;height:100vh;width:100%;z-index:100}.mui-shadow-toggle{position:fixed;left:0;top:0;z-index:10;height:100%;width:100%;background:transparent;opacity:0}.mui-svg-icon{display:inline-block;height:1em;max-height:1em;max-width:1em;transform:translateY(-10%);vertical-align:middle}.mui-svg-sprite{position:fixed}@media screen and (max-width:600px){aside{display:none!important}}a,a:visited{color:#1565c0}.mui-image.-docs.-logo{float:left;display:inline-block;height:3rem;width:3rem;margin:.5rem 1rem .5rem 0}.mui-p.-docs.-hint{padding:1rem}.aside-navigation{padding:0 1rem}.source-code{background:#eeeeee;font-family:Menlo,"Bitstream Vera Sans Mono","DejaVu Sans Mono",Monaco,Consolas,monospace;font-size:.7rem;padding:1rem;white-space:pre-wrap;word-wrap:break-word;border-left:3px solid #9e9e9e}</style>
+</head>
+<body>
+    <div class='mui-scroll-fix'></div>
+
+    <header class='mui-page-header'>
+        <div class='mui-content-container'>
+            <div class='mui-header-logo _left'>
+                <img class='mui-image -docs -logo -js-lazy-load' data-src='../muilessium.png' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='logo'>
+                <noscript>
+                    <img class='mui-image -docs -logo' src='../muilessium.jpg' alt='Muilessium logo'>
+                </noscript>
+                <a class='link _right' href='/'>
+                    <h1 class='heading _bigger-0 _line-4r'>Muilessium-UI <span class='_smaller-2'>v{{ project.version }}</span></h1>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class='mui-content-container'>
+
+        <aside class='mui-column -s12 -m3 _right'>
+            <div class='aside-navigation _smaller-1 _line-1-25 _separate-3' role='navigation'>
+                <ul class='mui-list -no-bullets _separate-1'>
+                    <li class='item'><a href='#overview'>Overview</a></li>
+                    <li class='item'><a href='#cdn'>CDN</a></li>
+                    <li class='item'><a href='#examples'>Examples</a></li>
+                    <li class='item'><a href='#grid-overview'>Grid</a></li>
+                    <li class='item'><a href='#page-layout-overview'>Page layout</a></li>
+                    <li class='item'><a href='#meta-viewport-overview'>Viewport</a></li>
+                    <li class='item'><a href='#typography-overview'>Typography</a></li>
+                    <li class='item'><a href='#colors-overview'>Colors</a></li>
+                    <li class='item'><a href='#helpers-overview'>Helpers</a></li>
+                    <li class='item'><a href='#icons-overview'>Icons</a></li>
+                    <li class='item'><a href='#animations-overview'>Animations</a></li>
+                </ul>
+                <hr class='_separate-1'>
+                <ul class='mui-list -no-bullets _separate-1'>
+                {{#files}}
+                    {{#blocks}}
+                        <li class='item'>
+                            <a href='#{{../file}}'>{{ name }}</a>
+                        </li>
+                    {{/blocks}}
+                {{/files}}
+                </ul>
+            </div>
+        </aside>
+
+        <main class='mui-column -s12 -m9'>
+            <div class='mui-content-container'>
+
+                <!-- overview -->
+                <div class='_separate-3'>
+                    <div class='mui-row'>
+                        <a href='#overview'>
+                            <h2 class='_bigger-2' id='overview'>Overview</h2>
+                        </a>
+                    </div>
+                    <p class='mui-p _separate-1'>Muilessium-UI is the default set of components for Muilessium.</p>
+
+                    <div class='_separate-1'>
+                        <a class='mui-button -black -orange-3-bg -f-orange-5-bg' href='../muilessium'>Muilessium</a>
+                    </div>
+                </div>
+                <!-- /overview -->
+
+                <!-- CDN -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#cdn'>
+                            <h3 class='_bigger-2' id='cdn'>CDN</h3>
+                        </a>
+                    </div>
+                    <div class='_separate-1'>
+                        <div class='code-example _separate-1 _smaller-1'>
+                            <pre class='source-code'>
+&lt;link rel='stylesheet' href='https://unpkg.com/muilessium/dist/muilessium-ui.min.css'&gt;
+&lt;script src='https://unpkg.com/muilessium/dist/muilessium-ui.min.js'&gt;&lt;/script&gt;</pre>
+                        </div>
+                    </div>
+                    <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>Don't forget to include Muilessium inself!</p>
+                </div>
+                <!-- /CDN -->
+
+                <!-- Examples -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#examples'>
+                            <h3 class='_bigger-2' id='examples'>Examples</h3>
+                        </a>
+                    </div>
+                    <div class='_separate-1'>
+                        <h4>Basic layout</h4>
+                        <p class='mui-p _separate-1'>The basic page layout is shown in this example. You'll see how to use header with logo and navigation, content containers and footer.</p>
+                        <p class='codepen' data-preview='true' data-height='500' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='YbvrLQ' style='height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - basic example'>
+                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/YbvrLQ/'>Muilessium 1.0 - Basic layout</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
+                        </p>
+                    </div>
+
+                    <div class='_separate-1'>
+                        <h4>Form validation</h4>
+                        <p class='mui-p _separate-1'>In this example, you'll see how to create forms with Muilessium-UI, how to use components in scripts and how to validate inputs.</p>
+                        <p class='codepen' data-preview='true' data-height='532' data-theme-id='light' data-default-tab='html,result' data-user='sfi0zy' data-slug-hash='rgKGrN' style='height: 532px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid black; margin: 1em 0; padding: 1em;' data-pen-title='Muilessium 1.0 - form example'>
+                            <span>See the Pen <a href='https://codepen.io/sfi0zy/pen/rgKGrN/'>Muilessium 1.0 - Form validation</a> by Ivan Bogachev (<a href='https://codepen.io/sfi0zy'>@sfi0zy</a>) on <a href='https://codepen.io'>CodePen</a>.</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- /Examples -->
+
+                <!-- grid overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#grid-overview'>
+                            <h3 class='_bigger-2' id='grid-overview'>Grid</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/components/grid/style.less</div>
+
+                    <p class='mui-p _separate-1'>Muilessium-UI uses a classic grid with 12 columns. Default breakpoints are 400, 600 and 1200px. Its behavior is similar to the grid from flexboxgrid.com, but it uses RSCSS-style class names.</p>
+
+                    <div class='grid-preview _separate-2'>
+                        <div class='mui-row'>
+                            <div class='mui-column -s1 -blue-4-bg -grey-1 _text-center _line-2r _smaller-1'>-s1</div>
+                            <div class='mui-column -s11 -blue-2-bg -grey-5 _text-center _line-2r _smaller-1'>-s11</div>
+                        </div>
+                        <div class='mui-row'>
+                            <div class='mui-column -s3 -blue-4-bg -grey-1 _text-center _line-2r _smaller-1'>-s3</div>
+                            <div class='mui-column -s9 -blue-2-bg -grey-5 _text-center _line-2r _smaller-1'>-s9</div>
+                        </div>
+                        <div class='mui-row'>
+                            <div class='mui-column -s6 -m4 -l6 -blue-4-bg -grey-1 _text-center _line-2r _smaller-1'>-s6 -m4 -l6</div>
+                            <div class='mui-column -s6 -m8 -l6 -blue-2-bg -grey-5 _text-center _line-2r _smaller-1'>-s6 -m8 -l6</div>
+                        </div>
+                        <div class='mui-row'>
+                            <div class='mui-column -m6 -l2 -blue-4-bg -grey-1 _text-center _line-2r _smaller-1'>-m6 -l2</div>
+                            <div class='mui-column -m6 -l10 -blue-2-bg -grey-5 _text-center _line-2r _smaller-1'>-m6 -l10</div>
+                        </div>
+                    </div>
+
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+&lt;div class='mui-row'&gt;
+    &lt;div class='mui-column -s1'&gt;-s1&lt;/div&gt;
+    &lt;div class='mui-column -s11'&gt;-s11&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='mui-row'&gt;
+    &lt;div class='mui-column -s3'&gt;-s3&lt;/div&gt;
+    &lt;div class='mui-column -s9'&gt;-s9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='mui-row'&gt;
+    &lt;div class='mui-column -s6 -m4 -l6'&gt;-s6 -m4 -l6&lt;/div&gt;
+    &lt;div class='mui-column -s6 -m8 -l6'&gt;-s6 -m8 -l6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='mui-row'&gt;
+    &lt;div class='mui-column -m6 -l2'&gt;-m6 -l2&lt;/div&gt;
+    &lt;div class='mui-column -m6 -l10'&gt;-m6 -l10&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+                <!-- /grid overview -->
+
+                <!-- page layout overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#page-layout-overview'>
+                            <h3 class='_bigger-2' id='page-layout-overview'>Page layout</h3>
+                        </a>
+                    </div>
+
+                    <p class='mui-p _separate-1'>The recommended page layout includes scroll-fix, page-header, page-container and page-footer. This layout is the simplest way to create a sticky footer.</p>
+
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+&lt;div class='mui-scroll-fix'&gt;&lt;/div&gt;
+&lt;header class='mui-page-header'&gt;header&lt;/header&gt;
+&lt;div class='mui-page-container'&gt;...&lt;/div&gt;
+&lt;footer class='mui-page-footer'&gt;footer&lt;/footer&gt;</pre>
+                    </div>
+                </div>
+                <!-- /page layout overview -->
+
+                <!-- viewport overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#meta-viewport-overview'>
+                            <h3 class='_bigger-2' id='meta-viewport-overview'>Viewport</h3>
+                        </a>
+                    </div>
+
+                    <p class='mui-p _separate-1'>Muilessium uses <a href='https://hammerjs.github.io/'>Hammer.js</a>, and it is recommended to use the following viewport settings:</p>
+
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+&lt;meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1'&gt;</pre>
+                    </div>
+                </div>
+                <!-- /viewport overview -->
+
+                <!-- typography overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#typography-overview'>
+                            <h3 class='_bigger-2' id='typography-overview'>Typography</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/fonts.less</div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/helpers.less</div>
+
+                    <p class='mui-p _separate-1'>Typography is fluid, and it is based on default system fonts and _bigger-* and _smaller-* <a href='#helpers-overview'>helpers</a>.</p>
+                    <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>These helpers have different behavior on different screen sizes.</p>
+                    <div class='h1'>H1 Heading (+5)</div>
+                    <div class='h2'>H2 Heading (+4)</div>
+                    <div class='h3'>H3 Heading (+3)</div>
+                    <div class='h4'>H4 Heading (+2)</div>
+                    <div class='h5'>H5 Heading (+1)</div>
+                    <div class='h6'>H6 Heading (+0)</div>
+                    <div class='_smaller-0'>Normal text</div>
+                    <div class='_smaller-1'>Text (-1)</div>
+                    <div class='_smaller-2'>Text (-2)</div>
+                    <div class='_smaller-3'>Text (-3)</div>
+                    <div class='_smaller-4'>Text (-4)</div>
+                    <div class='_smaller-5'>Text (-5)</div>
+                </div>
+                <!-- /typography overview -->
+
+                <!-- colors overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#colors-overview'>
+                            <h3 class='_bigger-2' id='colors-overview'>Colors</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/colors.less</div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/color-scheme.less</div>
+
+                    <p class='mui-p _separate-1'>These classes are created for fast painting. There are four types of them:</p>
+                    <ul class='mui-list _separate-1 _smaller-1'>
+                        <li class='item'><b>-color-[ 1 | 2 | 3 | 4 | 5 ]</b> - text color and fill for the element. For example "<span class='-orange-4'>-orange-4</span>"</li>
+                        <li class='item'><b>-color-[ 1 | 2 | 3 | 4 | 5 ]-bg</b> - background for the element. For example "<span class='-blue-1-bg'>-blue-1-bg</span>"</li>
+                        <li class='item'><b>-f-color-[ 1 | 2 | 3 | 4 | 5 ]</b> - text color and fill for the :hover and :focus states of the element</li>
+                        <li class='item'><b>-f-color-[ 1 | 2 | 3 | 4 | 5 ]-bg</b> - background color for the :hover and :focus states</li>
+                    </ul>
+
+                    <div class='_separate-2'>
+                        <div class='_separate-1'>White</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -white-bg'>FFFFFF</div>
+                        </div>
+
+                        <div class='_separate-1'>Grey</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -grey-1-bg'>#fafafa</div>
+                            <div class='color-preview -grey-2-bg'>#eeeeee</div>
+                            <div class='color-preview -grey-3-bg'>#9e9e9e</div>
+                            <div class='color-preview -grey-4-bg'>#424242</div>
+                            <div class='color-preview -grey-5-bg'>#212121</div>
+                        </div>
+
+                        <div class='_separate-1'>Black</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -black-bg'><span class='-white'>000000</span></div>
+                        </div>
+
+                        <div class='_separate-1'>Brown</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -brown-1-bg'>#efebe9</div>
+                            <div class='color-preview -brown-2-bg'>#bcaaa4</div>
+                            <div class='color-preview -brown-3-bg'>#795548</div>
+                            <div class='color-preview -brown-4-bg'>#4e342e</div>
+                            <div class='color-preview -brown-5-bg'>#3e2723</div>
+                        </div>
+
+                        <div class='_separate-1'>Orange</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -orange-1-bg'>#fff3e0</div>
+                            <div class='color-preview -orange-2-bg'>#ffcc80</div>
+                            <div class='color-preview -orange-3-bg'>#ff9800</div>
+                            <div class='color-preview -orange-4-bg'>#ef6c00</div>
+                            <div class='color-preview -orange-5-bg'>#e65100</div>
+                        </div>
+
+                        <div class='_separate-1'>Yellow</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -yellow-1-bg'>#fffde7</div>
+                            <div class='color-preview -yellow-2-bg'>#fff59d</div>
+                            <div class='color-preview -yellow-3-bg'>#ffeb3b</div>
+                            <div class='color-preview -yellow-4-bg'>#f9a825</div>
+                            <div class='color-preview -yellow-5-bg'>#f57f17</div>
+                        </div>
+
+                        <div class='_separate-1'>Red</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -red-1-bg'>#ffebee</div>
+                            <div class='color-preview -red-2-bg'>#ef9a9a</div>
+                            <div class='color-preview -red-3-bg'>#f44336</div>
+                            <div class='color-preview -red-4-bg'>#c62828</div>
+                            <div class='color-preview -red-5-bg'>#b71c1c</div>
+                        </div>
+
+                        <div class='_separate-1'>Pink</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -pink-1-bg'>#fce4ec</div>
+                            <div class='color-preview -pink-2-bg'>#f48fb1</div>
+                            <div class='color-preview -pink-3-bg'>#e91e63</div>
+                            <div class='color-preview -pink-4-bg'>#ad1457</div>
+                            <div class='color-preview -pink-5-bg'>#880e4f</div>
+                        </div>
+
+                        <div class='_separate-1'>Violet</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -violet-1-bg'>#ede7f6</div>
+                            <div class='color-preview -violet-2-bg'>#b39ddb</div>
+                            <div class='color-preview -violet-3-bg'>#673ab7</div>
+                            <div class='color-preview -violet-4-bg'>#4527a0</div>
+                            <div class='color-preview -violet-5-bg'>#311b92</div>
+                        </div>
+
+                        <div class='_separate-1'>Blue</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -blue-1-bg'>#e3f2fd</div>
+                            <div class='color-preview -blue-2-bg'>#90caf9</div>
+                            <div class='color-preview -blue-3-bg'>#2196f3</div>
+                            <div class='color-preview -blue-4-bg'>#1565c0</div>
+                            <div class='color-preview -blue-5-bg'>#0d47a1</div>
+                        </div>
+
+                        <div class='_separate-1'>Cyan</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -cyan-1-bg'>#e0f7fa</div>
+                            <div class='color-preview -cyan-2-bg'>#80deea</div>
+                            <div class='color-preview -cyan-3-bg'>#00bcd4</div>
+                            <div class='color-preview -cyan-4-bg'>#00838f</div>
+                            <div class='color-preview -cyan-5-bg'>#006064</div>
+                        </div>
+
+                        <div class='_separate-1'>Green</div>
+                        <div class='mui-row'>
+                            <div class='color-preview -green-1-bg'>#e8f5e9</div>
+                            <div class='color-preview -green-2-bg'>#a5d6a7</div>
+                            <div class='color-preview -green-3-bg'>#4caf50</div>
+                            <div class='color-preview -green-4-bg'>#2e7d32</div>
+                            <div class='color-preview -green-5-bg'>#1b5e20</div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- colors overview -->
+
+                <!-- helpers overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#helpers-overview'>
+                            <h3 class='_bigger-2' id='helpers-overview'>Helpers</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/helpers.less</div>
+
+                    <p class='mui-p _separate-1'>Muilessium-UI has a lot of CSS helpers. You can take a look at sources for more information about them.</p>
+
+                    <p class='mui-p -docs -hint -blue-1-bg _separate-1'>Only helpers and classes for painting can include the "!important" rules.</p>
+
+                    <ul class='mui-list _separate-1'>
+                        <li class='item'>
+                            <span>Text</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_text-[ left | center | right | justify ]</li>
+                                <li class='item'>_[ upper | lower ]case</li>
+                                <li class='item'>_capitalize</li>
+                                <li class='item'>_bigger-[ 0 | 1 | 2 | 3 | 4 | 5 ]</li>
+                                <li class='item'>_smaller-[ 0 | 1 | 2 | 3 | 4 | 5 ]</li>
+                                <li class='item'>_line-[ 1r | 1-25 | 1-50 | 1-75 | 2r | 3r | 4r | 5r ]</li>
+                            </ul>
+                        </li>
+                        <li class='item'>
+                            <span>Floating</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_left</li>
+                                <li class='item'>_right</li>
+                            </ul>
+                        </li>
+                        <li class='item'>
+                            <span>Vertical rhythm</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_separate-[ 1 | 2 | 3 | 4 | 5 ]</li>
+                            </ul>
+                        </li>
+                        <li class='item'>
+                            <span>Shadows</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_shadow-[ 1 | 2 | 3 | 4 | 5 ]</li>
+                            </ul>
+                        </li>
+                        <li class='item'>
+                            <span>Pointer events</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_disabled</li>
+                                <li class='item'>_disable-pointer-events</li>
+                                <li class='item'>_disable-pointer-events-hard</li>
+                            </ul>
+                        </li>
+                        <li class='item'>
+                            <span>Others</span>
+                            <ul class='mui-list _smaller-1 _separate-1'>
+                                <li class='item'>_no-overflow</li>
+                                <li class='item'>_no-decoration</li>
+                                <li class='item'>_truncate-line</li>
+                                <li class='item'>_no-break</li>
+                                <li class='item'>_allow-empty</li>
+                                <li class='item'>_hidden</li>
+                                <li class='item'>_clearfix</li>
+                                <li class='item'>_object-fit-cover</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /helpers overview -->
+
+                <!-- icons overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#icons-overview'>
+                            <h3 class='_bigger-2' id='icons-overview'>Icons</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/components/svg-icon/style.less</div>
+
+                    <p class='mui-p'>Muilessium-UI uses Ionicons by default.</p>
+
+                    <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>You have to put the following sprite at the end of your pages. You can create custom icons by replacing symbols in this SVG.</p>
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+
+&lt;div class='mui-svg-sprite'&gt;
+    &lt;svg version='1.1' xmlns='http://www.w3.org/2000/svg'&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--check'&gt;&lt;path d='M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--close'&gt;&lt;path d='M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-down'&gt;&lt;path d='M277.375 85v259.704l119.702-119.702L427 256 256 427 85 256l29.924-29.922 119.701 118.626V85h42.75z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-right'&gt;&lt;path d='M85 277.375h259.704L225.002 397.077 256 427l171-171L256 85l-29.922 29.924 118.626 119.701H85v42.75z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-left'&gt;&lt;path d='M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-up'&gt;&lt;path d='M277.375 427V167.296l119.702 119.702L427 256 256 85 85 256l29.924 29.922 119.701-118.626V427h42.75z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--hamburger'&gt;&lt;path d='M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--spinner'&gt;&lt;path d='M256 48c-75.033 0-144.531 40.658-181.373 106.107l-1.963 3.485 20.915 11.771 1.962-3.485C128.138 107.973 189.621 72 256 72c101.458 0 184 82.542 184 184a185.48 185.48 0 0 1-3.749 37.147l-.803 3.918 23.511 4.819.804-3.919A209.53 209.53 0 0 0 464 256c0-114.691-93.309-208-208-208zM416.459 346.119C383.862 404.027 322.379 440 256 440c-101.458 0-184-82.542-184-184 0-12.512 1.262-25.011 3.75-37.15l.803-3.918-23.511-4.819-.804 3.918A209.445 209.445 0 0 0 48 256c0 114.691 93.309 208 208 208 75.033 0 144.531-40.658 181.373-106.109l1.963-3.485-20.915-11.771-1.962 3.484z'&gt;&lt;/path&gt;&lt;path d='M384 256l64 64 64-64zM0 256l64-64 64 64z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+        &lt;symbol viewBox='0 0 512 512' id='mui-svg-icon--tags'&gt;&lt;path d='M472 239.2s-.1 0 0 0L282.1 48.1l-1.4-1.4h-.5c-7.5-7.2-16.1-10.9-27.1-11.1l-89.9-3.3-3.9-.1c-10.1.1-20 4.1-27.7 11.8l-27.1 27.2c7.4-6.6 16.6-10 26-10.1l3.8.1 89.8 3.3c11 .2 19.7 3.9 27.2 11.1h.5l1.4 1.4L443 268.1c10 10.8 10.7 28.2 0 38.9l29-28.9c10.6-10.7 10-28.1 0-38.9z'&gt;&lt;/path&gt;&lt;path d='M428 282.5h.3L238.6 91.4l-1.3-1.4h-.3c-7.5-7.2-15.9-10.9-26.9-11.1L120 75.6l-4-.1c-9.2.1-18.2 3.4-25.6 9.8-.3.3-.7.6-1 .9l-1.2 1.2-44.3 44.5C35.8 140 32 150.8 32 161.4v.1l.1 3.8 5.9 87.9v1.9c1 7.9 4.2 15.6 9.6 22l5.1 4.9L239 470.4l2.8 2.8c10.7 9.4 27.1 9 37.3-1.3l13.1-13.2c.5-.4.9-.8 1.4-1.3l26.9-27c-.2.1-.3.2-.5.4l108.3-109.3c10.6-10.7 10.7-28.2-.3-39zm-317.4-143c6.6-4 14.3-6.3 22.6-6.3 23.9 0 43.4 19.4 43.4 43.4 0 8.3-2.3 16-6.3 22.6-7.6 12.5-21.3 20.8-37 20.8-23.9 0-43.4-19.4-43.4-43.4-.1-15.8 8.2-29.5 20.7-37.1z'&gt;&lt;/path&gt;&lt;/symbol&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+                <!-- /icons overview -->
+
+                <!-- animations overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#animations-overview'>
+                            <h3 class='_bigger-2' id='animations-overview'>Animations</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/utils/animations.js<br>/src/muilessium-ui/animations.less</div>
+
+                    <p class='mui-p _separate-1'>There are two ways to use animations. The first one:</p>
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+&lt;div class='-js-animation [ -hidden-by-default ]
+    [ -fade-in
+    | -fade-in-left
+    | -fade-in-right
+    | -fade-in-up
+    | -fade-in-down
+    | -fade-out
+    | -fade-out-left
+    | -fade-out-right
+    | -fade-out-up
+    | -fade-out-down ]'&gt;&lt;/div&gt;
+&lt;script&gt;
+    Muilessium.UTILS.activateAnimation(document.querySelector('div'));
+&lt;/script&gt;</pre>
+                    </div>
+
+                    <p class='mui-p _separate-1'>The second one:</p>
+                    <div class='code-example _separate-2 _smaller-1'>
+                        <pre class='source-code'>
+&lt;script&gt;Muilessium.UTILS.animateElement(element, 'fade-in')&lt;/script&gt;</pre>
+                    </div>
+                    <p class='mui-p _separate-1'>Both ways have equal internal behavior and the names of the animations.<p>
+
+                    <p class='mui-p -docs -hint _separate-1 -blue-1-bg'>The first way is useful if the element will be animated once. The second one is useful if you need to animate one element multiple times.</p>
+                </div>
+                <!-- /animations overview -->
+
+                <!-- components overview -->
+                <div class='_separate-5'>
+                    <div class='mui-row'>
+                        <a href='#components'>
+                            <h3 class='_bigger-2' id='components'>Components</h3>
+                        </a>
+                    </div>
+                    <div class='_smaller-2 -grey-3'>/src/muilessium-ui/components/**/*<br>/src/muilessium-ui/components/index.js<br>/src/muilessium-ui/components/index.less</div>
+
+                    <p class='mui-p _separate-1'>Muilessium-UI has a number of components listed below. Every component has a markup shown in example and this markup should be used as is, because some initializations of components are based on their markups.</p>
+
+
+                    {{#files}}
+                        <div id='{{file}}' class='_allow-empty'></div>
+                        {{#blocks }}
+                            <div class='_separate-5'>
+                                <div class='mui-row'>
+                                    <a href='#{{../file}}'>
+                                        <h4 class='_bigger-1'>{{ name }}</h4>
+                                    </a>
+                                </div>
+                                <div class='_smaller-2 -grey-3'>/{{ ../file }}</div>
+                                {{#if description }}
+                                    <p class='mui-p _separate-1'>{{ description }}</p>
+                                {{/if}}
+                                {{#if component }}
+                                    <div class='_separate-1 _smaller-1'><span class='-green-3'><b>(!) {{ component }}</b></span> <span class='-grey-3'>- Use Muilessium.get('{{ component }}', id) to get it.</span></div>
+                                {{/if}}
+                                {{#if method}}
+                                    <div class='_separate-1'>
+                                        <ul class='mui-list _smaller-1'>
+                                            {{#method}}
+                                                <li class='item'>
+                                                    <span>{{ name }}</span>
+                                                    {{#if description }}
+                                                        <span class='-grey-3'> - {{ description }}</span>
+                                                    {{/if}}
+                                                </li>
+                                            {{/method}}
+                                        </ul>
+                                    </div>
+                                {{/if}}
+                                {{#event}}
+                                    <div class='_smaller-1'><span class='-green-3'>Event: {{ event }}</span> <span class='-grey-3'>- Use {{ ../component }}.addEventListener('{{ event }}', (state) => { /* . . . */ }) to subscribe.</span></div>
+                                {{/event}}
+                                {{#requires}}
+                                    <div class='_smaller-1 -violet-3'>Requires {{ requires }}</div>
+                                {{/requires}}
+                                {{#if markup}}
+                                    <div class='_separate-1'>
+                                        <div class='component-preview _separate-2'>{{{ markup.example }}}</div>
+                                        {{#state}}
+                                            <div class='state _separate-2'>
+                                                <h5 class='_smaller-1'>Variant: {{name}}</h5>
+                                                <div class='example _separate-2' data-class='{{name}}'>{{{ ../markup.example }}}</div>
+                                            </div>
+                                        {{/state}}
+                                        <div class='mui-spoiler -max-height-20'>
+                                            <div class='title'>Source code</div>
+                                            <div class='content'>
+                                                <div class='_separate-2'>
+                                                    <div class='_smaller-1'>
+                                                        <pre class='source-code'>{{{markup.escaped}}}</pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/if}}
+                            </div>
+                        {{/blocks}}
+                    {{/files}}
+                </div>
+                <!-- components overview -->
+
+            </div>
+        </main>
+    </div>
+
+    <div class='mui-page-footer'>
+        <span>Copyright &copy; Ivan Bogachev, 2016-2018</span>
+    </div>
+
+    <div class='mui-svg-sprite'>
+        <svg version='1.1' xmlns='http://www.w3.org/2000/svg'>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--check'><path d='M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--close'><path d='M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-down'><path d='M277.375 85v259.704l119.702-119.702L427 256 256 427 85 256l29.924-29.922 119.701 118.626V85h42.75z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-right'><path d='M85 277.375h259.704L225.002 397.077 256 427l171-171L256 85l-29.922 29.924 118.626 119.701H85v42.75z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-left'><path d='M427 234.625H167.296l119.702-119.702L256 85 85 256l171 171 29.922-29.924-118.626-119.701H427v-42.75z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--arrow-up'><path d='M277.375 427V167.296l119.702 119.702L427 256 256 85 85 256l29.924 29.922 119.701-118.626V427h42.75z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--star'><path d='M256 372.686L380.83 448l-33.021-142.066L458 210.409l-145.267-12.475L256 64l-56.743 133.934L54 210.409l110.192 95.525L131.161 448z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--hamburger'><path d='M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--spinner'><path d='M256 48c-75.033 0-144.531 40.658-181.373 106.107l-1.963 3.485 20.915 11.771 1.962-3.485C128.138 107.973 189.621 72 256 72c101.458 0 184 82.542 184 184a185.48 185.48 0 0 1-3.749 37.147l-.803 3.918 23.511 4.819.804-3.919A209.53 209.53 0 0 0 464 256c0-114.691-93.309-208-208-208zM416.459 346.119C383.862 404.027 322.379 440 256 440c-101.458 0-184-82.542-184-184 0-12.512 1.262-25.011 3.75-37.15l.803-3.918-23.511-4.819-.804 3.918A209.445 209.445 0 0 0 48 256c0 114.691 93.309 208 208 208 75.033 0 144.531-40.658 181.373-106.109l1.963-3.485-20.915-11.771-1.962 3.484z'></path><path d='M384 256l64 64 64-64zM0 256l64-64 64 64z'></path></symbol>
+            <symbol viewBox='0 0 512 512' id='mui-svg-icon--tags'><path d='M472 239.2s-.1 0 0 0L282.1 48.1l-1.4-1.4h-.5c-7.5-7.2-16.1-10.9-27.1-11.1l-89.9-3.3-3.9-.1c-10.1.1-20 4.1-27.7 11.8l-27.1 27.2c7.4-6.6 16.6-10 26-10.1l3.8.1 89.8 3.3c11 .2 19.7 3.9 27.2 11.1h.5l1.4 1.4L443 268.1c10 10.8 10.7 28.2 0 38.9l29-28.9c10.6-10.7 10-28.1 0-38.9z'></path><path d='M428 282.5h.3L238.6 91.4l-1.3-1.4h-.3c-7.5-7.2-15.9-10.9-26.9-11.1L120 75.6l-4-.1c-9.2.1-18.2 3.4-25.6 9.8-.3.3-.7.6-1 .9l-1.2 1.2-44.3 44.5C35.8 140 32 150.8 32 161.4v.1l.1 3.8 5.9 87.9v1.9c1 7.9 4.2 15.6 9.6 22l5.1 4.9L239 470.4l2.8 2.8c10.7 9.4 27.1 9 37.3-1.3l13.1-13.2c.5-.4.9-.8 1.4-1.3l26.9-27c-.2.1-.3.2-.5.4l108.3-109.3c10.6-10.7 10.7-28.2-.3-39zm-317.4-143c6.6-4 14.3-6.3 22.6-6.3 23.9 0 43.4 19.4 43.4 43.4 0 8.3-2.3 16-6.3 22.6-7.6 12.5-21.3 20.8-37 20.8-23.9 0-43.4-19.4-43.4-43.4-.1-15.8 8.2-29.5 20.7-37.1z'></path></symbol>
+        </svg>
+    </div>
+
+    <link rel='stylesheet' href='../muilessium-ui.min.css?v={{ project.version }}'>
+
+    <style>
+        @media screen and (max-width: 600px) {
+            aside {
+                display: none !important;
+            }
+        }
+
+        a,
+        a:visited {
+            color: #1565c0;
+        }
+
+        a:hover,
+        a:focus {
+            color: #000000;
+        }
+
+        .mui-image.-docs.-logo {
+            float: left;
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+            margin: .5rem 1rem .5rem 0;
+        }
+
+        .mui-p.-docs.-hint {
+            padding: 1rem;
+        }
+
+        .component-preview:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .component-preview > .mui-button {
+            margin: 0 1rem 1rem 0;
+        }
+
+        .component-preview .mui-header-logo {
+            padding-left: 1rem;
+        }
+
+        .component-preview .mui-ribbon-wrapper {
+            height: 10rem;
+            background: #4caf50;
+        }
+
+        .component-preview .mui-ribbon-wrapper + .mui-ribbon-wrapper {
+            margin-top: 1rem;
+        }
+
+
+        .aside-navigation {
+            padding: 0 1rem;
+        }
+
+        .grid-preview .mui-column {
+            margin-top: .5rem;
+        }
+
+        .grid-preview .mui-column:first-of-type {
+            border-right: 2px solid #fff;
+        }
+
+        .source-code {
+            background: #eeeeee;
+            font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+            font-size: .7rem;
+            padding: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-left: 3px solid #9e9e9e;
+        }
+
+        .color-preview {
+            width: 100%;
+            height: 2rem;
+            padding: 0 1rem;
+            line-height: 2rem;
+        }
+
+    </style>
+
+    <script src='../muilessium.min.js?v={{ project.version }}'></script>
+    <script src='../muilessium-ui.min.js?v={{ project.version }}'></script>
+    <!--<script async src='https://static.codepen.io/assets/embed/ei.js'></script>-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var _ = Muilessium.UTILS;
+
+            function initExamples() {
+                _.forEach(document.querySelectorAll('.state .example'), function(example) {
+                    var stateClass = _.getAttribute(example, 'data-class'),
+                        targetChild = 0;
+
+                    if (example.childNodes[1]) {
+                        targetChild = 1;
+                    }
+
+                    _.addClass(example.childNodes[targetChild], stateClass);
+                });
+            }
+
+            initExamples();
+        });
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-53893511-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
