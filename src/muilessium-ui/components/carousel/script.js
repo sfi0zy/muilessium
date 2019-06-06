@@ -154,31 +154,52 @@ export default class Carousel extends FACTORY.BaseComponent {
         return this;
     }
 
+    
+    pauseAndExecute(callback) {
+        if (this.state.isRotation) {
+            this.stopRotating();
+            callback();
+            this.startRotation();
+        } else {
+            callback();
+        }
+    }
+
 
     rotateNext() {
-        this.makeSlideInactive(this.state.activeSlideIndex);
+        this.pauseAndExecute(() => {
+            this.makeSlideInactive(this.state.activeSlideIndex);
 
-        this.state.activeSlideIndex =
-            (this.state.activeSlideIndex + 1) % this.state.numberOfSlides;
+            this.state.activeSlideIndex =
+                (this.state.activeSlideIndex + 1) % this.state.numberOfSlides;
 
-        this.makeSlideActive(this.state.activeSlideIndex);
+            this.makeSlideActive(this.state.activeSlideIndex);
+        });
+
+        return this;
     }
 
 
     rotatePrev() {
-        this.makeSlideInactive(this.state.activeSlideIndex);
+        this.pauseAndExecute(() => {
+            this.makeSlideInactive(this.state.activeSlideIndex);
 
-        this.state.activeSlideIndex =
-            ((this.state.activeSlideIndex + this.state.numberOfSlides) - 1)
-                % this.state.numberOfSlides;
+            this.state.activeSlideIndex =
+                ((this.state.activeSlideIndex + this.state.numberOfSlides) - 1)
+                    % this.state.numberOfSlides;
 
-        this.makeSlideActive(this.state.activeSlideIndex);
+            this.makeSlideActive(this.state.activeSlideIndex);
+        });
+
+        return this;
     }
 
 
     rotate(index) {
-        this.makeSlideInactive(this.state.activeSlideIndex);
-        this.makeSlideActive(index);
+        this.pauseAndExecute(() => {
+            this.makeSlideInactive(this.state.activeSlideIndex);
+            this.makeSlideActive(index);
+        });
 
         return this;
     }
