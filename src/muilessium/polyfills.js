@@ -15,7 +15,7 @@ function smoothScroll() {
 // OBJECT FIT FOR IMAGES
 // https://github.com/bfred-it/object-fit-images
 // There is a css class for this polyfill.
-// Take a look at src/css/utils.css for more information.
+// Take a look at src/muilessium-ui/helpers.css for more information.
 // WTF: Require doesn't work with this module, but should.
 import _objectFit from 'object-fit-images';
 

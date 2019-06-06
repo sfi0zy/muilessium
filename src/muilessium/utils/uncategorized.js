@@ -1,25 +1,6 @@
 // -----------------------------------------------------------------------------
 // UNCATEGORIZED UTILITIES
 // -----------------------------------------------------------------------------
-//
-//  - normalizeTabIndexes()
-//  - lazyLoadImages(callback)
-//  - initAnchorLinks()
-//  - generateRandomString(length = 8)
-//  - stringify(object)
-//  - extend(target, ...sources)
-//  - debounce(func, ms)
-//  - callOnce(callback)
-//  - firstOfList(list)
-//  - lastOfList(list)
-//  - forEach(list, callback, delay)
-//  - deepGet(obj, path)
-//  - deepSet(obj, path, data)
-//  - toLispCase(str)
-//  - upperLimit(value, max)
-//  - lowerLimit(value, min)
-//
-// -----------------------------------------------------------------------------
 
 import DEPENDENCIES from '../dependencies';
 import POLYFILLS    from '../polyfills';

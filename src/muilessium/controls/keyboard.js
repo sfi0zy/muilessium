@@ -1,19 +1,6 @@
 // -----------------------------------------------------------------------------
 // KEYBOARD
 // -----------------------------------------------------------------------------
-//
-// Functions list:
-//  - onEnterPressed
-//  - onSpacePressed
-//  - onTabPressed
-//  - onEscapePressed
-//  - onShiftTabPressed
-//  - onArrowUpPressed
-//  - onArrowRightPressed
-//  - onArrowDownPressed
-//  - onArrowLeftPressed
-//
-// -----------------------------------------------------------------------------
 
 
 function onEnterPressed(element, callback) {

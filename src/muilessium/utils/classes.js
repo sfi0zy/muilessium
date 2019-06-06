@@ -1,16 +1,5 @@
 // -----------------------------------------------------------------------------
-// CSS CLASSES
-// -----------------------------------------------------------------------------
-//
-//  - hasClass(element, class)
-//  - hasNotClass(element, class)
-//  - addClass(element, class)
-//  - addClasses(element, ...classes)
-//  - removeClass(element, class)
-//  - removeClasses(element, ...classes)
-//  - replaceClass(element, class, newClass)
-//  - toggleClass(element, class)
-//
+// UTILITIES FOR CSS CLASSES
 // -----------------------------------------------------------------------------
 
 

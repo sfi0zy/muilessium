@@ -1,23 +1,5 @@
 // -----------------------------------------------------------------------------
-// FOCUS AND CLICK
-// -----------------------------------------------------------------------------
-//
-//  - makeElementFocusable(element)
-//  - makeElementsFocusable(elementsList)
-//  - makeElementNotFocusable(element)
-//  - makeElementsNotFocusable(elementsList)
-//  - getFocusableChilds(element)
-//  - getAllFocusableElements()
-//  - getNextFocusableElement(element)
-//  - getPreviousFocusableElement(element)
-//  - goToNextFocusableElement(element)
-//  - GoToPreviousFocusableElement(element)
-//  - makeElementClickable(element, callback, { mouse = true, keyboard = true } = {})
-//  - makeChildElementsClickable(element, childs, callback, { mouse = true, keyboard = true } = {})
-//  - onFocus(element, callback)
-//  - onBlur(element, callback)
-//  - clearFocus()
-//
+// FOCUS AND CLICK UTILITIES
 // -----------------------------------------------------------------------------
 
 

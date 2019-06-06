@@ -1,16 +1,6 @@
 // -----------------------------------------------------------------------------
 // WAI-ARIA UTILITIES
 // -----------------------------------------------------------------------------
-//
-//  - set(element, property, value = true)
-//  - setRole(element, role)
-//  - removeRole(element)
-//  - setId(element, id)
-//  - get(element, property)
-//  - getRole(element)
-//  - toggleState(element, state)
-//
-// -----------------------------------------------------------------------------
 
 
 import { setAttribute         } from '../utils/attributes';

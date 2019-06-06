@@ -1,11 +1,5 @@
 // -----------------------------------------------------------------------------
-// HTML ATTRIBUTES
-// -----------------------------------------------------------------------------
-//
-//  - setAttribute(element, attribute, value)
-//  - getAttribute(element, attribute, defaultValue)
-//  - removeAttribute(element, attribute)
-//
+// UTILITIES FOR HTML ATTRIBUTES
 // -----------------------------------------------------------------------------
 
 

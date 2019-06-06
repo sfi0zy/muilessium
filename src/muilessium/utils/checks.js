@@ -1,16 +1,6 @@
 // -----------------------------------------------------------------------------
-// CHECKS
+// CHECK UTILITIES
 // -----------------------------------------------------------------------------
-//
-//  - isNode(element)
-//  - isInPage(element)
-//  - isNotInPage(element)
-//  - ifExists(element, callback)
-//  - ifNodeList(element, callback)
-//  - isDescendant(parent, child)
-//
-// -----------------------------------------------------------------------------
-
 
 
 // Is Node
