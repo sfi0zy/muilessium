@@ -45,7 +45,7 @@
                     <li class='item'><a href='#globals-overview'>Globals</a></li>
                     <li class='item'><a href='#events-overview'>Events</a></li>
                     <li class='item'><a href='#store-overview'>Store</a></li>
-                    <li class='item'><a href='#factory-overview'>Factory</a></li>
+                    <li class='item'><a href='#components-overview'>Components</a></li>
                     <li class='item'><a href='#controls-overview'>Controls</a></li>
                     <li class='item'><a href='#utils-overview'>Utils</a></li>
                     <li class='item'><a href='#lazy-loading-images-overview'>Lazy loading</a></li>
@@ -214,11 +214,11 @@ console.log(STORE.get('my-data.a') + STORE.get('my-data.b'));</pre>
                 </div>
                 <!-- /stores overview -->
 
-                <!-- factory overview -->
+                <!-- components overview -->
                 <div class='_separate-5'>
                     <div class='mui-row'>
-                        <a href='#factory-overview'>
-                            <h3 class='_bigger-2' id='factory-overview'>Factory</h3>
+                        <a href='#components-overview'>
+                            <h3 class='_bigger-2' id='components-overview'>Components</h3>
                         </a>
                     </div>
                     <div class='_smaller-2 -grey-3'>/src/muilessium/factory.js<br>/src/muilessium/base-component.js</div>
@@ -250,8 +250,59 @@ console.log(FACTORY.componentsCache.MyComponent);
 </pre>
                         </div>
                     </div>
+
+                    <p class='mui-p _separate-1'>The default set of components is <a href='../muilessium-ui/'>Muilessium-UI</a>. Examples listed below will use it.</p>
+
+                    <p class='mui-p _separate-1'>If the main element of component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>// Let we have an accordion with id='my-accordion'.
+
+const accordion = Muilessium.get('Accordion', 'my-accordion');
+
+accordion.unfoldAllItems();
+</pre>
+                        </div>
+                    </div>
+                    <p class='mui-p _separate-1'>Components can have local events. Their behavior is similar to the main <a href='#events-overview'>events observer</a>:</p>
+                    <div class='_separate-1'>
+                        <div class='code _smaller-1'>
+                            <pre class='source-code'>// Let we have a checkbox.
+
+const checkbox = Muilessium.get('Checkbox', 'my-checkbox');
+
+checkbox.addEventListener('update-state', (state) =&gt; {
+    console.log(state);
+});
+</pre>
+                        </div>
+                    </div>
+
+                    <p class='mui-p _separate-1'>The BaseComponent have default methods:</p>
+
+                    <ul class='mui-list _smaller-1 _separate-1'>
+                        <li class='item'>initAria<span class='-grey-3'>()</span></li>
+                        <li class='item'>initControls<span class='-grey-3'>()</span></li>
+                        <li class='item'>initEvents<span class='-grey-3'>()</span></li>
+                        <li class='item'>addEvent<span class='-grey-3'>(name)</span></li>
+                        <li class='item'>addEventListener<span class='-grey-3'>(name, callback, executeIfAlreadyFired=false)</span></li>
+                        <li class='item'>fireEvent<span class='-grey-3'>(name)</span></li>
+                        <li class='item'>saveState<span class='-grey-3'>()</span></li>
+                        <li class='item'>restoreState<span class='-grey-3'>()</span></li>
+                    </ul>
+
+                    <p class='mui-p _separate-1'>...and default fields:</p>
+
+                    <ul class='mui-list _smaller-1 _separate-1'>
+                        <li class='item'>domCache</li>
+                        <li class='item'>state</li>
+                        <li class='item'>savedStates</li>
+                    </ul>
+
+                    <p class='mui-p _separate-1'>Use or replace them and keep the structure of the components.</p>
+
                 </div>
-                <!-- /factory overview -->
+                <!-- components overview -->
 
                 <!-- controls overview -->
                 <div class='_separate-5'>
@@ -461,90 +512,6 @@ _.scrollToTop();</pre>
                     </div>
                 </div>
                 <!-- /lazy loading overview -->
-
-                <!-- components overview -->
-                <div class='_separate-5'>
-                    <div class='mui-row'>
-                        <a href='#components'>
-                            <h3 class='_bigger-2' id='components'>Components</h3>
-                        </a>
-                    </div>
-                    <div class='_smaller-2 -grey-3'>/src/muilessium/base-component.js<br>/src/muilessium/factory.js</div>
-
-
-                    <p class='mui-p _separate-1'>The <a href='#factory-overview'>FACTORY</a> should be used to create components:</p>
-                    <div class='_separate-1'>
-                        <div class='code _smaller-1'>
-                            <pre class='source-code'>const FACTORY = Muilessium.FACTORY;
-
-class MyComponent extends FACTORY.BaseComponent {
-    constructor(element, options) {
-        super(element, options);
-        console.log('ok');
-    }
-}
-
-FACTORY.registerComponent('MyComponent', MyComponent);
-FACTORY.create('MyComponent', 'body'); // <-- we use body just for example
-
-console.log(FACTORY.componentsCache.MyComponent);
-
-</pre>
-                        </div>
-                    </div>
-
-                    <p class='mui-p _separate-1'>The default set of components is <a href='../muilessium-ui/'>Muilessium-UI</a>. Examples listed below will use it.</p>
-
-                    <p class='mui-p _separate-1'>If the main element of component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):</p>
-                    <div class='_separate-1'>
-                        <div class='code _smaller-1'>
-                            <pre class='source-code'>// Let we have an accordion with id='my-accordion'.
-
-const accordion = Muilessium.get('Accordion', 'my-accordion');
-
-accordion.unfoldAllItems();
-</pre>
-                        </div>
-                    </div>
-                    <p class='mui-p _separate-1'>Components can have local events. Their behavior is similar to the main <a href='#events-overview'>events observer</a>:</p>
-                    <div class='_separate-1'>
-                        <div class='code _smaller-1'>
-                            <pre class='source-code'>// Let we have a checkbox.
-
-const checkbox = Muilessium.get('Checkbox', 'my-checkbox');
-
-checkbox.addEventListener('update-state', (state) =&gt; {
-    console.log(state);
-});
-</pre>
-                        </div>
-                    </div>
-
-                    <p class='mui-p _separate-1'>The BaseComponent have default methods:</p>
-
-                    <ul class='mui-list _smaller-1 _separate-1'>
-                        <li class='item'>initAria<span class='-grey-3'>()</span></li>
-                        <li class='item'>initControls<span class='-grey-3'>()</span></li>
-                        <li class='item'>initEvents<span class='-grey-3'>()</span></li>
-                        <li class='item'>addEvent<span class='-grey-3'>(name)</span></li>
-                        <li class='item'>addEventListener<span class='-grey-3'>(name, callback, executeIfAlreadyFired=false)</span></li>
-                        <li class='item'>fireEvent<span class='-grey-3'>(name)</span></li>
-                        <li class='item'>saveState<span class='-grey-3'>()</span></li>
-                        <li class='item'>restoreState<span class='-grey-3'>()</span></li>
-                    </ul>
-
-                    <p class='mui-p _separate-1'>...and default fields:</p>
-
-                    <ul class='mui-list _smaller-1 _separate-1'>
-                        <li class='item'>domCache</li>
-                        <li class='item'>state</li>
-                        <li class='item'>savedStates</li>
-                    </ul>
-
-                    <p class='mui-p _separate-1'>Use or replace them and keep the structure of the components.</p>
-
-                </div>
-                <!-- components overview -->
 
             </div>
         </main>
