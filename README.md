@@ -2,7 +2,7 @@
 ![version-badge](https://img.shields.io/npm/v/muilessium.svg?style=flat-square&colorB=00b5d6) ![npm-downloads](https://img.shields.io/npm/dt/muilessium.svg?style=flat-square&colorB=00b5d6) ![license-badge](https://img.shields.io/badge/dynamic/json.svg?style=flat-square&label=license&colorB=00b5d6&query=license&uri=https://raw.githubusercontent.com/sfi0zy/muilessium/master/package.json)
 
 ## Description
-Muilessium is a UI framework for simple static websites - landings, blogs, etc.
+Muilessium is a front-end framework for simple websites - landings, blogs, etc.
 
 ## Docs
 [https://sfi0zy.github.io/muilessium](https://sfi0zy.github.io/muilessium)
@@ -22,9 +22,12 @@ npm i --save muilessium
 You have to include these files into your page:
 
 ```
-node_modules/muilessium/dist/muilessium.min.css
-node_modules/muilessium/dist/muilessium-ui.min.js
-node_modules/muilessium/dist/muilessium-ui.min.css
+node_modules/
+|---muilessium/
+    |---dist/
+        |---muilessium.min.js
+        |---muilessium-ui.min.js
+        |---muilessium-ui.min.css
 ```
 
 
