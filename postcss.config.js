@@ -24,9 +24,11 @@ module.exports = {
         }),
         require('doiuse')(require('./doiuse.config.js')),
         require('cssnano')({
-            discardComments: {
-                removeAll: true
-            }
+            preset: ['default', {
+                discardComments: {
+                    removeAll: true
+                }
+            }]
         })
     ]
 };
