@@ -66,8 +66,7 @@ console.log('\n\n\n');
 gulp.task('muilessium:lint-js', () => {
     return gulp.src('./src/muilessium/**/*.js')
         .pipe($.eslint())
-        .pipe($.eslint.format())
-        .pipe($.eslint.failAfterError());
+        .pipe($.eslint.format());
 });
 
 
@@ -101,8 +100,7 @@ gulp.task('muilessium', gulp.series(
 gulp.task('muilessium-ui:lint-js', () => {
     return gulp.src('./src/muilessium-ui/**/*.js')
         .pipe($.eslint())
-        .pipe($.eslint.format())
-        .pipe($.eslint.failAfterError());
+        .pipe($.eslint.format());
 });
 
 
