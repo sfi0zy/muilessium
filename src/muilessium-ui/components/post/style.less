@@ -1,49 +1,44 @@
 // @name        Post
 // @description Components those should be used together for the posts on page.
 //
-// @requires     button
-// @requires     tags-list
-//
+// @requires    button
+// @requires    tags-list
 //
 // @markup
-//  <article class='mui-post _shadow-1'>
-//      <header class='mui-post-header'>
-//          <div class='title'>
-//              <a class='link' href=''><h4>Lorem ipsum dolor</h4></a>
-//          </div>
-//          <div class='information -grey-4'>
-//              <span>Published on</span>
-//              <span class='date'>September 29, 2018</span>
-//          </div>
-//      </header>
-//      <div class='mui-post-content'>
-//          <img class='mui-image -rounded -js-lazy-load' data-src='https://placehold.it/800x400/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Example'>
-//          <noscript>
-//              <img class='mui-image' src='https://placehold.it/800x400/4caf50/2e7d32' alt='Example'>
-//          </noscript>
-//          <p class='mui-p _separate-1'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laboriosam esse unde explicabo molestiae laborum consequuntur placeat perspiciatis sit omnis, aperiam molestias delectus repellendus, illo mollitia doloremque libero quod reprehenderit.</p>
-//          <a href='' class='mui-button -ghost _separate-top-1'>
-//              <span>read more</span>
-//              <svg class='mui-svg-icon'>
-//                  <use xlink:href='#mui-svg-icon--arrow-right'></use>
-//              </svg>
-//          </a>
-//      </div>
-//      <footer class='mui-post-footer'>
-//          <div class='mui-tags-list' aria-label='Tags list'>
-//              <div class='mui-tag-wrapper -icon' role='presentation'>
-//                  <svg class='mui-svg-icon'>
-//                      <use xlink:href='#mui-svg-icon--tags'></use>
-//                  </svg>
-//              </div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag'>html</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag'>css</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag'>javascript</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag'>gulp</a></div>
-//              <div class='mui-tag-wrapper'><a href='' class='mui-tag'>webpack</a></div>
-//          </div>
-//      </footer>
-//   </article>
+//article.mui-post._shadow-1
+//    header.mui-post-header
+//        .title
+//            a.link(href='')
+//                h4 Lorem ipsum dolor
+//        .information.-grey-4
+//            span Published on
+//            span.date September 29, 2018
+//    .mui-post-content
+//        img.mui-image.-rounded.-js-lazy-load(data-src='https://placehold.it/800x400/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Example')
+//        noscript
+//            img.mui-image(src='https://placehold.it/800x400/4caf50/2e7d32' alt='Example')
+//        p.mui-p._separate-1
+//            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laboriosam esse unde explicabo molestiae laborum consequuntur placeat perspiciatis sit omnis, aperiam molestias delectus repellendus, illo mollitia doloremque libero quod reprehenderit.
+//        a.mui-button.-ghost._separate-top-1(href='')
+//            span read more
+//            svg.mui-svg-icon
+//                use(xlink:href='#mui-svg-icon--arrow-right')
+//    footer.mui-post-footer
+//        .mui-tags-list(aria-label='Tags list')
+//            .mui-tag-wrapper.-icon(role='presentation')
+//                svg.mui-svg-icon
+//                    use(xlink:href='#mui-svg-icon--tags')
+//            .mui-tag-wrapper
+//                a.mui-tag(href='') html
+//            .mui-tag-wrapper
+//                a.mui-tag(href='') css
+//            .mui-tag-wrapper
+//                a.mui-tag(href='') javascript
+//            .mui-tag-wrapper
+//                a.mui-tag(href='') gulp
+//            .mui-tag-wrapper
+//                a.mui-tag(href='') webpack
+
 
 
 .@{muilessium-prefix}post {

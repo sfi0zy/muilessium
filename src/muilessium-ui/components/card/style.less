@@ -1,38 +1,27 @@
-// @name        Card
+// @name Card
 // @description Its desirable to wrap card header text into h2-h6 tags for better navigation.
 //
-//
 // @markup
-//  <div class='mui-card _shadow-1'>
-//      <div class='header'>
-//          <h5>Lorem ipsum</h5>
-//      </div>
-//      <div class='content'>
-//          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, magni.</p>
-//      </div>
-//  </div>
+//.mui-card._shadow-1
+//   .header
+//       h5 Lorem ipsum
+//   .content
+//       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, magni.
 
 
-
-
-// @name        Image card
+// @name Image card
 // @description Same card, but with an image instead of traditional header. If an image used here only for presentation purposes, role='presentation' should be added to it manually.
 //
-// @depends     image
-//
+// @depends image
 //
 // @markup
-//  <div class='mui-card -with-image _shadow-1'>
-//      <div class='header'>
-//          <img class='mui-image -js-lazy-load' data-src='https://placehold.it/800x600/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Card header'>
-//          <noscript>
-//              <img class='mui-image' src='https://placehold.it/800x600/4caf50/2e7d32' alt='Card header'>
-//          </noscript>
-//      </div>
-//      <div class='content'>
-//          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, magni.</p>
-//      </div>
-//  </div>
+//.mui-card.-with-image._shadow-1
+//   .header
+//       img.mui-image.-js-lazy-load(data-src='https://placehold.it/800x600/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Card header')
+//       noscript
+//           img.mui-image(src='https://placehold.it/800x600/4caf50/2e7d32' alt='Card header')
+//   .content
+//       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, magni.
 
 
 .@{muilessium-prefix}card {

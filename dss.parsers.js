@@ -21,15 +21,11 @@ module.exports =  {
     },
 
     event(i, line) {
-        return {
-            event: line
-        };
+        return line;
     },
 
     requires(i, line) {
-        return {
-            requires: line
-        };
+        return line;
     },
 
     method(i, line) {

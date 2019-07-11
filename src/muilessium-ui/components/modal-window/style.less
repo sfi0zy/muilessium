@@ -12,25 +12,18 @@
 // @requires     image
 // @requires     svg-icon
 //
-//
 // @markup
-// <div class='mui-button' data-modal-opener='docs-only-id--modal-window'>Show big image</div>
-// <div class='mui-modal-window' id='docs-only-id--modal-window'>
-//     <div class='window _shadow-3'>
-//         <div class='content -image'>
-//              <img class='mui-image -js-lazy-load' data-src='https://placehold.it/800x600/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Image description'>
-//              <noscript>
-//                  <img class='mui-image' src='https://placehold.it/800x600/4caf50/2e7d32' alt='Image description'>
-//              </noscript>
-//         </div>
-//         <div class='closeicon'>
-//              <svg class='mui-svg-icon'>
-//                  <use xlink:href='#mui-svg-icon--close'></use>
-//              </svg>
-//         </div>
-//     </div>
-//     <div class='mui-shadow-toggle'></div>
-// </div>
+//.mui-button(data-modal-opener='docs-only-id--modal-window') Show big image
+//.mui-modal-window#docs-only-id--modal-window
+//    .window._shadow-3
+//        .content.-image
+//            img.mui-image.-js-lazy-load(data-src='https://placehold.it/800x600/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Image description')
+//            noscript
+//                img.mui-image(src='https://placehold.it/800x600/4caf50/2e7d32' alt='Image description')
+//        .closeicon
+//            svg.mui-svg-icon
+//                use(xlink:href='#mui-svg-icon--close')
+//    .mui-shadow-toggle
 
 
 .@{muilessium-prefix}modal-window {

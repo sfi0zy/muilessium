@@ -5,6 +5,7 @@ const path         = require('path');
 const argv         = require('yargs').argv;
 const webpack      = require('webpack-stream');
 const browserSync  = require('browser-sync').create();
+const dss          = require('./gulp-dss.js');
 
 
 
@@ -142,7 +143,8 @@ gulp.task('muilessium-ui', gulp.series(
 
 gulp.task('docs:main', () => {
     return gulp.src('./src/muilessium-ui/components/**/*.less')
-        .pipe($.dss({
+        .pipe(dss({
+            pkg,
             templatePath: './src/docs',
             parsers: require('./dss.parsers.js'),
             outputPath: './dist'
@@ -154,7 +156,8 @@ gulp.task('docs:main', () => {
 
 gulp.task('docs:muilessium', () => {
     return gulp.src('./src/muilessium-ui/components/**/*.less')
-        .pipe($.dss({
+        .pipe(dss({
+            pkg,
             templatePath: './src/docs/muilessium',
             parsers: require('./dss.parsers.js'),
             outputPath: './dist/muilessium'
@@ -166,7 +169,8 @@ gulp.task('docs:muilessium', () => {
 
 gulp.task('docs:muilessium-ui', () => {
     return gulp.src('./src/muilessium-ui/components/**/*.less')
-        .pipe($.dss({
+        .pipe(dss({
+            pkg,
             templatePath: './src/docs/muilessium-ui',
             parsers: require('./dss.parsers.js'),
             outputPath: './dist/muilessium-ui'
@@ -206,18 +210,18 @@ gulp.task('browser-sync', () => {
 
     gulp.watch([
         './src/muilessium-ui/**/*.less',
-    ], gulp.series('muilessium-ui:compile-less'));
+    ], gulp.series('muilessium-ui:compile-less', 'docs'));
 
     gulp.watch([
-        './src/docs/*.handlebars'
+        './src/docs/*.pug'
     ], gulp.series('docs:main'));
 
     gulp.watch([
-        './src/docs/muilessium/*.handlebars'
+        './src/docs/muilessium/*.pug'
     ], gulp.series('docs:muilessium'));
 
     gulp.watch([
-        './src/docs/muilessium-ui/*.handlebars'
+        './src/docs/muilessium-ui/*.pug'
     ], gulp.series('docs:muilessium-ui'));
 });
 

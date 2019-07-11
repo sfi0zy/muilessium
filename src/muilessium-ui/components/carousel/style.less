@@ -11,55 +11,42 @@
 // @requires image
 // @requires svg-icon
 //
-//
 // @markup
-//      <div class='mui-carousel -rounded' id='docs-only-id--carousel' data-interval='4s'>
-//          <ul class='mui-slides'>
-//              <li class='mui-slide'>
-//                  <img class='mui-image background -js-lazy-load' data-src='https://placehold.it/1024x768/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Slide 1'>
-//                  <noscript>
-//                      <img class='mui-image background' src='https://placehold.it/1024x768/4caf50/2e7d32/' alt='Slide 1'>
-//                  </noscript>
-//                  <div class='mui-slide-content -center'>
-//                      <div class='title'>1. Lorem ipsum dolor.</div>
-//                      <div class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, ipsa.</div>
-//                  </div>
-//              </li>
-//              <li class='mui-slide'>
-//                  <img class='mui-image background -js-lazy-load' data-src='https://placehold.it/1200x800/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt=''>
-//                  <noscript>
-//                      <img class='mui-image background' src='https://placehold.it/1200x800/4caf50/2e7d32' alt='Slide 2'>
-//                  </noscript>
-//                  <div class='mui-slide-content -content-left'>
-//                      <div class='title'>2. Lorem ipsum dolor sit amet.</div>
-//                      <div class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, illo.</div>
-//                  </div>
-//              </li>
-//              <li class='mui-slide'>
-//                  <img class='mui-image background -js-lazy-load' data-src='https://placehold.it/1200x800/2e7d32/1b5e20' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt=''>
-//                  <noscript>
-//                      <img class='mui-image background' src='https://placehold.it/1200x800/2e7d32/1b5e20' alt='Slide 3'>
-//                  </noscript>
-//                  <div class='mui-slide-content -content-right'>
-//                      <div class='title'>3. Lorem ipsum dolor sit.</div>
-//                      <div class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam.</div>
-//                  </div>
-//              </li>
-//          </ul>
-//          <div class='mui-carousel-controls'>
-//              <div class='prev'>
-//                  <svg class='mui-svg-icon -white'><use xlink:href='#mui-svg-icon--arrow-left'></use></svg>
-//              </div>
-//              <div class='next'>
-//                  <svg class='mui-svg-icon -white'><use xlink:href='#mui-svg-icon--arrow-right'></use></svg>
-//              </div>
-//          </div>
-//          <ul class='mui-carousel-indicators'>
-//              <li class='indicator'></li>
-//              <li class='indicator'></li>
-//              <li class='indicator'></li>
-//          </ul>
-//      </div>
+//.mui-carousel.-rounded#docs-only-id--carousel(data-interval='4s')
+//    ul.mui-slides
+//        li.mui-slide
+//            img.mui-image.background.-js-lazy-load(data-src='https://placehold.it/1024x768/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='Slide 1')
+//            noscript
+//                img.mui-image.background(src='https://placehold.it/1024x768/4caf50/2e7d32/', alt='Slide 1')
+//            .mui-slide-content.-center
+//                .title 1. Lorem ipsum dolor.
+//                .text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, ipsa.
+//        li.mui-slide
+//            img.mui-image.background.-js-lazy-load(data-src='https://placehold.it/1200x800/4caf50/2e7d32' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='')
+//            noscript
+//                img.mui-image.background(src='https://placehold.it/1200x800/4caf50/2e7d32', alt='Slide 2')
+//            .mui-slide-content.-content-left
+//                .title 2. Lorem ipsum dolor sit amet.
+//                .text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, illo.
+//        li.mui-slide
+//            img.mui-image.background.-js-lazy-load(data-src='https://placehold.it/1200x800/2e7d32/1b5e20' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='')
+//            noscript
+//                img.mui-image.background(src='https://placehold.it/1200x800/2e7d32/1b5e20', alt='Slide 3')
+//            .mui-slide-content.-content-right
+//                .title 3. Lorem ipsum dolor sit.
+//                .text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam.
+//    .mui-carousel-controls
+//        .prev
+//            svg.mui-svg-icon.-white
+//               use(xlink:href='#mui-svg-icon--arrow-left')
+//        .next
+//            svg.mui-svg-icon.-white
+//                use(xlink:href='#mui-svg-icon--arrow-right')
+//    ul.mui-carousel-indicators
+//        li.indicator
+//        li.indicator
+//        li.indicator
+
 
 
 .@{muilessium-prefix}carousel {
