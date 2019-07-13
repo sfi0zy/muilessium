@@ -23,9 +23,35 @@ console.log(`> ${argv.$0} ${argv._}`);
 console.log(ENVIRONMENT.toUpperCase().yellow);
 console.log(`${pkg.name.red} ${pkg.version.green}\n`);
 console.log('%s\n'.blue, pkg.browserslist);
-console.log('DEV DEPENDENCIES:');
 
 let isDependenciesSaved = true;
+
+console.log('DEPENDENCIES:');
+
+Object.keys(pkg.dependencies).forEach((dependency) => {
+    const depPackage =
+        JSON.parse(
+            fs.readFileSync(
+                path.join('node_modules', dependency, 'package.json'), 'utf-8'));
+
+    if (depPackage._requested.registry) {
+        if (depPackage.version !== pkg.dependencies[dependency]) {
+            console.log('NPM %s@%s'.green, dependency, depPackage.version.red);
+            isDependenciesSaved = false;
+        } else {
+            console.log('NPM %s@%s'.green, dependency, depPackage.version);
+        }
+    } else {
+        if (depPackage._resolved !== pkg.dependencies[dependency]) {
+            console.log('--- %s@%s'.blue, dependency, depPackage._resolved.red);
+            isDependenciesSaved = false;
+        } else {
+            console.log('--- %s@%s'.blue, dependency, depPackage._resolved);
+        }
+    }
+});
+
+console.log('\nDEV DEPENDENCIES:');
 
 Object.keys(pkg.devDependencies).forEach((dependency) => {
     const depPackage =
