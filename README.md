@@ -35,7 +35,7 @@ node_modules/
 ```sh
 git clone https://github.com/sfi0zy/muilessium.git
 cd muilessium
-npm ci
+npm i
 npm run dev
 npm run prod
 ```
