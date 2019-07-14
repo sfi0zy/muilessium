@@ -108,6 +108,10 @@ export default class Textarea extends FACTORY.BaseComponent {
 
 
     getValue() {
+        if (this.state.value !== this.domCache.textarea.value) {
+            this.changeEventHandler();
+        }
+
         return this.state.value;
     }
 }
