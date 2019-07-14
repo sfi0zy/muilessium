@@ -164,6 +164,15 @@ export default class Input extends FACTORY.BaseComponent {
     }
 
 
+    setValue(value) {
+        this.domCache.input.value = value;
+
+        this.changeValueHandler();
+
+        return this;
+    }
+
+
     getValue() {
         return this.state.value;
     }
