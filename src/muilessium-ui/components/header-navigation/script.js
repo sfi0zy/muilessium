@@ -32,6 +32,10 @@ export default class HeaderNavigation extends FACTORY.BaseComponent {
         this.update();
         this.initEvents();
 
+        setTimeout(() => {
+            _.addClass(this.domCache.element, '-activated');
+        }, 500);
+
         this.state.initialized = true;
     }
 
