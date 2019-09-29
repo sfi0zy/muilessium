@@ -169,7 +169,7 @@ export default class ButtonDropdown extends FACTORY.BaseComponent {
     }
 
 
-    toggleDropdown(focusFirstWhenOpened = true) {
+    toggleDropdown({ focusFirstWhenOpened = true }) {
         if (this.state.isOpened) {
             this.closeDropdown();
         } else {

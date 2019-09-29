@@ -117,7 +117,7 @@ export default class SelectDropdown extends FACTORY.BaseComponent {
         _.ifNodeList(this.domCache.labels, () => {
             _.forEach(this.domCache.labels, (label) => {
                 _.onFocus(label, () => {
-                    this.domCache.select.focus();
+                    _.goToNextFocusableElement(label);
                 });
             });
 
@@ -171,7 +171,7 @@ export default class SelectDropdown extends FACTORY.BaseComponent {
 
         KEYBOARD.onTabPressed(this.domCache.select, () => {
             if (!this.state.isOpened) {
-                _.goToNextFocusableElement(this.domCache.hiddenSelect);
+                _.goToNextFocusableElement(_.lastOfList(this.domCache.optionsList));
             }
         });
 
@@ -242,7 +242,7 @@ export default class SelectDropdown extends FACTORY.BaseComponent {
         return this;
     }
 
-    toggleDropdown(focusFirstWhenOpened = true) {
+    toggleDropdown({ focusFirstWhenOpened = true }) {
         if (this.state.isOpened) {
             this.closeDropdown();
         } else {
