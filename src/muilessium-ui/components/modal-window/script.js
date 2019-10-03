@@ -71,7 +71,7 @@ export default class ModalWindow extends FACTORY.BaseComponent {
     initEvents() {
         EVENTS.addEventListener('scroll-start', () => {
             if (this.state.isOpened) {
-                this.closeModal();
+                this.closeModal({ returnToOpener: false });
                 _.clearFocus();
             }
         });
@@ -117,7 +117,7 @@ export default class ModalWindow extends FACTORY.BaseComponent {
     }
 
 
-    closeModal() {
+    closeModal({ returnToOpener = true }) {
         if (this.state.isOpened) {
             _.removeClass(this.domCache.element, '-opened');
             _.removeClass(this.domCache.shadow,  '-visible');
@@ -127,7 +127,7 @@ export default class ModalWindow extends FACTORY.BaseComponent {
             _.makeElementNotFocusable(this.domCache.modalWindow);
             this.state.isOpened = false;
 
-            if (this.state.savedOpener) {
+            if (this.state.savedOpener && returnToOpener && !_.isInViewport(this.state.savedOpener)) {
                 _.scrollTo(this.state.savedOpener, () => {
                     this.state.savedOpener.focus();
                     this.state.savedOpener = null;
