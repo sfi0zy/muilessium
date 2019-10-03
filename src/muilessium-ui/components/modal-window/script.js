@@ -128,8 +128,10 @@ export default class ModalWindow extends FACTORY.BaseComponent {
             this.state.isOpened = false;
 
             if (this.state.savedOpener) {
-                this.state.savedOpener.focus();
-                this.state.savedOpener = null;
+                _.scrollTo(this.state.savedOpener, () => {
+                    this.state.savedOpener.focus();
+                    this.state.savedOpener = null;
+                });
             }
 
             this.fireEvent('close-modal');
