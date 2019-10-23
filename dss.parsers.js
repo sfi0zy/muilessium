@@ -16,6 +16,10 @@ module.exports =  {
         };
     },
 
+    description_ru(i, line) {
+        return line;
+    },
+
     see(i, line) {
         return line;
     },
@@ -32,8 +36,9 @@ module.exports =  {
         const method = line.split(' - ');
 
         return {
-            name:        method[0] ? method[0] : '',
-            description: method[1] ? method[1] : ''
+            name:           method[0] ? method[0] : '',
+            description:    method[1] ? method[1] : '',
+            description_ru: method[2] ? method[2] : ''
         };
     },
 

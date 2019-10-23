@@ -1,21 +1,21 @@
 doctype html
-html(lang='en')
+html(lang='ru')
     head
         meta(http-equiv='content-type' content='text/html;charset=UTF-8')
         meta(name='viewport' content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1')
 
-        title Muilessium (docs)
+        title Muilessium (документация)
 
-        link(rel='apple-touch-icon' sizes='180x180' href='../favicons/apple-touch-icon.png')
-        link(rel='icon' type='image/png' sizes='32x32' href='../favicons/favicon-32x32.png')
-        link(rel='icon' type='image/png' sizes='16x16' href='../favicons/favicon-16x16.png')
-        link(rel='manifest' href='../favicons/manifest.json')
-        link(rel='mask-icon' href='../favicons/safari-pinned-tab.svg' color='#050505')
+        link(rel='apple-touch-icon' sizes='180x180' href='../../favicons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='../../favicons/favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='../../favicons/favicon-16x16.png')
+        link(rel='manifest' href='../../favicons/manifest.json')
+        link(rel='mask-icon' href='../../favicons/safari-pinned-tab.svg' color='#050505')
         meta(name='theme-color' content='#ffffff')
 
-        link(rel='prefetch' href='../muilessium.min.js?v=' + pkg.version)
-        link(rel='prefetch' href='../muilessium-ui.min.css?v=' + pkg.version)
-        link(rel='prefetch' href='../muilessium-ui.min.js?v=' + pkg.version)
+        link(rel='prefetch' href='../../muilessium.min.js?v=' + pkg.version)
+        link(rel='prefetch' href='../../muilessium-ui.min.css?v=' + pkg.version)
+        link(rel='prefetch' href='../../muilessium-ui.min.js?v=' + pkg.version)
 
         style.
             .-black{color:#000!important;fill:#000!important}.-grey-3{color:#9e9e9e!important;fill:#9e9e9e!important}.-green-3-bg{background:#4caf50!important}.-red-3-bg{background:#f44336!important}.-orange-3-bg{background:#ff9800!important}._smaller-1{font-size:.8em!important}._smaller-2{font-size:.72em!important}@media screen and (max-width:600px){._smaller-1,._smaller-2{font-size:1em!important}}@media screen and (max-width:400px){._smaller-1,._smaller-2{font-size:1em!important}}._bigger-0{font-size:1em!important}._bigger-2{font-size:1.56em!important}._line-1-25{line-height:1.25!important}._line-4r{line-height:4rem!important}._left{float:left!important}._right{float:right!important}._separate-1{margin-top:1rem!important;margin-bottom:1rem!important}._separate-3{margin-top:3rem!important;margin-bottom:3rem!important}._separate-5{margin-top:5rem!important;margin-bottom:5rem!important}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}aside,header{display:block}h1{font-size:2em;margin:.67em 0}main{display:block}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}svg:not(:root){overflow:hidden}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{height:100%;color:#000;background-color:#fff}body{display:flex;flex-direction:column;min-height:100%;min-width:320px}a{text-decoration:none}a,a:visited{color:#000}:focus{outline:none}div:empty:not(.indicator):not(.mui-navigation-toggle):not(._allow-empty):not(.mui-shadow-toggle):not(.scrollbar){display:none}h1,h2,h3{margin:0;padding:0;line-height:1.2}img{display:block;height:auto;max-width:100%}html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;font-size:calc(14px + 6*(100vw - 400px)/800);line-height:1.5}@media screen and (max-width:400px){html{font-size:14px}}@media screen and (min-width:1200px){html{font-size:20px}}h1{font-size:3.05em!important}h2{font-size:2.44em!important}h3{font-size:1.95em!important}.mui-button,a.mui-button{display:inline-block;position:relative;padding:0 1em;font-size:1rem;line-height:2;text-decoration:none;text-align:center;color:#fff;background:#1565c0;border:none;border-radius:.2rem}.mui-button:visited,a.mui-button:visited{color:#fff;background:#1565c0}.mui-content-container{position:relative;width:90%;max-width:1100px;margin:0 auto}.mui-content-container:after{content:"";display:table;clear:both}.mui-row{display:flex;flex:0 1 auto;flex-direction:row;flex-wrap:wrap}.mui-column{flex:0 0 auto;flex-grow:1;flex-basis:0;max-width:100%}@media screen and (max-width:400px){.mui-column{flex-basis:100%;max-width:100%}}.mui-column.-s12{flex-basis:100%;max-width:100%}@media screen and (min-width:600px){.mui-column.-m3{flex-basis:25%;max-width:25%}.mui-column.-m9{flex-basis:75%;max-width:75%}}.mui-header-logo{display:inline-block;line-height:4rem}.mui-header-logo>.link{color:#fff;text-decoration:none}.mui-image{margin-left:auto;margin-right:auto}.mui-image.-js-lazy-load{opacity:0}ul.mui-list{list-style-position:inside}ul.mui-list.-no-bullets{list-style:none}ul.mui-list .item:not(:first-of-type){margin-top:.5rem}.mui-page-header{position:relative;height:4rem;max-height:4rem;background:#000}.mui-page-header:after{content:"";display:table;clear:both}.mui-p{display:block;margin:0 auto;text-align:justify;text-align-last:left}.mui-scroll-fix{position:fixed;top:0;left:0;height:100vh;width:100%;z-index:100}.mui-svg-sprite{position:fixed}@media screen and (max-width:600px){aside{display:none!important}}a,a:visited{color:#1565c0}.mui-image.-docs.-logo{float:left;display:inline-block;height:3rem;width:3rem;margin:.5rem 1rem .5rem 0}.aside-navigation{padding:0 1rem}.source-code{background:#eeeeee;font-family:Menlo,"Bitstream Vera Sans Mono","DejaVu Sans Mono",Monaco,Consolas,monospace;font-size:.7rem;padding:1rem;white-space:pre-wrap;word-wrap:break-word;border-left:3px solid #9e9e9e}.-white{color:#fff}
@@ -26,32 +26,32 @@ html(lang='en')
         header.mui-page-header
             .mui-content-container
                 .mui-header-logo._left
-                    img.mui-image.-docs.-logo.-js-lazy-load(data-src='../muilessium.png' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='logo')
+                    img.mui-image.-docs.-logo.-js-lazy-load(data-src='../../muilessium.png' src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' alt='logo')
                     noscript
-                        img.mui-image.-docs.-logo(src='../muilessium.jpg' alt='Muilessium logo')
-                    a.link._right(href='../')
+                        img.mui-image.-docs.-logo(src='../../muilessium.jpg' alt='Muilessium logo')
+                    a.link._right(href='../../')
                         h1.heading._bigger-0._line-4r
                             span Muilessium
                             span._smaller-2 &nbsp;v#{ pkg.version }
                 ._right._line-4r
-                    span.-grey-3 ENG
+                    a.-white.-f-blue-3(href='../../muilessium') ENG
                     span.-white &nbsp;/&nbsp;
-                    a.-white.-f-blue-3(href='../ru/muilessium') RUS
+                    span.-grey-3 RUS
 
         .mui-content-container
             aside.mui-column.-s12.-m3._right
                 .aside-navigation._smaller-1._line-1-25._separate-3(role='navigation')
                     ul.mui-list.-no-bullets._separate-1
-                        li.item: a(href='#overview') Overview
+                        li.item: a(href='#overview') Обзор
                         li.item: a(href='#muilessium-ui-overview') Muilessium-UI
                         li.item: a(href='#cdn') CDN
-                        li.item: a(href='#globals-overview') Globals
-                        li.item: a(href='#events-overview') Events
-                        li.item: a(href='#store-overview') Store
-                        li.item: a(href='#components-overview') Components
-                        li.item: a(href='#controls-overview') Controls
-                        li.item: a(href='#utils-overview') Utils
-                        li.item: a(href='#lazy-loading-images-overview') Lazy loading
+                        li.item: a(href='#globals-overview') Глобальные объекты
+                        li.item: a(href='#events-overview') События
+                        li.item: a(href='#store-overview') Хранилище
+                        li.item: a(href='#components-overview') Компоненты
+                        li.item: a(href='#controls-overview') Устройства ввода
+                        li.item: a(href='#utils-overview') Утилиты
+                        li.item: a(href='#lazy-loading-images-overview') Ленивая загрузка
 
             main.mui-column.-s12.-m9
                 .mui-content-container
@@ -60,8 +60,8 @@ html(lang='en')
                     ._separate-3
                         .mui-row
                             a(href='#overview')
-                                h2._bigger-2#overview Overview
-                        p.mui-p._separate-1 Muilessium is a front-end framework for simple websites - landings, blogs, etc.
+                                h2._bigger-2#overview Обзор
+                        p.mui-p._separate-1 Muilessium - это фреймворк для простых сайтов - лендингов, блогов и.т.д.
                         ._separate-1
                             a.mui-button.-green-3-bg.-f-green-5-bg(href='https://github.com/sfi0zy/muilessium') GitHub
                             span &nbsp;
@@ -75,7 +75,7 @@ html(lang='en')
                         ._smaller-2.-grey-3 /src/muilessium-ui/
                         p.mui-p._separate-1
                             a(href='../muilessium-ui') Muilessium-UI
-                            span &nbsp;is the default set of components for Muilessium.
+                            span &nbsp;- это стандартный набор компонентов для Muilessium.
 
                     // CDN
                     ._separate-5
@@ -91,31 +91,31 @@ html(lang='en')
                     ._separate-5
                         .mui-row
                             a(href='#globals-overview')
-                                h3._bigger-2#globals-overview Global Variables
+                                h3._bigger-2#globals-overview Глобальные объекты
                         ._smaller-2.-grey-3 /src/muilessium/muilessium.js
-                        p.mui-p._separate-1 Muilessium has one global entry point - window.Muilessium.
-                        p.mui-p._separate-1 It has a number of useful fields:
+                        p.mui-p._separate-1 Muilessium имеет только один глобальный объект - window.Muilessium.
+                        p.mui-p._separate-1 Он содержит в себе некоторые полезные штуки:
                         ul.mui-list._separate-1
                             li.item
                                 a(href='#events-overview') EVENTS
-                                span &nbsp;- Events observer
+                                span &nbsp;- Следилка за событиями
                             li.item
                                 a(href='#store-overview') STORE
-                                span &nbsp;- Global store for data
+                                span &nbsp;- Хранилище для данных
                             li.item
                                 a(href='#factory-overview') FACTORY
-                                span &nbsp;- The main factory of components
+                                span &nbsp;- Основная фабрика компонентов
                             li.item
                                 a(href='#controls-overview') KEYBOARD, MOUSE, TOUCHPAD
-                                span &nbsp;- Utilities for controls
+                                span &nbsp;- Утилиты для устройств ввода
                             li.item
                                 a(href='#utils-overview') UTILS
-                                span &nbsp;- A number of other useful utilities
-                            li.item DATA_TYPES - Data types
-                            li.item DEPENDENCIES - Some dependencies for internal usage
-                            li.item POLYFILLS - Some polyfills for internal usage
-                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Run "console.log(Muilessium)" on this page to see the full structure of it.
-                        p.mui-p A little example of the ajax request:
+                                span &nbsp;- Немного других утилит
+                            li.item DATA_TYPES - Типы данных
+                            li.item DEPENDENCIES - Зависимости (для внутреннего использования)
+                            li.item POLYFILLS - Полифилы (для внутреннего использования)
+                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Запустите "console.log(Muilessium)" на этой странице, чтобы посмотреть всю структуру.
+                        p.mui-p Небольшой пример ajax-запроса:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -123,15 +123,15 @@ html(lang='en')
                                     const STORE  = Muilessium.STORE;
                                     const EVENTS = Muilessium.EVENTS;
 
-                                    // This can be in the first module...
+                                    // Это может быть в одном модуле...
                                     EVENTS.addEvent('data-updated');
 
-                                    // This can be in the second one...
+                                    // А это в другом...
                                     EVENTS.addEventListener('data-updated', () =&gt; {
                                         console.log(STORE.get('my-data'));
                                     });
 
-                                    // And this can be in th third module...
+                                    // А это - в третьем...
                                     _.ajax.get('https://...', (responseText) =&gt; {
                                         STORE.set('my-data', responseText);
                                         EVENTS.fireEvent('data-updated');
@@ -141,10 +141,10 @@ html(lang='en')
                     ._separate-5
                         .mui-row
                             a(href='#events-overview')
-                                h3._bigger-2#events-overview Events
+                                h3._bigger-2#events-overview События
                         ._smaller-2.-grey-3 /src/muilessium/events.js
-                        p.mui-p._separate-1 Muilessium has a system of internal events.
-                        p.mui-p._separate-1 The main methods are:
+                        p.mui-p._separate-1 У Muilessium есть система глобальных событий.
+                        p.mui-p._separate-1 Основные методы:
                         ul.mui-list._separate-1._smaller-1
                             li.item
                                 span addEvent
@@ -155,7 +155,7 @@ html(lang='en')
                             li.item
                                 span fireEvent
                                 span.-grey-3 (name)
-                        p.mui-p._separate-1 It has default events:
+                        p.mui-p._separate-1 По умолчанию зарегистрированы следующие события:
                         ul.mui-list._smaller-1
                             li.item resize-window
                             li.item resize-window-height
@@ -166,7 +166,7 @@ html(lang='en')
                             li.item app-initialized
                             li.item images-loaded
                             li.item store-updated
-                        p.mui-p._separate-1 For example:
+                        p.mui-p._separate-1 Пример использования:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -182,16 +182,16 @@ html(lang='en')
                                     EVENTS.addEventListener('scroll-start', () =&gt; {
                                         EVENTS.fireEvent('my-event');
                                     });
-                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg All UI components have the similar methods to work with their local events.
+                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Все компоненты интерфейса имеют аналогичные методы для работы с их собственными событиями.
 
                     // store overview
                     ._separate-5
                         .mui-row
                             a(href='#store-overview')
-                                h3._bigger-2#store-overview Store
+                                h3._bigger-2#store-overview Хранилище
                         ._smaller-2.-grey-3 /src/muilessium/store.js
-                        p.mui-p._separate-1 Muilessium has a global store. It should be used to store different data and share it between components.
-                        p.mui-p._separate-1 The main methods are:
+                        p.mui-p._separate-1 У Muilessium есть простое глобальное хранилище для данных, которые могут быть нужны разным компонентам.
+                        p.mui-p._separate-1 Основные методы:
                         ul.mui-list._separate-1._smaller-1
                             li.item
                                 span set
@@ -199,7 +199,7 @@ html(lang='en')
                             li.item
                                 span get
                                 span.-grey-3 (path)
-                        p.mui-p._separate-1 For example:
+                        p.mui-p._separate-1 Пример использования:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -214,11 +214,11 @@ html(lang='en')
                     ._separate-5
                         .mui-row
                             a(href='#components-overview')
-                                h3._bigger-2#components-overview Components
+                                h3._bigger-2#components-overview Компоненты
                         ._smaller-2.-grey-3 /src/muilessium/factory.js
                         ._smaller-2.-grey-3 /src/muilessium/base-component.js
-                        p.mui-p._separate-1 Muilessium has a factory of components.
-                        p.mui-p._separate-1 The main methods are:
+                        p.mui-p._separate-1 У Muilessium есть фабрика компонентов.
+                        p.mui-p._separate-1 Основные методы:
                         ul.mui-list._separate-1._smaller-1
                             li.item
                                 span registerComponent
@@ -226,8 +226,8 @@ html(lang='en')
                             li.item
                                 span create
                                 span.-grey-3 (type, selector, options)
-                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg All components should extend the BaseComponent class.
-                        p.mui-p._separate-1 For example:
+                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Все компоненты должны расширять класс BaseComponent.
+                        p.mui-p._separate-1 Пример использования:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -241,37 +241,37 @@ html(lang='en')
                                     }
 
                                     FACTORY.registerComponent('MyComponent', MyComponent);
-                                    FACTORY.create('MyComponent', 'body'); /* <-- we use body just for example */
+                                    FACTORY.create('MyComponent', 'body'); /* <-- используем body чисто для примера */
 
                                     console.log(FACTORY.componentsCache.MyComponent);
                         p.mui-p._separate-1
-                            span The default set of components is &nbsp;
+                            span Стандартный набор компонентов -&nbsp;
                             a(href='../muilessium-ui/') Muilessium-UI
-                            span . Examples listed below will use it.</p>
-                        p.mui-p._separate-1 If the main element of component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):
+                            span . В примерах ниже будем использовать его.</p>
+                        p.mui-p._separate-1 Если основной dom-элемент компонента имеет id, то инициализированный компонент можно получить используя конструкцию Muilessium.get(componentName, id):
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
-                                    /* Let we have an accordion with id='my-accordion'. */
+                                    /* Допустим у нас есть аккордеон с id='my-accordion'. */
 
                                     const accordion = Muilessium.get('Accordion', 'my-accordion');
 
                                     accordion.unfoldAllItems();
                         p.mui-p._separate-1
-                            span Components can have local events. Their behavior is similar to the main &nbsp;
-                            a(href='#events-overview') events observer
+                            span У компонентов могут быть локальные события. Работа с ними аналогична работе с глобальной &nbsp;
+                            a(href='#events-overview') системой событий
                             span :
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
-                                    // Let we have a checkbox.
+                                    // Допустим у нас есть чекбокс.
 
                                     const checkbox = Muilessium.get('Checkbox', 'my-checkbox');
 
                                     checkbox.addEventListener('update-state', (state) =&gt; {
                                         console.log(state);
                                     });
-                        p.mui-p._separate-1 The BaseComponent have default methods:
+                        p.mui-p._separate-1 У класса BaseComponent есть несколько методов по умолчанию:
                         ul.mui-list._smaller-1._separate-1
                             li.item
                                 span initAria
@@ -297,22 +297,22 @@ html(lang='en')
                             li.item
                                 span restoreState
                                 span.-grey-3 ()
-                        p.mui-p._separate-1 ...and default fields:
+                        p.mui-p._separate-1 ...и поля:
                         ul.mui-list._smaller-1._separate-1
                             li.item domCache
                             li.item state
                             li.item savedStates
-                        p.mui-p._separate-1 Use or replace them and keep the structure of the components.
+                        p.mui-p._separate-1 Их следует использовать, чтобы сохранять единообразие в различных компонентах.
 
                     // controls overview
                     ._separate-5
                         .mui-row
                             a(href='#controls-overview')
-                                h3._bigger-2#controls-overview Controls
+                                h3._bigger-2#controls-overview Устройства ввода
                         ._smaller-2.-grey-3 /src/muilessium/controls/keyboard.js
                         ._smaller-2.-grey-3 /src/muilessium/controls/mouse.js
                         ._smaller-2.-grey-3 /src/muilessium/controls/touchpad.js
-                        p.mui-p._separate-1 Muilessium has a number of handy utilities for controls:
+                        p.mui-p._separate-1 У Muilessium есть набор утилит для устройств ввода для часто используемых действий:
                         ul.mui-list._smaller-1
                             li.item
                                 span MOUSE
@@ -377,7 +377,7 @@ html(lang='en')
                                     li.item
                                         span onPinchOut
                                         span.-grey-3 (element, callback)
-                        p.mui-p._separate-1 For example:
+                        p.mui-p._separate-1 Пример использования:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -393,9 +393,9 @@ html(lang='en')
                     ._separate-5
                         .mui-row
                             a(href='#utils-overview')
-                                h3._bigger-2#utils-overview Utils
+                                h3._bigger-2#utils-overview Утилиты
                         ._smaller-2.-grey-3 /src/muilessium/utils.js
-                        p.mui-p._separate-1 Muilessium has over 60 utilities:
+                        p.mui-p._separate-1 Также у Muilessium есть набор из более чем 60 утилит, которые помогают сохранять код более чистым:
                         ul.mui-list._smaller-1
                             li.item#utils-ajax
                                 span AJAX
@@ -413,7 +413,7 @@ html(lang='en')
                                         span ajax.getProtected
                                         span.-grey-3 (url, callback)
                             li.item#utils-aria
-                                span WAI-ARIA
+                                span ARIA-разметка
                                 ul.mui-list
                                     li.item
                                         span aria.set
@@ -437,7 +437,7 @@ html(lang='en')
                                         span aria.toggleState
                                         span.-grey-3 (element, state)
                             li.item#utils-attributes
-                                span HTML attributes
+                                span HTML-атрибуты
                                 ul.mui-list
                                     li.item
                                         span setAttribute
@@ -449,7 +449,7 @@ html(lang='en')
                                         span removeAttribute
                                         span.-grey-3 (element, attribute)
                             li.item#utils-checks
-                                span Checking
+                                span Разные проверки
                                 ul.mui-list
                                     li.item
                                         span isNode
@@ -470,7 +470,7 @@ html(lang='en')
                                         span isDescendant
                                         span.-grey-3 (parent, child)
                             li.item#utils-css-classes
-                                span CSS classes
+                                span CSS-классы
                                 ul.mui-list
                                     li.item
                                         span hasClass
@@ -497,7 +497,7 @@ html(lang='en')
                                         span toggleClass
                                         span.-grey-3 (element, class)
                             li.item#utils-focus-and-click
-                                span Focus & click
+                                span Фокус и взаимодействия с элементами
                                 ul.mui-list
                                     li.item
                                         span makeElementFocusable
@@ -545,7 +545,7 @@ html(lang='en')
                                         span clearFocus
                                         span.-grey-3 ()
                             li.item#utils-scroll
-                                span Scroll
+                                span Скролл
                                 ul.mui-list
                                     li.item
                                         span scrollTo
@@ -557,7 +557,7 @@ html(lang='en')
                                         span scrollFire
                                         span.-grey-3 (element, callback)
                             li.item#utils-viewport
-                                span Viewport
+                                span Вьюпорт
                                 ul.mui-list
                                     li.item
                                         span isInViewport
@@ -566,13 +566,13 @@ html(lang='en')
                                         span isAboveViewport
                                         span.-grey-3 (element)
                             li.item#utils-uncategorized
-                                span Uncategorized
+                                span И всякое-разное
                                 ul.mui-list
                                     li.item
                                         span normalizeTabIndexes
                                         span.-grey-3 ()
                                     li.item
-                                        span layLoadImages
+                                        span lazyLoadImages
                                         span.-grey-3 (callback)
                                     li.item
                                         span initAnchorLinks
@@ -616,7 +616,7 @@ html(lang='en')
                                     li.item
                                         span lowerLimit
                                         span.-grey-3 (value, min)
-                        p.mui-p._separate-1 For example:
+                        p.mui-p._separate-1 Пример использования:
                         ._separate-1
                             .code._smaller-1
                                 pre.source-code.
@@ -628,9 +628,9 @@ html(lang='en')
                     ._separate-5
                         .mui-row
                             a(href='#lazy-loading-images-overview')
-                                h3._bigger-2#lazy-loading-images-overview Lazy loading images
+                                h3._bigger-2#lazy-loading-images-overview Ленивая загрузка картинок
                         ._smaller-2.-grey-3 /src/muilessium/utils/uncategorized.js
-                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Don't forget to add "noscript" tag for search engines.
+                        p.mui-p.-docs.-hint._separate-1.-blue-1-bg Не забывайте добавлять тег "noscript" для поисковых роботов.
                         .code-example._separate-2._smaller-1
                             pre.source-code.
                                 #{'<img class="mui-image -js-lazy-load"'}
@@ -672,7 +672,7 @@ html(lang='en')
                     path(d='M428 282.5h.3L238.6 91.4l-1.3-1.4h-.3c-7.5-7.2-15.9-10.9-26.9-11.1L120 75.6l-4-.1c-9.2.1-18.2 3.4-25.6 9.8-.3.3-.7.6-1 .9l-1.2 1.2-44.3 44.5C35.8 140 32 150.8 32 161.4v.1l.1 3.8 5.9 87.9v1.9c1 7.9 4.2 15.6 9.6 22l5.1 4.9L239 470.4l2.8 2.8c10.7 9.4 27.1 9 37.3-1.3l13.1-13.2c.5-.4.9-.8 1.4-1.3l26.9-27c-.2.1-.3.2-.5.4l108.3-109.3c10.6-10.7 10.7-28.2-.3-39zm-317.4-143c6.6-4 14.3-6.3 22.6-6.3 23.9 0 43.4 19.4 43.4 43.4 0 8.3-2.3 16-6.3 22.6-7.6 12.5-21.3 20.8-37 20.8-23.9 0-43.4-19.4-43.4-43.4-.1-15.8 8.2-29.5 20.7-37.1z')
 
 
-        link(rel='stylesheet' href='../muilessium-ui.min.css?v=' + pkg.version)
+        link(rel='stylesheet' href='../../muilessium-ui.min.css?v=' + pkg.version)
 
         style.
             @media screen and (max-width: 600px) {
@@ -718,8 +718,8 @@ html(lang='en')
                 border-left: 3px solid #9e9e9e;
             }
 
-        script(src='../muilessium.min.js?v=' + pkg.version)
-        script(src='../muilessium-ui.min.js?v=' + pkg.version)
+        script(src='../../muilessium.min.js?v=' + pkg.version)
+        script(src='../../muilessium-ui.min.js?v=' + pkg.version)
 
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

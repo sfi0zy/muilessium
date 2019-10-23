@@ -191,6 +191,19 @@ gulp.task('docs:muilessium', () => {
 });
 
 
+gulp.task('docs:muilessium-ru', () => {
+    return gulp.src('./src/muilessium-ui/components/**/*.less')
+        .pipe(dss({
+            pkg,
+            templatePath: './src/docs/ru/muilessium',
+            parsers: require('./dss.parsers.js'),
+            outputPath: './dist/ru/muilessium'
+        }))
+        .pipe(gulp.dest('./dist/ru/muilessium'))
+        .pipe(browserSync.stream());
+});
+
+
 gulp.task('docs:muilessium-ui', () => {
     return gulp.src('./src/muilessium-ui/components/**/*.less')
         .pipe(dss({
@@ -204,10 +217,25 @@ gulp.task('docs:muilessium-ui', () => {
 });
 
 
+gulp.task('docs:muilessium-ui-ru', () => {
+    return gulp.src('./src/muilessium-ui/components/**/*.less')
+        .pipe(dss({
+            pkg,
+            templatePath: './src/docs/ru/muilessium-ui',
+            parsers: require('./dss.parsers.js'),
+            outputPath: './dist/ru/muilessium-ui'
+        }))
+        .pipe(gulp.dest('./dist/ru/muilessium-ui'))
+        .pipe(browserSync.stream());
+});
+
+
 gulp.task('docs', gulp.series(
     'docs:main',
     'docs:muilessium',
+    'docs:muilessium-ru',
     'docs:muilessium-ui',
+    'docs:muilessium-ui-ru',
 ));
 
 
@@ -245,8 +273,16 @@ gulp.task('browser-sync', () => {
     ], gulp.series('docs:muilessium'));
 
     gulp.watch([
+        './src/docs/ru/muilessium/*.pug'
+    ], gulp.series('docs:muilessium-ru'));
+
+    gulp.watch([
         './src/docs/muilessium-ui/*.pug'
     ], gulp.series('docs:muilessium-ui'));
+
+    gulp.watch([
+        './src/docs/ru/muilessium-ui/*.pug'
+    ], gulp.series('docs:muilessium-ui-ru'));
 });
 
 
