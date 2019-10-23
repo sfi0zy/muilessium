@@ -4,7 +4,7 @@
 ## Description
 Muilessium is a front-end framework for simple websites - landings, blogs, etc.
 
-## Docs
+## Docs (English/Russian)
 [https://sfi0zy.github.io/muilessium](https://sfi0zy.github.io/muilessium)
 
 ## CDN
