@@ -241,13 +241,13 @@ html(lang='ru')
                                     }
 
                                     FACTORY.registerComponent('MyComponent', MyComponent);
-                                    FACTORY.create('MyComponent', 'body'); /* <-- используем body чисто для примера */
+                                    FACTORY.create('MyComponent', 'body'); /* &lt;-- используем body чисто для примера */
 
                                     console.log(FACTORY.componentsCache.MyComponent);
                         p.mui-p._separate-1
                             span Стандартный набор компонентов -&nbsp;
                             a(href='../muilessium-ui/') Muilessium-UI
-                            span . В примерах ниже будем использовать его.</p>
+                            span . В примерах ниже будем использовать его.
                         p.mui-p._separate-1 Если основной dom-элемент компонента имеет id, то инициализированный компонент можно получить используя конструкцию Muilessium.get(componentName, id):
                         ._separate-1
                             .code._smaller-1

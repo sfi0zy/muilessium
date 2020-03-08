@@ -7,20 +7,23 @@
 //    li.item list item
 //    li.item list item
 //    li.item list item
-//    ol.mui-list._separate-1
-//        li.item list item
-//        li.item list item
-//        li.item list item
+//    li.item.-unlisted
+//        ol.mui-list._separate-1
+//            li.item list item
+//            li.item list item
+//            li.item list item
 //ul.mui-list._separate-1
 //    li.item list item
 //    li.item list item
-//    ul.mui-list
-//        li.item list item
-//        li.item list item
-//        ul.mui-list._separate-1
+//    li.item.-unlisted
+//        ul.mui-list
 //            li.item list item
 //            li.item list item
-//            li.item list item
+//            li.item.-unlisted
+//                ul.mui-list._separate-1
+//                    li.item list item
+//                    li.item list item
+//                    li.item list item
 
 
 ul.@{muilessium-prefix}list,
@@ -40,6 +43,11 @@ ol.@{muilessium-prefix}list {
         &:not(:first-of-type) {
             margin-top: .5rem;
         }
+    }
+
+    .item.-unlisted {
+        margin-top: 0;
+        list-style-type: none;
     }
 }
 

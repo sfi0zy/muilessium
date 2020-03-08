@@ -241,13 +241,13 @@ html(lang='en')
                                     }
 
                                     FACTORY.registerComponent('MyComponent', MyComponent);
-                                    FACTORY.create('MyComponent', 'body'); /* <-- we use body just for example */
+                                    FACTORY.create('MyComponent', 'body'); /* &lt;-- we use body just for example */
 
                                     console.log(FACTORY.componentsCache.MyComponent);
                         p.mui-p._separate-1
                             span The default set of components is &nbsp;
                             a(href='../muilessium-ui/') Muilessium-UI
-                            span . Examples listed below will use it.</p>
+                            span . Examples listed below will use it.
                         p.mui-p._separate-1 If the main element of component has an ID, previously created component can be obtained using Muilessium.get(componentName, id):
                         ._separate-1
                             .code._smaller-1
