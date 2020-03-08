@@ -43,5 +43,5 @@ npm run prod
 ## License
 MIT License
 
-Copyright (c) 2016-2019 Ivan Bogachev <sfi0zy@gmail.com>
+Copyright (c) 2016-2020 Ivan Bogachev <sfi0zy@gmail.com>
 
