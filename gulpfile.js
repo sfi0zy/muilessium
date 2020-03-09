@@ -15,6 +15,7 @@ const webpack      = require('webpack-stream');
 const browserSync  = require('browser-sync').create();
 
 const dss          = require('./gulp-plugins/gulp-dss.js');
+const validate     = require('./gulp-plugins/gulp-w3c-validate');
 
 
 
@@ -209,6 +210,7 @@ gulp.task('docs:main', () => {
             outputPath: './dist'
         }))
         .pipe(gulp.dest('./dist'))
+        .pipe($.if(ENVIRONMENT === 'production', validate()))
         .pipe(browserSync.stream());
 });
 
@@ -222,6 +224,7 @@ gulp.task('docs:muilessium', () => {
             outputPath: './dist/muilessium'
         }))
         .pipe(gulp.dest('./dist/muilessium'))
+        .pipe($.if(ENVIRONMENT === 'production', validate()))
         .pipe(browserSync.stream());
 });
 
@@ -235,6 +238,7 @@ gulp.task('docs:muilessium-ru', () => {
             outputPath: './dist/ru/muilessium'
         }))
         .pipe(gulp.dest('./dist/ru/muilessium'))
+        .pipe($.if(ENVIRONMENT === 'production', validate()))
         .pipe(browserSync.stream());
 });
 
@@ -248,6 +252,7 @@ gulp.task('docs:muilessium-ui', () => {
             outputPath: './dist/muilessium-ui'
         }))
         .pipe(gulp.dest('./dist/muilessium-ui'))
+        .pipe($.if(ENVIRONMENT === 'production', validate()))
         .pipe(browserSync.stream());
 });
 
@@ -261,6 +266,7 @@ gulp.task('docs:muilessium-ui-ru', () => {
             outputPath: './dist/ru/muilessium-ui'
         }))
         .pipe(gulp.dest('./dist/ru/muilessium-ui'))
+        .pipe($.if(ENVIRONMENT === 'production', validate()))
         .pipe(browserSync.stream());
 });
 
