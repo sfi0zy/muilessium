@@ -27,38 +27,38 @@
 .@{muilessium-prefix}radio {
     user-select: none;
     margin-top: .5rem;
-    
-    > input[type=radio] {
+
+    > input[type='radio'] {
         display: none;
     }
-    
+
     > label {
         display: inline-block;
-        
+
         &:hover,
         &:focus {
             cursor: pointer;
-            
+
             > .icon {
                 border-color: @radio[dot-color];
-                
+
                 &::after {
                     background: @radio[dot-color];
                 }
             }
         }
     }
-    
+
     > label > .icon {
         display: inline-block;
         position: relative;
-        vertical-align: middle;        
+        vertical-align: middle;
         height: @defaults[ui-height];
         width: @defaults[ui-height];
         border: 1px solid @radio[border-color];
         border-radius: 50%;
         transition: border-color @defaults[animation-duration] @defaults[animation-function];
-        
+
         &::after {
             content: '';
             display: block;
@@ -74,15 +74,15 @@
             transition: all @defaults[animation-duration] @defaults[animation-function];
         }
     }
-    
-    > input[type=radio]:checked + label > .icon {
+
+    > input[type='radio']:checked + label > .icon {
         &::after {
             opacity: 1;
             height: @defaults[ui-height] * .4;
             width: @defaults[ui-height] * .4;
         }
     }
-    
+
     > label > .text {
         padding: 0 1rem;
     }

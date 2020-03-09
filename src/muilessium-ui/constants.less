@@ -5,6 +5,11 @@
 
 @muilessium-prefix: mui-;
 
+// WARNING:
+// Looks like a bug in stylelint here. It interprets enums in LESS as ordinary
+// CSS blocks and throws a lot of "unknown propery" errors.
+
+/* stylelint-disable property-no-unknown */
 
 @grid: {
     breakpoint-small:     400;
@@ -32,4 +37,6 @@
     border-radius:        .2rem;
     ui-height:            2rem;
 }
+
+/* stylelint-enable property-no-unknown */
 

@@ -25,21 +25,21 @@
 .@{muilessium-prefix}tag {
     ._smaller-1;
 
-    display: inline-block;    
+    display: inline-block;
     text-decoration: none;
     color: @tags-list[color];
     transition: all @defaults[animation-duration] @defaults[animation-function];
-    
+
     &:visited {
         color: @tags-list[color];
     }
-    
+
     &:hover,
     &:focus {
         cursor: pointer;
         color: @tags-list[color-focused];
     }
-    
+
     &:active {
         color: @tags-list[color-active];
     }
@@ -48,21 +48,21 @@
 
 .@{muilessium-prefix}tags-list {
     user-select: none;
-    
+
     > .@{muilessium-prefix}tag-wrapper {
         display: inline-block;
-        
+
         &:first-of-type > .@{muilessium-prefix}tag {
             &::first-letter {
                 text-transform: uppercase;
             }
         }
-        
-        &:last-of-type > .@{muilessium-prefix}tag:after  {
+
+        &:last-of-type > .@{muilessium-prefix}tag::after {
             content: '.';
         }
-        
-        &:not(:last-of-type) > .@{muilessium-prefix}tag:after  {
+
+        &:not(:last-of-type) > .@{muilessium-prefix}tag::after {
             content: ',';
             padding-right: .1rem;
         }

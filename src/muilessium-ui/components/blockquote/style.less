@@ -9,10 +9,10 @@
 
 
 .@{muilessium-prefix}blockquote {
-    display: block;    
+    display: block;
     padding: 1rem 2rem;
     color: @blockquote[color];
-    
+
     .text {
         ._bigger-1;
 
@@ -21,16 +21,16 @@
         margin: 0 auto .5rem;
         font-weight: 600;
         text-align: center;
-        
+
         &::before {
             content: '\201C';
         }
-        
+
         &::after {
             content: '\201D';
         }
     }
-    
+
     .author {
         display: block;
         max-width: @grid[max-container-width];

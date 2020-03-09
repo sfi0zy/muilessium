@@ -32,26 +32,36 @@
 //        .mui-shadow-toggle
 
 
-.@{muilessium-prefix}header-navigation { 
+.@{muilessium-prefix}header-navigation {
     user-select: none;
-    
+
     > .linkslist {
         list-style: none;
         margin: 0;
     }
-    
+
     > .linkslist > .item {
         display: inline-block;
         margin: 0;
     }
-    
+
     > .linkslist > .item > .link {
         display: inline-block;
-        padding: 0 calc((@defaults[ui-height] * 2 - 1em) / 2);        
+
+        // WARNING:
+        // Looks like a bug in stylelint here. It interprets an "-" from LESS
+        // enum syntax as math operator.
+
+        /* stylelint-disable function-calc-no-invalid */
+
+        padding: 0 calc((@defaults[ui-height] * 2 - 1em) / 2);
+
+        /* stylelint-enable function-calc-no-invalid */
+
         line-height: @defaults[ui-height] * 2;
         text-decoration: none;
         color: @header-navigation[color];
-        transition: all @defaults[animation-duration] @defaults[animation-function];        
+        transition: all @defaults[animation-duration] @defaults[animation-function];
 
         &:hover,
         &:focus {
@@ -60,7 +70,7 @@
             outline: none;
         }
     }
-    
+
     &.-mobile-version {
         opacity: 0;
 
@@ -86,11 +96,11 @@
             box-shadow: 0 0 10rem @shadow-color;
             transition: all @defaults[animation-duration] @defaults[animation-function];
         }
-        
+
         > .linkslist > .item {
             display: block;
             overflow: hidden;
-            
+
             margin-left: 0;
 
             &:first-of-type {
@@ -101,18 +111,18 @@
                 border-top: 1px solid @header-navigation[border-color];
             }
         }
-        
+
         > .linkslist > .item > .link {
             display: block;
             padding: .5rem 1rem;
         }
-        
+
         &.-opened {
             > .linkslist {
                 transform: translateX(0);
                 visibility: visible;
             }
-        
+
             > .@{muilessium-prefix}navigation-toggle.-hamburger {
                 color: @navigation-toggle[color];
             }
@@ -140,11 +150,11 @@
         color: @navigation-toggle[color];
         fill: @navigation-toggle[color];
         transition: all @defaults[animation-duration] @defaults[animation-function];
-        
+
         &:hover {
             cursor: pointer;
         }
-        
+
         &:hover,
         &:focus {
             fill: @navigation-toggle[color-focused];

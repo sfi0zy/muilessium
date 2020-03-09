@@ -51,7 +51,7 @@
 
 
 .@{muilessium-prefix}carousel {
-    position: relative;    
+    position: relative;
     height: 20rem;
     width: 100%;
 
@@ -82,7 +82,7 @@
     margin: 0 !important;
     opacity: 0;
     transition: opacity 600ms @defaults[animation-function],
-                transform 600ms @defaults[animation-function];
+        transform 600ms @defaults[animation-function];
 
     &.-active {
         opacity: 1;
@@ -96,15 +96,15 @@
     &.-next {
         transform: translateX(100%);
     }
-    
+
     > img.background {
         ._object-fit-cover;
 
         height: inherit;
         width: inherit;
     }
-
 }
+
 
 .@{muilessium-prefix}slide-content {
     position: absolute;
@@ -132,14 +132,14 @@
         text-align: center !important;
         padding: 1rem;
     }
-    
+
     > .title {
         font-size: 2rem;
         line-height: 1.2;
     }
-    
+
     > .text {
-        
+
     }
 }
 
@@ -150,7 +150,7 @@
     left: 0;
     height: inherit;
     width: inherit;
-    
+
     > .prev,
     > .next {
         position: absolute;
@@ -163,7 +163,7 @@
         color: @carousel[controls-color];
         background: @carousel[controls-background];
         transition: all @defaults[animation-duration] @defaults[animation-function];
-        
+
         &:hover,
         &:focus,
         &.-focused {
@@ -176,11 +176,11 @@
             fill: @carousel[controls-color];
         }
     }
-    
+
     > .prev {
         left: 0;
     }
-    
+
     > .next {
         right: 0;
     }

@@ -2,6 +2,13 @@
 // Grid
 // -----------------------------------------------------------------------------
 
+// WARNING:
+// The following CSS doesn't correspond to the stylelint rules. Lots of
+// one-liners is a weird idea. We never change this code and it has been
+// tested many times. So we completely disable stylelint here.
+
+/* stylelint-disable */
+
 .@{muilessium-prefix}row {
     display: flex;
     flex: 0 1 auto;
@@ -11,11 +18,11 @@
     &.-s-start  { justify-content: flex-start; text-align: start;  }
     &.-s-center { justify-content: center;     text-align: center; }
     &.-s-end    { justify-content: flex-end;   text-align: end;    }
-    
+
     &.-s-top    { align-items: flex-start; }
     &.-s-middle { align-items: center;     }
     &.-s-bottom { align-items: flex-end;   }
-    
+
     &.-s-around  { justify-content: space-around; }
     &.-s-between { justify-content: space-between; }
 
@@ -24,11 +31,11 @@
         &.-m-start  { justify-content: flex-start; text-align: start;  }
         &.-m-center { justify-content: center;     text-align: center; }
         &.-m-end    { justify-content: flex-end;   text-align: end;    }
-    
+
         &.-m-top    { align-items: flex-start; }
         &.-m-middle { align-items: center;     }
         &.-m-bottom { align-items: flex-end;   }
-    
+
         &.-m-around  { justify-content: space-around; }
         &.-m-between { justify-content: space-between; }
     }
@@ -38,11 +45,11 @@
         &.-l-start  { justify-content: flex-start; text-align: start;  }
         &.-l-center { justify-content: center;     text-align: center; }
         &.-l-end    { justify-content: flex-end;   text-align: end;    }
-    
+
         &.-l-top    { align-items: flex-start; }
         &.-l-middle { align-items: center;     }
         &.-l-bottom { align-items: flex-end;   }
-    
+
         &.-l-around  { justify-content: space-around; }
         &.-l-between { justify-content: space-between; }
     }
@@ -156,4 +163,6 @@
         }
     }
 }
+
+/* stylelint-enable */
 

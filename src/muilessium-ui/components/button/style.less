@@ -55,7 +55,7 @@
 .@{muilessium-prefix}button,
 a.@{muilessium-prefix}button {
     display: inline-block;
-    position: relative;    
+    position: relative;
     padding: 0 1em;
     font-size: 1rem;
     line-height: 2;
@@ -72,50 +72,50 @@ a.@{muilessium-prefix}button {
     .@{muilessium-prefix}svg-icon {
         fill: @button[color];
     }
-    
+
     &:visited {
         color: @button[color];
         background: @button[background];
     }
-    
+
     &:hover,
     &:focus {
         color: @button[color-focused];
         background: @button[background-focused];
         outline: none;
     }
-    
+
     &:active {
         color: @button[color-active];
         background: @button[background-active];
     }
-    
+
     &.-small {
         ._smaller-2;
     }
-    
+
     &.-big {
         ._bigger-2;
     }
-    
+
     &.-dangerous {
         background: @button[dangerous-background];
         text-transform: uppercase;
-        
+
         &:visited {
             background: @button[dangerous-background];
         }
-        
+
         &:hover,
         &:focus {
             background: @button[dangerous-background-focused];
         }
-        
+
         &:active {
             background: @button[dangerous-background-active];
         }
     }
-    
+
     &.-ghost {
         color: @button[ghost-color];
         background: @transparent;
@@ -124,7 +124,7 @@ a.@{muilessium-prefix}button {
         .@{muilessium-prefix}svg-icon {
             fill: @button[ghost-color];
         }
-        
+
         &:hover,
         &:focus {
             color: @button[ghost-color-focused];
@@ -170,6 +170,5 @@ a.@{muilessium-prefix}button {
             transform: translateX(50%) translateY(-50%);
         }
     }
-
 }
 

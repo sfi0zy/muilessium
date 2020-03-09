@@ -25,35 +25,35 @@
 
 .@{muilessium-prefix}checkbox {
     user-select: none;
-    
-    > input[type=checkbox] {
+
+    > input[type='checkbox'] {
         display: none;
     }
-    
+
     > label {
         display: inline-block;
-        
+
         &:hover,
         &:focus {
             cursor: pointer;
             outline: none;
-            
+
             > .icon {
                 border-color: @checkbox[border-color-focused];
             }
         }
     }
-    
+
     > label > .icon {
         display: inline-block;
         position: relative;
-        vertical-align: middle; 
+        vertical-align: middle;
         height: @defaults[ui-height];
         width: @defaults[ui-height];
         border: 1px solid @checkbox[border-color];
         border-radius: @defaults[border-radius];
         transition: border-color @defaults[animation-duration] @defaults[animation-function];
-        
+
         > .symbol {
             display: inline-block;
             height: @defaults[ui-height];
@@ -70,13 +70,13 @@
             fill: @checkbox[icon-color];
         }
     }
-    
+
     &.-checked > label > .icon {
         > .symbol {
             opacity: 1;
         }
     }
-    
+
     > label > .text {
         padding: 0 1rem;
     }

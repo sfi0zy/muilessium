@@ -12,16 +12,16 @@
 
 
 .@{muilessium-prefix}breadcrumb {
-    height: @defaults[ui-height];    
+    height: @defaults[ui-height];
     padding: 0 1rem;
     line-height: @defaults[ui-height];
     background: @breadcrumb[background];
     border-radius: @defaults[border-radius];
-    
+
     > .link {
         text-decoration: none;
         color: @breadcrumb[color];
-        
+
         &:not(:last-of-type)::after {
             content: '\0203A';
             padding: 0 .5rem;
@@ -33,7 +33,7 @@
             color: @breadcrumb[color-focused];
         }
     }
-    
+
     &.-slash-delimiter {
         > .link:not(:last-of-type)::after {
             content: '/';

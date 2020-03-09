@@ -2,17 +2,22 @@
 // Sources for animations
 // -----------------------------------------------------------------------------
 //
-//   - fade-in 
-//   - fade-in-left 
+//   - fade-in
+//   - fade-in-left
 //   - fade-in-up
 //   - fade-in-right
 //   - fade-in-down
-//   - fade-out 
-//   - fade-out-left 
+//   - fade-out
+//   - fade-out-left
 //   - fade-out-up
 //   - fade-out-right
 //   - fade-out-down
 //
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+//  Part 1 of 2: Keyframes for animations
 // -----------------------------------------------------------------------------
 
 
@@ -134,8 +139,14 @@
 
 
 // -----------------------------------------------------------------------------
+//  Part 2 of 2: Classes for animations
+// -----------------------------------------------------------------------------
 
+// WARNING:
+// Looks like a bug in stylelint here. It interprets an "*" from LESS syntax
+// as animation name in the following classes.
 
+/* stylelint-disable no-unknown-animations */
 
 .-js-animation {
     &.-hidden-by-default {
@@ -217,4 +228,6 @@
         }
     }
 }
+
+/* stylelint-enable no-unknown-animations */
 

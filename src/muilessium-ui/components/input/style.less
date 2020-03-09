@@ -27,18 +27,18 @@
 
 
 .@{muilessium-prefix}input {
-    position: relative;    
+    position: relative;
     height: @defaults[ui-height];
     width: 100%;
     border: 1px solid @input[border-color];
     border-radius: @defaults[border-radius];
     overflow: hidden;
     transition: border-color @defaults[animation-duration] @defaults[animation-function];
-    
+
     &:hover {
         cursor: pointer;
     }
-    
+
     > input {
         height: ~'calc(' @defaults[ui-height] ~' - ' 2px ~')';
         width: 100%;
@@ -56,9 +56,8 @@
             opacity: 1;
             transition: all @defaults[animation-duration] @defaults[animation-function];
         }
-
     }
-    
+
     &.-focused {
         border-color: @input[border-color-focused];
 
@@ -71,18 +70,18 @@
             }
         }
     }
-    
+
     &.-valid {
         border-color: @input[valid-color];
-        
+
         > input::placeholder {
             color: @input[valid-color];
         }
     }
-    
+
     &.-invalid {
         border-color: @input[invalid-color];
-        
+
         > input::placeholder {
             color: @input[invalid-color];
         }
@@ -155,6 +154,6 @@
 
 
 .@{muilessium-prefix}input-wrapper {
-    
+
 }
 

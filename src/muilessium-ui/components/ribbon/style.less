@@ -22,36 +22,47 @@
 
 
 .@{muilessium-prefix}ribbon {
-    position: absolute;    
+    position: absolute;
     text-align: center;
     font-size: .8rem;
     text-transform: uppercase;
     color: @ribbon[color];
     background: @ribbon[background];
     user-select: none;
-    
-    &.-left   { left:   0; }
-    &.-right  { right:  0; }
-    &.-top    { top:    0; }
-    &.-bottom { bottom: 0; }
-    
+
+    &.-left {
+        left: 0;
+    }
+
+    &.-right {
+        right: 0;
+    }
+
+    &.-top {
+        top: 0;
+    }
+
+    &.-bottom {
+        bottom: 0;
+    }
+
     &.-bookmark {
         @width: 50px;
-        
+
         top: 0;
         width: @width;
         font-size: .8rem;
         text-transform: uppercase;
         line-height: 4;
-        
+
         &.-left {
             left: 1rem;
         }
-        
+
         &.-right {
             right: 1rem;
         }
-        
+
         &::after {
             content: '';
             position: absolute;
@@ -64,23 +75,23 @@
             border-bottom: @width / 2 solid transparent;
         }
     }
-    
+
     &.-classic {
         line-height: 2;
         width: 8rem;
-        
+
         &.-top.-left {
             transform: translateX(-25%) translateY(50%) rotate(-45deg);
         }
-        
+
         &.-bottom.-right {
             transform: translateX(25%) translateY(-50%) rotate(-45deg);
         }
-        
+
         &.-top.-right {
             transform: translateX(25%) translateY(50%) rotate(45deg);
         }
-        
+
         &.-bottom.-left {
             transform: translateX(-25%) translateY(-50%) rotate(45deg);
         }

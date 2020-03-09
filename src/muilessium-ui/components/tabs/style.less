@@ -25,12 +25,12 @@
         table-layout: fixed;
         margin-right: -.5px; // hack for 1px bug in Chrome
     }
-    
+
     > .labels > .label {
         ._truncate-line;
 
         display: table-cell;
-        width: 1px;        
+        width: 1px;
         padding: 0 1rem;
         text-align: center;
         line-height: @defaults[ui-height];
@@ -44,7 +44,7 @@
         &:not(:first-of-type) {
             border-left: none;
         }
-        
+
         &:hover,
         &:focus {
             cursor: pointer;
@@ -58,17 +58,17 @@
             border-bottom-color: @tabs[background];
         }
     }
-    
+
     > .tabs {
         ._clearfix;
 
-        margin: 0;        
+        margin: 0;
         border: 1px solid @tabs[border-color];
         border-top: none;
         border-bottom-left-radius: @defaults[border-radius];
         border-bottom-right-radius: @defaults[border-radius];
     }
-    
+
     > .tabs > .tab {
         display: block;
         float: left;
@@ -82,7 +82,7 @@
         border-bottom: 1px solid @tabs[background];
         border-bottom-left-radius: @defaults[border-radius];
         border-bottom-right-radius: @defaults[border-radius];
-        
+
         &:not(:first-of-type) {
             margin-left: ~'calc(-100% + 1px)';
         }

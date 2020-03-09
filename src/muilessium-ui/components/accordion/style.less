@@ -33,30 +33,30 @@
     list-style: none;
     background: @accordion[background];
     color: @accordion[color];
-    
+
     > .item {
         display: block;
-        position: relative;        
+        position: relative;
         margin: 0;
         padding: 0 1rem;
         border: 1px solid @accordion[border-color];
         overflow: hidden;
-        
+
         &:first-of-type {
-            border-top-left-radius: @defaults[border-radius];    
-            border-top-right-radius: @defaults[border-radius];    
+            border-top-left-radius: @defaults[border-radius];
+            border-top-right-radius: @defaults[border-radius];
         }
-        
+
         &:not(:first-of-type) {
             border-top: none;
         }
-        
+
         &:last-of-type {
-            border-bottom-left-radius: @defaults[border-radius];    
-            border-bottom-right-radius: @defaults[border-radius];    
+            border-bottom-left-radius: @defaults[border-radius];
+            border-bottom-right-radius: @defaults[border-radius];
         }
     }
-    
+
     > .item > .title {
         display: block;
         position: relative;
@@ -67,8 +67,8 @@
         background: @accordion[title-background];
         color: @accordion[title-color];
         transition: border-bottom-left-radius  @defaults[animation-duration] @defaults[animation-function],
-                    border-bottom-right-radius @defaults[animation-duration] @defaults[animation-function];
-        
+            border-bottom-right-radius @defaults[animation-duration] @defaults[animation-function];
+
         &:hover,
         &:focus {
             cursor: pointer;
@@ -112,8 +112,8 @@
             opacity: 1;
             transform: rotateX(0);
         }
-    } 
-        
+    }
+
     > .item.-unfold {
         > .content {
             max-height: 30rem;

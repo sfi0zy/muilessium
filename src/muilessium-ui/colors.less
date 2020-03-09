@@ -19,6 +19,10 @@
 // -----------------------------------------------------------------------------
 
 
+// -----------------------------------------------------------------------------
+//  Part 1 of 5: Constants for colors
+// -----------------------------------------------------------------------------
+
 @transparent: transparent;
 @white:  #ffffff;
 @black:  #000000;
@@ -79,8 +83,16 @@
 
 
 // -----------------------------------------------------------------------------
+//  Part 2 of 5: Classes for colors (default)
+// -----------------------------------------------------------------------------
 
 
+// WARNING:
+// The following CSS doesn't correspond to the stylelint rules. Lots of
+// one-liners is a weird idea. We never change this code and it has been
+// tested many times. So we completely disable stylelint here.
+
+/* stylelint-disable */
 
 .-transparent { color: @transparent !important; fill: @transparent !important; }
 .-white       { color: @white       !important; fill: @white       !important; }
@@ -139,6 +151,8 @@
 
 
 
+// -----------------------------------------------------------------------------
+//  Part 3 of 5: Classes for colors (hover and focus)
 // -----------------------------------------------------------------------------
 
 
@@ -201,6 +215,8 @@
 
 
 // -----------------------------------------------------------------------------
+//  Part 4 of 5: Classes for colors (default backgrounds)
+// -----------------------------------------------------------------------------
 
 
 
@@ -262,6 +278,8 @@
 
 
 // -----------------------------------------------------------------------------
+//  Part 5 of 5: Classes for colors (hover and focus backgrounds)
+// -----------------------------------------------------------------------------
 
 
 
@@ -319,4 +337,6 @@
 .-f-orange-3-bg { &:hover, &:focus { background: @orange-3 !important; }}
 .-f-orange-4-bg { &:hover, &:focus { background: @orange-4 !important; }}
 .-f-orange-5-bg { &:hover, &:focus { background: @orange-5 !important; }}
+
+/* stylelint-enable */
 

@@ -21,27 +21,27 @@
         position: relative;
         border-radius: 0;
         z-index: 0;
-        
+
         &:first-of-type {
             border-top-left-radius: @defaults[border-radius];
             border-bottom-left-radius: @defaults[border-radius];
         }
-        
+
         &:last-of-type {
             border-top-right-radius: @defaults[border-radius];
             border-bottom-right-radius: @defaults[border-radius];
         }
-        
+
         &:not(:first-of-type) {
             border-left: 1px solid @grey-2;
             margin-left: -.4rem; // hack?
         }
-        
+
         &:not(:last-of-type) {
             border-right: 1px solid @grey-2;
         }
     }
-    
+
     &.-vertical {
         > .@{muilessium-prefix}button {
             display: block;
@@ -74,7 +74,7 @@
                 content: 'or';
                 position: absolute;
                 left: -.6rem;
-                top: ~"calc(50% + .5px)";
+                top: ~'calc(50% + .5px)';
                 z-index: 1;
                 transform: translateY(-50%);
                 display: block;
@@ -82,7 +82,8 @@
                 width: 1.2rem;
                 border-radius: 50%;
                 font-size: .7rem;
-                line-height: 1.71em; // It's (1rem * 0.7 * 1.71) = 1.2rem. IE11 doesn't support REM units in pseudo-elements.
+                // It's (1rem * 0.7 * 1.71) = 1.2rem. IE11 doesn't support REM units in pseudo-elements.
+                line-height: 1.71em;
                 text-align: center;
                 background: @grey-1;
                 color: @black;

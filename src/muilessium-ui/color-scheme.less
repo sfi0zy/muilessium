@@ -3,6 +3,13 @@
 // -----------------------------------------------------------------------------
 
 
+// WARNING:
+// Looks like a bug in stylelint here. It interprets enums in LESS as ordinary
+// CSS blocks and throws a lot of "unknown propery" errors.
+
+/* stylelint-disable property-no-unknown */
+
+
 @html: {
     color: @black;
     background: @white;
@@ -240,4 +247,6 @@
     border-color: @grey-4;
     border-color-focused: @blue-4;
 }
+
+/* stylelint-enable property-no-unknown */
 
