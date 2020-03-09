@@ -13,7 +13,8 @@ const path         = require('path');
 const argv         = require('yargs').argv;
 const webpack      = require('webpack-stream');
 const browserSync  = require('browser-sync').create();
-const dss          = require('./gulp-dss.js');
+
+const dss          = require('./gulp-plugins/gulp-dss.js');
 
 
 
