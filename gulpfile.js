@@ -1,3 +1,11 @@
+// -----------------------------------------------------------------------------
+//  GULPFILE
+// -----------------------------------------------------------------------------
+//
+//  All steps of the building process are here.
+//
+
+
 const gulp         = require('gulp');
 const $            = require('gulp-load-plugins')();
 const fs           = require('fs');
@@ -18,75 +26,100 @@ const ENVIRONMENT = argv.production ? 'production' : 'development';
 
 
 
+// -----------------------------------------------------------------------------
+//  INFORMATION ABOUT THIS PROJECT
+// -----------------------------------------------------------------------------
+//
+//  The process begins with displaying information about current project.
+//  This is a very good idea, because the log includes a lot of information
+//  which helps us to understand where can be problem if the build fails.
+//  Also, the build log can be used in conversations and no needed to describe
+//  what project we are talking about, what versions of dependencies are used etc.
+//
+
+
+// Current time
 console.log(`${(new Date()).toString().white}\n`);
+
+// Console command that starts the gulp
 console.log(`> ${argv.$0} ${argv._}`);
+
+// Current environment
 console.log(ENVIRONMENT.toUpperCase().yellow);
+
+// Version of this package
 console.log(`${pkg.name.red} ${pkg.version.green}\n`);
+
+// Target browsers
 console.log('%s\n'.blue, pkg.browserslist);
 
-let isDependenciesSaved = true;
+
+
+// -----------------------------------------------------------------------------
+//  LIST AND SAVE THE DEPENDENCIES
+// -----------------------------------------------------------------------------
+//
+// Sometimes we want to know the real versions of the main dependencies in
+// the project. Package-lock file is not human-friendly, so we save the current
+// versions of dependencies right in the package.json. We'll must update
+// them manually in the future.
+//
+
 
 console.log('DEPENDENCIES:');
 
 Object.keys(pkg.dependencies).forEach((dependency) => {
-    const depPackage =
-        JSON.parse(
-            fs.readFileSync(
-                path.join('node_modules', dependency, 'package.json'), 'utf-8'));
+    const depPackage = JSON.parse(
+        fs.readFileSync(
+            path.join('node_modules', dependency, 'package.json'), 'utf-8'));
 
     if (depPackage._requested.registry) {
-        if (depPackage.version !== pkg.dependencies[dependency]) {
-            console.log('NPM %s@%s'.green, dependency, depPackage.version.red);
-            isDependenciesSaved = false;
-        } else {
-            console.log('NPM %s@%s'.green, dependency, depPackage.version);
-        }
+        pkg.dependencies[dependency] = depPackage.version;
+        console.log('NPM %s@%s'.green, dependency, depPackage.version);
     } else {
-        if (depPackage._resolved !== pkg.dependencies[dependency]) {
-            console.log('--- %s@%s'.blue, dependency, depPackage._resolved.red);
-            isDependenciesSaved = false;
-        } else {
-            console.log('--- %s@%s'.blue, dependency, depPackage._resolved);
-        }
+        pkg.dependencies[dependency] = depPackage._resolved;
+        console.log('--- %s@%s'.green, dependency, depPackage._resolved);
     }
 });
+
 
 console.log('\nDEV DEPENDENCIES:');
 
 Object.keys(pkg.devDependencies).forEach((dependency) => {
-    const depPackage =
-        JSON.parse(
-            fs.readFileSync(
-                path.join('node_modules', dependency, 'package.json'), 'utf-8'));
+    const depPackage = JSON.parse(
+        fs.readFileSync(
+            path.join('node_modules', dependency, 'package.json'), 'utf-8'));
 
     if (depPackage._requested.registry) {
-        if (depPackage.version !== pkg.devDependencies[dependency]) {
-            console.log('NPM %s@%s'.green, dependency, depPackage.version.red);
-            isDependenciesSaved = false;
-        } else {
-            console.log('NPM %s@%s'.green, dependency, depPackage.version);
-        }
+        pkg.devDependencies[dependency] = depPackage.version;
+        console.log('NPM %s@%s'.green, dependency, depPackage.version);
     } else {
-        if (depPackage._resolved !== pkg.devDependencies[dependency]) {
-            console.log('--- %s@%s'.blue, dependency, depPackage._resolved.red);
-            isDependenciesSaved = false;
-        } else {
-            console.log('--- %s@%s'.blue, dependency, depPackage._resolved);
-        }
+        pkg.devDependencies[dependency] = depPackage._resolved;
+        console.log('--- %s@%s'.green, dependency, depPackage._resolved);
     }
 });
 
-if (!isDependenciesSaved) {
-    console.log('Dependencies in the package.json are not saved correctly.'.red);
-    console.log('Run `npm run save-installed` to fix it.'.red);
-}
+
+const newPackageJSON = JSON.stringify(pkg, null, 2);
+
+fs.writeFileSync(path.join('package.json'), newPackageJSON, 'utf-8');
 
 console.log('\n\n\n');
 
 
 
-// -----------------------------------------------------------------------------
 
+// -----------------------------------------------------------------------------
+//  GULP TASKS
+// -----------------------------------------------------------------------------
+//
+//  We use separate tasks for different logical actions.
+//
+
+
+// -----------------------------------------------------------------------------
+//  ACTIONS
+// -----------------------------------------------------------------------------
 
 
 gulp.task('muilessium:lint-js', () => {
@@ -116,11 +149,6 @@ gulp.task('muilessium', gulp.series(
     'muilessium:test-js',
     'muilessium:compile-js'
 ));
-
-
-
-// -----------------------------------------------------------------------------
-
 
 
 gulp.task('muilessium-ui:lint-js', () => {
@@ -163,18 +191,12 @@ gulp.task('muilessium-ui:compile-less', () => {
 });
 
 
-
 gulp.task('muilessium-ui', gulp.series(
     'muilessium-ui:lint-js',
     'muilessium-ui:compile-js',
     'muilessium-ui:lint-less',
     'muilessium-ui:compile-less'
 ));
-
-
-
-// -----------------------------------------------------------------------------
-
 
 
 gulp.task('docs:main', () => {
@@ -253,6 +275,8 @@ gulp.task('docs', gulp.series(
 
 
 // -----------------------------------------------------------------------------
+//  BROWSER SYNC
+// -----------------------------------------------------------------------------
 
 
 
@@ -303,6 +327,11 @@ gulp.task('browser-sync', () => {
 
 
 
+// -----------------------------------------------------------------------------
+//  DEFAULT TASK
+// -----------------------------------------------------------------------------
+
+
 
 gulp.task('default', (done) => {
     switch (ENVIRONMENT) {
@@ -335,6 +364,11 @@ gulp.task('default', (done) => {
     done();
 });
 
+
+
+// -----------------------------------------------------------------------------
+//  SERVER
+// -----------------------------------------------------------------------------
 
 
 gulp.task('serve', gulp.series('default', 'browser-sync'));

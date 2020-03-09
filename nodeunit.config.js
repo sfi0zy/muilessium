@@ -1,3 +1,13 @@
+// -----------------------------------------------------------------------------
+//  CONFIG: NODEUNIT
+// -----------------------------------------------------------------------------
+//
+//  Nodeunit is a simple tool for unit testing. It has been deprecated,
+//  but it still works and works fine.
+//
+//  More information: https://github.com/caolan/nodeunit
+//
+
 require('colors');
 
 

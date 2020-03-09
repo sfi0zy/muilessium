@@ -1,3 +1,11 @@
+// -----------------------------------------------------------------------------
+//  GULP DSS
+// -----------------------------------------------------------------------------
+//
+//  This plugin generates docs from comments in CSS (or LESS in our case) files.
+//
+
+
 const fs         = require('fs');
 const dss        = require('dss');
 const pug        = require('pug');

@@ -1,3 +1,12 @@
+// -----------------------------------------------------------------------------
+//  CONFIG: DOIUSE
+// -----------------------------------------------------------------------------
+//
+//  We use the "doiuse" npm module for checking written CSS.
+//  See https://www.npmjs.com/package/doiuse for more options.
+//
+
+
 require('colors');
 
 

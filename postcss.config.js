@@ -1,3 +1,14 @@
+// -----------------------------------------------------------------------------
+//  CONFIG: POSTCSS
+// -----------------------------------------------------------------------------
+//
+//  We use PostCSS after the LESS preprocessor. In other words, we use
+//  LESS syntax and run PostCSS after it to check the CSS we got.
+//
+//  See https://postcss.org/ for more information.
+//
+
+
 require('colors');
 
 
