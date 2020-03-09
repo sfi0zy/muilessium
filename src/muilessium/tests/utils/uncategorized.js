@@ -35,7 +35,7 @@ module.exports = {
 
         const focusableElements = document.querySelectorAll('a,button,input,label,select,textarea,object');
         const otherElements     = document.querySelectorAll('div');
- 
+
         // ---------------
 
         _.normalizeTabIndex();
@@ -78,7 +78,7 @@ module.exports = {
         function callback() {
             // test.ok(true, 'It should execute the callback function when all images loaded.');
         }
- 
+
         // ---------------
 
         _.lazyLoadImages(callback);
@@ -102,7 +102,7 @@ module.exports = {
                  <div id='test-id'></div>`;
 
         const link = document.querySelector('a');
- 
+
         test.expect(1);
 
         // ---------------
@@ -195,7 +195,7 @@ module.exports = {
         ];
 
         const results = [];
- 
+
         // ---------------
 
         results.push(_.extend(undefined, undefined));
@@ -223,7 +223,7 @@ module.exports = {
 
 
     debounce(test) {
-        test.expect(2); 
+        test.expect(2);
 
         // ---------------
 
@@ -239,7 +239,7 @@ module.exports = {
         func();
 
         // ---------------
-        
+
         test.doesNotThrow(() => {
             _.debounce(undefined);
             _.debounce(null);
@@ -305,7 +305,7 @@ module.exports = {
 
         const elements = document.querySelectorAll('div');
         const results = [];
- 
+
         // ---------------
 
         results[0] = _.firstOfList(elements);
@@ -333,7 +333,7 @@ module.exports = {
 
         const elements = document.querySelectorAll('div');
         const results = [];
- 
+
         // ---------------
 
         results[0] = _.lastOfList(elements);
@@ -370,7 +370,7 @@ module.exports = {
             results.push([element.id, index]);
         }
 
- 
+
         // ---------------
 
         _.forEach(elements, callback);
@@ -399,7 +399,7 @@ module.exports = {
 
         let goodPathResult = null;
         let badPathResult = null;
- 
+
         // ---------------
 
         goodPathResult = _.deepGet(obj, 'level1.level2');
@@ -427,7 +427,7 @@ module.exports = {
                 level2: 'value'
             }
         };
- 
+
         // ---------------
 
         _.deepSet(obj, 'level1.level2', 'new-value');

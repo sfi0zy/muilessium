@@ -12,7 +12,7 @@ const _           = window.Muilessium.UTILS;
 export default class Tabs extends FACTORY.BaseComponent {
     constructor(element, options) {
         super(element, options);
-        
+
         this.domCache = _.extend(this.domCache, {
             tabs:          element.querySelectorAll('.tab'),
             labels:        element.querySelectorAll('.label'),
@@ -47,7 +47,7 @@ export default class Tabs extends FACTORY.BaseComponent {
         _.aria.set(this.domCache.tabs[0],   'hidden', false);
         _.addClass(this.domCache.labels[0], '-active');
         _.aria.set(this.domCache.labels[0], 'selected', true);
-        
+
         return this;
     }
 
@@ -92,7 +92,7 @@ export default class Tabs extends FACTORY.BaseComponent {
 
         _.aria.set(this.domCache.labels[index], 'selected', true);
         _.aria.set(this.domCache.tabs[index], 'hidden', false);
-        
+
         _.makeElementFocusable(this.domCache.labels[index]);
         this.domCache.labels[index].focus();
 

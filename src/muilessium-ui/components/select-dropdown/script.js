@@ -55,7 +55,7 @@ export default class SelectDropdown extends FACTORY.BaseComponent {
             const hiddenOption = document.createElement('option');
 
             hiddenOption.value = _.getAttribute(option, 'data-value');
-            
+
             this.domCache.hiddenSelect.add(hiddenOption);
         });
 
@@ -90,8 +90,8 @@ export default class SelectDropdown extends FACTORY.BaseComponent {
         return this;
     }
 
-    
-    initControls() { 
+
+    initControls() {
         _.makeElementClickable(this.domCache.select,
             this.toggleDropdown.bind(this, {
                 focusFirstWhenOpened: false

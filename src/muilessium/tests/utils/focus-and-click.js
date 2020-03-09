@@ -235,7 +235,7 @@ module.exports = {
                  </div>`;
 
         const element = document.querySelector('#prev');
-        
+
         element.focus();
 
         // ---------------
@@ -266,7 +266,7 @@ module.exports = {
                  </div>`;
 
         const element = document.querySelector('#next');
-        
+
         element.focus();
 
         // ---------------
@@ -356,7 +356,7 @@ module.exports = {
                 `<div class='parent'>
                      <div></div>
                      <div></div>
-                 </div> 
+                 </div>
                  <div class='parent'>
                      <div></div>
                      <div></div>
@@ -385,7 +385,7 @@ module.exports = {
 
             return (index) => {
                 test.ok(true, 'It should set the event listener for the click event for the element.');
-                test.equal(index, (counter++) % 2, 'It should pass the index of the child element to the callback function.'); 
+                test.equal(index, (counter++) % 2, 'It should pass the index of the child element to the callback function.');
                 isClicked = true;
             };
         }
@@ -454,7 +454,7 @@ module.exports = {
         test.expect(2);
 
         // ---------------
-        
+
         function callback() {
             test.ok(true, 'It should execute the callback function on the "focus" event.');
         }

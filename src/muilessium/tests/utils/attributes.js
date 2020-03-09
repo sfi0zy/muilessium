@@ -67,7 +67,7 @@ module.exports = {
         const element = document.querySelector('div');
 
         // ---------------
-    
+
         _.removeAttribute(element, 'data-test');
 
         // ---------------

@@ -121,7 +121,7 @@ export function stringify(object) {
         if (typeof value === 'function') {
             return 'function';
         }
- 
+
         return value;
     });
 }
@@ -312,7 +312,7 @@ export function toLispCase(str) {
         return '';
     }
 
-    return DEPENDENCIES.toSlugCase(str); 
+    return DEPENDENCIES.toSlugCase(str);
 }
 
 

@@ -56,7 +56,7 @@ export default class ModalWindow extends FACTORY.BaseComponent {
         KEYBOARD.onEscapePressed(this.domCache.modalWindow, this.closeModal.bind(this));
         KEYBOARD.onTabPressed(this.domCache.modalWindow, this.closeModal.bind(this));
         KEYBOARD.onShiftTabPressed(this.domCache.modalWindow, this.closeModal.bind(this));
-        
+
         _.makeElementClickable(this.domCache.closeIcon, this.closeModal.bind(this),
             { mouse: true, keyboard: false });
         _.makeElementClickable(this.domCache.shadow, this.closeModal.bind(this),
@@ -102,7 +102,7 @@ export default class ModalWindow extends FACTORY.BaseComponent {
         if (!this.state.isOpened) {
             _.addClass(this.domCache.element, '-opened');
             _.addClass(this.domCache.shadow,  '-visible');
-            
+
             _.aria.set(this.domCache.element, 'hidden', false);
 
             _.makeElementFocusable(this.domCache.modalWindow);
@@ -121,13 +121,14 @@ export default class ModalWindow extends FACTORY.BaseComponent {
         if (this.state.isOpened) {
             _.removeClass(this.domCache.element, '-opened');
             _.removeClass(this.domCache.shadow,  '-visible');
-            
+
             _.aria.set(this.domCache.element, 'hidden', true);
 
             _.makeElementNotFocusable(this.domCache.modalWindow);
             this.state.isOpened = false;
 
-            if (this.state.savedOpener && returnToOpener && !_.isInViewport(this.state.savedOpener)) {
+            if (this.state.savedOpener && returnToOpener &&
+                !_.isInViewport(this.state.savedOpener)) {
                 _.scrollTo(this.state.savedOpener, () => {
                     this.state.savedOpener.focus();
                     this.state.savedOpener = null;

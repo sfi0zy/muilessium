@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 
-import { ifExists } from '../utils/checks'; 
+import { ifExists } from '../utils/checks';
 import { forEach } from '../utils/uncategorized';
 
 

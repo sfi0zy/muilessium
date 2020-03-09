@@ -30,7 +30,7 @@ module.exports = {
         }
 
         function callbackNegative(/* status, statusText */) {
-            test.ok(false, 'it seems like jsonplaceholder is down');            
+            test.ok(false, 'it seems like jsonplaceholder is down');
             test.done();
         }
 
@@ -43,7 +43,7 @@ module.exports = {
             callbackNegative
         );
     },
-    
+
 
 
     postProtected(test) {
@@ -82,7 +82,7 @@ module.exports = {
         }
 
         function callbackNegative(/* status, statusText */) {
-            test.ok(false, 'it seems like jsonplaceholder is down');            
+            test.ok(false, 'it seems like jsonplaceholder is down');
             test.done();
         }
 
@@ -94,7 +94,7 @@ module.exports = {
             callbackNegative
         );
     },
-    
+
 
 
     getProtected(test) {

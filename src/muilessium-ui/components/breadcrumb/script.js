@@ -20,4 +20,4 @@ export default class Breadcrumb extends FACTORY.BaseComponent {
         return this;
     }
 }
- 
+

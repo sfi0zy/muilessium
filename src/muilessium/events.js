@@ -10,7 +10,7 @@ class Events {
         };
 
         this.timeouts = {
-            
+
         };
 
         this.events = {};

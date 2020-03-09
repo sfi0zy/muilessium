@@ -28,9 +28,9 @@ module.exports = {
         document.body.innerHTML = '<div></div>';
 
         const element = document.querySelector('div');
- 
+
         // ---------------
- 
+
         function callback() {
             test.ok(true, 'It should execute the callback function when scroll ends.');
             test.done();
@@ -63,7 +63,7 @@ module.exports = {
             test.ok(true, 'It should execute the callback function when scroll ends.');
             test.done();
         }
- 
+
         // ---------------
 
         _.scrollToTop(callback);
@@ -82,13 +82,13 @@ module.exports = {
         log.warning('Can\'t test the utility.', 'Recommended to test it in the real browser.');
 
         document.body.innerHTML = '<div></div>';
- 
+
         const element = document.querySelector('div');
 
         test.expect(2);
 
         // ---------------
-        
+
         function callback() {
             test.ok(true, 'It should execute the callback function.');
         }

@@ -107,7 +107,7 @@ export default class Input extends FACTORY.BaseComponent {
     }
 
 
-    changeValueHandler() { 
+    changeValueHandler() {
         this.state.value = this.domCache.input.value;
 
         if (this.state.value === '') {
@@ -134,7 +134,7 @@ export default class Input extends FACTORY.BaseComponent {
         return this;
     }
 
-    
+
     validate() {
         if (this.state.isValidationEnabled) {
             if (this.state.regexp.test(this.state.value)) {

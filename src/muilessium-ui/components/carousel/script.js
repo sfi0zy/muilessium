@@ -154,7 +154,7 @@ export default class Carousel extends FACTORY.BaseComponent {
         return this;
     }
 
-    
+
     pauseAndExecute(callback) {
         if (this.state.isRotation) {
             this.stopRotating();

@@ -35,7 +35,7 @@ export default class Accordion extends FACTORY.BaseComponent {
     initAria() {
         _.aria.setRole(this.domCache.element, 'tablist');
         _.setAttribute(this.domCache.element, 'multiselectable', true);
-        
+
         _.forEach(this.domCache.titles, (title, index) => {
             _.aria.setRole(title, 'tab');
             _.aria.set(title, 'expanded', false);
@@ -66,13 +66,13 @@ export default class Accordion extends FACTORY.BaseComponent {
 
             if (title !== _.firstOfList(this.domCache.titles)) {
                 KEYBOARD.onArrowUpPressed(title, () => {
-                    this.domCache.titles[index - 1].focus(); 
+                    this.domCache.titles[index - 1].focus();
                 });
             }
-            
+
             if (title !== _.lastOfList(this.domCache.titles)) {
                 KEYBOARD.onArrowDownPressed(title, () => {
-                    this.domCache.titles[index + 1].focus(); 
+                    this.domCache.titles[index + 1].focus();
                 });
             }
         });
@@ -94,7 +94,7 @@ export default class Accordion extends FACTORY.BaseComponent {
             });
         }
 
-        return this; 
+        return this;
     }
 
 

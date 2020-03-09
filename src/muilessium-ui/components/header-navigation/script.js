@@ -13,7 +13,7 @@ const _           = window.Muilessium.UTILS;
 export default class HeaderNavigation extends FACTORY.BaseComponent {
     constructor(element, options) {
         super(element, options);
-        
+
         this.domCache = _.extend(this.domCache, {
             hamburger:  element.querySelector('.mui-navigation-toggle'),
             shadow:     element.querySelector('.mui-shadow-toggle'),
@@ -93,7 +93,7 @@ export default class HeaderNavigation extends FACTORY.BaseComponent {
 
 
     initEvents() {
-        EVENTS.addEventListener('resize-window-width', this.update.bind(this)); 
+        EVENTS.addEventListener('resize-window-width', this.update.bind(this));
 
         EVENTS.addEventListener('scroll-start', () => {
             this.closeNavigation();
@@ -160,7 +160,7 @@ export default class HeaderNavigation extends FACTORY.BaseComponent {
 
         return this;
     }
-    
+
     toggleNavigation() {
         if (this.state.opened) {
             this.closeNavigation();
@@ -227,7 +227,7 @@ export default class HeaderNavigation extends FACTORY.BaseComponent {
                 childsWidth += child.offsetWidth;
             }
         });
- 
+
         if (childsWidth > (parentWidth - 50)) {
             this.transformToMobile();
         } else {

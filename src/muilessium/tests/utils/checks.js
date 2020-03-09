@@ -161,7 +161,7 @@ module.exports = {
         const child  = document.querySelector('#child');
 
         // ---------------
-    
+
         const resultPositive = _.isDescendant(parent, child);
         const resultNegative = _.isDescendant(child, parent)
                                 || _.isDescendant(child, child)

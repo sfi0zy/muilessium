@@ -104,7 +104,7 @@ export default class Radio extends FACTORY.BaseComponent {
         return this;
     }
 
-    
+
     getState() {
         return this.state.checkedIndex;
     }

@@ -17,7 +17,7 @@ module.exports = {
         document.body.innerHTML = '<div></div>';
 
         const element = document.querySelector('div');
- 
+
         // ---------------
 
         const result = _.isInViewport(element);
@@ -42,7 +42,7 @@ module.exports = {
         document.body.innerHTML = '<div></div>';
 
         const element = document.querySelector('div');
- 
+
         // ---------------
 
         const result = _.isInViewport(element);

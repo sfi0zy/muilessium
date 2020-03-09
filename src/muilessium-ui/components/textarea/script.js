@@ -10,7 +10,7 @@ const _       = window.Muilessium.UTILS;
 export default class Textarea extends FACTORY.BaseComponent {
     constructor(element, options) {
         super(element, options);
-        
+
         this.domCache = _.extend(this.domCache, {
             textarea: element.querySelector('textarea'),
             labels:   element.parentNode.querySelectorAll('label')

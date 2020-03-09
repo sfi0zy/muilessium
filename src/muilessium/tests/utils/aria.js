@@ -151,7 +151,7 @@ module.exports = {
         // ---------------
 
         test.equal(result, 'button', 'It should return the role of the element.');
-    
+
         test.doesNotThrow(() => {
             _.aria.getRole(null);
             _.aria.getRole(undefined);

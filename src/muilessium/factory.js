@@ -29,9 +29,9 @@ class Factory {
         if (!this.componentsCache[type]) {
             this.componentsCache[type] = [];
         }
-        
+
         const elements = document.querySelectorAll(selector);
-        
+
         return [].map.call(elements, (element) => {
             const newComponent = new this.components[type](element, options);
 

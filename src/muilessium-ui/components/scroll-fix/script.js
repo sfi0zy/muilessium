@@ -11,7 +11,7 @@ const _           = window.Muilessium.UTILS;
 export default class ScrollFix extends FACTORY.BaseComponent {
     constructor(element, options) {
         super(element, options);
-        
+
         this.initAria();
         this.initEvents();
     }

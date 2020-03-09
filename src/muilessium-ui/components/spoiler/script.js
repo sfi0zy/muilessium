@@ -25,9 +25,9 @@ export default class Spoiler extends FACTORY.BaseComponent {
     }
 
 
-    initAria() {        
+    initAria() {
         _.aria.setRole(this.domCache.element, 'tablist');
-        
+
         _.aria.setRole(this.domCache.title, 'tab');
         _.aria.set(this.domCache.title, 'expanded', false);
         _.aria.set(this.domCache.title, 'controls', _.aria.setId(this.domCache.content));
