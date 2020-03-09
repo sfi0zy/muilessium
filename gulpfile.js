@@ -139,6 +139,17 @@ gulp.task('muilessium-ui:compile-js', () => {
 });
 
 
+gulp.task('muilessium-ui:lint-less', () => {
+    return gulp.src('./src/**/*.less')
+        .pipe($.stylelint({
+            failAfterError: false,
+            reporters: [
+                { formatter: 'string', console: true }
+            ]
+        }));
+});
+
+
 gulp.task('muilessium-ui:compile-less', () => {
     return gulp.src('./src/muilessium-ui/main.less')
         .pipe($.if(ENVIRONMENT === 'development', $.sourcemaps.init()))
@@ -156,6 +167,7 @@ gulp.task('muilessium-ui:compile-less', () => {
 gulp.task('muilessium-ui', gulp.series(
     'muilessium-ui:lint-js',
     'muilessium-ui:compile-js',
+    'muilessium-ui:lint-less',
     'muilessium-ui:compile-less'
 ));
 
@@ -262,7 +274,11 @@ gulp.task('browser-sync', () => {
 
     gulp.watch([
         './src/muilessium-ui/**/*.less',
-    ], gulp.series('muilessium-ui:compile-less', 'docs'));
+    ], gulp.series(
+        'muilessium-ui:lint-less',
+        'muilessium-ui:compile-less',
+        'docs'
+    ));
 
     gulp.watch([
         './src/docs/*.pug'
@@ -302,9 +318,8 @@ gulp.task('default', (done) => {
 
         case 'development': {
             gulp.series(
-                'muilessium:compile-js',
-                'muilessium-ui:compile-js',
-                'muilessium-ui:compile-less',
+                'muilessium',
+                'muilessium-ui',
                 'docs',
                 'browser-sync'
             )();
